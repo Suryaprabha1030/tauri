@@ -37,7 +37,7 @@ const OrderFilters: React.FC<OrdersFilterProps> = ({
                   setActiveStatusFilter(
                     activeStatusFilter.toUpperCase() === "REJECTED"
                       ? null
-                      : "REJECTED"
+                      : "REJECTED",
                   )
                 }
               >
@@ -54,7 +54,7 @@ const OrderFilters: React.FC<OrdersFilterProps> = ({
                   setActiveStatusFilter(
                     activeStatusFilter.toUpperCase() === "COMPLETED"
                       ? null
-                      : "COMPLETED"
+                      : "COMPLETED",
                   )
                 }
               >
@@ -71,7 +71,7 @@ const OrderFilters: React.FC<OrdersFilterProps> = ({
                   }`}
                 onClick={() =>
                   setTransactionFilter(
-                    transactionFilter === "BUY" ? null : "BUY"
+                    transactionFilter === "BUY" ? null : "BUY",
                   )
                 }
               >
@@ -86,7 +86,7 @@ const OrderFilters: React.FC<OrdersFilterProps> = ({
                   }`}
                 onClick={() =>
                   setTransactionFilter(
-                    transactionFilter === "SELL" ? null : "SELL"
+                    transactionFilter === "SELL" ? null : "SELL",
                   )
                 }
               >
@@ -100,7 +100,7 @@ const OrderFilters: React.FC<OrdersFilterProps> = ({
           className="absolute right-0 top-0 p-4 text-xl"
           onClick={() => setShowOrders(false)}
         >
-          <Image
+          <img
             src="/svg/removeSymbol.svg"
             className="relative h-[1.5rem] w-[1.5rem]"
             width="20"

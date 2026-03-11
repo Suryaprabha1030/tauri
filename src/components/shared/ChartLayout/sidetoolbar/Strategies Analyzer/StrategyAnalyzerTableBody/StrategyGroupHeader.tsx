@@ -17,7 +17,7 @@ const GroupHeader: React.FC<GroupHeaderProps> = ({ strategyDirection }) => {
         <div className="flex items-center space-x-2 md:max-xl:space-x-4">
           <div className="flex-grow border-t border-gray-300"></div>
           <div className="flex items-center space-x-2 md:max-xl:space-x-4">
-            <Image
+            <img
               src={getImageSrc(strategyDirection)}
               alt={strategyDirection}
               width={14}

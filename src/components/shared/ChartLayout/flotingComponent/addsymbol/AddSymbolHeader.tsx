@@ -31,7 +31,7 @@ const AddSymbolHeader: React.FC<AddSymbolHeaderProps> = ({
         setSelected={setSelected}
         setSearchSymbol={setSearchSymbol}
       />
-      <Image
+      <img
         src="/svg/removeSymbol.svg"
         className="relative h-[1.5rem] w-[1.5rem] cursor-pointer max-sm:h-[1rem] max-sm:w-[1rem] lg:max-xl:h-[1.7rem] lg:max-xl:w-[1.7rem] "
         width="20"

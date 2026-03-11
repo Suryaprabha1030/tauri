@@ -40,7 +40,7 @@ const Profile = () => {
           loading: false,
         }));
       },
-      () => {}
+      () => {},
     );
   };
 
@@ -60,7 +60,7 @@ const Profile = () => {
           error: error.response.data,
           loading: false,
         }));
-      }
+      },
     );
   };
 
@@ -101,7 +101,7 @@ const Profile = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/svg/profile-icon.svg"
                 alt=""
                 className="h-1/6"
@@ -115,7 +115,7 @@ const Profile = () => {
                 <label htmlFor="first_name" className="block font-medium">
                   First Name
                   {/* <Tooltip tooltipText="This is a tooltip" position="top">
-                    <Image
+                    <img
                       src="/svg/tooltip.svg"
                       alt=""
                       height={20}

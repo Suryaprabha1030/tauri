@@ -83,7 +83,7 @@ function OpenInterest() {
   const [toOiTime, setToOiTime] = useState("");
   const [activeButton, setActiveButton] = useState("Both");
   const [fromDate, setFromDate] = useState(
-    new Date().toISOString().split("T")[0]
+    new Date().toISOString().split("T")[0],
   );
   const [toDate, setToDate] = useState(new Date().toISOString().split("T")[0]);
   const [activeStraddleButton, setActiveStraddleButton] = useState("");
@@ -101,17 +101,17 @@ function OpenInterest() {
   const dispatch = useDispatch();
   const [calculateMargin, setCalculateMargin] = useState(false);
   const expiries: any = useSelector(
-    (state: RootState) => state.OI.OIIndexExpiryDate
+    (state: RootState) => state.OI.OIIndexExpiryDate,
   );
 
   const indexAddtionalData: any = useSelector(
-    (state: RootState) => state.OI.OIAddtionalData
+    (state: RootState) => state.OI.OIAddtionalData,
   );
   const isInitialRender = useRef(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [showOiTable, setShowOiTable] = useState(false);
   const [manageTimeRange, setManageTimeRange] = useState<any>(
-    activeButton === "Both" ? true : false
+    activeButton === "Both" ? true : false,
   );
   const [userId, setUserId] = useState("");
   // Function to toggle the name
@@ -135,19 +135,19 @@ function OpenInterest() {
   const [heatMapData, setHeatMapData] = useState<any>();
   const [showClassic, setShowClassic] = useState(true);
   const showheatMap = useSelector(
-    (state: RootState) => state.charts.setShowHeatmap
+    (state: RootState) => state.charts.setShowHeatmap,
   );
   const toggleState = useSelector(
-    (state: RootState) => state.analyzer.toggleState
+    (state: RootState) => state.analyzer.toggleState,
   );
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const netpercentage: any = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const brokerName = getBrokerName();
 
@@ -160,17 +160,17 @@ function OpenInterest() {
   const [tableData, setTableData] = useState<any>({});
   const [processedIndexes, setProcessedIndexes] = useState<boolean>();
   const rawApiResponse: any = useSelector(
-    (state: RootState) => state.strategy.rawIndexAPIresponse
+    (state: RootState) => state.strategy.rawIndexAPIresponse,
   );
   const WebsocketLtpRef = useRef(webSocketDataRead);
   const indexData: any = useSelector(
-    (state: RootState) => state.OI.OiIndexData
+    (state: RootState) => state.OI.OiIndexData,
   );
   const [querySpotPrice, setQuerySpotPrice] = useState<any>(null);
   const lastQueryRef = useRef<string | null>(null);
   const spotPriceSetRef = useRef(false);
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   useEffect(() => {
     validateBrokerCode(id, brokerData, router, setBrokerCode, setIsValid);
@@ -237,7 +237,7 @@ function OpenInterest() {
       dispatch(
         addSymbol({
           symbol: identifier,
-        })
+        }),
       );
     });
   }, []);
@@ -292,11 +292,11 @@ function OpenInterest() {
         const atmStrike: any = ATMCalculation(
           OIData,
           WebsocketLtpRef.current,
-          indexData[query]
+          indexData[query],
         );
         setSpotPriceRoundOff(atmStrike);
         setOiIncrementor(
-          indexAddtionalData[query][expiries[query][0]]?.incrementer
+          indexAddtionalData[query][expiries[query][0]]?.incrementer,
         );
       }
     }
@@ -308,7 +308,7 @@ function OpenInterest() {
     broker: any,
     index: any,
     querySpotPrice: any,
-    apiBoolean: any
+    apiBoolean: any,
   ) => {
     const getAllDataApi = new UserBrokerRouterApi(baseConfig());
     getAllDataApi
@@ -316,7 +316,7 @@ function OpenInterest() {
         broker,
         index,
         querySpotPrice,
-        apiBoolean
+        apiBoolean,
       )
       .then((res: any) => {
         dispatch(setIndexRawApiResponse(res?.data));
@@ -326,7 +326,7 @@ function OpenInterest() {
           addSymbol({
             symbol: res?.data?.index_obj?.identifier,
             // token: res?.data?.index_obj?.token,
-          })
+          }),
         );
         Object.keys(res?.data?.option_chain || {}).forEach((expiry) => {
           const strikes = res?.data?.option_chain[expiry];
@@ -339,7 +339,7 @@ function OpenInterest() {
                 addSymbol({
                   symbol: opt?.identifier, // pick identifier
                   // token: opt.token, // pick token
-                })
+                }),
               );
             });
           });
@@ -349,7 +349,7 @@ function OpenInterest() {
             addSymbol({
               symbol: future?.identifier,
               // token: future.token,
-            })
+            }),
           );
         });
       })
@@ -381,13 +381,13 @@ function OpenInterest() {
       const enrichedOptionChain = enrichOptionChain(
         option_chain,
         webSocketDataRead,
-        netpercentage
+        netpercentage,
       );
       const enrichedFutures: any = enrichFutures(
         futures_data,
         lot_size,
         webSocketDataRead,
-        netpercentage
+        netpercentage,
       );
 
       dispatch(
@@ -402,14 +402,14 @@ function OpenInterest() {
           OISpotPrice: webSocketDataRead[indexId] ?? null,
           indexObj: index_obj ?? {},
           lotSize: lot_size ?? 0,
-        })
+        }),
       );
 
       // Sort and dispatch first fut
       const sortedFuts =
         futures_data?.length > 0
           ? [...futures_data]?.sort((a, b) =>
-              new Date(a?.expiry) > new Date(b?.expiry) ? 1 : -1
+              new Date(a?.expiry) > new Date(b?.expiry) ? 1 : -1,
             )
           : [];
       if (sortedFuts?.length > 0) {
@@ -417,7 +417,7 @@ function OpenInterest() {
           setIndexFirstFutData({
             IndexFirstFutData: sortedFuts[0],
             FutIndexName: indexId,
-          })
+          }),
         );
       }
     }
@@ -515,14 +515,14 @@ function OpenInterest() {
       defaultLoad.map((key) => [
         key,
         `${key.split(".0")[0]}#${key.split("#")[1]}`,
-      ])
+      ]),
     );
 
     const initialRadioLoad = Object.fromEntries(
       [`${defaultSelector}.0#${expiry}#${groupName}`].map((key) => [
         key,
         [`${key.split(".0")[0]}CE`, `${key.split(".0")[0]}PE`],
-      ])
+      ]),
     );
 
     const updateCheckedRows = (setter, condition) => {
@@ -570,7 +570,7 @@ function OpenInterest() {
       !showMultiOi &&
         (showMultiStraddle || showOiChange || showCombinedOi) &&
         (Object?.entries(checkedOIRows).length == 0 ||
-          Object?.values(checkedOIRows)?.every((value) => !value))
+          Object?.values(checkedOIRows)?.every((value) => !value)),
     );
     // all unchecked when tab switch and again click multi starddle -custom tab
     updateMultiStraddleRows(
@@ -578,7 +578,7 @@ function OpenInterest() {
       !showMultiStraddle &&
         showMultiOi &&
         (Object?.entries(checkedCustomRows).length == 0 ||
-          Object?.values(checkedCustomRows)?.every((value) => !value))
+          Object?.values(checkedCustomRows)?.every((value) => !value)),
     );
     // all unchecked when tab switch and again click multi starddle-strangle tab
     updateMultiStraddleRows(
@@ -586,7 +586,7 @@ function OpenInterest() {
       (showMultiOi || showOiChange || showCombinedOi) &&
         !showMultiStraddle &&
         (Object?.entries(checkedStrangleRows).length == 0 ||
-          Object?.values(checkedStrangleRows)?.every((value) => !value))
+          Object?.values(checkedStrangleRows)?.every((value) => !value)),
     );
 
     // all unchecked when tab switch and again click multi starddle-strangle tab
@@ -595,7 +595,7 @@ function OpenInterest() {
       (showMultiOi || showOiChange || showCombinedOi) &&
         !showMultiStraddle &&
         (Object?.entries(checkedOIRadios).length == 0 ||
-          Object?.values(checkedOIRadios)?.every((value) => !value))
+          Object?.values(checkedOIRadios)?.every((value) => !value)),
     );
   }, [showOiChange, showCombinedOi]);
   const handleHeatMap = () => {
@@ -609,8 +609,8 @@ function OpenInterest() {
         oiValue,
         toggleState,
         webSocketDataRead,
-        netpercentage
-      )
+        netpercentage,
+      ),
     );
   }, [OIData, showheatMap, toggleState]);
 
@@ -788,7 +788,7 @@ function OpenInterest() {
                         if (queryIdentifier && queryIdentifier.length > 0) {
                           handlePopUp(
                             { identifier: queryIdentifier },
-                            dispatch
+                            dispatch,
                           );
                         }
                       }}
@@ -1048,7 +1048,7 @@ function OpenInterest() {
                   )}
                   {/* Only for Small Screen */}
                   {showOiTable === false ? (
-                    <Image
+                    <img
                       src="/svg/plusIcon.svg"
                       height={15}
                       width={15}

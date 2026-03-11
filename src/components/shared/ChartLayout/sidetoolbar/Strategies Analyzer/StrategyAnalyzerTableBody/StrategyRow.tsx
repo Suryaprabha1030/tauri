@@ -68,7 +68,7 @@ const StrategyRow: React.FC<StrategyRowProps> = ({
   const userEmail = useSelector((state: RootState) => state.common.userInfo);
   const isPrivilegedUser = config.userEmail.includes(userEmail?.email);
   const Payoffstrategy = useSelector(
-    (state: RootState) => state.Screener.PayoffStrategyName
+    (state: RootState) => state.Screener.PayoffStrategyName,
   );
   return (
     <tr
@@ -87,7 +87,7 @@ const StrategyRow: React.FC<StrategyRowProps> = ({
             className={`flex w-[13rem] flex-row items-center max-sm:w-[7.5rem] max-sm:gap-0.5 sm:max-md:w-[9rem] sm:max-md:gap-1 md:gap-2 ${isExpanded ? "xl:max-2xl:max-w-[65%] " : " xl:max-2xl:max-w-[80%]"} xl:max-2xl:justify-start`}
           >
             <div className="flex cursor-pointer max-sm:min-w-[0.8rem] sm:max-md:w-[0.8rem] xl:w-[1rem]">
-              <Image
+              <img
                 src="/svg/expand-icon.svg"
                 alt=""
                 width={10}
@@ -136,7 +136,7 @@ const StrategyRow: React.FC<StrategyRowProps> = ({
                     dispatch(setPayoffStrategyName(null));
                   }}
                 >
-                  <Image
+                  <img
                     src="/svg/analyze.svg"
                     width={14}
                     height={14}
@@ -155,12 +155,12 @@ const StrategyRow: React.FC<StrategyRowProps> = ({
                         strategy,
                         response,
                         setSelectedStrategy,
-                        dispatch
+                        dispatch,
                       );
                       e.stopPropagation();
                     }}
                   >
-                    <Image
+                    <img
                       src="/svg/execute.svg"
                       width={14}
                       height={14}
@@ -183,7 +183,7 @@ const StrategyRow: React.FC<StrategyRowProps> = ({
                       dispatch(setPayoffStrategyName(strategy));
                     }}
                   >
-                    <Image
+                    <img
                       src="/svg/zoom_in.svg"
                       width={16}
                       height={16}
@@ -216,7 +216,9 @@ const StrategyRow: React.FC<StrategyRowProps> = ({
         }`}
       >
         <span>
-          {isFinite(maxProfit) ? maxProfit * (strategyLots || 1) : maxProfit}{" "}
+          {isFinite(maxProfit)
+            ? maxProfit * (strategyLots || 1)
+            : maxProfit}{" "}
         </span>
         {maxProfitPercent != undefined && (
           <span

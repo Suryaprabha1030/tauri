@@ -53,7 +53,7 @@ const RollDropdown = ({
           {" "}
           {label} {selectedRollUp}{" "}
         </span>
-        <Image
+        <img
           src="/svg/arrowFall.svg"
           width="25"
           height="25"

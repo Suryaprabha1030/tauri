@@ -7,7 +7,7 @@ interface HeatMapButtonProps {
 const HeatMapButton: React.FC<HeatMapButtonProps> = ({ handleHeatMap }) => {
   return (
     <div className="group relative inline-block cursor-pointer">
-      <Image
+      <img
         src="/svg/heatmap.svg"
         height={15}
         width={15}

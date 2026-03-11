@@ -30,7 +30,7 @@ const PWAInstallPrompt: React.FC<PWAProps> = ({
             isClicked ? "animate-bounce" : "hover:bg-green-600"
           }`}
         >
-          <Image
+          <img
             src="/svg/install.svg"
             alt="install app"
             height={24}

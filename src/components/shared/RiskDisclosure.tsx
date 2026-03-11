@@ -20,8 +20,8 @@ const RiskDisclosureModal = () => {
     <div className="fixed inset-0 z-[10004] flex h-full items-center justify-center bg-black bg-opacity-50 ">
       <div className="relative w-full max-w-2xl rounded-xl bg-white p-6 shadow-xl max-xl:m-6 max-sm:m-4">
         <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold max-sm:text-[0.9rem]">
-          <Image src="/svg/notice.svg" width={20} height={20} alt="notice" />{" "}
-          Risk disclosures on derivatives
+          <img src="/svg/notice.svg" width={20} height={20} alt="notice" /> Risk
+          disclosures on derivatives
         </h2>
         <ul className="list-inside list-disc space-y-3 text-gray-800 max-sm:text-[0.8rem]">
           <li>

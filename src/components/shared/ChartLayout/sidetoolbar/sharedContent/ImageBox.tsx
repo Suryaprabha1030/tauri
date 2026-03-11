@@ -9,7 +9,7 @@ interface ImageBoxProps {
   autoWidth?: any;
 }
 
-const ImageBox: React.FC<ImageBoxProps> = ({
+const ImageBox: React.FC<imgBoxProps> = ({
   imagePath,
   display,
   width,
@@ -20,7 +20,7 @@ const ImageBox: React.FC<ImageBoxProps> = ({
     <div
       className={`flex w-full flex-col items-center justify-center max-sm:h-[25rem] sm:max-md:h-[27rem] xl:h-[30rem]`}
     >
-      <Image
+      <img
         src={imagePath}
         height={height}
         className={`${autoWidth}`}

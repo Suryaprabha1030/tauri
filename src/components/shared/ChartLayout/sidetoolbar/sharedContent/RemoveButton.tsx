@@ -38,7 +38,7 @@ const RemoveButton: React.FC<RemoveButtonProps> = ({
       onClick={handleClick}
       onDoubleClick={(event) => event.stopPropagation()}
     >
-      <Image
+      <img
         src="/svg/removeSymbol.svg"
         className="relative max-md:h-[1.4rem] max-md:w-[1.4rem] md:h-[1.5rem] md:w-[1.5rem]"
         width={20}

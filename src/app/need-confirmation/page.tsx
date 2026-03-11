@@ -36,7 +36,7 @@ const NeedConfirmation = () => {
           brokerLogoutTokenRemove(router);
         }
         // toast("Please check your email for further confirmation");
-      }
+      },
     );
   }, []);
 
@@ -68,7 +68,7 @@ const NeedConfirmation = () => {
               </h3>
             </div>
             <div className="flex-row justify-center">
-              <Image
+              <img
                 src="/svg/confirm.svg"
                 alt=""
                 className="aspect-video h-2/6 w-full justify-center"

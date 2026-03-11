@@ -21,7 +21,7 @@ const PositionsWatchlist: React.FC<PositionsWatchlistProps> = ({
                 <span className="mr-[0.2rem] mt-[0.1rem] text-[0.65rem] font-table text-z-gray-300">
                   {position?.quantity}
                 </span>
-                <Image
+                <img
                   src={"/svg/colorHolding.svg"}
                   height={12}
                   width={12}
@@ -31,7 +31,7 @@ const PositionsWatchlist: React.FC<PositionsWatchlistProps> = ({
               </div>
             ) : (
               ""
-            )
+            ),
           )
         : ""}
     </>

@@ -46,7 +46,7 @@ const DraftNamePopup: React.FC<DraftNamePopupProps> = ({
         <h1 className="font-semibold max-md:text-base md:text-[1.2rem]">
           Create Strategy Sandbox
         </h1>
-        <Image
+        <img
           src="/svg/removeSymbol.svg"
           className="relative h-[1.5rem] w-[1.5rem]"
           width="20"

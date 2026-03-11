@@ -70,11 +70,11 @@ const AddSymbolTable: React.FC<AddSymbolTableProps> = ({
             </td>
 
             <td scope="col" className="py-3 text-left max-sm:px-3 lg:px-3">
-              <Image
+              <img
                 src={`${
                   symbols &&
                   symbols.some(
-                    (item: any) => item?.identifier === symb?.identifier
+                    (item: any) => item?.identifier === symb?.identifier,
                   )
                     ? "/svg/removeSymbol.svg"
                     : "/svg/plusSymbol.svg"

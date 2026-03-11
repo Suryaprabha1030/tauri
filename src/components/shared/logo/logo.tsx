@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Logo(props: { width: number; height: number }) {
   return (
-    <Image
+    <img
       priority
       src="/svg/Zoonest_Logo.svg"
       width={props.width}

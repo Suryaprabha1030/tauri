@@ -65,7 +65,7 @@ const CommonNotesList: React.FC<CommonNotesListProps> = ({
                   }}
                   className="text-green-600 hover:text-green-700"
                 >
-                  <Image
+                  <img
                     src="/svg/editNote.svg"
                     className="w-[1rem] cursor-pointer"
                     height={50}
@@ -77,7 +77,7 @@ const CommonNotesList: React.FC<CommonNotesListProps> = ({
                   onClick={() => DeleteNotes(item?.id)}
                   className="text-red-600 hover:text-red-700"
                 >
-                  <Image
+                  <img
                     src="/svg/deleteNotes.svg"
                     className="w-[1rem] cursor-pointer"
                     height={50}

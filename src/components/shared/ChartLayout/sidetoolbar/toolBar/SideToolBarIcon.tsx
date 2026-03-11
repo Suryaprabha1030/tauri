@@ -18,7 +18,7 @@ interface SideToolBarIcon {
 
 const SideToolBarIcon: React.FC<SideToolBarIcon> = ({ brokerCode }) => {
   const currentSection = useSelector(
-    (state: RootState) => state.common.currentSection
+    (state: RootState) => state.common.currentSection,
   );
   const iconRef = useRef<HTMLDivElement | null>(null);
   const userEmail = useSelector((state: RootState) => state.common.userInfo);
@@ -27,15 +27,15 @@ const SideToolBarIcon: React.FC<SideToolBarIcon> = ({ brokerCode }) => {
   const handleClick = (key: any) => {
     dispatch(
       setCurrentSection(
-        String(key).trim() === String(currentSection).trim() ? null : key
-      )
+        String(key).trim() === String(currentSection).trim() ? null : key,
+      ),
     );
     dispatch(setScreenerOpen(false));
     dispatch(setStockInfoOpen(false));
     dispatch(setScreenerQuery(null));
   };
   const showStrategiesPopup = useSelector(
-    (state: RootState) => state.charts.setShowStrategiesPopup
+    (state: RootState) => state.charts.setShowStrategiesPopup,
   );
   useEffect(() => {
     if (showStrategiesPopup === true) {
@@ -68,7 +68,7 @@ const SideToolBarIcon: React.FC<SideToolBarIcon> = ({ brokerCode }) => {
                 className={`wrapper flex items-center justify-center rounded-lg py-1 text-z-green-500 max-md:h-[2.2rem] max-md:w-[2rem] md:h-[2.7rem]  md:w-[2.5rem] xl:flex-col xl:gap-1  `}
                 onClick={() => handleClick(iconKey)}
               >
-                <Image
+                <img
                   src={currentSection === iconKey ? clickSrc : src}
                   alt={label}
                   width={width}

@@ -21,7 +21,7 @@ const StatusTooltip: React.FC<StatusTooltipProps> = ({
   return (
     <span className="relative w-10">
       {order.status !== "completed" && order?.description?.trim().length > 0 ? (
-        <Image
+        <img
           ref={tooltipIconRef}
           src="/svg/tooltip.svg"
           width={16}

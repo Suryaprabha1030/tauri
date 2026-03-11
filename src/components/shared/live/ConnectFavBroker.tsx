@@ -585,7 +585,7 @@ const ConnectFavBroker = () => {
                           }
                           `}
                         >
-                          <Image
+                          <img
                             src={getImageUrl(broker?.name)?.url}
                             className={`object-contain max-lg:pt-2 ${getImageUrl(broker?.name)?.widthHeight} `}
                             height={getImageUrl(broker?.name)?.height}

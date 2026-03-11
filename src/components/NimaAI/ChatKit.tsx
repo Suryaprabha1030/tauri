@@ -67,17 +67,17 @@ export default function AIScreener() {
     }[]
   >([]);
   const ScreenerQuery: any = useSelector(
-    (state: RootState) => state.Screener.screenerQuery
+    (state: RootState) => state.Screener.screenerQuery,
   );
   const isChatMode: any = useSelector(
-    (state: RootState) => state.Screener.isChatMode
+    (state: RootState) => state.Screener.isChatMode,
   );
 
   const screenerOpen: any = useSelector(
-    (state: RootState) => state.common.ScreenerOpen
+    (state: RootState) => state.common.ScreenerOpen,
   );
   const NimaGptType: any = useSelector(
-    (state: RootState) => state.Screener.NimaGptType
+    (state: RootState) => state.Screener.NimaGptType,
   );
   const streamingAssistantRef = useRef<Message | null>(null);
 
@@ -93,45 +93,45 @@ export default function AIScreener() {
     { text: "Market Research", query: "news" },
   ];
   const lastUpdatedPositions: any = useSelector(
-    (state: RootState) => state.Screener.lastUpdatedpositions
+    (state: RootState) => state.Screener.lastUpdatedpositions,
   );
   const lastUpdatedHoldings: any = useSelector(
-    (state: RootState) => state.Screener.lastUpdatedholdings
+    (state: RootState) => state.Screener.lastUpdatedholdings,
   );
   const selectedPositionType = useSelector(
-    (state: RootState) => state.SimulationDemo.positionType
+    (state: RootState) => state.SimulationDemo.positionType,
   );
   const selectedHoldingsType = useSelector(
-    (state: RootState) => state.SimulationDemo.holdingsType
+    (state: RootState) => state.SimulationDemo.holdingsType,
   );
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const positionPnl = useSelector(
-    (state: RootState) => state.strategy.positionPnl
+    (state: RootState) => state.strategy.positionPnl,
   );
   const positionpnlpercent = useSelector(
-    (state: RootState) => state.strategy.positionpnlpercent
+    (state: RootState) => state.strategy.positionpnlpercent,
   );
 
   const holdingsdata: any = useSelector(
-    (state: RootState) => state.strategy.holdingsData
+    (state: RootState) => state.strategy.holdingsData,
   );
   const simulatedOrders: any = useSelector(
-    (state: RootState) => state.SimulationDemo.simulatedOrders
+    (state: RootState) => state.SimulationDemo.simulatedOrders,
   );
   const OrdersDemoEnabled = useSelector(
-    (state: RootState) => state.SimulationDemo.ordersDemo
+    (state: RootState) => state.SimulationDemo.ordersDemo,
   );
   const existing_conversation_id = localStorage.getItem(
-    `${brokerCode}_conversation_id`
+    `${brokerCode}_conversation_id`,
   );
   const dispatch = useDispatch();
   //  Focus input when conversation completes or new message arrives
   const PositionsData = consolidatedPositions(
     positionsdata,
     positionPnl,
-    positionpnlpercent
+    positionpnlpercent,
   );
 
   useEffect(() => {
@@ -160,7 +160,7 @@ export default function AIScreener() {
           holdingsdata,
           OrdersDemoEnabled,
           simulatedOrders,
-          brokerCode
+          brokerCode,
         );
       }, 500);
     }
@@ -199,7 +199,7 @@ export default function AIScreener() {
     if (!loading && tableIdentifier?.length > 0) {
       // Find new identifiers that were not fetched before
       const newIds = tableIdentifier?.filter(
-        (id) => !fetchedIdentifiers.includes(id)
+        (id) => !fetchedIdentifiers.includes(id),
       );
       if (newIds?.length > 0) {
         // Fetch only for new identifiers
@@ -269,7 +269,7 @@ export default function AIScreener() {
         {!isChatMode && (
           <div className="flex items-center space-x-3  py-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-z-green-100 max-sm:h-7 max-sm:w-7">
-              <Image
+              <img
                 src="/svg/sparkle.svg"
                 width={30}
                 height={30}
@@ -305,7 +305,7 @@ export default function AIScreener() {
                   className="hover:bg-z-green-50 flex flex-col items-start rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-left text-sm text-gray-700 transition hover:border-z-green-500 hover:shadow-sm max-md:text-[0.75rem] max-sm:py-1 max-sm:text-[0.65rem]"
                 >
                   <span className="mb-1 flex items-center gap-1 text-xs font-medium text-z-green-500">
-                    <Image
+                    <img
                       src="/svg/sparkle.svg"
                       width={20}
                       height={20}
@@ -437,7 +437,7 @@ export default function AIScreener() {
                     holdingsdata,
                     OrdersDemoEnabled,
                     simulatedOrders,
-                    brokerCode
+                    brokerCode,
                   );
                 }}
                 onMouseEnter={() => setHoverImage(false)}
@@ -445,7 +445,7 @@ export default function AIScreener() {
                 disabled={loading || query?.length == 0}
                 className={`flex items-center justify-between rounded-full border border-z-green-500 p-[0.1rem] text-[0.75rem] font-medium  transition ${!hoverImage ? "bg-z-green-500 text-white" : "bg-white text-z-green-500"} disabled:opacity-50`}
               >
-                <Image
+                <img
                   src={
                     hoverImage ? "/svg/sendIcon.svg" : "/svg/sendIconWhite.svg"
                   }

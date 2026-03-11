@@ -55,13 +55,13 @@ const Positions: React.FC<PositionsProps> = ({
   const [calenderData, setCalenderData] = useState<any>();
   const [hasFetchedCalenderData, setHasFetchedCalenderData] = useState(false);
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const currentBrokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
   const dispatch = useDispatch();
   const [selectAll, setSelectAll] = useState(false);
@@ -73,16 +73,16 @@ const Positions: React.FC<PositionsProps> = ({
   const [showModal, setShowModal] = useState(false);
 
   const positionPnl = useSelector(
-    (state: RootState) => state.strategy.positionPnl
+    (state: RootState) => state.strategy.positionPnl,
   );
   const positionpnlpercent = useSelector(
-    (state: RootState) => state.strategy.positionpnlpercent
+    (state: RootState) => state.strategy.positionpnlpercent,
   );
   const userDetails = useSelector(
-    (state: RootState) => state.strategy.settingsData
+    (state: RootState) => state.strategy.settingsData,
   );
   const ImageTotalPositionsPnl = useSelector(
-    (state: RootState) => state.Position.TotalPositionsPnl
+    (state: RootState) => state.Position.TotalPositionsPnl,
   );
   const router = useRouter();
 
@@ -94,7 +94,7 @@ const Positions: React.FC<PositionsProps> = ({
         brokerCode,
         setCalenderData,
         setHasFetchedCalenderData,
-        router
+        router,
       );
     }
   };
@@ -142,14 +142,14 @@ const Positions: React.FC<PositionsProps> = ({
     if (!positionsdata || !webSocketDataRead) return;
     const allPositionsExited = positionsdata.every(
       (position: any) =>
-        position.quantity === 0 && position.transaction_type === "EXITED"
+        position.quantity === 0 && position.transaction_type === "EXITED",
     );
 
     if (allPositionsExited) return;
     const { updatedPositions, updatedTotalPnl } = updatePositionsWithPnL(
       positionsdata,
       webSocketDataRead,
-      currentBrokerName
+      currentBrokerName,
     );
     setPositionsData(updatedPositions);
     setTotalPnL(updatedTotalPnl);
@@ -227,7 +227,7 @@ const Positions: React.FC<PositionsProps> = ({
         ((positionsdata && positionsdata.length === 0) ||
           positionsdata === null) &&
         !HistoryClicked && (
-          <ImageBox
+          <imgBox
             imagePath="/svg/positions.svg"
             display="No Positions Available"
             width={200}

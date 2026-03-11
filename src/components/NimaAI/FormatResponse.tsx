@@ -21,7 +21,7 @@ export const renderWithClickableIdentifiers = (
   setShowLoginPopup: Dispatch<SetStateAction<boolean>>,
   strategyImageResult: any,
   handleStrategyClick: any,
-  IndexDetails: any
+  IndexDetails: any,
 ) => {
   const normalized = text
     .replace(/[\u00AD\u200B\u2011]/g, "")
@@ -76,8 +76,8 @@ export const renderWithClickableIdentifiers = (
         (line) =>
           !/\b(uno[\s-]*stock)\b/i.test(line.trim()) &&
           !/^\s*[*-]?\s*Identifier\s*:\s*NSE:[A-Za-z0-9_]+\s*$/i.test(
-            line.trim()
-          )
+            line.trim(),
+          ),
       )
       .join("\n")
       .trim();
@@ -104,7 +104,7 @@ export const renderWithClickableIdentifiers = (
               <button
                 onClick={() => {
                   dispatch(
-                    setSelectedAiStock({ identifier, symbol: stockName })
+                    setSelectedAiStock({ identifier, symbol: stockName }),
                   );
                   setSelectedIdentifier(identifier);
                   dispatch(setStockInfoOpen(true));
@@ -135,7 +135,7 @@ export const renderWithClickableIdentifiers = (
                 onClick={() => setShowLoginPopup(true)}
                 className="flex w-[10rem] items-center justify-center gap-2 rounded-full border border-z-green-500 px-2 py-2 text-[0.75rem] font-medium text-z-green-500 transition"
               >
-                <Image src="/svg/lock.svg" width={20} height={20} alt="view" />
+                <img src="/svg/lock.svg" width={20} height={20} alt="view" />
                 Unlock with Login
               </button>
             </div>
@@ -169,7 +169,7 @@ export const renderWithClickableIdentifiers = (
     const { strategyName, indexName } = uidData;
     const indexObj = IndexDetails?.find(
       (item: any) =>
-        item?.index_name?.toUpperCase() === indexName?.toUpperCase()
+        item?.index_name?.toUpperCase() === indexName?.toUpperCase(),
     );
     const parseExpiry = (dateStr: string) => {
       const day = parseInt(dateStr.slice(0, 2));
@@ -196,12 +196,12 @@ export const renderWithClickableIdentifiers = (
     let firstExpiry;
     if (indexObj?.expiries?.length) {
       firstExpiry = [...indexObj?.expiries].sort(
-        (a: string, b: string) => +parseExpiry(a) - +parseExpiry(b)
+        (a: string, b: string) => +parseExpiry(a) - +parseExpiry(b),
       )[0];
     }
     const imageKey = `${normalizeKey(indexName)}_${normalizeKey(firstExpiry)}_${normalizeKey(strategyName)}.jpg`;
     const matchedImage = strategyImageResult?.find(
-      (img) => img?.fileName === imageKey
+      (img) => img?.fileName === imageKey,
     );
     const isSmall = window.matchMedia("(max-width: 576px)").matches;
     const isXlSmall = window.matchMedia("(max-width: 1200px)").matches;

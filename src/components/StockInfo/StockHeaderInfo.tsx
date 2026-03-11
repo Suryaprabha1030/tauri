@@ -12,15 +12,15 @@ interface InfoItem {
 }
 
 export default function StockHeaderInfo({ info }: { info: any }) {
-  const [windowSize, setWindowSize] = useState(window.innerWidth)
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const isSidetabCollapsed: any = useSelector(
-    (state: RootState) => state.common.isSidetabCollapsed
+    (state: RootState) => state.common.isSidetabCollapsed,
   );
 
-  window.addEventListener('resize', () => {
-    setWindowSize(window.innerWidth)
-  })
+  window.addEventListener("resize", () => {
+    setWindowSize(window.innerWidth);
+  });
 
   const dataPairs: InfoItem[][] = [
     [
@@ -70,32 +70,40 @@ export default function StockHeaderInfo({ info }: { info: any }) {
       {dataPairs.map((pair, pairIdx) => {
         const isLastPair = pairIdx === dataPairs?.length - 1;
         if (windowSize >= 1400 && !isSidetabCollapsed && isLastPair) {
-          return null
+          return null;
         }
 
         return (
           <div
             key={pairIdx}
-            className={`flex flex-col items-start justify-between rounded-lg p-1 sm:h-12  md:h-14 md:w-[9.5rem] ${isLastPair
-              ? "border-2 max-sm:border-none sm:max-md:border-none"
-              : "border-2"
-              }`}
+            className={`flex flex-col items-start justify-between rounded-lg p-1 sm:h-12  md:h-14 md:w-[9.5rem] ${
+              isLastPair
+                ? "border-2 max-sm:border-none sm:max-md:border-none"
+                : "border-2"
+            }`}
           >
             {pair.map(({ label, value, icon, hideOnMobile }) =>
               value && value !== 0 ? (
                 <p
                   key={label}
-                  className={`flex items-center gap-1 text-[0.65rem] text-gray-500 sm:text-[0.6rem] ${hideOnMobile ? "max-sm:hidden sm:max-md:hidden" : ""
-                    }`}
+                  className={`flex items-center gap-1 text-[0.65rem] text-gray-500 sm:text-[0.6rem] ${
+                    hideOnMobile ? "max-sm:hidden sm:max-md:hidden" : ""
+                  }`}
                 >
-                    {" "}
-                    <Image src={icon} alt={label} width={14} height={14} className="max-sm:hidden"/>
+                  {" "}
+                  <img
+                    src={icon}
+                    alt={label}
+                    width={14}
+                    height={14}
+                    className="max-sm:hidden"
+                  />
                   <span className="md:w-[3rem]  ">{label}</span> :
                   <span className="text-[0.75rem] font-semibold text-black max-md:text-[0.7rem] ">
                     {formatNumber(value)}
                   </span>
                 </p>
-              ) : null
+              ) : null,
             )}
           </div>
         );

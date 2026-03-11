@@ -51,12 +51,7 @@ const WarningBox: React.FC<WarningBoxProps> = React.memo(
       >
         <div className="flex flex-col items-center  xl:flex-row xl:gap-2">
           <span className="flex flex-row gap-1 text-sm font-semibold">
-            <Image
-              src="/svg/Warning.svg"
-              width={15}
-              height={15}
-              alt="Warning"
-            />{" "}
+            <img src="/svg/Warning.svg" width={15} height={15} alt="Warning" />{" "}
             Warning !
           </span>
           <p className="text-center text-sm xl:text-xs 2xl:text-sm">
@@ -69,16 +64,11 @@ const WarningBox: React.FC<WarningBoxProps> = React.memo(
           onClick={handleClose}
           className="absolute right-2 top-2 text-gray-500 hover:opacity-80 xl:relative xl:right-auto xl:top-auto "
         >
-          <Image
-            src="/svg/removeSymbol.svg"
-            width={15}
-            height={15}
-            alt="Close"
-          />
+          <img src="/svg/removeSymbol.svg" width={15} height={15} alt="Close" />
         </button>
       </div>
     );
-  }
+  },
 );
 
 WarningBox.displayName = "WarningBox";

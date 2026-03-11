@@ -24,14 +24,14 @@ const StockRow: React.FC<StockRowProps> = ({
   handleDelete,
 }) => {
   const LiveLtpData = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   const [localTempLtp, setLocalTempLtp] = useState<string | null>(null);
 
   const [localValue, setLocalValue] = useState(stock?.quantity ?? "");
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const isInPositions =
     positionsdata &&
@@ -103,13 +103,13 @@ const StockRow: React.FC<StockRowProps> = ({
                 handleChange={() => {
                   if (!isInPositions && stock?.product === "CNC") {
                     toast(
-                      "Stocks with type CNC cannot have transaction type sell"
+                      "Stocks with type CNC cannot have transaction type sell",
                     );
                   } else {
                     handleUpdateStock(
                       stock?.identifier,
                       "transaction_type",
-                      stock?.transaction_type === "LONG" ? "SHORT" : "LONG"
+                      stock?.transaction_type === "LONG" ? "SHORT" : "LONG",
                     );
                   }
                 }}
@@ -140,14 +140,14 @@ const StockRow: React.FC<StockRowProps> = ({
                 handleUpdateStock(
                   stock?.identifier,
                   "order_type",
-                  e.target.value
+                  e.target.value,
                 )
               }
               onTouchStart={(event: any) =>
                 handleUpdateStock(
                   stock?.identifier,
                   "order_type",
-                  event.target.value
+                  event.target.value,
                 )
               }
               className="class-for-touch-event rounded-lg border bg-white max-md:px-0.5 max-md:text-[0.55rem] max-sm:w-[3rem] sm:max-md:w-[3.5rem] md:px-1 md:text-[0.65rem] xl:w-[4rem]"
@@ -249,7 +249,7 @@ const StockRow: React.FC<StockRowProps> = ({
                     LiveLtpData[stock?.identifier] ??
                     stock?.ltp ??
                     ""
-                  ).toString()
+                  ).toString(),
                 );
               }
             }}
@@ -295,7 +295,7 @@ const StockRow: React.FC<StockRowProps> = ({
                 handleUpdateStock(
                   stock?.identifier,
                   "transaction_type",
-                  stock?.transaction_type === "LONG" ? "SHORT" : "LONG"
+                  stock?.transaction_type === "LONG" ? "SHORT" : "LONG",
                 );
               }
             }}
@@ -303,7 +303,7 @@ const StockRow: React.FC<StockRowProps> = ({
         </td>
 
         <td className="class-for-touch-event w-[1.5rem] cursor-pointer sm:max-md:w-[2rem] md:px-1 md:max-xl:w-[3rem]">
-          <Image
+          <img
             src={"/svg/removeSymbol.svg"}
             height={15}
             width={15}

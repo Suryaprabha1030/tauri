@@ -72,7 +72,7 @@ const ListOfGroups: React.FC<ListOfGroupsProps> = ({
         }`}
       >
         <h1 className="text-[0.75rem]">Groups</h1>
-        <Image
+        <img
           src="/svg/arrowFall.svg"
           className="h-[1.2rem] w-[1.2rem]"
           width="20"

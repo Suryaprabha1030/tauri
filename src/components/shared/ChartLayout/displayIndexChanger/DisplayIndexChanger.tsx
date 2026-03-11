@@ -29,10 +29,10 @@ const DisplayIndexChanger: React.FC<DisplayIndexChangerProps> = ({
 }) => {
   const dispatch = useDispatch();
   const LiveLtpData = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const LiveChangePercentData = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
 
   return (
@@ -52,7 +52,7 @@ const DisplayIndexChanger: React.FC<DisplayIndexChangerProps> = ({
           className={`flex w-full  cursor-pointer flex-row justify-between  ${dropDownClassName}  border-gray-200 px-2 py-[0.25rem] text-[0.8rem] font-medium`}
         >
           {selectedIndexName}
-          <Image
+          <img
             src="/svg/arrowFall.svg"
             width="25"
             height="25"

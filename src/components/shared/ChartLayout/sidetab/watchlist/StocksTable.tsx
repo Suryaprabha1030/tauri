@@ -134,33 +134,33 @@ const StocksTable: React.FC<StocksTableProps> = ({
   const [pinnedSymbolslimit, setPinnedSymbolslimit] = useState(false);
   const [filterClick, setFilterClick] = useState(false);
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const pinUnpinRedux = useSelector(
-    (state: RootState) => state.strategy.pinUnpinstate
+    (state: RootState) => state.strategy.pinUnpinstate,
   ); //state to check changes in pin or unpin symbols
   const netchange: any = useSelector(
-    (state: RootState) => state.strategy.netChange
+    (state: RootState) => state.strategy.netChange,
   );
   const netpercentage = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
 
   const [selectedSymbol, setSelectedSymbol] = useState("");
   const shouldRefreshRedux = useSelector(
-    (state: RootState) => state.strategy.shouldRefresh
+    (state: RootState) => state.strategy.shouldRefresh,
   );
   const holdingsdata: any = useSelector(
-    (state: RootState) => state.strategy.holdingsData
+    (state: RootState) => state.strategy.holdingsData,
   );
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const pinnedSymbols = useSelector(
-    (state: RootState) => state.strategy.pinnedsymbols
+    (state: RootState) => state.strategy.pinnedsymbols,
   );
   const CurrentToggle: any = useSelector(
-    (state: RootState) => state.common.CandleAreaToggle
+    (state: RootState) => state.common.CandleAreaToggle,
   );
   const prevFirstSymbolRef = useRef(null);
   const [responseSymboldata, setResponseSymboldata] = useState<any[]>([]);
@@ -168,11 +168,11 @@ const StocksTable: React.FC<StocksTableProps> = ({
   const [selectedGroup, setSelectedGroup] = useState<any>(null);
   const [selectedGroupData, setSelectedGroupData] = useState<any>();
   const showHeatMap = useSelector(
-    (state: RootState) => state.charts.setShowHeatmap
+    (state: RootState) => state.charts.setShowHeatmap,
   );
 
   const SymbolAdded = useSelector(
-    (state: RootState) => state.charts.setAddSymbols
+    (state: RootState) => state.charts.setAddSymbols,
   );
 
   const [sortConfig, setSortConfig] = useState({
@@ -181,27 +181,27 @@ const StocksTable: React.FC<StocksTableProps> = ({
   });
   const [createNewUserWatchlist, setCreateNewUserWatchlist] = useState(false);
   const defaultWatchlistPinnedSymbol = useSelector(
-    (state: RootState) => state.charts.setDefaultWatchlist
+    (state: RootState) => state.charts.setDefaultWatchlist,
   );
   const SymbolIdentifier = useSelector(
-    (state: RootState) => state.charts.SymbolIdentifier
+    (state: RootState) => state.charts.SymbolIdentifier,
   );
   const router = useRouter();
   const identifiersSet = useSelector(
-    (state: RootState) => state.Position.identifiersSet
+    (state: RootState) => state.Position.identifiersSet,
   );
   const getAllindices = useSelector(
-    (state: RootState) => state.charts.getAllIndicesData
+    (state: RootState) => state.charts.getAllIndicesData,
   );
 
   const [allIdentifiers, setAllIdentifiers] = useState<string[]>([]);
   const ITEMS_PER_PAGE = 50;
   const [visibleSymbols, setVisibleSymbols] = useState(
-    filteredSymbols.slice(0, ITEMS_PER_PAGE)
+    filteredSymbols.slice(0, ITEMS_PER_PAGE),
   );
   const [showheatMapIcon, setShowheatMapIcon] = useState(true);
   const TvChartInitiateIndex: any = useSelector(
-    (state: RootState) => state.Position.initiateTvChart
+    (state: RootState) => state.Position.initiateTvChart,
   );
   // selected watchlist id
   const handleSelectWatchlist = (watchlistId: number) => {
@@ -224,7 +224,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
       setDefaultWatchlist,
       router,
       pinUnpinRedux,
-      defaultWatchlistPinnedSymbol
+      defaultWatchlistPinnedSymbol,
     );
   }, [shouldRefreshRedux, selectedWatchlistId]);
 
@@ -242,11 +242,11 @@ const StocksTable: React.FC<StocksTableProps> = ({
         }
 
         const defaultList = res.data.find(
-          (watchlist: any) => watchlist.primary === true
+          (watchlist: any) => watchlist.primary === true,
         );
         // for new user
         const allPrimaryFalse = res.data.every(
-          (watchlist: any) => watchlist.primary === false
+          (watchlist: any) => watchlist.primary === false,
         );
         if (defaultList) {
           setSelectedWatchlistId(defaultList.id);
@@ -349,7 +349,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
         dispatch,
         shouldRefreshRedux,
         getAllindices,
-        router
+        router,
       );
     }
   }, [identifiers, brokerCode]);
@@ -365,7 +365,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
         dispatch,
         shouldRefreshRedux,
         getAllindices,
-        router
+        router,
       );
     }
   }, [allIdentifiers]);
@@ -402,7 +402,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
       webSocketDataRead,
       netchange,
       netpercentage,
-      dispatch
+      dispatch,
     );
   }, [
     activeSymbolFilter,
@@ -427,7 +427,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
         webSocketDataRead,
         netchange,
         netpercentage,
-        dispatch
+        dispatch,
       );
   }, [holdingsdata, positionsData]);
 
@@ -442,7 +442,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
     const data = combineSymbolData(
       filteredSymbols,
       webSocketDataRead,
-      netpercentage
+      netpercentage,
     );
     return data;
   }, [filteredSymbols, showHeatMap, webSocketDataRead]);
@@ -600,7 +600,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
                   event.stopPropagation();
                 }}
               >
-                <Image
+                <img
                   src="/svg/view.svg"
                   className="h-[1.2rem] w-[1.2rem] max-sm:h-[1.55rem] max-sm:w-[1.5rem] sm:max-md:h-[1.5rem] sm:max-md:w-[1.5rem] md:max-lg:h-[1.4rem] md:max-lg:w-[1.4rem] lg:max-xl:h-[1.5rem] lg:max-xl:w-[1.5rem] xl:mb-[0.2rem] xl:h-[1.25rem] xl:w-[1.25rem] "
                   width="18"
@@ -645,7 +645,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
                   event.stopPropagation();
                 }}
               >
-                <Image
+                <img
                   src="/svg/searchIcon.svg"
                   className="h-[1.2rem] w-[1.2rem] max-sm:h-[1.55rem] max-sm:w-[1.5rem] sm:max-md:h-[1.5rem] sm:max-md:w-[1.5rem] md:max-lg:h-[1.4rem] md:max-lg:w-[1.4rem] lg:max-xl:h-[1.5rem] lg:max-xl:w-[1.5rem] xl:mb-[0.2rem] xl:h-[1.25rem] xl:w-[1.25rem] "
                   width="18"
@@ -663,7 +663,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
               </div>
             )}
             <div className="group relative inline-block cursor-pointer">
-              <Image
+              <img
                 src="/svg/filter.svg"
                 className="max-sm:h-[1.35rem] max-sm:w-[1.2rem] sm:max-md:h-[1.3rem] sm:max-md:w-[1.3rem] md:max-xl:h-[1.4rem] md:max-xl:w-[1.1rem] xl:mb-[0.3rem] xl:h-[1.15rem] xl:w-[1rem]"
                 width="18"

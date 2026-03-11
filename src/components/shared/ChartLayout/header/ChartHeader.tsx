@@ -94,16 +94,16 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
   const router = useRouter();
   const { connectionStatus } = useWebSocketContext();
   const addsymbolsread: any = useSelector(
-    (state: RootState) => state.strategy.symbols
+    (state: RootState) => state.strategy.symbols,
   );
   const holdingsdata: any = useSelector(
-    (state: RootState) => state.strategy.holdingsData
+    (state: RootState) => state.strategy.holdingsData,
   );
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const websocketOpen = useSelector(
-    (state: RootState) => state.charts.websocketOpen
+    (state: RootState) => state.charts.websocketOpen,
   );
   const chartPanel = useSelector((state: RootState) => state.charts.chartPanel);
   const [activeButton, setActiveButton] = useState("");
@@ -123,7 +123,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
     if (connectionStatus && websocketOpen) {
       // Filter identifiers that are not yet subscribed
       const unsubscribedIdentifiers = addsymbolsread.filter(
-        (identifier) => !subscribedTokens.includes(identifier)
+        (identifier) => !subscribedTokens.includes(identifier),
       );
 
       if (unsubscribedIdentifiers.length > 0) {
@@ -204,7 +204,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
             spot_price: null,
             expiryDate: "",
           },
-        })
+        }),
       );
 
       dispatch(getFutureData({ futureData: {} }));
@@ -212,7 +212,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
       dispatch(
         optionChainPayload({
           optionChainPayloadData: { ClickedRow: {}, response: {} },
-        })
+        }),
       );
       // setActiveButton("A");
     }
@@ -243,7 +243,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
           index_name: "",
           spot_price: "",
         },
-      })
+      }),
     );
     router.push(route);
     dispatch(ShowStrategiesPopup(false));
@@ -251,7 +251,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
       getIndexName({
         indexName: "",
         expiryDate: "",
-      })
+      }),
     );
     dispatch(getToggleState({ toggleState: "LTP" }));
     dispatch(showHeatmap(false));
@@ -266,7 +266,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
         <div className="fixed bottom-0 left-0 right-0 top-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50 max-xl:z-[10009] ">
           <div className="flex flex-col items-center justify-center rounded  bg-white p-4 text-center shadow-lg ">
             <p className="row  flex flex items-center justify-center gap-2 text-center font-semibold">
-              <Image src={cachedSrc} width={20} height={20} alt="wifi" /> Oops!
+              <img src={cachedSrc} width={20} height={20} alt="wifi" /> Oops!
               Network Disconnected
             </p>
             <p>Please check your network connection.</p>

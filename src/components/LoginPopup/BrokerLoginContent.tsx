@@ -27,7 +27,7 @@ const BrokerLoginContent: React.FC<BrokerLoginContentProps> = ({
         className={`mb-6 flex items-center gap-4 ${showAllbrokers ? "justify-between" : "justify-center"}`}
       >
         <div className=" flex flex-row items-center justify-center gap-4">
-          <Image
+          <img
             src={brokerImageUrl}
             alt={brokerName}
             height={brokerImageheight}
@@ -72,7 +72,7 @@ const BrokerLoginContent: React.FC<BrokerLoginContentProps> = ({
         className="mb-4 block flex w-full flex-row items-center justify-center gap-4 rounded-lg border border-green-600 py-3 text-center font-medium text-z-green-500 hover:bg-green-50"
       >
         <span>Open Account</span>
-        <Image
+        <img
           src="/svg/newtab.svg"
           alt=" tab"
           width={20}

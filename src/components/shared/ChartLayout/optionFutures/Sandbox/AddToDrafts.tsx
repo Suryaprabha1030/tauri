@@ -47,13 +47,13 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
   const [hoverImage, setHoverImage] = useState(true);
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const optionDatas = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const futureDatas = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
   const handleAddToDraft = async () => {
     setActive(ChartToggleButtonType.Chart);
@@ -82,7 +82,7 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
           dispatch(
             optionChainPayload({
               optionChainPayloadData: { ClickedRow: {}, response: {} },
-            })
+            }),
           );
 
           setCheckedOptionData({});
@@ -96,7 +96,7 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
         dispatch(
           optionChainPayload({
             optionChainPayloadData: { ClickedRow: {}, response: {} },
-          })
+          }),
         );
 
         setCheckedOptionData({});
@@ -108,7 +108,7 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
       draftData,
       DraftName,
       false,
-      indexname
+      indexname,
     );
 
     const DraftPositions = new StrategiesSandboxRouterApi(baseConfig());
@@ -123,7 +123,7 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
           setShowSelectedSandboxName({
             setSelectedSandboxName: res?.data?.name,
             setSelectedSandboxId: res?.data?.id,
-          })
+          }),
         );
       })
       .catch((error: any) => {
@@ -163,7 +163,7 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
         event.stopPropagation();
       }}
     >
-      <Image
+      <img
         src={hoverImage ? "/svg/plusSymbol.svg" : "/svg/whiteAdd.svg"}
         width={15}
         height={15}

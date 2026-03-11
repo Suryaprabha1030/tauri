@@ -25,7 +25,7 @@ const RefreshButton: React.FC<RefreshButtonProps> = ({ onClick }) => {
         event.stopPropagation();
       }}
     >
-      <Image
+      <img
         src="/svg/reset.svg"
         height={16}
         width={16}

@@ -21,15 +21,15 @@ const PriceSlider: React.FC<PriceSliderProps> = ({
   const dispatch = useDispatch();
   const [isSpinning, setIsSpinning] = useState(false);
   const spotPriceInfo = useSelector(
-    (state: RootState) => state.strategy.spotPriceData
+    (state: RootState) => state.strategy.spotPriceData,
   );
 
   const showPayoffchart = useSelector(
-    (state: RootState) => state.analyzer.ShowPayOffChart
+    (state: RootState) => state.analyzer.ShowPayOffChart,
   );
   const [resetvalue, setResetvalue] = useState(false);
   const inputValue = useSelector(
-    (state: RootState) => state.StrategyChart.inputValue
+    (state: RootState) => state.StrategyChart.inputValue,
   );
 
   const handleChange = (newValue: number | number[]) => {
@@ -105,7 +105,7 @@ const PriceSlider: React.FC<PriceSliderProps> = ({
           index_name: "",
           spot_price: "",
         },
-      })
+      }),
     );
 
     setValue((prevValue) => {
@@ -125,7 +125,7 @@ const PriceSlider: React.FC<PriceSliderProps> = ({
           index_name: "",
           spot_price: "",
         },
-      })
+      }),
     );
     setValue((prevValue) => {
       const newValue = prevValue - 0.5;
@@ -175,7 +175,7 @@ const PriceSlider: React.FC<PriceSliderProps> = ({
             onClick={handleReset}
             className="flex h-5 w-[1.5rem] cursor-pointer flex-row items-center justify-center gap-1  px-1 py-1 max-sm:w-[1rem] max-sm:px-0.5 md:max-xl:w-[1.8rem]"
           >
-            <Image
+            <img
               src="/svg/reset.svg"
               alt=""
               width={15}

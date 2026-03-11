@@ -47,7 +47,7 @@ const StockInfoNavbar = ({ info, scopeId }) => {
           }
         });
       },
-      { rootMargin: "-50% 0px -60% 0px" }
+      { rootMargin: "-50% 0px -60% 0px" },
     );
 
     sections.forEach((section) => {
@@ -112,7 +112,7 @@ const StockInfoNavbar = ({ info, scopeId }) => {
             }
             className="absolute right-0 top-1/2 mx-auto h-full w-4 -translate-y-1/2 bg-black bg-opacity-50 text-white"
           >
-            <Image
+            <img
               src="/svg/scroll-arrow.svg"
               alt=""
               width={10}
@@ -128,7 +128,7 @@ const StockInfoNavbar = ({ info, scopeId }) => {
             }
             className="absolute left-0 top-1/2 mx-auto h-full w-4 -translate-y-1/2 bg-black bg-opacity-50 text-white"
           >
-            <Image
+            <img
               src="/svg/scroll-arrow.svg"
               alt=""
               width={10}

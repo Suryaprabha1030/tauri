@@ -156,7 +156,7 @@ const GaugeWithThreePartitions: React.FC<chartProps> = ({
             >
               <div className="text-center text-z-green-500">
                 <p>
-                  <Image
+                  <img
                     src="/svg/bull-icon.svg"
                     width={15}
                     height={15}
@@ -168,7 +168,7 @@ const GaugeWithThreePartitions: React.FC<chartProps> = ({
               </div>
               <div className="text-center text-gray-400">
                 <p>
-                  <Image
+                  <img
                     src="/svg/target-icon.svg"
                     width={15}
                     height={15}
@@ -180,7 +180,7 @@ const GaugeWithThreePartitions: React.FC<chartProps> = ({
               </div>
               <div className="text-center text-red-400">
                 <p>
-                  <Image
+                  <img
                     src="/svg/bear-icon.svg"
                     width={15}
                     height={15}

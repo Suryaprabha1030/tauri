@@ -10,7 +10,7 @@ export default function CandleIcon({ className, onClick }) {
         event.stopPropagation();
       }}
     >
-      <Image
+      <img
         src="/svg/candleStick.svg"
         alt=""
         width={16}

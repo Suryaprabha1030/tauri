@@ -137,7 +137,7 @@ const Strategies: React.FC = () => {
     useState<boolean>(false);
   const [symbols, setSymbols] = useState<any[]>([]);
   const [selectedWatchlistId, setSelectedWatchlistId] = useState<number | null>(
-    null
+    null,
   );
   const [apiKey, setApiKey] = useState<string>("");
   const stocks = useSelector((state: RootState) => state.strategy.stock);
@@ -155,45 +155,45 @@ const Strategies: React.FC = () => {
   const [pnlValue, setPnlValue] = useState(null);
   const [copiedData, setCopiedData] = useState<{ [key: string]: any }>([]);
   const spotPriceInfo = useSelector(
-    (state: RootState) => state.strategy.spotPriceData
+    (state: RootState) => state.strategy.spotPriceData,
   );
   const ltpData = useSelector((state: RootState) => state.strategy.ltpData);
   const strategyTable = useSelector(
-    (state: RootState) => state.analyzer.setShowStrategyTable
+    (state: RootState) => state.analyzer.setShowStrategyTable,
   );
   const PositionTable = useSelector(
-    (state: RootState) => state.analyzer.setShowPositionTable
+    (state: RootState) => state.analyzer.setShowPositionTable,
   );
   const optionDatas = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const futureDatas = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const AllfutDatas = useSelector(
-    (state: RootState) => state.strategy.indexFutureData
+    (state: RootState) => state.strategy.indexFutureData,
   );
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
   const chartPanel = useSelector((state: RootState) => state.charts.chartPanel);
   const [premium, setPremium] = useState(Number);
   const pnlTable = useSelector(
-    (state: RootState) => state.analyzer.setShowPnlTable
+    (state: RootState) => state.analyzer.setShowPnlTable,
   );
   const [targetPayoffdata, settargetPayoffdata] = useState([]);
   const expiryDate = useSelector(
-    (state: RootState) => state.strategy.expiryDate
+    (state: RootState) => state.strategy.expiryDate,
   );
   const [showlot, setShowlot] = useState(false);
   const [expiryPayload, setExpiryPayload] = useState<any>(null);
   const optionChainPayloadData: any = useSelector(
-    (state: RootState) => state.analyzer.optionChainPayLoadData
+    (state: RootState) => state.analyzer.optionChainPayLoadData,
   );
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const [targetDate, setTargetDate] = useState<any>();
   const showHeatMap = useSelector(
-    (state: RootState) => state.charts.setShowHeatmap
+    (state: RootState) => state.charts.setShowHeatmap,
   );
   const [heatMapData, setHeatMapData] = useState<any>();
   const [clickedHeatmapData, setClickedHeatmapData] = useState<any>({});
@@ -201,18 +201,18 @@ const Strategies: React.FC = () => {
   const [toggleOpt, setToggleOpt] = useState(true);
 
   const toggleState = useSelector(
-    (state: RootState) => state.analyzer.toggleState
+    (state: RootState) => state.analyzer.toggleState,
   );
   const [DraftName, setDraftName] = useState<string>("");
   const DraftPositions = useSelector(
-    (state: RootState) => state.analyzer.setShowDraftPositions
+    (state: RootState) => state.analyzer.setShowDraftPositions,
   );
   const selectedStrategy = useSelector(
-    (state: RootState) => state.analyzer.setselectedStrategy
+    (state: RootState) => state.analyzer.setselectedStrategy,
   );
 
   const SandboxData = useSelector(
-    (state: RootState) => state.analyzer.setSandboxData
+    (state: RootState) => state.analyzer.setSandboxData,
   );
   const [draftData, setDraftData] = useState({});
 
@@ -221,13 +221,13 @@ const Strategies: React.FC = () => {
   }>({});
   const [addTable, setAddTable] = useState(false);
   const data: any = useSelector(
-    (state: RootState) => state.analyzer.ChartDataList
+    (state: RootState) => state.analyzer.ChartDataList,
   );
   const AnalyzeOrderstock = useSelector(
-    (state: RootState) => state.placeOrder.AnalyzeOrder
+    (state: RootState) => state.placeOrder.AnalyzeOrder,
   );
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
   const brokerName = getBrokerName();
   const [triggerSpotPrice, setTriggerSpotPrice] = useState(false);
@@ -238,65 +238,65 @@ const Strategies: React.FC = () => {
   const brokerData: any = sessionStorage.getItem("ExistbrokerCode");
   const [userId, setUserId] = useState("");
   const indexObjData: any = useSelector(
-    (state: RootState) => state.strategy.indexObj
+    (state: RootState) => state.strategy.indexObj,
   );
   const PAndL: any = useSelector(
-    (state: RootState) => state.PayoffChart.cardResultData
+    (state: RootState) => state.PayoffChart.cardResultData,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const rawApiResponse: any = useSelector(
-    (state: RootState) => state.strategy.rawIndexAPIresponse
+    (state: RootState) => state.strategy.rawIndexAPIresponse,
   );
   const netpercentage: any = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const reset = useSelector((state: RootState) => state.optionChain.reset);
   const ltp: any = useSelector((state: RootState) => state.strategy.ltpData);
   const currentExpiryOptionChainDataForHeatMap = useSelector(
     (state: RootState) =>
-      state.optionChain.currentExpiryOptionChainDataForHeatMap
+      state.optionChain.currentExpiryOptionChainDataForHeatMap,
   );
   const payOffChartPayLoad = useSelector(
-    (state: RootState) => state.StrategyChart.payOffChartPayLoad
+    (state: RootState) => state.StrategyChart.payOffChartPayLoad,
   );
   const payoffExpiryDate = useSelector(
-    (state: RootState) => state.StrategyChart.payoffExpiryDate
+    (state: RootState) => state.StrategyChart.payoffExpiryDate,
   );
   const showPayoffchart = useSelector(
-    (state: RootState) => state.analyzer.ShowPayOffChart
+    (state: RootState) => state.analyzer.ShowPayOffChart,
   );
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   useEffect(() => {
     dispatch(getExpiryValue(expiryDate));
   }, [expiryDate]);
 
   const oiPercent = useSelector(
-    (state: RootState) => state.optionChain.oiPercent
+    (state: RootState) => state.optionChain.oiPercent,
   );
   const calcData = useSelector(
-    (state: RootState) => state.optionChain.calcData
+    (state: RootState) => state.optionChain.calcData,
   );
   const oiValue = useSelector((state: RootState) => state.optionChain.oiValue);
 
   const [active, setActive] = useState(ChartToggleButtonType.Chart);
   const straddleChartData = useSelector(
-    (state: RootState) => state.StrategyChart.straddleChartData
+    (state: RootState) => state.StrategyChart.straddleChartData,
   );
   const strangleOiLoad = useSelector(
-    (state: RootState) => state.StrategyChart.strangleOiLoad
+    (state: RootState) => state.StrategyChart.strangleOiLoad,
   );
   const multiOiLoad = useSelector(
-    (state: RootState) => state.StrategyChart.multiOiLoad
+    (state: RootState) => state.StrategyChart.multiOiLoad,
   );
   const [targetSpotPrice, setTargetSpotPrice] = useState<any>();
   const [payoffdata, setPayoffdata] = useState([]);
   const [expandOptTable, setExpandOptTable] = useState(false);
   const queryIdentifier = useSelector(
-    (state: RootState) => state.optionChain.queryIdentifier
+    (state: RootState) => state.optionChain.queryIdentifier,
   );
   const query = useSelector((state: RootState) => state.optionChain.query);
   const [isSumSelected, setIsSumSelected] = useState(true);
@@ -307,17 +307,17 @@ const Strategies: React.FC = () => {
   const [processedIndexes, setProcessedIndexes] = useState<boolean>(false);
 
   const Payoffstrategy = useSelector(
-    (state: RootState) => state.Screener.PayoffStrategyName
+    (state: RootState) => state.Screener.PayoffStrategyName,
   );
   const expiryValue = useSelector(
-    (state: RootState) => state.optionChain.expiryValue
+    (state: RootState) => state.optionChain.expiryValue,
   );
   const WebsocketLtpRef = useRef(webSocketDataRead);
   const [orderExecuteFromOptionChain, setOrderExecuteFromOptionChain] =
     useState<boolean>(false);
   const [enableOptButtons, setEnableOptButtons] = useState(true);
   const inputValue = useSelector(
-    (state: RootState) => state.StrategyChart.inputValue
+    (state: RootState) => state.StrategyChart.inputValue,
   );
 
   const [querySpotPrice, setQuerySpotPrice] = useState<any>(null);
@@ -330,7 +330,7 @@ const Strategies: React.FC = () => {
       brokerData,
       router,
       setBrokerCode,
-      setIsValid
+      setIsValid,
     );
   }, [Brokercode, router]);
 
@@ -391,7 +391,7 @@ const Strategies: React.FC = () => {
       dispatch(
         addSymbol({
           symbol: identifier,
-        })
+        }),
       );
     });
   }, []);
@@ -422,7 +422,7 @@ const Strategies: React.FC = () => {
     brokerCode: any,
     query: any,
     querySpotprice: any,
-    booleanState: any
+    booleanState: any,
   ) => {
     const getAllDataApi = new UserBrokerRouterApi(baseConfig());
     if (!query?.length) return;
@@ -431,7 +431,7 @@ const Strategies: React.FC = () => {
         brokerCode,
         query,
         querySpotprice,
-        booleanState
+        booleanState,
       )
       .then((res: any) => {
         setQuerySpotPrice(null);
@@ -442,7 +442,7 @@ const Strategies: React.FC = () => {
           addSymbol({
             symbol: res?.data?.index_obj?.identifier,
             // token: res.data.index_obj.token,
-          })
+          }),
         );
         Object.keys(res?.data?.option_chain || {}).forEach((expiry) => {
           const strikes = res?.data?.option_chain[expiry];
@@ -455,7 +455,7 @@ const Strategies: React.FC = () => {
                 addSymbol({
                   symbol: opt?.identifier, // pick identifier
                   // token: opt.token, // pick token
-                })
+                }),
               );
             });
           });
@@ -465,7 +465,7 @@ const Strategies: React.FC = () => {
             addSymbol({
               symbol: future?.identifier,
               // token: future.token,
-            })
+            }),
           );
         });
       })
@@ -496,13 +496,13 @@ const Strategies: React.FC = () => {
       const enrichedOptionChain = enrichOptionChain(
         option_chain,
         WebsocketLtpRef.current,
-        netpercentage
+        netpercentage,
       );
       const enrichedFutures: any = enrichFutures(
         futures_data,
         lot_size,
         WebsocketLtpRef.current,
-        netpercentage
+        netpercentage,
       );
 
       dispatch(
@@ -516,7 +516,7 @@ const Strategies: React.FC = () => {
           spotPrice: indexspotPrice ?? null,
           indexData: index_obj ?? {},
           lotSize: lot_size ?? 0,
-        })
+        }),
       );
       dispatch(
         addCartSuccess({
@@ -527,14 +527,14 @@ const Strategies: React.FC = () => {
             spot_price: indexspotPrice ?? null,
             expiryDate: "",
           },
-        })
+        }),
       );
 
       // Sort and dispatch first fut
       const sortedFuts =
         futures_data?.length > 0
           ? [...futures_data]?.sort((a, b) =>
-              new Date(a?.expiry) > new Date(b?.expiry) ? 1 : -1
+              new Date(a?.expiry) > new Date(b?.expiry) ? 1 : -1,
             )
           : [];
       if (sortedFuts.length > 0) {
@@ -542,7 +542,7 @@ const Strategies: React.FC = () => {
           setIndexFirstFutData({
             IndexFirstFutData: sortedFuts[0] ?? "",
             FutIndexName: indexId ?? "",
-          })
+          }),
         );
       }
     }
@@ -605,8 +605,8 @@ const Strategies: React.FC = () => {
     setCopiedData(
       manageOrders(
         JSON.parse(JSON.stringify({ ...optionDatas, ...futureDatas })),
-        webSocketDataRead
-      )
+        webSocketDataRead,
+      ),
     );
   }, [optionDatas, futureDatas]);
 
@@ -636,7 +636,7 @@ const Strategies: React.FC = () => {
       dispatch(
         optionChainPayload({
           optionChainPayloadData: { ClickedRow: {}, response: {} },
-        })
+        }),
       );
     }
   }, [ltp]);
@@ -653,8 +653,8 @@ const Strategies: React.FC = () => {
         oiValue,
         toggleState,
         webSocketDataRead,
-        netpercentage
-      )
+        netpercentage,
+      ),
     );
   }, [currentExpiryOptionChainDataForHeatMap, showHeatMap, toggleState]);
 
@@ -664,7 +664,7 @@ const Strategies: React.FC = () => {
       const hash = getHashKey(
         key,
         clickedHeatmapData.option_type,
-        clickedHeatmapData.expiry
+        clickedHeatmapData.expiry,
       );
       const transactionType = clickedHeatmapData.y >= 0 ? "LONG" : "SHORT";
       const buttonType = clickedHeatmapData.y >= 0 ? "BUY" : "SELL";
@@ -674,7 +674,7 @@ const Strategies: React.FC = () => {
           clickedHeatmapData,
           transactionType,
           buttonType,
-        })
+        }),
       );
     }
   }, [clickedHeatmapData]);
@@ -807,7 +807,7 @@ const Strategies: React.FC = () => {
           dispatch(
             optionChainPayload({
               optionChainPayloadData: { ClickedRow: {}, response: {} },
-            })
+            }),
           );
           dispatch(getTempInputValues({}));
           setEntryPriceData({});
@@ -833,7 +833,7 @@ const Strategies: React.FC = () => {
         dispatch(
           optionChainPayload({
             optionChainPayloadData: { ClickedRow: {}, response: {} },
-          })
+          }),
         );
         dispatch(getTempInputValues({}));
         setEntryPriceData({});
@@ -918,7 +918,7 @@ const Strategies: React.FC = () => {
   const NimaClick = () => {
     if (indexname) {
       dispatch(
-        setScreenerQuery(`Give a detailed fno analysis for ${indexname}`)
+        setScreenerQuery(`Give a detailed fno analysis for ${indexname}`),
       );
       dispatch(setNimaGpt("fno"));
       dispatch(setScreenerOpen(true));
@@ -926,7 +926,7 @@ const Strategies: React.FC = () => {
     }
   };
   const minExpiryDate = useSelector(
-    (state: RootState) => state.StrategyChart.minExpiryDate
+    (state: RootState) => state.StrategyChart.minExpiryDate,
   );
   useEffect(() => {
     if (minExpiryDate) {
@@ -1036,7 +1036,7 @@ const Strategies: React.FC = () => {
                         }}
                         className="group relative flex cursor-pointer items-center justify-center rounded max-sm:h-[1.2rem] max-sm:w-[1.2rem] max-sm:p-[0.2rem] md:max-xl:h-[1.2rem] md:max-xl:w-[1.2rem] xl:h-[1.35rem] xl:w-[1.35rem]"
                       >
-                        <Image
+                        <img
                           src="/svg/analyze.svg"
                           width={16}
                           height={16}
@@ -1057,7 +1057,7 @@ const Strategies: React.FC = () => {
                             Object.entries(indexObjData).length > 0
                           ) {
                             dispatch(
-                              setSymbolIdentifier(indexObjData?.identifier)
+                              setSymbolIdentifier(indexObjData?.identifier),
                             );
                           }
                         }}
@@ -1494,45 +1494,47 @@ const Strategies: React.FC = () => {
                   avoidRepeatCall={false}
                 />
                 <span className="flex flex-row gap-3">
-                {chartPanel ? (
-                  <div
-                    onClick={() => {
-                      dispatch(setChartIconClicked(false));
-                      dispatch(setChartPanel(false));
-                    }}
-                    className="group relative flex cursor-pointer items-center justify-center rounded max-sm:h-[1.2rem] max-sm:w-[1.2rem] max-sm:p-[0.2rem] md:max-xl:h-[1.2rem] md:max-xl:w-[1.2rem] xl:h-[1.35rem] xl:w-[1.35rem]"
-                  >
-                    <Image
-                      src="/svg/analyze.svg"
-                      width={16}
-                      height={16}
-                      alt=""
+                  {chartPanel ? (
+                    <div
+                      onClick={() => {
+                        dispatch(setChartIconClicked(false));
+                        dispatch(setChartPanel(false));
+                      }}
+                      className="group relative flex cursor-pointer items-center justify-center rounded max-sm:h-[1.2rem] max-sm:w-[1.2rem] max-sm:p-[0.2rem] md:max-xl:h-[1.2rem] md:max-xl:w-[1.2rem] xl:h-[1.35rem] xl:w-[1.35rem]"
+                    >
+                      <img
+                        src="/svg/analyze.svg"
+                        width={16}
+                        height={16}
+                        alt=""
+                      />
+                      <span className="absolute top-5 rounded bg-gray-800 px-1 text-center text-[0.65rem] text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 ">
+                        Analyze
+                      </span>
+                    </div>
+                  ) : (
+                    <CandleIcon
+                      className="flex cursor-pointer items-center justify-center rounded max-sm:h-[1.2rem] max-sm:w-[1.2rem] max-sm:p-[0.2rem] md:max-xl:h-[1.2rem] md:max-xl:w-[1.2rem] xl:h-[1.35rem] xl:w-[1.35rem]"
+                      onClick={() => {
+                        dispatch(setChartIconClicked(true));
+                        dispatch(setChartPanel(true));
+                        if (
+                          indexObjData &&
+                          Object.entries(indexObjData).length > 0
+                        ) {
+                          dispatch(
+                            setSymbolIdentifier(indexObjData?.identifier),
+                          );
+                        }
+                      }}
                     />
-                    <span className="absolute top-5 rounded bg-gray-800 px-1 text-center text-[0.65rem] text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 ">
-                      Analyze
-                    </span>
-                  </div>
-                ) : (
-                  <CandleIcon
-                    className="flex cursor-pointer items-center justify-center rounded max-sm:h-[1.2rem] max-sm:w-[1.2rem] max-sm:p-[0.2rem] md:max-xl:h-[1.2rem] md:max-xl:w-[1.2rem] xl:h-[1.35rem] xl:w-[1.35rem]"
-                    onClick={() => {
-                      dispatch(setChartIconClicked(true));
-                      dispatch(setChartPanel(true));
-                      if (
-                        indexObjData &&
-                        Object.entries(indexObjData).length > 0
-                      ) {
-                        dispatch(setSymbolIdentifier(indexObjData?.identifier));
-                      }
-                    }}
-                  />
-                )}
+                  )}
 
-                <IndexChangerIconButton
-                  handleHeatMap={handleHeatMap}
-                  svg={"/svg/heatmap.svg"}
-                  name={"Premium Map"}
-                />
+                  <IndexChangerIconButton
+                    handleHeatMap={handleHeatMap}
+                    svg={"/svg/heatmap.svg"}
+                    name={"Premium Map"}
+                  />
                 </span>
                 {/* <IndexChangerIconButton
                   handleHeatMap={handleButtonClickExpand}
@@ -1552,7 +1554,7 @@ const Strategies: React.FC = () => {
 
               <span className="flex h-[100%] items-center justify-end  gap-2 ">
                 <div className="group relative inline-block cursor-pointer ">
-                  <Image
+                  <img
                     src="/svg/deleteNotes.svg"
                     height={15}
                     width={15}
@@ -1578,7 +1580,7 @@ const Strategies: React.FC = () => {
                     event.stopPropagation();
                   }}
                 >
-                  <Image
+                  <img
                     src="/svg/removeSymbol.svg"
                     className="relative h-[1.5rem] w-[1.5rem]"
                     width="20"

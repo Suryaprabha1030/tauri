@@ -119,7 +119,7 @@ export function HeaderBar({
 
       <div className="flex w-[20rem] flex-col items-center pt-3 ">
         <div className="flex flex-row items-center gap-1">
-          <Image src="/svg/shield.svg" height={20} width={20} alt="" />
+          <img src="/svg/shield.svg" height={20} width={20} alt="" />
           <span className="text-lg font-medium italic text-gray-500">
             Verified by Zoonest
           </span>
@@ -229,7 +229,7 @@ export function PLTable({
                         </td>
                         <td className="px-1 py-2 text-center">
                           {["SELL", "SHORT", "BUY", "LONG"].includes(
-                            item?.transaction_type
+                            item?.transaction_type,
                           ) ? (
                             <BuySellDisplay
                               transactionType={item?.transaction_type}

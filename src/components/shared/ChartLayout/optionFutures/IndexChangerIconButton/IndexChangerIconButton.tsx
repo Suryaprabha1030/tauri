@@ -17,7 +17,7 @@ const IndexChangerIconButton: React.FC<HeatMapButtonProps> = ({
     <div
       className={`group relative inline-block cursor-pointer ${hideExpandButton} `}
     >
-      <Image
+      <img
         src={svg}
         height={18}
         width={18}

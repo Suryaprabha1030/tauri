@@ -65,13 +65,13 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
 }) => {
   const dispatch = useDispatch();
   const optionDatas: any = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const futureDatas: any = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const webSocketDataRead: any = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const router = useRouter();
   const [hoverImage, setHoverImage] = useState(true);
@@ -85,10 +85,10 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
     dispatch(setStockData(stocks));
   };
   const premiumData: any = useSelector(
-    (state: RootState) => state.PayoffChart.premiumData
+    (state: RootState) => state.PayoffChart.premiumData,
   );
   const PlaceOrderInitiated = useSelector(
-    (state: RootState) => state.Position.orderPlaced
+    (state: RootState) => state.Position.orderPlaced,
   );
 
   const handlePlaceOrder = () => {
@@ -98,7 +98,7 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
     const OrderApi = new UserBrokerRouterApi(baseConfig());
     OrderApi.placeMultiOrdersV1UsersMeBrokersBrokerCodeMultiOrdersPost(
       brokerCode,
-      formattedStocks
+      formattedStocks,
     )
       .then((res) => {
         toast("Orders Placed");
@@ -112,13 +112,13 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
         dispatch(getOptionData({ optionData: {} }));
         const filteredOptionData = Object.fromEntries(
           Object.entries(optionDatas).filter(
-            ([key]) => !checkedOptionData.hasOwnProperty(key)
-          )
+            ([key]) => !checkedOptionData.hasOwnProperty(key),
+          ),
         );
         const filteredFutureData = Object.fromEntries(
           Object.entries(futureDatas).filter(
-            ([key]) => !checkedOptionData.hasOwnProperty(key)
-          )
+            ([key]) => !checkedOptionData.hasOwnProperty(key),
+          ),
         );
 
         // Dispatch the updated data
@@ -196,7 +196,7 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
             setAddTable(true);
           }}
         >
-          <Image
+          <img
             src={legHoverImage ? "/svg/plusSymbol.svg" : "/svg/whiteAdd.svg"}
             width={15}
             height={15}
@@ -226,7 +226,7 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
           onMouseEnter={() => setHoverImage(false)}
           onMouseLeave={() => setHoverImage(true)}
         >
-          <Image
+          <img
             src={hoverImage ? "/svg/plusSymbol.svg" : "/svg/whiteAdd.svg"}
             width={15}
             height={15}

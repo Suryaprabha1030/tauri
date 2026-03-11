@@ -35,14 +35,14 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
   const [List, setList] = useState<any[]>([]);
   const [deleteState, setDeleteState] = useState<boolean>(false);
   const selectedStrategy = useSelector(
-    (state: RootState) => state.analyzer.setselectedStrategy
+    (state: RootState) => state.analyzer.setselectedStrategy,
   );
   const ExpandSelectedId = useSelector(
-    (state: RootState) => state.analyzer.ExpandSelectedSandbox
+    (state: RootState) => state.analyzer.ExpandSelectedSandbox,
   );
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const DraftPositions = useSelector(
-    (state: RootState) => state.analyzer.setShowDraftPositions
+    (state: RootState) => state.analyzer.setShowDraftPositions,
   );
   const [totalPnlMap, setTotalPnlMap] = useState<{ [key: string]: number }>({});
   const [expandedRow, setExpandedRow] = useState<string | null>(null);
@@ -57,7 +57,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
   const dispatch = useDispatch();
 
   const LiveLtpData = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const router = useRouter();
 
@@ -67,7 +67,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
 
       DraftPositions.getAllSandboxesByIndexnameV1UsersMeSandboxesByIndexNameIndexNameGet(
         indexname,
-        pageNum
+        pageNum,
       )
         .then((res) => {
           const data = res.data;
@@ -84,7 +84,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
 
                 // Filter out new items that already exist in the prevList
                 const newItemsOnly = newItems.filter(
-                  (item: any) => !existingIds.has(item.id)
+                  (item: any) => !existingIds.has(item.id),
                 );
 
                 // Concatenate new items at the top and existing items after
@@ -93,7 +93,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
                 // For subsequent pages, concatenate the new data while ensuring no duplicates
                 const existingIds = new Set(prevList.map((item) => item.id));
                 const newItems = data.filter(
-                  (newItem: any) => !existingIds.has(newItem.id)
+                  (newItem: any) => !existingIds.has(newItem.id),
                 );
 
                 // Concatenate previous list with new items in the order of the API response
@@ -287,7 +287,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
         setShowSelectedSandboxName({
           setSelectedSandboxName: strategy.name,
           setSelectedSandboxId: strategy.id,
-        })
+        }),
       );
     }
   };
@@ -298,8 +298,8 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
         prevList.map((strategy) =>
           strategy.id === selectedStrategy.id
             ? { ...strategy, ...selectedStrategy } // Merge updated data
-            : strategy
-        )
+            : strategy,
+        ),
       );
     }
   }, [selectedStrategy]);
@@ -349,7 +349,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
     const strategy = List.find((item) => item.id === strategyId);
     const strategyData = strategy.data;
     const selectedRows = Object.keys(strategyData).filter(
-      (key) => !strategyData[key]?.is_exited
+      (key) => !strategyData[key]?.is_exited,
     );
 
     if (selectedRows.length === 0) {
@@ -379,7 +379,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
     // Call the API to modify the sandbox data
     DraftPositions.modifySandboxV1UsersMeSandboxesModifyIdPut(
       strategy.id,
-      payload
+      payload,
     )
       .then((res) => {
         toast("Strategy Exited", {
@@ -451,7 +451,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
                           event.stopPropagation();
                         }}
                       >
-                        <Image
+                        <img
                           src="/svg/expand-icon.svg"
                           alt="Expand"
                           width={10}
@@ -491,7 +491,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
                               ? totalPnlMap[strategy.id] > 0
                                 ? `+${formatNumber(totalPnlMap[strategy.id].toFixed(2))}` // Add "+" for positive pnl
                                 : formatNumber(
-                                    totalPnlMap[strategy.id].toFixed(2)
+                                    totalPnlMap[strategy.id].toFixed(2),
                                   )
                               : strategy.total_pnl > 0
                                 ? `+${formatNumber(strategy.total_pnl.toFixed(2))}` // Add "+" for positive pnl
@@ -506,7 +506,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
                           )}
                           {!strategy.is_all_exited && (
                             <>
-                              <Image
+                              <img
                                 src="/svg/exitAll.svg"
                                 width="15"
                                 height="15"
@@ -528,7 +528,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
                         </div>
 
                         <div className="group relative inline-block cursor-pointer ">
-                          <Image
+                          <img
                             src="/svg/deleteNotes.svg"
                             height={15}
                             width={15}

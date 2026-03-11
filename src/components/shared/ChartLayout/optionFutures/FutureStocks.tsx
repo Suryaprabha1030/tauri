@@ -22,7 +22,11 @@ import {
 } from "@/lib/util/analyzer/futureUtil/futUtil";
 import { handlePopUp } from "@/lib/util/analyzer/handleSelect";
 import CandleIcon from "./CandleIcon";
-import { setChartIconClicked, setChartPanel, setSymbolIdentifier } from "@/lib/redux/slices/ChartsSlice";
+import {
+  setChartIconClicked,
+  setChartPanel,
+  setSymbolIdentifier,
+} from "@/lib/redux/slices/ChartsSlice";
 import { getTempInputValues } from "@/lib/redux/slices/OptionChainSlice";
 
 interface FutureStocksProps {
@@ -33,28 +37,28 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
   const [showComponent, setShowComponent] = useState(false);
   const [futureSymbol, setFutureSymbol] = useState([]);
   const futureStock = useSelector(
-    (state: RootState) => state.strategy.indexFutureData
+    (state: RootState) => state.strategy.indexFutureData,
   );
   const futureDatas: any = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const dispatch = useDispatch();
   const spotPriceInfo = useSelector(
-    (state: RootState) => state.strategy.spotPriceData
+    (state: RootState) => state.strategy.spotPriceData,
   );
   const indexObjData: any = useSelector(
-    (state: RootState) => state.strategy.indexObj
+    (state: RootState) => state.strategy.indexObj,
   );
 
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   const FuttargetltpData: any = useSelector(
-    (state: RootState) => state.analyzer.FutTargetLtpData
+    (state: RootState) => state.analyzer.FutTargetLtpData,
   );
   const SandboxData: any = useSelector(
-    (state: RootState) => state.analyzer.setSandboxData
+    (state: RootState) => state.analyzer.setSandboxData,
   );
   const inputRef = useRef<any>(1);
   const reset = useSelector((state: RootState) => state.optionChain.reset);
@@ -63,10 +67,10 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
     if (futureStock && futureStock.length > 0 && spotPriceInfo != null) {
       const sort = [...futureStock].sort((a: any, b: any) => {
         const dateA = new Date(
-          `${a.expiry.slice(5)}-${a.expiry.slice(2, 5)}-${a.expiry.slice(0, 2)}`
+          `${a.expiry.slice(5)}-${a.expiry.slice(2, 5)}-${a.expiry.slice(0, 2)}`,
         );
         const dateB = new Date(
-          `${b.expiry.slice(5)}-${b.expiry.slice(2, 5)}-${b.expiry.slice(0, 2)}`
+          `${b.expiry.slice(5)}-${b.expiry.slice(2, 5)}-${b.expiry.slice(0, 2)}`,
         );
         return dateA.getTime() - dateB.getTime(); // Compare timestamps
       });
@@ -76,7 +80,7 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
       let hasChanges = false;
       const updateCommonData = (
         prevCommonData: { [key: string]: any },
-        tData: { [key: string]: any }
+        tData: { [key: string]: any },
       ) => {
         const updatedCommonData = { ...prevCommonData };
         setEntryPriceData({});
@@ -112,21 +116,21 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
     if (futureStock && futureStock.length > 0 && spotPriceInfo != null) {
       const sort = [...futureStock].sort((a: any, b: any) => {
         const dateA = new Date(
-          `${a?.expiry?.slice(5)}-${a?.expiry?.slice(2, 5)}-${a?.expiry?.slice(0, 2)}`
+          `${a?.expiry?.slice(5)}-${a?.expiry?.slice(2, 5)}-${a?.expiry?.slice(0, 2)}`,
         );
         const dateB = new Date(
-          `${b?.expiry?.slice(5)}-${b?.expiry?.slice(2, 5)}-${b?.expiry?.slice(0, 2)}`
+          `${b?.expiry?.slice(5)}-${b?.expiry?.slice(2, 5)}-${b?.expiry?.slice(0, 2)}`,
         );
         return dateA.getTime() - dateB.getTime(); // Compare timestamps
       });
       setFutureSymbol(sort);
       const tData = expiryFutTransformData(
-        FutPayloadTransformData(futureStock)
+        FutPayloadTransformData(futureStock),
       );
       let hasChanges = false;
       const updateCommonData = (
         prevCommonData: { [key: string]: any },
-        tData: { [key: string]: any }
+        tData: { [key: string]: any },
       ) => {
         const updatedCommonData = { ...prevCommonData };
 
@@ -275,7 +279,7 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
         className="flex w-full cursor-pointer items-center justify-center max-xl:rounded-2xl max-xl:border-[1px] max-xl:border-solid max-xl:border-z-green-500 max-md:gap-[0.1rem] max-sm:m-1 max-sm:h-[1rem] sm:h-full sm:max-xl:pr-[0.2rem] sm:max-xl:pt-[0.1rem] md:max-xl:gap-[0.2rem] xl:gap-1"
         onClick={showFuture}
       >
-        <Image
+        <img
           src="/svg/plusSymbol.svg"
           className=" relative h-[1rem] w-[1rem] cursor-pointer max-sm:h-[0.7rem] max-sm:w-[0.7rem] sm:max-xl:h-[0.9rem] sm:max-xl:w-[0.9rem]"
           width="20"
@@ -337,12 +341,12 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
                           <button
                             className={`max-md:h-4 max-md:w-4 md:max-xl:h-5 md:max-xl:w-5 ${getFutBuyClassLive(
                               futureDatas,
-                              getHashKey(key, "FUT", option.expiry)
+                              getHashKey(key, "FUT", option.expiry),
                             )} `}
                             onClick={handleSelect(
                               getHashKey(key, "FUT", option.expiry),
                               option,
-                              "LONG"
+                              "LONG",
                             )}
                           >
                             B
@@ -350,39 +354,40 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
                           <button
                             className={`max-md:h-4 max-md:w-4 md:max-xl:h-5 md:max-xl:w-5 ${getFutSellClassLive(
                               futureDatas,
-                              getHashKey(key, "FUT", option.expiry)
+                              getHashKey(key, "FUT", option.expiry),
                             )} `}
                             onClick={handleSelect(
                               getHashKey(key, "FUT", option.expiry),
                               option,
-                              "SHORT"
+                              "SHORT",
                             )}
                           >
                             S
                           </button>
 
-                            {/* Only visible on xl and above-xl screens and has different way of showing TV chart */}
-                            <span className="hidden xl:block">
-                          <CandleIcon
-                            className="flex cursor-pointer items-center justify-center rounded  bg-white max-md:h-4 max-md:w-4 md:h-[1.35rem] md:w-[1.35rem]  "
-                            onClick={() => {
-                              dispatch(setChartIconClicked(true));
-                              dispatch(setChartPanel(true))
-                              dispatch(setSymbolIdentifier(option?.identifier))
-                            }}
-                          />
-                            </span>
-                            <span className="block xl:hidden">
-
+                          {/* Only visible on xl and above-xl screens and has different way of showing TV chart */}
+                          <span className="hidden xl:block">
+                            <CandleIcon
+                              className="flex cursor-pointer items-center justify-center rounded  bg-white max-md:h-4 max-md:w-4 md:h-[1.35rem] md:w-[1.35rem]  "
+                              onClick={() => {
+                                dispatch(setChartIconClicked(true));
+                                dispatch(setChartPanel(true));
+                                dispatch(
+                                  setSymbolIdentifier(option?.identifier),
+                                );
+                              }}
+                            />
+                          </span>
+                          <span className="block xl:hidden">
                             {/* Only visible on below-xl screens and uses usual way of showing TV chart */}
-                          <CandleIcon
-                            className="flex cursor-pointer items-center justify-center rounded  bg-white max-md:h-4 max-md:w-4 md:h-[1.35rem] md:w-[1.35rem]  "
-                            onClick={() => {
-                              dispatch(setChartIconClicked(true));
-                              handlePopUp(option, dispatch);
-                            }}
-                          />
-                            </span>
+                            <CandleIcon
+                              className="flex cursor-pointer items-center justify-center rounded  bg-white max-md:h-4 max-md:w-4 md:h-[1.35rem] md:w-[1.35rem]  "
+                              onClick={() => {
+                                dispatch(setChartIconClicked(true));
+                                handlePopUp(option, dispatch);
+                              }}
+                            />
+                          </span>
                         </div>
                         {LiveselectedDataForFut && (
                           <div className="W-full mt-2  flex items-center justify-center">
@@ -394,14 +399,14 @@ const FutureStocks: React.FC<FutureStocksProps> = ({ setEntryPriceData }) => {
                               onChange={(event) => {
                                 const selectedValue = parseInt(
                                   event.target.value,
-                                  10
+                                  10,
                                 ); // Convert value to number
                                 LivehandleUpdateLots(
                                   getHashKey(key, "FUT", option.expiry), // Correct hash key
                                   {
                                     ...LiveselectedDataForFut,
                                     lots: selectedValue, // Pass the updated lots value
-                                  }
+                                  },
                                 )(event); // Pass the event to the curried function
                               }}
                             >

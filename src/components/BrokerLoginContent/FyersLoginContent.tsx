@@ -32,7 +32,7 @@ const BrokerIntegrationPage: React.FC<BrokerIntegrationPageProps> = ({
         </div>
         <span className="text-2xl font-bold text-gray-600 sm:text-3xl">+</span>
         <div className="flex h-20 w-[9rem] items-center justify-center rounded-xl bg-white shadow max-sm:h-16 max-sm:w-[7rem] sm:w-[10rem]">
-          <Image
+          <img
             src={brokerLogo}
             alt={brokerName}
             height={brokerImageWidth}

@@ -25,7 +25,7 @@ const Settings: React.FC<SettingsProps> = ({
 }) => {
   const [settingsData, setSettingsData] = useState<any | null>(null);
   const settingsDataRedux = useSelector(
-    (state: RootState) => state.strategy.settingsData
+    (state: RootState) => state.strategy.settingsData,
   );
   const userInfo = useSelector((state: RootState) => state.common.userInfo);
   const { showSupport, toggleSupport, setUserEmail, setUserId } = useTawk();
@@ -64,7 +64,7 @@ const Settings: React.FC<SettingsProps> = ({
                 event.stopPropagation();
               }}
             >
-              <Image
+              <img
                 src={showSupport ? "/svg/toggleIcon.svg" : "/svg/toggleOff.svg"}
                 height={25}
                 width={25}

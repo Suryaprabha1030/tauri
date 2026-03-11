@@ -90,7 +90,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
   setOrderExecuteFromOptionChain,
 }) => {
   const [checkedRows, setCheckedRows] = useState<{ [key: string]: boolean }>(
-    {}
+    {},
   );
   const [checked, setChecked] = useState(true);
   const [allChecked, setAllChecked] = useState(true);
@@ -100,7 +100,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
     [key: string]: number;
   }>({});
   const multiplier = useSelector(
-    (state: RootState) => state.optionChain.multiplier
+    (state: RootState) => state.optionChain.multiplier,
   );
 
   const prevMultiplierRef = useRef(multiplier);
@@ -111,26 +111,26 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
 
   const dispatch = useDispatch();
   const optionDatas: any = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const futureDatas: any = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
 
   const [positions, setPositions] = useState({});
   const DraftPositions = useSelector(
-    (state: RootState) => state.analyzer.setShowDraftPositions
+    (state: RootState) => state.analyzer.setShowDraftPositions,
   );
 
   const dataKey = useSelector((state: RootState) => state.optionChain.dataKey);
   const decreaser = useSelector(
-    (state: RootState) => state.optionChain.decreaser
+    (state: RootState) => state.optionChain.decreaser,
   );
   const tempInputValues = useSelector(
-    (state: RootState) => state.optionChain.tempInputValues
+    (state: RootState) => state.optionChain.tempInputValues,
   );
   const [addLegHoverImage, setaddLegHoverImage] = useState(true);
   const [orderExecuted, setOrderExecuted] = useState<boolean>(false);
@@ -155,14 +155,14 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
 
   const hcfOfArray = (numbers: any) => {
     return numbers.reduce((hcf: any, number: any) =>
-      hcfOfTwoNumbers(hcf, number)
+      hcfOfTwoNumbers(hcf, number),
     );
   };
   //  set multiplier
   useEffect(() => {
     if (prevCopiedDataRef.current && copiedData) {
       const currentLotSizes = Object.keys(copiedData).map(
-        (key) => copiedData[key]?.lots
+        (key) => copiedData[key]?.lots,
       );
 
       // Calculate the HCF of the current lot sizes
@@ -189,7 +189,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
           };
           return acc;
         },
-        {} as { [key: string]: OptionData }
+        {} as { [key: string]: OptionData },
       );
   };
 
@@ -219,7 +219,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
           };
           return acc;
         },
-        {} as { [key: string]: OptionData }
+        {} as { [key: string]: OptionData },
       );
   };
 
@@ -280,9 +280,9 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
           dispatch(
             getMultiOiLoad(
               Object.values(comb)?.map(
-                (m: any) => `${m?.strike_price}#${m?.option_type}`
-              )
-            )
+                (m: any) => `${m?.strike_price}#${m?.option_type}`,
+              ),
+            ),
           );
           const changePayloadStrangle = (comb: any) => {
             let data: any = {};
@@ -295,12 +295,12 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
           dispatch(getStrangleOiLoad(changePayloadStrangle(comb)));
           const fixedData = mergePositionsAndStrategy(
             positionDatas,
-            checkedDatas
+            checkedDatas,
           );
 
           // const futTransForm = futReverseTransformData(comb);
           const futTransForm = futReverseTransformData(
-            mergePositionsAndStrategy(positionDatas, checkedDatas)
+            mergePositionsAndStrategy(positionDatas, checkedDatas),
           );
           dispatch(getPayOffChartPayLoad(futTransForm));
           strategyChartPayload({ strategyChartPayloadList: futTransForm });
@@ -327,7 +327,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
   // target prive value set
   useEffect(() => {
     const copiedDataidentifiers = Object.values(copiedData).map(
-      (item) => item.identifier
+      (item) => item.identifier,
     );
 
     const updatedEntryPriceData = { ...entryPriceData };
@@ -361,8 +361,8 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
       setCheckedOptionData(checkedDatas);
       const filteredPositionDatas = Object.fromEntries(
         Object.entries(positionDatas).filter(
-          ([, value]: [string, any]) => value.transaction_type !== "EXITED"
-        )
+          ([, value]: [string, any]) => value.transaction_type !== "EXITED",
+        ),
       );
       const comb: any = { ...checkedDatas, ...filteredPositionDatas };
       onMinExpiryDateChange(getMinimumExpiryDate(comb));
@@ -440,7 +440,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
                 onMouseEnter={() => setaddLegHoverImage(false)}
                 onMouseLeave={() => setaddLegHoverImage(true)}
               >
-                <Image
+                <img
                   src={
                     addLegHoverImage
                       ? "/svg/plusSymbol.svg"

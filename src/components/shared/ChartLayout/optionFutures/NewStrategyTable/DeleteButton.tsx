@@ -15,10 +15,10 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
 }) => {
   const dispatch = useDispatch();
   const optionDatas: any = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const futureDatas: any = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const handleDelete = (key: string) => {
     setCopiedData((prev: any) => {
@@ -28,7 +28,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
     });
     const removeKeyFromData = (
       prevData: { [key: string]: any },
-      key: string
+      key: string,
     ) => {
       const updatedData: { [key: string]: any } = { ...prevData };
       delete updatedData[key];
@@ -37,17 +37,17 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
     dispatch(
       getOptionData({
         optionData: { ...removeKeyFromData(optionDatas, key) },
-      })
+      }),
     );
     dispatch(
       getFutureData({
         futureData: { ...removeKeyFromData(futureDatas, key) },
-      })
+      }),
     );
   };
 
   return (
-    <Image
+    <img
       src={"/svg/removeSymbol.svg"}
       height={10}
       width={10}

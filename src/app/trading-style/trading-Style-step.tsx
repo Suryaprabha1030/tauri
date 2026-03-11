@@ -12,7 +12,7 @@ const TradingStyleStep = (props: {
         <div className="flex flex-col  rounded-2xl border border-gray-200 shadow hover:bg-green-500 hover:bg-opacity-10 max-sm:px-10 max-sm:py-5 sm:p-5 md:p-10 xl:p-10">
           <div className="flex flex-row items-center justify-start gap-2">
             <div className="relative">
-              <Image src="./svg/TrendUp.svg" height={24} width={24} alt={""} />
+              <img src="./svg/TrendUp.svg" height={24} width={24} alt={""} />
             </div>
             <div className="font-medium leading-normal text-black max-sm:text-[1.2rem] sm:text-base md:text-lg xl:text-2xl">
               Trader
@@ -26,7 +26,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Short-term Positional Trading
@@ -34,7 +34,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Swing Trading
@@ -42,7 +42,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Day Trading
@@ -50,7 +50,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Scalp Trading
@@ -58,7 +58,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 F&Os
@@ -75,7 +75,7 @@ const TradingStyleStep = (props: {
                 Continue
               </div>
               <div className="relative">
-                <Image
+                <img
                   src="./svg/ArrowRightBlack.svg"
                   height={24}
                   width={24}
@@ -90,7 +90,7 @@ const TradingStyleStep = (props: {
         <div className="sm-py-5 flex flex-col rounded-2xl border border-gray-200 bg-white bg-opacity-10 shadow hover:bg-green-500 hover:bg-opacity-10 max-sm:px-10 max-sm:py-5 sm:p-5 md:p-10 xl:p-10">
           <div className="flex flex-row items-center justify-start gap-2">
             <div className="relative">
-              <Image src="./svg/Building.svg" height={24} width={24} alt={""} />
+              <img src="./svg/Building.svg" height={24} width={24} alt={""} />
             </div>
             <div className="font-medium leading-normal text-black max-sm:text-[1.2rem] sm:text-base  md:text-lg xl:text-2xl">
               Investor
@@ -104,7 +104,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Long-term Positional Trading
@@ -112,7 +112,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Equities, MF & SIP
@@ -120,7 +120,7 @@ const TradingStyleStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="font-normal leading-normal text-black max-sm:text-[0.85rem] sm:text-[0.9rem] xl:text-base">
                 Bonds, T-Bills & More
@@ -137,7 +137,7 @@ const TradingStyleStep = (props: {
                 Continue
               </div>
               <div className="relative">
-                <Image
+                <img
                   src="./svg/ArrowRightBlack.svg"
                   height={24}
                   width={24}

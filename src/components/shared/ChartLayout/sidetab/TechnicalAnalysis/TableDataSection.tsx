@@ -23,7 +23,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
     const maxValue = Math.max(
       indicatorValues.sell,
       indicatorValues.neutral,
-      indicatorValues.buy
+      indicatorValues.buy,
     );
     if (maxValue === indicatorValues.buy) {
       setcolor("green");
@@ -49,7 +49,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
                 </span>
                 <div className="row flex flex items-center justify-center gap-5   font-letter">
                   <span className="flex flex-col items-center justify-center text-green-500">
-                    <Image
+                    <img
                       src="/svg/bull-icon.svg"
                       width={15}
                       height={15}
@@ -58,7 +58,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
                     {indicatorValues.buy}
                   </span>
                   <span className="flex flex-col items-center justify-center text-gray-400 ">
-                    <Image
+                    <img
                       src="/svg/target-icon.svg"
                       width={15}
                       height={15}
@@ -67,7 +67,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
                     {indicatorValues.neutral}
                   </span>
                   <span className="flex flex-col items-center justify-center text-red-400 ">
-                    <Image
+                    <img
                       src="/svg/bear-icon.svg"
                       width={15}
                       height={15}

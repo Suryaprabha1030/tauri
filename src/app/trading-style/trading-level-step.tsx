@@ -15,7 +15,7 @@ const TradingLevelStep = (props: {
             </div>
           </div>
           <div className="flex flex-col items-center justify-start gap-3 py-10">
-            <Image src="./svg/beginner.svg" height={64} width={64} alt={""} />
+            <img src="./svg/beginner.svg" height={64} width={64} alt={""} />
           </div>
 
           <div className="flex flex-row items-center justify-start">
@@ -27,7 +27,7 @@ const TradingLevelStep = (props: {
                 Continue
               </div>
               <div className="relative">
-                <Image
+                <img
                   src="./svg/ArrowRightBlack.svg"
                   height={24}
                   width={24}
@@ -40,22 +40,17 @@ const TradingLevelStep = (props: {
         <div className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white bg-opacity-10 shadow hover:bg-green-500 hover:bg-opacity-10 max-sm:px-10 max-sm:py-5 sm:px-5 sm:py-6 md:p-8 lg:p-10">
           <div className="flex flex-row items-center justify-center gap-2">
             {/* <div className="relative">
-              <Image src="./svg/Building.svg" height={24} width={24} alt={""} />
+              <img src="./svg/Building.svg" height={24} width={24} alt={""} />
             </div> */}
             <div className="font-medium leading-normal text-black max-sm:text-[1rem] sm:text-base md:text-lg xl:text-2xl">
               Intermediate
             </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-10">
-            <Image
-              src="./svg/intermediate.svg"
-              height={64}
-              width={64}
-              alt={""}
-            />
+            <img src="./svg/intermediate.svg" height={64} width={64} alt={""} />
             {/* <div className="flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="text-base font-normal leading-normal text-black">
                 Stocks Scanner
@@ -63,7 +58,7 @@ const TradingLevelStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="text-base font-normal leading-normal text-black">
                 Backtesting Simulator
@@ -79,7 +74,7 @@ const TradingLevelStep = (props: {
                 Continue
               </div>
               <div className="relative">
-                <Image
+                <img
                   src="./svg/ArrowRightBlack.svg"
                   height={24}
                   width={24}
@@ -92,17 +87,17 @@ const TradingLevelStep = (props: {
         <div className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white bg-opacity-10 shadow hover:bg-green-500 hover:bg-opacity-10 max-sm:px-10 max-sm:py-5 sm:p-5 md:p-7 lg:p-10">
           <div className="flex flex-row items-center justify-center gap-2">
             {/* <div className="relative">
-              <Image src="./svg/Building.svg" height={24} width={24} alt={""} />
+              <img src="./svg/Building.svg" height={24} width={24} alt={""} />
             </div> */}
             <div className="font-medium leading-normal text-black max-sm:text-[1rem] sm:text-base md:text-lg xl:text-2xl">
               Pro
             </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-10">
-            <Image src="./svg/expert.svg" height={52} width={52} alt={""} />
+            <img src="./svg/expert.svg" height={52} width={52} alt={""} />
             {/* <div className="flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="text-base font-normal leading-normal text-black">
                 Stocks Scanner
@@ -110,7 +105,7 @@ const TradingLevelStep = (props: {
             </div>
             <div className="inline-flex items-center justify-start gap-2">
               <div className="relative">
-                <Image src="./svg/Check.svg" height={16} width={16} alt={""} />
+                <img src="./svg/Check.svg" height={16} width={16} alt={""} />
               </div>
               <div className="text-base font-normal leading-normal text-black">
                 Backtesting Simulator
@@ -126,7 +121,7 @@ const TradingLevelStep = (props: {
                 Continue
               </div>
               <div className="relative">
-                <Image
+                <img
                   src="./svg/ArrowRightBlack.svg"
                   height={24}
                   width={24}

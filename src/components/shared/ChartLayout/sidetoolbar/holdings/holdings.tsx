@@ -25,20 +25,20 @@ const Holdings: React.FC<HoldingsProps> = ({
   setLeftWidth,
 }) => {
   const [totalProfitAndLoss, setTotalProfitAndLoss] = useState<number | null>(
-    null
+    null,
   );
   const [totalProfitAndLossPercent, setTotalProfitAndLossPercent] =
     useState<any>("");
   const [dataholding, setHoldings] = useState<any[]>([]);
   const holdingsdata: any = useSelector(
-    (state: RootState) => state.strategy.holdingsData
+    (state: RootState) => state.strategy.holdingsData,
   );
   const [symbolsPerPage, setSymbolsPerpage] = useState(2);
   const [symbols, setsymbols] = useState<any[]>([]);
   const [totinvestedvalue, setinvestedvalue] = useState<number>(0);
 
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const dispatch = useDispatch();
   useEffect(() => {
@@ -50,7 +50,7 @@ const Holdings: React.FC<HoldingsProps> = ({
   useEffect(() => {
     setTotalProfitAndLoss(holdingsdata && holdingsdata?.total_profit_and_loss);
     setTotalProfitAndLossPercent(
-      holdingsdata && holdingsdata?.total_profit_and_loss_percent
+      holdingsdata && holdingsdata?.total_profit_and_loss_percent,
     );
     setinvestedvalue(holdingsdata && holdingsdata?.total_invested_value);
 
@@ -61,7 +61,7 @@ const Holdings: React.FC<HoldingsProps> = ({
           updateSymbolPnl({
             symbol: stock?.identifier,
             pnl: stock?.profit_and_loss,
-          })
+          }),
         );
       });
     const symbolsArray =
@@ -79,7 +79,7 @@ const Holdings: React.FC<HoldingsProps> = ({
       calculateHoldingsPnL(
         holdingsdata.holdings,
         webSocketDataRead,
-        investValue
+        investValue,
       );
     setHoldings(updatedHoldings); // Assuming there's a local state for holdings
     updatedHoldings?.forEach((stock) => {
@@ -87,7 +87,7 @@ const Holdings: React.FC<HoldingsProps> = ({
         updateSymbolPnl({
           symbol: stock?.identifier,
           pnl: stock?.profit_and_loss,
-        })
+        }),
       );
     });
     setTotalProfitAndLoss(totalPnL);
@@ -120,7 +120,7 @@ const Holdings: React.FC<HoldingsProps> = ({
           </div>
         </>
       ) : (
-        <ImageBox
+        <imgBox
           imagePath="/svg/holdings.svg"
           display="No Holdings Available"
           width={250}

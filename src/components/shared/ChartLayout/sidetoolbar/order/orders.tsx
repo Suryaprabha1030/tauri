@@ -36,10 +36,10 @@ const Orders: React.FC<OrdersProps> = ({
   const [refresh, setresfresh] = useState(false);
   const [activeTooltip, setActiveTooltip] = useState(null);
   const [activeStatusFilter, setActiveStatusFilter] = useState<string | null>(
-    null
+    null,
   );
   const [transactionFilter, setTransactionFilter] = useState<string | null>(
-    null
+    null,
   );
   const [editOrderId, setEditOrderId] = useState<string | null>(null);
   const [editedOrder, setEditedOrder] = useState<any>({});
@@ -51,10 +51,10 @@ const Orders: React.FC<OrdersProps> = ({
     setActiveTooltip(activeTooltip === index ? null : index); // Toggle tooltip for the current row
   };
   const OrdersDemoEnabled = useSelector(
-    (state: RootState) => state.SimulationDemo.ordersDemo
+    (state: RootState) => state.SimulationDemo.ordersDemo,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const Simulatedorders: any = useSimulatedOrders(webSocketDataRead);
   const dispatch = useDispatch();
@@ -67,7 +67,7 @@ const Orders: React.FC<OrdersProps> = ({
       dispatch(
         addSymbol({
           symbol: item.identifier,
-        })
+        }),
       );
     });
   }, []);
@@ -88,7 +88,7 @@ const Orders: React.FC<OrdersProps> = ({
   const filteredOrders = filterOrders(
     ordersData,
     activeStatusFilter,
-    transactionFilter
+    transactionFilter,
   );
 
   const handleEditClick = (order: any) => {
@@ -114,7 +114,7 @@ const Orders: React.FC<OrdersProps> = ({
     const OrderApi = new UserBrokerRouterApi(baseConfig());
     OrderApi.modifyOrderV1UsersMeBrokersBrokerCodeOrdersPut(
       brokerCode,
-      updatedData
+      updatedData,
     )
       .then((res) => {
         toast("Order Updated Successfully");
@@ -204,7 +204,7 @@ const Orders: React.FC<OrdersProps> = ({
             />
           </table>
         ) : (
-          <ImageBox
+          <imgBox
             imagePath="/svg/orders.svg"
             display="No Orders placed"
             width={250}

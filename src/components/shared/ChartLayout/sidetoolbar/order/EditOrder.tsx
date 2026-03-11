@@ -25,7 +25,7 @@ const EditOrder: React.FC<EditOrderProps> = ({
           onMouseLeave={() => setTooltipDisplay(false)}
           onClick={() => handleEditClick(order)}
         >
-          <Image
+          <img
             src="/svg/editNote.svg"
             width={20}
             height={20}

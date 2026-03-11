@@ -49,14 +49,14 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
   pnlMap,
 }) => {
   const DraftPositions = useSelector(
-    (state: RootState) => state.analyzer.setShowDraftPositions
+    (state: RootState) => state.analyzer.setShowDraftPositions,
   );
 
   const LiveLtpData = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const sandboxId = useSelector(
-    (state: RootState) => state.analyzer.setSelectedSandboxId
+    (state: RootState) => state.analyzer.setSelectedSandboxId,
   );
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const [exitedRows, setExitedRows] = useState<{ [key: string]: boolean }>({});
@@ -69,13 +69,13 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
   useEffect(() => {
     // Filter legs where is_expired and is_exited are false
     const activeLegs: any = Object.values(strategyData).filter(
-      (leg: any) => !(leg.is_exited || leg.is_expired)
+      (leg: any) => !(leg.is_exited || leg.is_expired),
     );
     const allExpired = Object.values(strategyData).every(
-      (leg: any) => leg.is_expired
+      (leg: any) => leg.is_expired,
     ); //check all expired
     const allExited = Object.values(strategyData).every(
-      (leg: any) => leg.is_exited
+      (leg: any) => leg.is_exited,
     ); //check all exited
 
     const Payoffpayload = transformToDesiredStructure(activeLegs, indexname);
@@ -131,7 +131,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
 
     DraftPositions.modifySandboxV1UsersMeSandboxesModifyIdPut(
       sandboxId,
-      payload
+      payload,
     )
       .then((res) => {
         dispatch(setSelectedStrategy({ setselectedStrategy: res.data }));
@@ -152,7 +152,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
     setEditingRow(null);
     // Check if there are any rows that are not already exited
     const selectedRows = Object.keys(strategyData).filter(
-      (key) => !strategyData[key]?.is_exited
+      (key) => !strategyData[key]?.is_exited,
     );
 
     if (selectedRows.length === 0) {
@@ -184,7 +184,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
     // Call the API to modify the sandbox data
     DraftPositions.modifySandboxV1UsersMeSandboxesModifyIdPut(
       sandboxId,
-      payload
+      payload,
     )
       .then((res) => {
         // Update exitedRows state to reflect that all rows are exited
@@ -193,7 +193,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
             acc[key] = true; // Mark all rows as exited
             return acc;
           },
-          {}
+          {},
         );
         toast("Strategy Exited", {
           icon: false, // Removes the default icon (tick mark)
@@ -246,7 +246,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
       };
       DraftPositions.modifySandboxV1UsersMeSandboxesModifyIdPut(
         sandboxId,
-        payload
+        payload,
       )
         .then((res) => {
           dispatch(setSelectedStrategy({ setselectedStrategy: res.data }));
@@ -266,7 +266,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
   const handleValueChange = (
     identifier: string,
     field: "lots" | "transaction_type",
-    value: any
+    value: any,
   ) => {
     setEditedData((prev) => ({
       ...prev,
@@ -282,12 +282,12 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
     handleValueChange(
       identifier,
       "transaction_type",
-      currentType === "LONG" ? "SHORT" : "LONG"
+      currentType === "LONG" ? "SHORT" : "LONG",
     );
   };
   const AddToStrategy = () => {
     const filteredData = Object.values(strategyData).filter(
-      (item: any) => !item.is_exited && !item.is_expired
+      (item: any) => !item.is_exited && !item.is_expired,
     );
     const sandBoxdata = transformedSandBoxObject(filteredData);
     dispatch(setSandboxDataObj({ setSandboxData: sandBoxdata }));
@@ -438,7 +438,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
                             handleValueChange(
                               item.identifier,
                               "lots",
-                              parseInt(e.target.value)
+                              parseInt(e.target.value),
                             )
                           }
                           onDoubleClick={(event: any) => {
@@ -451,7 +451,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
                               <option key={lot} value={lot}>
                                 {lot}
                               </option>
-                            )
+                            ),
                           )}
                         </select>
                       ) : (
@@ -532,7 +532,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
                       className={`flex justify-center sm:max-md:py-[0.45rem] md:max-2xl:py-[0.66rem] ${strategyExited == true ? "max-xl:hidden" : ""}`}
                     >
                       {editingRow === item.identifier ? null : (
-                        <Image
+                        <img
                           src="/svg/editNote.svg"
                           width={20}
                           height={20}
@@ -627,7 +627,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
             onMouseEnter={() => setHoverStrategy(false)}
             onMouseLeave={() => setHoverStrategy(true)}
           >
-            <Image
+            <img
               src={hoverStrategy ? "/svg/plusSymbol.svg" : "/svg/whiteAdd.svg"}
               width={15}
               height={15}

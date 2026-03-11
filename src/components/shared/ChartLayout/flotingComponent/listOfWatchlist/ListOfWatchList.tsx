@@ -30,13 +30,13 @@ const ListOfWatchList: React.FC<ListOfWatchListProps> = ({
 }) => {
   const [list, setList] = useState([]);
   const [activeWatchlistId, setActiveWatchlistId] = useState<number | null>(
-    null
+    null,
   );
   const [starredWatchlistId, setStarredWatchlistId] = useState<number | null>(
-    null
+    null,
   );
   const getPrimaryRefreshData = useSelector(
-    (state: RootState) => state.strategy.primaryRefresh
+    (state: RootState) => state.strategy.primaryRefresh,
   );
   const [GroupsOpen, setGroupsOpen] = useState<boolean>(false);
   const router = useRouter();
@@ -92,7 +92,7 @@ const ListOfWatchList: React.FC<ListOfWatchListProps> = ({
 
     setActiveWatchlistId(watchlistId);
     setStarredWatchlistId((prev) =>
-      prev === watchlistId ? null : watchlistId
+      prev === watchlistId ? null : watchlistId,
     );
 
     const primaryApi = new UserWatchlistRouterApi(baseConfig());
@@ -133,7 +133,7 @@ const ListOfWatchList: React.FC<ListOfWatchListProps> = ({
           <h1 className="max-sm:text-[0.75rem] sm:max-md:py-[0.3rem] sm:max-md:text-[0.8rem] md:text-[0.75rem]">
             Watchlist
           </h1>
-          <Image
+          <img
             src="/svg/arrowFall.svg"
             className="max-sm:h-[0.8rem] max-sm:w-[0.8rem] md:h-[1.2rem] md:w-[1.2rem] "
             width="20"
@@ -150,7 +150,7 @@ const ListOfWatchList: React.FC<ListOfWatchListProps> = ({
             className="group relative inline-block"
             onClick={createWatchlist}
           >
-            <Image
+            <img
               src="/svg/whiteAdd.svg"
               className="mt-[rem] h-[1rem] w-[1rem]"
               width="20"
@@ -178,7 +178,7 @@ const ListOfWatchList: React.FC<ListOfWatchListProps> = ({
                 <div>
                   {(activeWatchlistId === item.id ||
                     starredWatchlistId === item.id) && (
-                    <Image
+                    <img
                       src={
                         starredWatchlistId === item.id
                           ? "/svg/starfill.svg"

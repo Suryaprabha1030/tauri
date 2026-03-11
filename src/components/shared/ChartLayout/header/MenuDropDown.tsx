@@ -62,7 +62,7 @@ const MenuDropDown: React.FC<MenuDropDownProps> = ({
               >
                 {button.label}
               </span>
-              <Image src="/svg/arrowFall.svg" height={16} width={15} alt="" />
+              <img src="/svg/arrowFall.svg" height={16} width={15} alt="" />
             </button>
           ) : (
             ""

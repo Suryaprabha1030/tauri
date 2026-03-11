@@ -61,7 +61,7 @@ const AddGroupSymbol = ({
         className="flex w-full items-center justify-between rounded rounded-lg border border-z-green-500 bg-white px-3 py-1 text-[0.75rem] text-black max-sm:text-[0.6rem]"
       >
         {selected}
-        <Image
+        <img
           src="/svg/arrowFall.svg"
           width="25"
           height="25"

@@ -53,7 +53,7 @@ const UserProfile = ({ setLeftWidth, leftWidth }: any) => {
         if (error?.response && error?.response?.status == 456) {
           brokerLogoutTokenRemove(router);
         }
-      }
+      },
     );
   };
 
@@ -79,7 +79,7 @@ const UserProfile = ({ setLeftWidth, leftWidth }: any) => {
           error: error?.response?.data,
           loading: false,
         }));
-      }
+      },
     );
   };
 
@@ -134,7 +134,7 @@ const UserProfile = ({ setLeftWidth, leftWidth }: any) => {
             className=" space-y-4 font-[340] md:max-xl:space-y-10 xl:space-y-6 "
           >
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/svg/BlackUser.svg"
                 alt=""
                 className="h-1/6"

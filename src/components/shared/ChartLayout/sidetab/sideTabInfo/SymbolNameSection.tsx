@@ -127,10 +127,10 @@ const SymbolNameSection: React.FC<SymbolNameSectionProps> = ({
           <span
             className={`group relative mx-2 inline-block cursor-pointer md:max-2xl:mx-0`}
             onClick={() => {
-              setShowCreateNotes(true), setNoteToEdit(null);
+              (setShowCreateNotes(true), setNoteToEdit(null));
             }}
           >
-            <Image
+            <img
               src="/svg/notes.svg"
               className="cursor-pointer"
               height={15}

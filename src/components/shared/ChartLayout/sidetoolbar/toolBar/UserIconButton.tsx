@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const UserIconButton = () => {
   const currentSection = useSelector(
-    (state: RootState) => state.common.currentSection
+    (state: RootState) => state.common.currentSection,
   );
   const dispatch = useDispatch();
   const handleProfileInfo = () => {
@@ -23,7 +23,7 @@ const UserIconButton = () => {
       className={`wrapper relative flex h-[2.7rem] w-[2.5rem] items-center justify-center rounded-lg py-1 max-md:hidden md:max-xl:mr-[2.5rem]`}
     >
       <span className="group flex h-full w-full flex-col items-center justify-center gap-1">
-        <Image
+        <img
           src={
             currentSection === "Profile"
               ? "/svg/greenUser.svg"

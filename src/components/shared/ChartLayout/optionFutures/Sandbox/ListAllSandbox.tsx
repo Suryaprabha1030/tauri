@@ -45,26 +45,26 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
 
   const sandboxId = useSelector(
-    (state: RootState) => state.analyzer.setSelectedSandboxId
+    (state: RootState) => state.analyzer.setSelectedSandboxId,
   );
   const SelectedsandboxName = useSelector(
-    (state: RootState) => state.analyzer.setSelectedSandboxName
+    (state: RootState) => state.analyzer.setSelectedSandboxName,
   );
   const updatedData = useSelector(
-    (state: RootState) => state.analyzer.setUpdateData
+    (state: RootState) => state.analyzer.setUpdateData,
   );
   const optionDatas = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const futureDatas = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
   const router = useRouter();
   const handleSelectionChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setSelectedId(event.target.value);
     setTimeout(() => {
@@ -103,7 +103,7 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
           dispatch(
             optionChainPayload({
               optionChainPayloadData: { ClickedRow: {}, response: {} },
-            })
+            }),
           );
         }, 100);
       }
@@ -115,7 +115,7 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
         dispatch(
           optionChainPayload({
             optionChainPayloadData: { ClickedRow: {}, response: {} },
-          })
+          }),
         );
       }, 100);
     }
@@ -125,7 +125,7 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
     const DraftPositions = new StrategiesSandboxRouterApi(baseConfig());
     DraftPositions.getAllSandboxesByIndexnameV1UsersMeSandboxesByIndexNameIndexNameGet(
       indexname,
-      pageNum
+      pageNum,
     )
       .then((res) => {
         const names = res.data;
@@ -139,13 +139,13 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
         }
         // Filter non-exited strategies
         const nonExitedStrategies = allStrategies.filter(
-          (item: any) => !item.is_all_exited
+          (item: any) => !item.is_all_exited,
         );
         // Add unique non-exited strategies to the list
         setList((prevList) => {
           const existingIds = new Set(prevList.map((item) => item.id));
           const uniqueStrategies = nonExitedStrategies.filter(
-            (item: any) => !existingIds.has(item.id)
+            (item: any) => !existingIds.has(item.id),
           );
           return [...prevList, ...uniqueStrategies];
         });
@@ -179,11 +179,11 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
         draftData,
         SelectedsandboxName,
         false,
-        indexname
+        indexname,
       );
       DraftPositions.modifySandboxV1UsersMeSandboxesModifyIdPut(
         sandboxId,
-        payload
+        payload,
       )
         .then((res: any) => {
           dispatch(setSelectedStrategy({ setselectedStrategy: res?.data }));
@@ -271,7 +271,7 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
           >
             New
           </button>
-          <Image
+          <img
             src="/svg/removeSymbol.svg"
             className="relative h-[1.5rem] w-[1.5rem]"
             width="20"
@@ -310,7 +310,7 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
                             setShowSelectedSandboxName({
                               setSelectedSandboxName: item.name,
                               setSelectedSandboxId: item.id,
-                            })
+                            }),
                           );
                           handleSelectionChange(e);
                         }}

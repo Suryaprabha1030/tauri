@@ -69,7 +69,7 @@ export default function AIResponseTable({
   strategyImageResult,
 }: AIResponseTableProps) {
   const [selectedIdentifier, setSelectedIdentifier] = useState<string | null>(
-    null
+    null,
   );
   const dispatch = useDispatch();
   const brokerCode = authSuccess ? getBrokerCode() : null;
@@ -89,23 +89,23 @@ export default function AIResponseTable({
   const selectedTextTooltipRef = useRef<HTMLDivElement | null>(null);
   const stockTooltipRef = useRef<HTMLDivElement | null>(null);
   const webSocketDataRead: any = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const [selectedStrategy, setSelectedStrategy] = useState<any>(null);
   const [selectedIndex, setSelectedIndex] = useState<any>(null);
   const [allStrategyDetail, setallStrategyDetail] = useState<any>();
   const path = window.location.pathname;
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
   const futureDatas = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const optionDatas = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
   const IndexDetails = useSelector(
-    (state: RootState) => state.Screener.IndicesDataWithExpiry
+    (state: RootState) => state.Screener.IndicesDataWithExpiry,
   );
 
   const handleStrategyClick = (strategy: string, indexName: any, e: any) => {
@@ -123,7 +123,7 @@ export default function AIResponseTable({
           index_name: "",
           spot_price: "",
         },
-      })
+      }),
     );
     dispatch(
       addCartSuccess({
@@ -133,7 +133,7 @@ export default function AIResponseTable({
           spot_price: null,
           expiryDate: "",
         },
-      })
+      }),
     );
     e.stopPropagation();
     setSelectedStrategy(strategy);
@@ -155,7 +155,7 @@ export default function AIResponseTable({
       futureDatas,
       allStrategyDetail,
       optionDatas,
-      IndexDetails
+      IndexDetails,
     );
   }, [allStrategyDetail]);
 
@@ -163,10 +163,10 @@ export default function AIResponseTable({
     if (loading || !markdownTable?.trim()) return;
     identifiersRef.current = new Set();
     const extractedIds = Array.from(
-      markdownTable.matchAll(/\bNSE:[A-Za-z0-9_]+\b/g)
+      markdownTable.matchAll(/\bNSE:[A-Za-z0-9_]+\b/g),
     ).map((m) => m[0]);
     const formattedIds = Array.from(new Set(extractedIds)).map((id) =>
-      id.replace("-", ":")
+      id.replace("-", ":"),
     );
     identifiersRef.current = new Set(formattedIds);
     onIdentifiersReady?.(formattedIds);
@@ -300,7 +300,7 @@ export default function AIResponseTable({
         const rows = block.split("\n").filter((r) => r.includes("|"));
 
         const separatorIndex = rows.findIndex((r) =>
-          r.replace(/\s/g, "").match(/^\|-+\|/)
+          r.replace(/\s/g, "").match(/^\|-+\|/),
         );
 
         if (separatorIndex >= 1) {
@@ -324,7 +324,7 @@ export default function AIResponseTable({
             headers.find(
               (h) =>
                 h.toLowerCase().includes("identifier") ||
-                h.toLowerCase().includes("id")
+                h.toLowerCase().includes("id"),
             ) || null;
           //  Collect identifiers from this table block
           isSingleStockRef.current = false; // To stop unostock rendering if table renders
@@ -381,7 +381,7 @@ export default function AIResponseTable({
                                       handleStockClick(
                                         identifier,
                                         cellValue,
-                                        e
+                                        e,
                                       );
                                     } //hiding the symbol name clicking functionality
                                   }
@@ -415,7 +415,7 @@ export default function AIResponseTable({
               setShowLoginPopup,
               strategyImageResult,
               handleStrategyClick,
-              IndexDetails
+              IndexDetails,
             )}
           </div>
         );
@@ -429,7 +429,7 @@ export default function AIResponseTable({
           const adjusted = adjustTooltipPosition(
             tooltipPosition.x,
             tooltipPosition.y,
-            parentRef
+            parentRef,
           );
 
           return (
@@ -444,7 +444,7 @@ export default function AIResponseTable({
               onClick={() => handleAddToFollowUp(selectedText)}
             >
               <div className="flex flex-row items-center gap-1">
-                <Image
+                <img
                   src="/svg/searchIcon.svg"
                   width={20}
                   height={20}
@@ -466,7 +466,7 @@ export default function AIResponseTable({
           const adjusted = adjustTooltipPosition(
             tooltipPosition.x,
             tooltipPosition.y,
-            parentRef //  pass same ref used for main layout
+            parentRef, //  pass same ref used for main layout
           );
 
           return (
@@ -486,7 +486,7 @@ export default function AIResponseTable({
                     setSelectedAiStock({
                       identifier: tooltipStock?.identifier,
                       symbol: tooltipStock?.symbol,
-                    })
+                    }),
                   );
                   setSelectedIdentifier(tooltipStock?.identifier);
                   dispatch(setStockInfoOpen(true));
@@ -494,7 +494,7 @@ export default function AIResponseTable({
                   setTooltipPosition(null);
                 }}
               >
-                <Image
+                <img
                   src="/svg/view.svg"
                   width={20}
                   height={20}
@@ -510,7 +510,7 @@ export default function AIResponseTable({
                 className="group relative flex items-center p-1 hover:rounded"
                 onClick={() => handleAddToFollowUp(tooltipStock?.symbol)}
               >
-                <Image
+                <img
                   src="/svg/searchIcon.svg"
                   width={20}
                   height={20}
@@ -530,7 +530,7 @@ export default function AIResponseTable({
                       tooltipStock,
                       "LONG",
                       webSocketDataRead,
-                      dispatch
+                      dispatch,
                     )
                   }
                   id="buy-button"
@@ -542,7 +542,7 @@ export default function AIResponseTable({
                       tooltipStock,
                       "SHORT",
                       webSocketDataRead,
-                      dispatch
+                      dispatch,
                     )
                   }
                   id="sell-button"

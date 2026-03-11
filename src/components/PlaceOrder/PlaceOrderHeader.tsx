@@ -58,11 +58,11 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
 }) => {
   const path = window.location.pathname;
   const FundsDataRedux: any = useSelector(
-    (state: RootState) => state.strategy.fundsData
+    (state: RootState) => state.strategy.fundsData,
   );
 
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const [spinningAnimation, setSpinningAnimation] = useState(false);
@@ -106,7 +106,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
       getIndexName({
         indexName: result?.index_name,
         expiryDate: result?.expiry,
-      })
+      }),
     );
 
     dispatch(
@@ -116,7 +116,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
           index_name: result?.index_name,
           spot_price: webSocketDataRead[firstObject.identifier],
         },
-      })
+      }),
     );
 
     if (result?.index_name != indexname && indexname?.length > 0) {
@@ -128,7 +128,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
             spot_price: null,
             expiryDate: "",
           },
-        })
+        }),
       );
     }
 
@@ -169,7 +169,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
             }`}
             onClick={() => AnalyzeStocks(stockData)}
           >
-            <Image
+            <img
               src="/svg/analyze.svg"
               className=" max-md:w-[1.5rem] max-sm:h-[1rem] max-sm:w-[1rem] sm:max-md:h-[1rem] md:max-xl:h-[1rem] md:max-xl:w-[1.5rem]"
               height={14}
@@ -185,7 +185,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
               className="class-for-touch-event hover:cursor-pointer hover:bg-gray-100"
               onClick={resetPrices}
             >
-              <Image
+              <img
                 src="/svg/reset.svg"
                 height={13}
                 width={13}
@@ -200,7 +200,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
 
           <div className="flex cursor-pointer items-center hover:bg-gray-100 max-sm:w-[1.8rem]">
             {!minimize ? (
-              <Image
+              <img
                 src="/svg/verticalShrink.svg"
                 height={20}
                 width={20}
@@ -210,7 +210,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
                 className="max-md:h-[1.2rem] max-md:w-[1.8rem] md:max-xl:h-[1.6rem] md:max-xl:w-[2rem]"
               />
             ) : (
-              <Image
+              <img
                 src="/svg/maximize.svg"
                 height={15}
                 width={15}
@@ -226,7 +226,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
             onClick={handleClose}
             onTouchStart={handleClose}
           >
-            <Image
+            <img
               src={"/svg/removeSymbol.svg"}
               className="max-xl:w-[1.6rem] max-md:h-[1.4rem] md:max-xl:h-[1.6rem]"
               height={20}

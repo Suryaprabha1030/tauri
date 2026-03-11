@@ -10,7 +10,7 @@ const LogoutButton = () => {
           Logout
         </span>
         <span className=" relative inline-block h-[1.95rem] w-[1.7rem] md:max-xl:mt-0.5">
-          <Image
+          <img
             src={"/svg/logout.svg"}
             fill
             alt="logout"

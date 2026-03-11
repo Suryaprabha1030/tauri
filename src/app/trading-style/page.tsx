@@ -94,7 +94,7 @@ const TradingStyle = () => {
     >
       {showNextStep2 && !showNextStep && (
         <div className="w-[30%]  max-xl:hidden">
-          <Image
+          <img
             className="min-h-screen "
             src="/images/signin-left.png"
             alt=""
@@ -199,7 +199,7 @@ const TradingStyle = () => {
       </div>
       {showNextStep2 && !showNextStep && (
         <div className="w-[30%]  max-xl:hidden">
-          <Image
+          <img
             className="min-h-screen"
             src="/images/signin-right.png"
             alt=""

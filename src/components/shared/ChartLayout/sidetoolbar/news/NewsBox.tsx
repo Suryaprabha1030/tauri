@@ -25,7 +25,7 @@ const NewsBox: React.FC<NewsBoxProps> = ({ newsData, tagTrue, AllNews }) => {
               >
                 {item.title}
               </div>
-              <Image
+              <img
                 src="/svg/newtab.svg"
                 alt="Open in new tab"
                 width={15}

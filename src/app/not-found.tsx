@@ -10,7 +10,7 @@ export default function NotFoundPage() {
     <div className="fixed flex h-dvh w-screen flex-col items-center justify-center gap-[1rem] text-center">
       <>
         <span className="relative h-[20rem] w-[25rem] max-sm:h-[10rem] max-sm:w-[15rem]">
-          <Image src={"/images/404.png"} alt="" fill className="" />
+          <img src={"/images/404.png"} alt="" fill className="" />
         </span>
         <span className="flex flex-col gap-2">
           <h1 className=" text-2xl font-bold">404 - Page Not Found</h1>

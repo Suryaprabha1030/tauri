@@ -19,7 +19,7 @@ export default function GlobalError({
       <body>
         <div className="flex h-dvh w-screen flex-col items-center  justify-center bg-white">
           <span className="relative md:h-[10rem] md:w-[10rem] lg:h-[12rem] lg:w-[12rem] xl:h-[15rem] xl:w-[15rem]">
-            <Image src="/images/sad.png" alt="Error" fill className="" />
+            <img src="/images/sad.png" alt="Error" fill className="" />
           </span>
 
           <h1 className="mt-3 font-table text-gray-400 md:text-xl  lg:text-2xl">

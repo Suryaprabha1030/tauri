@@ -57,13 +57,13 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
 }) => {
   const dispatch = useDispatch();
   const pinUnpinRedux = useSelector(
-    (state: RootState) => state.strategy.pinUnpinstate
+    (state: RootState) => state.strategy.pinUnpinstate,
   );
   const pinnedSymbols = useSelector(
-    (state: RootState) => state.strategy.pinnedsymbols
+    (state: RootState) => state.strategy.pinnedsymbols,
   );
   const defaultWatchlistPinnedSymbol = useSelector(
-    (state: RootState) => state.charts.setDefaultWatchlist
+    (state: RootState) => state.charts.setDefaultWatchlist,
   );
   const router = useRouter();
   return (
@@ -82,7 +82,7 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
               className="group relative flex w-[1.5rem] items-center bg-gray-100 max-xl:hidden max-xl:bg-z-br-gray"
               onClick={() => handleAddSymbolClick(symb?.identifier)}
             >
-              <Image
+              <img
                 src="/svg/plusSymbol.svg"
                 width={20}
                 height={20}
@@ -117,7 +117,7 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
                   pinUnpinRedux,
                   defaultWatchlistPinnedSymbol,
                   router,
-                  pinnedSymbolsCount
+                  pinnedSymbolsCount,
                 );
               }}
               className={`group relative flex h-[1.3rem] w-[1.3rem] items-center hover:cursor-pointer hover:rounded hover:bg-gray-300 max-md:hidden ${
@@ -128,7 +128,7 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
               }`}
               onMouseEnter={handleMouseEnter}
             >
-              <Image
+              <img
                 src="/svg/pin.svg"
                 width="15"
                 height="15"
@@ -168,7 +168,7 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
           {(isFNO == true ||
             (symb &&
               ["options", "futures"].includes(
-                symb?.symbol_type?.split("_")[1]
+                symb?.symbol_type?.split("_")[1],
               ) &&
               config?.supportIndices?.includes(symb?.symbol_name))) && (
             <div
@@ -177,11 +177,11 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
                 setFutureOption(
                   symb,
                   e.currentTarget as HTMLTableCellElement,
-                  symb?.symbol_type
+                  symb?.symbol_type,
                 )
               }
             >
-              <Image src="/svg/analyze.svg" width={14} height={14} alt="" />
+              <img src="/svg/analyze.svg" width={14} height={14} alt="" />
               <span
                 className={`pointer-events-none absolute ${
                   isLastRow ? "bottom-6 left-[-4]" : "left-[-2] top-6"
@@ -193,7 +193,7 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
           )}
           {activePositionFilter === null && !selectedGroup && (
             <div className="group relative flex items-center hover:rounded hover:bg-gray-300">
-              <Image
+              <img
                 src="/svg/removeSymbol.svg"
                 className={`w-[1.3rem] ${
                   (clickedRow && hoveredRow) === symb?.identifier

@@ -37,7 +37,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({
       title={label}
     >
       {/* {label} */}
-      <Image
+      <img
         src={getImageSrc(label)}
         width={15}
         height={15}

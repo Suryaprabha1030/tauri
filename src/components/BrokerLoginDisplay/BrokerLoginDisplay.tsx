@@ -37,7 +37,7 @@ const BrokerLoginDisplay: React.FC<BrokerLoginDisplayProps> = ({
       }`}
     >
       <div className="flex flex-col items-center justify-center gap-2 pt-2">
-        <Image
+        <img
           src={getImageUrl(broker)?.url}
           alt={broker}
           height={getImageUrl(broker)?.height}

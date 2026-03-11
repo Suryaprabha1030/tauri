@@ -35,7 +35,7 @@ const ToastContent = ({ title, message, details }) => {
       className={clsx(
         "flex  items-start rounded-lg bg-white shadow-lg  max-sm:p-1 sm:p-1 xl:p-3",
         "border-l-4",
-        getBorderColor(title)
+        getBorderColor(title),
       )}
     >
       {/* Left Indicator */}
@@ -46,7 +46,7 @@ const ToastContent = ({ title, message, details }) => {
         <p
           className={clsx(
             "font-semibold max-sm:text-[0.8rem] sm:text-[0.8rem] xl:text-sm",
-            getStatusColor(title)
+            getStatusColor(title),
           )}
         >
           {title}
@@ -62,7 +62,7 @@ const ToastContent = ({ title, message, details }) => {
         className="ml-3 text-gray-500 hover:text-gray-700"
         onClick={() => toast.dismiss()}
       >
-        <Image src="/svg/removeSymbol.svg" width={15} height={15} alt="Close" />
+        <img src="/svg/removeSymbol.svg" width={15} height={15} alt="Close" />
       </button>
     </div>
   );
@@ -72,7 +72,7 @@ const ToastContent = ({ title, message, details }) => {
 export const showCustomToast = (
   title: string,
   message: string,
-  details?: string
+  details?: string,
 ) => {
   const audio = new Audio("/sound/toastSound.mp3");
   audio.play().catch((error) => console.error("Audio play failed:", error));

@@ -44,7 +44,7 @@ const SwitchWatchList: React.FC<SwitchWatchListProps> = ({
       <div className="group relative max-w-[90%] ">
         <h1 className="   flex  w-full flex-row gap-2  font-table max-md:text-[0.8rem] md:max-lg:text-[0.85rem] lg:text-[0.92rem]">
           {activePositionFilter !== null && (
-            <Image
+            <img
               src="/svg/ArrowRightBlack.svg"
               height="15"
               width="15"
@@ -72,7 +72,7 @@ const SwitchWatchList: React.FC<SwitchWatchListProps> = ({
       </div>
       {activePositionFilter === null && (
         <div className="group relative inline-block  ">
-          <Image
+          <img
             src="/svg/arrowFall.svg"
             width="25"
             height="25"

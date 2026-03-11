@@ -14,7 +14,7 @@ const LoginWithGoogle = ({ name }: any) => {
       className="flex w-[13rem] cursor-pointer items-center justify-evenly gap-3 rounded-md border border-neutral-200 bg-white px-5 py-3"
       onClick={googleAuthentication}
     >
-      <Image src="/images/google-logo.png" alt="" height={20} width={20} />
+      <img src="/images/google-logo.png" alt="" height={20} width={20} />
       <div className="text-sm font-normal leading-none text-zinc-600">
         {name}
       </div>

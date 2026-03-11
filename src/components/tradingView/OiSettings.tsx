@@ -33,13 +33,13 @@ export default function OIProfileSettingsModal({
   const [selectedExpiry, setSelectedExpiry] = useState<string>("");
   const dispatch = useDispatch();
   const OISelectedExpiry = useSelector(
-    (state: RootState) => state.common.tvOIexpiry
+    (state: RootState) => state.common.tvOIexpiry,
   );
   const ceBarColor = useSelector(
-    (state: RootState) => state.common.cePeBarColors.ce
+    (state: RootState) => state.common.cePeBarColors.ce,
   );
   const peBarColor = useSelector(
-    (state: RootState) => state.common.cePeBarColors.pe
+    (state: RootState) => state.common.cePeBarColors.pe,
   );
 
   const ceDefault = rgbaToHexOpacity(ceBarColor);
@@ -140,7 +140,7 @@ export default function OIProfileSettingsModal({
           onClick={onClose}
           className="absolute right-2 top-2 rounded  pb-2"
         >
-          <Image src="/svg/removeSymbol.svg" width={20} height={20} alt="" />
+          <img src="/svg/removeSymbol.svg" width={20} height={20} alt="" />
         </button>
         <button
           className="class-for-touch-event flex w-[5rem] items-center justify-center rounded-3xl border  border-z-green-500  p-2 text-[0.75rem]  font-medium leading-none text-z-green-500 hover:bg-z-green-500 hover:text-white"
@@ -150,7 +150,7 @@ export default function OIProfileSettingsModal({
               setCePeBarColors({
                 ce: hexOpacityToRgba(ceColor, ceOpacity),
                 pe: hexOpacityToRgba(peColor, peOpacity),
-              })
+              }),
             );
             dispatch(setOpenOiSettings([]));
 
@@ -167,14 +167,14 @@ export default function OIProfileSettingsModal({
             const { tvChart, container, reduxDispatch } = getOIState();
             setOIColors(
               hexOpacityToRgba(ceColor, ceOpacity),
-              hexOpacityToRgba(peColor, peOpacity)
+              hexOpacityToRgba(peColor, peOpacity),
             );
             if (tvChart && container && reduxDispatch) {
               await fetchAndRenderCurrentMode(
                 tvChart,
                 container,
                 reduxDispatch,
-                true
+                true,
               );
             }
 

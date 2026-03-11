@@ -20,7 +20,7 @@ const FundsDetailPage: React.FC<FundsDetailPageProps> = ({
 }) => {
   const [fundsData, setfundsData] = useState<any>({});
   const FundsDataRedux = useSelector(
-    (state: RootState) => state.strategy.fundsData
+    (state: RootState) => state.strategy.fundsData,
   );
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const FundsDetailPage: React.FC<FundsDetailPageProps> = ({
       {fundsData && Object.keys(fundsData).length > 0 ? (
         <FundsTable fundsData={fundsData} />
       ) : (
-        <ImageBox
+        <imgBox
           imagePath="/svg/fundsdata.svg"
           display="No Funds Available"
           width={200}

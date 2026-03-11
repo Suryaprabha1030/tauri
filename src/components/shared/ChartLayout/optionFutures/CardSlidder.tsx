@@ -52,7 +52,7 @@ const CardSlidder: React.FC<CardSlidderProps> = ({ cardsSwipe }) => {
   return (
     <>
       <div className="flex flex-row justify-center  max-sm:w-[100%] max-sm:gap-3 sm:max-md:gap-[1rem] md:max-xl:my-2 md:max-xl:gap-[1.5rem] xl:hidden xl:max-2xl:gap-[1rem] ">
-        <Image
+        <img
           src={"/svg/arrowFall.svg"}
           className="w-[1.5rem] rotate-90 cursor-pointer 2xl:hidden"
           height={20}
@@ -62,7 +62,7 @@ const CardSlidder: React.FC<CardSlidderProps> = ({ cardsSwipe }) => {
         />
         {Array.from(
           { length: pageSize },
-          (_, i) => cardsSwipe[(index + i) % cardsSwipe.length]
+          (_, i) => cardsSwipe[(index + i) % cardsSwipe.length],
         ).map((item, index) => (
           <div
             key={index}
@@ -90,7 +90,7 @@ const CardSlidder: React.FC<CardSlidderProps> = ({ cardsSwipe }) => {
             </div>
           </div>
         ))}
-        <Image
+        <img
           src={"/svg/arrowFall.svg"}
           className="w-[1.5rem] -rotate-90 cursor-pointer 2xl:hidden"
           height={20}

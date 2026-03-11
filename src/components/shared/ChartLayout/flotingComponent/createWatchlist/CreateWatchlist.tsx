@@ -27,7 +27,7 @@ const CreateWatchlist: React.FC<CreateWatchlistProps> = ({
         const CreatewatchlistApi = new UserWatchlistRouterApi(baseConfig());
         const res =
           await CreatewatchlistApi.createWatchlistsV1UsersMeWatchlistsPost(
-            nameRef.current.value
+            nameRef.current.value,
           );
         setShowCreateWatchlist(false);
         setSelectedWatchlistId(res.data.id);
@@ -45,7 +45,7 @@ const CreateWatchlist: React.FC<CreateWatchlistProps> = ({
     <div className="shadow-t-2xl relative h-[17rem] w-[35rem] overflow-y-auto rounded-lg bg-white shadow-2xl max-sm:w-[25rem] sm:max-md:w-[30rem] md:max-lg:h-[20rem] lg:max-xl:w-[44rem]">
       <div className="bg-shadow flex w-full flex-row items-center justify-between border-b-[0.05rem] border-z-br-gray p-2 px-4 max-md:py-[0.8rem] md:max-xl:py-[1rem]">
         <h1 className="text-[1.2rem] font-semibold">Create Watchlist </h1>
-        <Image
+        <img
           src="/svg/removeSymbol.svg"
           className="relative h-[1.5rem] w-[1.5rem]"
           width="20"

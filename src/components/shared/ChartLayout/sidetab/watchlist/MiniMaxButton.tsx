@@ -14,7 +14,7 @@ const MiniMaxButton: React.FC<AeroButtonProps> = ({
 }) => {
   return (
     <div className="flex w-full flex-col items-center justify-center max-sm:h-[2.5rem] xl:hidden">
-      <Image
+      <img
         src={aeroToggle ? "/svg/minimize.svg" : "/svg/maximize.svg"}
         height="30"
         width="30"

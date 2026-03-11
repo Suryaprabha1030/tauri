@@ -171,10 +171,10 @@ const Login = () => {
       .fetchAllBrokersV1BrokersGet()
       .then((response) => {
         const activeBrokers = response?.data?.filter(
-          (broker: any) => broker.is_active
+          (broker: any) => broker.is_active,
         );
         const selectedBroker = activeBrokers?.find(
-          (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase()
+          (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase(),
         );
 
         // Redirect to login_url in the same tab
@@ -191,7 +191,7 @@ const Login = () => {
     if (brokerNameFromQuery) {
       const normalizedQuery = brokerNameFromQuery.toLowerCase();
       const matchingBroker = brokers.find(
-        (b) => b.toLowerCase() === normalizedQuery
+        (b) => b.toLowerCase() === normalizedQuery,
       );
       if (matchingBroker) {
         setSelectedBroker(matchingBroker);
@@ -205,7 +205,7 @@ const Login = () => {
     } else {
       // Try to find a broker name from the hostname
       const matchedBroker = brokers.find((b) =>
-        normalizedHostname.includes(b.toLowerCase())
+        normalizedHostname.includes(b.toLowerCase()),
       );
 
       if (matchedBroker) {
@@ -221,7 +221,7 @@ const Login = () => {
   return (
     <div className="relative flex min-h-screen flex-row items-center justify-between overflow-y-hidden text-black   max-xl:justify-center max-sm:w-screen">
       <div className="absolute left-0 top-0  h-full opacity-50 max-xl:hidden xl:block">
-        <Image
+        <img
           className="min-h-screen"
           src="/images/signin-left.png"
           alt=""
@@ -306,7 +306,7 @@ const Login = () => {
         />
       )}
       <div className="absolute right-0 top-0  h-full opacity-50 max-xl:hidden xl:block">
-        <Image
+        <img
           className="min-h-screen"
           src="/images/signin-right.png"
           alt=""

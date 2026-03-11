@@ -54,7 +54,7 @@ const MonthSelector: React.FC<FiiDiiSummaryProps> = ({
         className=" flex flex-row gap-2 rounded-md border border-gray-300 bg-white px-0.5 py-1.5 text-left text-[0.75rem]  shadow-sm"
       >
         {normalizeSingleDate(payLoadDate)}
-        <Image src={"/svg/downChevron.svg"} alt="" width={16} height={16} />
+        <img src={"/svg/downChevron.svg"} alt="" width={16} height={16} />
       </button>
 
       {isOpen && (

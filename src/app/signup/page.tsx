@@ -75,7 +75,7 @@ const Signup = () => {
   return (
     <div className="flex min-h-screen flex-row items-center justify-between bg-white text-black max-xl:justify-center max-sm:w-screen">
       <div className="max-xl:hidden">
-        <Image
+        <img
           className="min-h-screen"
           src="/images/signin-left.png"
           alt="signin-icon"
@@ -169,7 +169,7 @@ const Signup = () => {
         </div>
       </div>
       <div className="max-xl:hidden">
-        <Image
+        <img
           className="min-h-screen"
           src="/images/signin-right.png"
           alt="sign-in-bg"

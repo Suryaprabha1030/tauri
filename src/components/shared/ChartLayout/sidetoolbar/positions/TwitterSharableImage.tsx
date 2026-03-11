@@ -28,7 +28,7 @@ const uploadToS3 = async (
   base64Image: string,
   brokerCode: any,
   clientCode?: string,
-  userId?: number
+  userId?: number,
 ): Promise<string | null> => {
   try {
     const response = await fetch(base64Image);
@@ -45,7 +45,7 @@ const uploadToS3 = async (
         {
           fileName,
           fileType: "image/jpeg",
-        }
+        },
       );
 
     const signedUrl = presignRes.data.url;
@@ -85,10 +85,10 @@ const ShareableImageCard = ({
   const pnlImageRef = useRef<HTMLImageElement | null>(null);
 
   const currentBrokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
   const currentBrokerClientCode = useSelector(
-    (state: RootState) => state.Position.ClientCode
+    (state: RootState) => state.Position.ClientCode,
   );
   const userId = useSelector((state: RootState) => state.Position.userId);
   const positions = useSelector((state: RootState) => state.strategy.positions);
@@ -129,7 +129,7 @@ const ShareableImageCard = ({
         base64,
         brokerCode,
         currentBrokerClientCode,
-        userId
+        userId,
       );
       if (uploadedImageUrl) {
         setImageUrl(uploadedImageUrl);
@@ -252,12 +252,7 @@ const ShareableImageCard = ({
                 alignItems: "center",
               }}
             >
-              <Image
-                src="/svg/Zoonest_Logo.svg"
-                alt=""
-                width={100}
-                height={80}
-              />
+              <img src="/svg/Zoonest_Logo.svg" alt="" width={100} height={80} />
             </div>
             <div
               style={{
@@ -272,7 +267,7 @@ const ShareableImageCard = ({
               <div style={{ textAlign: "center" }}>
                 {(displayName || "").slice(0, 4).padEnd(9, "X")}
               </div>
-              <Image
+              <img
                 src="/svg/BlackUser.svg"
                 alt="user"
                 width={16}
@@ -391,7 +386,7 @@ const ShareableImageCard = ({
                   overflow: "hidden",
                 }}
               >
-                <Image
+                <img
                   src={getTwitterImage(currentBrokerName).url}
                   alt={currentBrokerName}
                   height={getTwitterImage(currentBrokerName).height}
@@ -417,7 +412,7 @@ const ShareableImageCard = ({
               <span>
                 #VerifiedBy<span style={{ color: "#16A34A" }}>Zoonest</span>
               </span>
-              <Image src="/svg/tick.svg" width={14} height={14} alt="tick" />
+              <img src="/svg/tick.svg" width={14} height={14} alt="tick" />
             </div>
           </div>
         </div>

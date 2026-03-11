@@ -13,7 +13,7 @@ const ResetButton: React.FC<ResetButtonProps> = ({
       onClick={handleReset}
       className="flex h-6 w-[2.5rem] cursor-pointer gap-1  px-1 py-1 md:max-xl:w-[1.8rem] "
     >
-      <Image
+      <img
         src="/svg/reset.svg"
         alt=""
         width={24}

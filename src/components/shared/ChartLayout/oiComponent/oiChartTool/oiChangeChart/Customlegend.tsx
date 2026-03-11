@@ -12,7 +12,7 @@ const CustomLegend = () => {
       </div>
       {/* Increase (Call OI) - Red Stripes */}
       <div className="flex items-center space-x-2 md:max-xl:space-x-4">
-        <Image
+        <img
           src="/images/red_stripes.png"
           alt=""
           width={12}
@@ -33,7 +33,7 @@ const CustomLegend = () => {
       </div>
       {/* Increase (Put OI) - Green Stripes */}
       <div className="flex items-center space-x-2 md:max-xl:space-x-4">
-        <Image
+        <img
           src="/images/green_stripes.png"
           alt=""
           width={12}

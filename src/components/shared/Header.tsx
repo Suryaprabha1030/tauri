@@ -182,7 +182,7 @@ const Header: React.FC<HeaderProps> = ({ toggleChild }) => {
             id="userDropDown"
             data-dropdown-toggle="dropdown"
           >
-            <Image src="/svg/user-icon.svg" height={35} width={35} alt={""} />
+            <img src="/svg/user-icon.svg" height={35} width={35} alt={""} />
           </button>
           <ul className="dropdown-menu absolute right-0 top-6   hidden w-36 border border-gray-200 bg-white max-sm:text-[0.6rem] sm:text-[0.8rem] 2xl:text-[1rem] text-black group-hover:block">
             <li className="">

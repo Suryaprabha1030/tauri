@@ -40,11 +40,11 @@ const RemoveOrders: React.FC<RemoveOrdersProps> = ({
               setEditOrderId,
               brokerCode,
               setOrdersData,
-              router
+              router,
             )
           }
         >
-          <Image
+          <img
             src="/svg/removeSymbol.svg"
             height={20}
             width={20}

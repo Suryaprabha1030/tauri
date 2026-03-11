@@ -63,7 +63,7 @@ const Login = () => {
       () =>
         userApi.loginForAccessTokenV1UsersTokenPost(
           values.email,
-          values.password
+          values.password,
         ),
       (response) => {
         const accessToken = response?.data?.access_token;
@@ -88,7 +88,7 @@ const Login = () => {
       },
       (error) => {
         setError("root", { message: error.response.data });
-      }
+      },
     );
   };
   const getImageUrl = (brokerName: string) => {
@@ -202,10 +202,10 @@ const Login = () => {
       .fetchAllBrokersV1BrokersGet()
       .then((response) => {
         const activeBrokers = response?.data?.filter(
-          (broker: any) => broker.is_active
+          (broker: any) => broker.is_active,
         );
         const selectedBroker = activeBrokers?.find(
-          (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase()
+          (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase(),
         );
 
         //Redirect to login_url in the same tab
@@ -219,7 +219,7 @@ const Login = () => {
   return (
     <div className="flex min-h-screen flex-row items-center justify-between text-black   max-xl:justify-center max-sm:w-screen">
       <div className="max-xl:hidden">
-        <Image
+        <img
           className="min-h-screen"
           src="/images/signin-left.png"
           alt=""
@@ -312,7 +312,7 @@ const Login = () => {
                     className={`flex flex-col items-center justify-center gap-2 pt-2 
              `}
                   >
-                    <Image
+                    <img
                       src={getImageUrl(broker)?.url}
                       alt={broker}
                       height={getImageUrl(broker)?.height}
@@ -339,7 +339,7 @@ const Login = () => {
         </div>
       </div>
       <div className="max-xl:hidden">
-        <Image
+        <img
           className="min-h-screen"
           src="/images/signin-right.png"
           alt=""

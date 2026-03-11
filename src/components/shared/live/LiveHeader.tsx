@@ -21,12 +21,7 @@ const LiveHeader = ({ userMail }) => {
         <a href="/logout">
           <span className="flex flex-row items-center justify-center gap-1 text-black max-md:text-[0.75rem]">
             Logout
-            <Image
-              src={"/svg/logout.svg"}
-              width={20}
-              height={20}
-              alt="logout"
-            />
+            <img src={"/svg/logout.svg"} width={20} height={20} alt="logout" />
           </span>
         </a>
       </div>

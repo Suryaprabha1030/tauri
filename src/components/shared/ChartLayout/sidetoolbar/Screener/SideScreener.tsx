@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const ScreenerButton = () => {
   const screenerOpen: any = useSelector(
-    (state: RootState) => state.common.ScreenerOpen
+    (state: RootState) => state.common.ScreenerOpen,
   );
   const dispatch = useDispatch();
   const handleScreenerInfo = () => {
@@ -24,7 +24,7 @@ const ScreenerButton = () => {
       className={`wrapper relative flex h-[3.5rem] w-[2.5rem] items-center justify-center rounded-lg py-2 max-xl:h-[3rem]  max-sm:h-[2rem] md:max-xl:mr-[2.5rem]`}
     >
       <span className="group flex h-full w-full flex-col items-center justify-center gap-1">
-        <Image
+        <img
           src={screenerOpen ? "/svg/greenScreener.svg" : "/svg/screener.svg"}
           alt=""
           width="100"

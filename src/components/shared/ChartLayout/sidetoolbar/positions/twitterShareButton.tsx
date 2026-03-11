@@ -87,7 +87,7 @@ const TwitterShareButton = ({
         </>
       ) : (
         <>
-          <Image src="/svg/twitter.svg" alt="twitter" width={20} height={20} />
+          <img src="/svg/twitter.svg" alt="twitter" width={20} height={20} />
           Share
         </>
       )}

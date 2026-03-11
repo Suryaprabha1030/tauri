@@ -92,7 +92,7 @@ const WatchListTableRow: React.FC<WatchListRowProps> = ({
   leftWidth,
 }) => {
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const [showPinnedSymbols, setShowPinnedSymbols] =
     useState<any>(pinnedSymbols);
@@ -110,16 +110,16 @@ const WatchListTableRow: React.FC<WatchListRowProps> = ({
         ? pinnedSymbols.slice(0, 1)
         : pinnedSymbolsCount == 2
           ? pinnedSymbols.slice(0, 2)
-          : pinnedSymbols
+          : pinnedSymbols,
     );
   }, [pinnedSymbols, pinnedSymbolsCount]);
 
   const alignxlViewicons =
     holdingsdata?.holdings?.find(
-      (holding: any) => holding?.identifier == symb?.identifier
+      (holding: any) => holding?.identifier == symb?.identifier,
     ) ||
     positionsData?.find(
-      (position: any) => position?.identifier == symb?.identifier
+      (position: any) => position?.identifier == symb?.identifier,
     );
 
   return (
@@ -216,14 +216,14 @@ const WatchListTableRow: React.FC<WatchListRowProps> = ({
                             const isSymbolInData =
                               holdingsdata?.holdings?.some(
                                 (holding: any) =>
-                                  holding.identifier == symb.identifier
+                                  holding.identifier == symb.identifier,
                               ) ||
                               positionsData?.some(
                                 (position: any) =>
-                                  position.identifier == symb.identifier
+                                  position.identifier == symb.identifier,
                               );
                             const pinnedSymb = pinnedSymbols.some(
-                              (pinSymb: any) => pinSymb == symb.identifier
+                              (pinSymb: any) => pinSymb == symb.identifier,
                             );
 
                             if (isSymbolInData && name.length > 12) {
@@ -275,7 +275,7 @@ const WatchListTableRow: React.FC<WatchListRowProps> = ({
                         handleUnpin(
                           selectedWatchlistId,
                           symb.identifier,
-                          pinnedSymbolsCount
+                          pinnedSymbolsCount,
                         );
                       }}
                       className={`group relative flex h-[1.3rem] w-[1.3rem] items-center hover:cursor-pointer hover:rounded hover:bg-gray-300 max-md:hidden ${
@@ -285,7 +285,7 @@ const WatchListTableRow: React.FC<WatchListRowProps> = ({
                           : "hidden"
                       } ${showPinnedSymbols?.includes(symb?.identifier) ? "md:max-xl:flex" : "md:max-xl:hidden"}`}
                     >
-                      <Image
+                      <img
                         src="/svg/unpin.svg"
                         width="12"
                         height="12"

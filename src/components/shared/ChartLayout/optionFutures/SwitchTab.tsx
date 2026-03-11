@@ -53,43 +53,43 @@ const SwitchTab: React.FC<SwitchTabProps> = ({
   checkedOptionData,
 }) => {
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const positionGroup = groupByCategory(positionTableData);
   const dispatch = useDispatch();
   const keywords = extractKeywords(positionGroup);
   const strategyTable = useSelector(
-    (state: RootState) => state.analyzer.setShowStrategyTable
+    (state: RootState) => state.analyzer.setShowStrategyTable,
   );
   const positionTable = useSelector(
-    (state: RootState) => state.analyzer.setShowPositionTable
+    (state: RootState) => state.analyzer.setShowPositionTable,
   );
   const pnlTable = useSelector(
-    (state: RootState) => state.analyzer.setShowPnlTable
+    (state: RootState) => state.analyzer.setShowPnlTable,
   );
   const DraftPositions = useSelector(
-    (state: RootState) => state.analyzer.setShowDraftPositions
+    (state: RootState) => state.analyzer.setShowDraftPositions,
   );
 
   const [isSpinning, setIsSpinning] = useState(false);
 
   const targetValue = strategyTabs.find(
-    (tab) => tab.activeConditionKey && eval(tab.activeConditionKey)
+    (tab) => tab.activeConditionKey && eval(tab.activeConditionKey),
   )?.label;
 
   const [selectedValue, setSelectedValue] = useState(targetValue);
   const PnlPositions = useSelector(
-    (state: RootState) => state.Position.totalCheckedPnl
+    (state: RootState) => state.Position.totalCheckedPnl,
   );
   const [switchValue, setSwitchValue] = useState(false);
   const switchdropdownRef = useRef<any>(null);
   const switchdropdownButtonRef = useRef<any>(null);
   const showTable = useSelector(
-    (state: RootState) => state.optionChain.showTable
+    (state: RootState) => state.optionChain.showTable,
   );
   const reset = useSelector((state: RootState) => state.optionChain.reset);
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
 
   useEffect(() => {
@@ -142,7 +142,7 @@ const SwitchTab: React.FC<SwitchTabProps> = ({
     dispatch(
       optionChainPayload({
         optionChainPayloadData: { ClickedRow: {}, response: {} },
-      })
+      }),
     );
     setIsSpinning(true);
     setTimeout(() => {
@@ -316,7 +316,7 @@ const SwitchTab: React.FC<SwitchTabProps> = ({
             );
           })}
           <span>
-            <Image
+            <img
               src="/svg/DropDowns.svg"
               height={25}
               width={25}
@@ -365,7 +365,7 @@ const SwitchTab: React.FC<SwitchTabProps> = ({
                 event.stopPropagation();
               }}
             >
-              <Image
+              <img
                 src={showlot ? "/svg/toggleIcon.svg" : "/svg/toggleOff.svg"}
                 height={25}
                 width={25}
@@ -388,7 +388,7 @@ const SwitchTab: React.FC<SwitchTabProps> = ({
               }}
             >
               Prices
-              <Image
+              <img
                 src="/svg/reset.svg"
                 height={10}
                 width={10}

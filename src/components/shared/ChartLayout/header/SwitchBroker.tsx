@@ -80,13 +80,13 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
   const [brokerClientInfos, setBrokerClientInfos] = useState<any[]>([]);
   const [brokerFloating, setBrokerFloating] = useState(false);
   const currentBrokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
   const currentBrokerClientCode = useSelector(
-    (state: RootState) => state.Position.ClientCode
+    (state: RootState) => state.Position.ClientCode,
   );
   const showSwitchbroker = useSelector(
-    (state: RootState) => state.common.showSwitchbroker
+    (state: RootState) => state.common.showSwitchbroker,
   );
   const dispatch = useDispatch();
   const router = useRouter();
@@ -107,19 +107,19 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
       // On initial call: fetch profile only for current brokerCode
       if (!fetchAllProfiles) {
         const currentMapping = userMappings.find(
-          (m: any) => m.broker_code === brokerCode
+          (m: any) => m.broker_code === brokerCode,
         );
 
         if (currentMapping) {
           try {
             const profileRes =
               await brokerapi.fetchMyBrokerProfileV1UsersMeBrokersBrokerCodeProfileGet(
-                brokerCode
+                brokerCode,
               );
 
             if (profileRes?.data?.client_code) {
               const brokerMeta = brokersMeta.find(
-                (b: any) => b.id === currentMapping.broker_id
+                (b: any) => b.id === currentMapping.broker_id,
               );
 
               const brokerInfo = {
@@ -135,7 +135,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
                 getProfileDetail({
                   ClientCode: brokerInfo.clientCode,
                   BrokerName: brokerInfo.brokerName,
-                })
+                }),
               );
               dispatch(setSettingsData({ settingsData: profileRes?.data }));
             }
@@ -157,12 +157,12 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
             try {
               const profileRes =
                 await brokerapi.fetchMyBrokerProfileV1UsersMeBrokersBrokerCodeProfileGet(
-                  mapping.broker_code
+                  mapping.broker_code,
                 );
 
               if (profileRes?.data?.client_code) {
                 const brokerMeta = brokersMeta.find(
-                  (b: any) => b.id === mapping.broker_id
+                  (b: any) => b.id === mapping.broker_id,
                 );
                 return {
                   brokerCode: mapping.broker_code,
@@ -180,7 +180,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
               }
               return null;
             }
-          }
+          },
         );
 
         const brokerClientData = (
@@ -198,12 +198,12 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
         } else {
           // Match brokerFromHost with brokerName (case insensitive match)
           filteredBrokerClientData = brokerClientData?.filter((broker) =>
-            broker?.brokerName?.toLowerCase()?.includes(brokerFromHost)
+            broker?.brokerName?.toLowerCase()?.includes(brokerFromHost),
           );
           if (filteredBrokerClientData.length === 0) {
             // Check if brokerFromHost matches any brokerName at all
             const hasMatch = brokerClientData?.some((broker) =>
-              broker?.brokerName?.toLowerCase()?.includes(brokerFromHost)
+              broker?.brokerName?.toLowerCase()?.includes(brokerFromHost),
             );
 
             if (!hasMatch) {
@@ -211,7 +211,8 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
               filteredBrokerClientData = brokerClientData;
             } else {
               const brokerinHost = brokerClientData?.find(
-                (broker) => broker?.brokerName?.toLowerCase() === brokerFromHost
+                (broker) =>
+                  broker?.brokerName?.toLowerCase() === brokerFromHost,
               );
               if (brokerinHost) {
                 filteredBrokerClientData = [brokerinHost];
@@ -252,7 +253,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
         dispatch(
           optionChainPayload({
             optionChainPayloadData: { ClickedRow: {}, response: {} },
-          })
+          }),
         );
         dispatch(getTempInputValues({}));
         setEntryPriceData({});
@@ -271,13 +272,13 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
       getIndexName({
         indexName: "",
         expiryDate: "",
-      })
+      }),
     );
     dispatch(
       getProfileDetail({
         ClientCode: "",
         BrokerName: "",
-      })
+      }),
     );
     dispatch(setStockInfoOpen(false));
   };
@@ -295,7 +296,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
         positions: [],
         positionPnl: undefined,
         positionpnlpercent: undefined,
-      })
+      }),
     );
     dispatch(setScreenerOpen(false));
     if (path === `${config.brokersListUrl}/${brokerCode}/psb`) {
@@ -315,7 +316,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
         dispatch(
           optionChainPayload({
             optionChainPayloadData: { ClickedRow: {}, response: {} },
-          })
+          }),
         );
         dispatch(getTempInputValues({}));
         setEntryPriceData({});
@@ -330,7 +331,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
           getIndexName({
             indexName: "",
             expiryDate: "",
-          })
+          }),
         );
       }, 100);
       dispatch(setSelectedStrategy({ setselectedStrategy: null }));
@@ -372,7 +373,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
       <span className="flex flex-row items-center gap-0.5 font-semibold max-xl:text-[0.9rem] xl:text-[0.85rem]">
         {currentBrokerName}
         {/* {showSwitchbroker && ( */}
-        <Image
+        <img
           src={"/svg/arrowFall.svg"}
           className="w-[1.3rem] cursor-pointer max-xl:pt-[0.1rem]"
           height={20}
@@ -396,7 +397,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
             className="sticky top-0 flex w-full cursor-pointer flex-row items-center bg-z-green-500 text-center max-xl:justify-start max-md:gap-[0.2rem] max-md:px-1 max-md:py-1 md:max-xl:px-2 md:max-xl:py-2 md:max-lg:gap-[0.4rem] lg:max-xl:gap-[0.5rem] xl:justify-between xl:px-6 xl:py-2"
             onClick={addbroker}
           >
-            <Image
+            <img
               src="/svg/whiteAdd.svg"
               className="max-sm:h-[0.7rem] max-sm:w-[0.7rem] sm:max-md:h-[0.85rem] sm:max-md:w-[0.85rem] md:max-lg:h-[0.9rem] md:max-lg:w-[0.9rem] lg:max-xl:h-[0.95rem] lg:max-xl:w-[0.95rem] xl:h-[1rem] xl:w-[1rem]"
               width="20"

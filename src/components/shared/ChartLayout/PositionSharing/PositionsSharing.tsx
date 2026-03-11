@@ -34,10 +34,10 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
   setHasFetchedCalenderData,
 }) => {
   const currentBrokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
   const currentBrokerClientCode = useSelector(
-    (state: RootState) => state.Position.ClientCode
+    (state: RootState) => state.Position.ClientCode,
   );
 
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
@@ -67,7 +67,7 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
     try {
       const response: any =
         await fetchApi.fetchMyBrokerPositionsV1UsersMeBrokersBrokerCodePositionsGet(
-          brokerCode
+          brokerCode,
         );
       const Positions = response?.data?.positions;
       dispatch(
@@ -75,13 +75,13 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
           positions: Positions,
           positionPnl: response?.data?.total_pnl,
           positionpnlpercent: response?.data?.total_pnl_percent,
-        })
+        }),
       );
       dispatch(
         setLastUpdatedPositions({
           data: response?.data?.positions,
           time: Date.now(),
-        })
+        }),
       );
 
       dispatch(setTotalPositionsPnl(response?.data?.total_pnl));
@@ -91,7 +91,7 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
           addSymbol({
             symbol: item?.identifier,
             //  token: item?.token
-          })
+          }),
         );
 
         dispatch(updateSymbolPnl({ symbol: item?.identifier, pnl: item?.pnl }));
@@ -119,7 +119,7 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
           brokerCode,
           "twitter",
           currentBrokerClientCode,
-          currentBrokerName
+          currentBrokerName,
         );
       const Positions = response?.data?.data;
       dispatch(
@@ -127,7 +127,7 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
           positions: Positions,
           positionPnl: response?.data?.total_pnl,
           positionpnlpercent: null,
-        })
+        }),
       );
       dispatch(setTotalPositionsPnl(response?.data?.total_pnl));
 
@@ -174,7 +174,7 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
         event.stopPropagation();
       }}
     >
-      <Image
+      <img
         src="/svg/share.svg"
         height={15}
         width={15}

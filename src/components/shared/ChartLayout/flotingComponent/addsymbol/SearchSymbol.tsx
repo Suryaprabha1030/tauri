@@ -44,7 +44,7 @@ const SearchSymbol: React.FC<SearchSymbolProps> = ({
 
   return (
     <div className="flex items-center justify-evenly max-xl:border-b-[0.05rem]  max-xl:border-solid max-xl:border-z-br-gray max-sm:w-full max-sm:px-3 sm:max-md:px-1.5 md:max-xl:w-full md:max-xl:py-[0.5rem]">
-      <Image
+      <img
         src="/svg/searchIcon.svg"
         className="h-[1.5rem] w-[1.5rem] max-sm:h-[1rem] max-sm:w-[1rem] sm:max-lg:h-[1.2rem] sm:max-lg:w-[1.2rem]"
         width="20"

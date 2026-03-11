@@ -23,10 +23,10 @@ const ExpirySlider: React.FC<SliderWithExpiryProps> = ({
   const [isSpinning, setIsSpinning] = useState(false);
 
   const showPayoffchart = useSelector(
-    (state: RootState) => state.analyzer.ShowPayOffChart
+    (state: RootState) => state.analyzer.ShowPayOffChart,
   );
   const expiryDate = useSelector(
-    (state: RootState) => state.StrategyChart.minExpiryDate
+    (state: RootState) => state.StrategyChart.minExpiryDate,
   );
   const dispatch = useDispatch();
   useEffect(() => {
@@ -175,7 +175,7 @@ const ExpirySlider: React.FC<SliderWithExpiryProps> = ({
             onClick={handleReset}
             className="flex h-5 w-[1.5rem] cursor-pointer flex-row items-center justify-center gap-1 px-1 py-1 md:max-xl:w-[1.8rem] "
           >
-            <Image
+            <img
               src="/svg/reset.svg"
               alt=""
               width={15}

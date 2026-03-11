@@ -10,7 +10,7 @@ interface FiiDiiSummaryProps {
 
 const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
   const fiiDiiHistoryData = useSelector(
-    (state: RootState) => state.FiiDiiData.datewiseSummaryList
+    (state: RootState) => state.FiiDiiData.datewiseSummaryList,
   );
   const [tableData, setTableData] = useState({});
 
@@ -120,13 +120,16 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
 
   return (
     <div className="mt-5 flex h-[100%] w-full flex-col items-start justify-start gap-2 2xl:pl-10">
-      <div ref={dropdownRef} className="relative max-sm:w-[95%] max-2xl:w-[90%] 2xl:w-[95%]  max-2xl:mx-auto">
+      <div
+        ref={dropdownRef}
+        className="relative max-sm:w-[95%] max-2xl:w-[90%] 2xl:w-[95%]  max-2xl:mx-auto"
+      >
         <button
           onClick={() => setIsOpen(!isOpen)}
           className=" flex flex-row gap-2 rounded-md border border-gray-300 bg-white px-1 py-1 text-left text-[0.75rem]   shadow-sm"
         >
           {date?.toString()?.replace(/-/g, " ")}
-          <Image src={"/svg/downChevron.svg"} alt="" width={16} height={16} />
+          <img src={"/svg/downChevron.svg"} alt="" width={16} height={16} />
         </button>
 
         {isOpen && (
@@ -176,7 +179,7 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
                       const key = `${participant}-${segmentKey}`;
                       const sentiment = getSentiment(
                         data?.net_oi,
-                        data?.change
+                        data?.change,
                       );
 
                       return (
@@ -201,7 +204,7 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
                                 {formatTitle(segmentKey)}
                                 {isIndexOptions && (
                                   <span className="inline text-xs text-gray-500">
-                                    <Image
+                                    <img
                                       src={
                                         expandedSegments[key]
                                           ? "/svg/upChevron.svg"
@@ -234,7 +237,7 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
 
                               const optionSentiment = getSentiment(
                                 optionData.net_oi,
-                                optionData.change
+                                optionData.change,
                               );
 
                               return (
@@ -262,9 +265,9 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
                           {(isFirstSegmentRow = false)}
                         </React.Fragment>
                       );
-                    }
+                    },
                   );
-                }
+                },
               )}
           </tbody>
         </table>

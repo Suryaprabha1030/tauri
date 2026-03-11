@@ -8,10 +8,10 @@ import Image from "next/image";
 
 const TabNavigation: React.FC = () => {
   const toggleState: any = useSelector(
-    (state: RootState) => state.common.CandleAreaToggle
+    (state: RootState) => state.common.CandleAreaToggle,
   );
   const isSidetabCollapsed: any = useSelector(
-    (state: RootState) => state.common.isSidetabCollapsed
+    (state: RootState) => state.common.isSidetabCollapsed,
   );
   const [check, setChecked] = useState(false);
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ const TabNavigation: React.FC = () => {
         </div>
       </div>
       {/* Only used within max-lg */}
-      <Image
+      <img
         src="/svg/ArrowRightBlack.svg"
         height="15"
         width="15"

@@ -37,7 +37,7 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
     const pathName = usePathname();
     const [NoOiData, setNoOiData] = useState(true);
     const toggleState = useSelector(
-      (state: RootState) => state.analyzer.toggleState
+      (state: RootState) => state.analyzer.toggleState,
     );
     const [callData, setCallData] = useState<any[]>([]);
     const [putData, setPutData] = useState<any[]>([]);
@@ -57,7 +57,7 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
         const deltaX = e.clientX - dragStartX!;
         const newLeftWidth = Math.min(
           MAX_WIDTH,
-          Math.max(MIN_WIDTH, leftWidth - (deltaX / window.innerWidth) * 100)
+          Math.max(MIN_WIDTH, leftWidth - (deltaX / window.innerWidth) * 100),
         );
         setLeftWidth(newLeftWidth);
         setDragStartX(e.clientX);
@@ -203,10 +203,10 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
         const left_width1: any = document.getElementById("left-width1");
         // Define the media queries for different screen sizes
         const smToLg = window.matchMedia(
-          "(min-width: 300px) and (max-width: 1199px)"
+          "(min-width: 300px) and (max-width: 1199px)",
         );
         const xlTo2xl = window.matchMedia(
-          "(min-width: 1200px) and (max-width: 1536px)"
+          "(min-width: 1200px) and (max-width: 1536px)",
         );
         // Function to remove all inline styles
         const removeAllInlineStyles = () => {
@@ -308,7 +308,7 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
                 event.stopPropagation();
               }}
             >
-              <Image
+              <img
                 src="/svg/removeSymbol.svg"
                 className="relative h-[1.5rem] w-[1.5rem]"
                 width="20"
@@ -370,7 +370,7 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
                       onMouseEnter={() =>
                         handleMouseEnter(
                           "NetBreadth=Advances-Declines",
-                          "netbreadth"
+                          "netbreadth",
                         )
                       }
                       onMouseLeave={handleMouseLeave}
@@ -440,7 +440,7 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
         </div>
       </div>
     );
-  }
+  },
 );
 HeatMap.displayName = "HeatMap";
 export default HeatMap;

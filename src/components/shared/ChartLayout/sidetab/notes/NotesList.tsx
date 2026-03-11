@@ -41,7 +41,7 @@ const NoteList: React.FC<NoteListProps> = ({
     notesApi
       .getNotesByIdentifierV1UsersMeNotesBySymbolIdentifierGet(
         identifier,
-        pageNum
+        pageNum,
       )
       .then((res: any) => {
         const notes = res?.data;
@@ -83,7 +83,7 @@ const NoteList: React.FC<NoteListProps> = ({
       .deleteItemV1UsersMeNotesIdDelete(id)
       .then((res: any) => {
         setSymbolNotesList((prevNotes: any) =>
-          prevNotes.filter((note: any) => note.id !== id)
+          prevNotes.filter((note: any) => note.id !== id),
         );
         setNoteToEdit(null);
       })
@@ -164,7 +164,7 @@ const NoteList: React.FC<NoteListProps> = ({
                 setNoteToEdit(null);
               }}
             >
-              <Image
+              <img
                 src="/svg/notes.svg"
                 className="cursor-pointer"
                 height={15}

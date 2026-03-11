@@ -18,7 +18,7 @@ const OiAlertBox: React.FC<OiAlertBoxProps> = React.memo(
   ({ showWarningOiAlert, setShowWarningOiAlert }) => {
     const router = useRouter();
     const isMarketHoliday = useSelector(
-      (state: RootState) => state.MarketBasis.isMarketHoliday
+      (state: RootState) => state.MarketBasis.isMarketHoliday,
     );
     // ✅ Function: GET API (runs every 5 minutes)
     const getbanner = async () => {
@@ -57,7 +57,7 @@ const OiAlertBox: React.FC<OiAlertBoxProps> = React.memo(
         () => {
           fetchBanner();
         },
-        60 * 60 * 1000
+        60 * 60 * 1000,
       );
 
       return () => clearInterval(interval);
@@ -88,7 +88,7 @@ const OiAlertBox: React.FC<OiAlertBoxProps> = React.memo(
         {/* Left: Icon + Text */}
         <p className="flex  text-[0.85rem] leading-snug xl:text-xs">
           <span className="mr-2 flex-shrink-0">
-            <Image
+            <img
               src="/svg/Warning.svg"
               width={16}
               height={16}
@@ -107,16 +107,11 @@ const OiAlertBox: React.FC<OiAlertBoxProps> = React.memo(
           onClick={handleClose}
           className="absolute right-2 top-2 text-gray-500 hover:opacity-80 sm:static sm:ml-3  sm:max-xl:w-[2rem]"
         >
-          <Image
-            src="/svg/removeSymbol.svg"
-            width={20}
-            height={20}
-            alt="Close"
-          />
+          <img src="/svg/removeSymbol.svg" width={20} height={20} alt="Close" />
         </button>
       </div>
     );
-  }
+  },
 );
 
 OiAlertBox.displayName = "OiAlertBox";

@@ -33,12 +33,7 @@ const TradingViewPopup = ({
               }}
               className="absolute right-2 top-2 rounded  pb-2 "
             >
-              <Image
-                src="/svg/removeSymbol.svg"
-                width={15}
-                height={15}
-                alt=""
-              />
+              <img src="/svg/removeSymbol.svg" width={15} height={15} alt="" />
             </button>
 
             {/* TradingViewChart inside modal */}

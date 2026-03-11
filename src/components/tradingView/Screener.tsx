@@ -22,7 +22,7 @@ const TradingViewScreener = () => {
             className="flex h-[90%] w-full  items-center justify-center bg-white "
             ref={containerRef}
           >
-            <Image src="/svg/comingSoon.svg" width={300} height={300} alt="" />
+            <img src="/svg/comingSoon.svg" width={300} height={300} alt="" />
           </div>
         </>
       )}
