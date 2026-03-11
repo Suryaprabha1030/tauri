@@ -9,7 +9,7 @@ import { AuthContext } from "@/context/authContextProvider";
 import ProfileSkeleton from "./profileSkeleton";
 import { useRouter } from "next/navigation";
 import zApi from "@/lib/api/zApi";
-import Image from "next/image";
+
 import ToolTip from "@/components/shared/toolTip";
 import Tooltip from "@/components/shared/toolTip";
 const Profile = () => {

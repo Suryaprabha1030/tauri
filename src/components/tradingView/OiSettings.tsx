@@ -6,7 +6,7 @@ import {
 } from "@/lib/redux/slices/CommonSlice";
 import { RootState } from "@/lib/redux/Store";
 import { formatExpiry } from "@/lib/util/DateUtil";
-import Image from "next/image";
+
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { tvWidget } from "./chartSetup";

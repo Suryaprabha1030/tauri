@@ -1,7 +1,7 @@
 import { UserWatchlistRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";

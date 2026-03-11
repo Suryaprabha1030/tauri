@@ -18,7 +18,7 @@ import {
   showPositionTable,
   showStrategyTable,
 } from "@/lib/redux/slices/AnalyzerSlice";
-import Image from "next/image";
+
 import { StrategiesSandboxRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { toast } from "react-toastify";

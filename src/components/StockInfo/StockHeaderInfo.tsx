@@ -1,6 +1,6 @@
 import { formatNumber } from "@/lib/util/DraftUtil";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image"; // Or use <img> if not on Next.js
+// Or use <img> if not on Next.js
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 

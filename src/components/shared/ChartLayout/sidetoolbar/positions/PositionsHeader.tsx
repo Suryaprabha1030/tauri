@@ -18,7 +18,7 @@ import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarComm
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { useRouter } from "next/navigation";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import {
   setIdentifiersSet,
   updateSymbolPnl,
@@ -65,7 +65,7 @@ const PositionsHeader: React.FC<PositionsHeaderProps> = ({
   setHasFetchedCalenderData,
 }) => {
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const openPositionsLength =
     positionsdata &&
@@ -73,13 +73,13 @@ const PositionsHeader: React.FC<PositionsHeaderProps> = ({
     positionsdata?.filter(
       (position) =>
         position?.transaction_type === "SHORT" ||
-        position?.transaction_type === "LONG"
+        position?.transaction_type === "LONG",
     )?.length;
 
   const userEmail = useSelector((state: RootState) => state.common.userInfo);
   const isPrivilegedUser = config.userEmail.includes(userEmail?.email);
   const StrategiesPnl = useSelector(
-    (state: RootState) => state.SimulationDemo.strategiesPnlDemo
+    (state: RootState) => state.SimulationDemo.strategiesPnlDemo,
   );
   const dispatch = useDispatch();
   const router = useRouter();
@@ -91,7 +91,7 @@ const PositionsHeader: React.FC<PositionsHeaderProps> = ({
     { label: "Arbitrage", value: "ARBITRAGE" },
   ];
   const selectedPositionType = useSelector(
-    (state: RootState) => state.SimulationDemo.positionType
+    (state: RootState) => state.SimulationDemo.positionType,
   );
 
   const handlerefresh = () => {
@@ -107,19 +107,19 @@ const PositionsHeader: React.FC<PositionsHeaderProps> = ({
             positions: response?.data?.positions?.positions,
             positionPnl: response?.data?.positions?.total_pnl,
             positionpnlpercent: response?.data?.positions?.total_pnl_percent,
-          })
+          }),
         );
         dispatch(
           setLastUpdatedPositions({
             data: response?.data?.positions,
             time: Date.now(),
-          })
+          }),
         );
         dispatch(
           setLastUpdatedHoldings({
             data: response?.data?.holdings,
             time: Date.now(),
-          })
+          }),
         );
         const Positions = response?.data?.positions?.positions;
         Positions?.forEach((item: any) => {
@@ -130,13 +130,13 @@ const PositionsHeader: React.FC<PositionsHeaderProps> = ({
             addSymbol({
               symbol: item?.identifier,
               // token: item?.token,
-            })
+            }),
           );
           dispatch(
             updateSymbolPnl({
               symbol: item?.identifier,
               pnl: item?.pnl,
-            })
+            }),
           );
         });
         dispatch(setFundsData({ fundsData: response?.data?.funds }));

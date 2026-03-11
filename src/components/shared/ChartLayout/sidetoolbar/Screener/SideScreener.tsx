@@ -5,7 +5,7 @@ import {
 } from "@/lib/redux/slices/CommonSlice";
 import { RootState } from "@/lib/redux/Store";
 import { ViewType } from "@/lib/util/toggleButtonName/toggleButtonNames";
-import Image from "next/image";
+
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 

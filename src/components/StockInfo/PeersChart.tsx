@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { useState } from "react";
-import Image from "next/image";
+
 import PeersChartOptions from "./StockChartOptions/PeersChartOptions";
 
 const tooltipValues = {

@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import ErrorAlert from "@/components/shared/ErrorAlert";
 import zApi from "@/lib/api/zApi";
 import { baseConfig } from "@/lib/api/baseConfiguration";
-import Image from "next/image";
+
 import SigninWithGoogle from "./SignInWithGoogle";
 import LoginWithGoogle from "../login/LoginWithGoogle";
 

@@ -9,7 +9,7 @@ import { RootState } from "@/lib/redux/Store";
 import { StrategiesSandboxRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import StrategyDetailsTable from "./StrategyDetailTable";
-import Image from "next/image";
+
 import { CalculatePnl, formatNumber } from "@/lib/util/DraftUtil";
 import PaginationLoading from "@/components/shared/commonUtil/PaginationLoading";
 import { toast } from "react-toastify";

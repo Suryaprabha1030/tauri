@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image"; // Assuming you're using Next.js
+// Assuming you're using Next.js
 import RefreshButton from "../refresh";
 interface OrdersFilterProps {
   ordersData: any;

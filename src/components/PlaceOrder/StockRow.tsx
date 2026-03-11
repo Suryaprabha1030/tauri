@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { formatExpiryDate } from "@/lib/util/DateUtil"; // Import necessary date formatting
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import { extractIndexName } from "@/lib/util/sideToolBar/orders/OrderUtil";
 import { validateNumericInput } from "@/lib/util/formatUtil";
 import DisplayHandleSellButton from "../shared/ChartLayout/buySellButton/DisplayHandleSellButton";

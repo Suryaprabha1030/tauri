@@ -2,7 +2,7 @@ import { UserWatchlistRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 interface ListOfGroupsProps {

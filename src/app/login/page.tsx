@@ -4,7 +4,7 @@ import { useState, useContext, use, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { BrokersRouterApi, UserApi, UserBrokerRouterApi } from "@/lib/api/base";
-import Image from "next/image";
+
 import BrokerLoginPopup from "@/components/LoginPopup/BrokerLoginPopup";
 import BrokerLoginContent from "@/components/LoginPopup/BrokerLoginContent";
 import BrokerIntegrationPage from "@/components/BrokerLoginContent/FyersLoginContent";

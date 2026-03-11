@@ -1,4 +1,3 @@
-import Image from "next/image";
 const TradingStyleStep = (props: {
   saveTradingStyle: (style: number) => void;
 }) => {

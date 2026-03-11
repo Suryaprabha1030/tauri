@@ -1,5 +1,5 @@
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { formatNumber } from "@/lib/util/DraftUtil";

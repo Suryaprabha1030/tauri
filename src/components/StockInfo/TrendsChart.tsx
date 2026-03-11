@@ -1,7 +1,7 @@
 import React, { act, useEffect, useRef, useState } from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import Image from "next/image";
+
 import { useDispatch } from "react-redux";
 import { setSelectedChart } from "@/lib/redux/slices/CommonSlice";
 import NoData from "./NoData";

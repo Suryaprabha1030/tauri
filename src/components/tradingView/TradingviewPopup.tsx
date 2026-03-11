@@ -1,5 +1,5 @@
 import TradingViewChart from "./TradingViewChart";
-import Image from "next/image";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import { setShowTVpopup } from "@/lib/redux/slices/CommonSlice";

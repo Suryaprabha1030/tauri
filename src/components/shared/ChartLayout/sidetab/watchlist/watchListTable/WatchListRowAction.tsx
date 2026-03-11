@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { Dispatch, SetStateAction } from "react";
 import DisplayHandleSellButton from "../../../buySellButton/DisplayHandleSellButton";
 import AddToWatchlist from "../AddToWatchlist";

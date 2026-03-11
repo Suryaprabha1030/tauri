@@ -5,7 +5,6 @@ import { symbolAddedToWatchlist } from "@/lib/redux/slices/ChartsSlice";
 import { addSymbol, setShouldRefresh } from "@/lib/redux/slices/StrategySlice";
 import { removeSymbolarray } from "@/lib/util/watchlist/handlingServerData";
 
-import Image from "next/image";
 import React, {
   Dispatch,
   SetStateAction,
@@ -40,10 +39,10 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
   const [searchSymbol, setSearchSymbol] = useState("Nifty");
 
   const limitSetAddSymbol = useSelector(
-    (state: RootState) => state.strategy.limitAddSymbol
+    (state: RootState) => state.strategy.limitAddSymbol,
   );
   const shouldRefreshRedux = useSelector(
-    (state: RootState) => state.strategy.shouldRefresh
+    (state: RootState) => state.strategy.shouldRefresh,
   );
   const [grpSymbols, setGrpSymbols] = useState([]);
   const [selectedFilter1, setSelectedFilter1] = useState(() => {
@@ -56,7 +55,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
     return savedFilter2 ? savedFilter2 : "none"; // Default to 'none' if no value is found
   });
   const [selectedExchange, setSelectedExchange] = useState<"NSE" | "BSE">(
-    "NSE"
+    "NSE",
   );
   const router = useRouter();
   const searchRef = useRef<HTMLInputElement | null>(null);
@@ -83,7 +82,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
             exchange: selectedExchange,
             search_symbol: searchSymbol,
             search_symbol_type: searchType,
-          }
+          },
         );
       setDisplaySymb(res.data);
     } catch (err: any) {
@@ -98,7 +97,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
 
   const searchInstruments = (text: string) => {
     const result = grpSymbols.filter((item: any) =>
-      item.symbol.toUpperCase().includes(text.toUpperCase())
+      item.symbol.toUpperCase().includes(text.toUpperCase()),
     );
 
     setDisplaySymb(result);
@@ -127,7 +126,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
       const res =
         await addwatchlistApi.addSymbolsInWatchlistsV1UsersMeWatchlistsWatchlistIdAddSymbolsPost(
           selectedWatchlistId,
-          [symbol]
+          [symbol],
         );
       dispatch(setShouldRefresh(!shouldRefreshRedux));
 
@@ -136,8 +135,8 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
           addSymbol({
             symbol: symbol?.identifier,
             // token: symbol.token
-          })
-        )
+          }),
+        ),
       ); //store the symbols and token in redux
     } catch (err: any) {
       if (err?.response && err?.response?.status == 401) {
@@ -152,7 +151,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
 
   const handleImageClickEvent = (
     symbol: string,
-    e: React.MouseEvent<HTMLImageElement>
+    e: React.MouseEvent<HTMLImageElement>,
   ) => {
     e.currentTarget.blur();
     if (symbols.some((item: any) => item.identifier === symbol)) {
@@ -161,7 +160,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
         selectedWatchlistId,
         dispatch,
         shouldRefreshRedux,
-        router
+        router,
       );
     } else {
       addWatchList(symbol);

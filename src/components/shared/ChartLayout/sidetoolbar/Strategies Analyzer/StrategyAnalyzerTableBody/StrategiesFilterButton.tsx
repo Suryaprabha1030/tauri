@@ -1,5 +1,5 @@
 import { getImageSrc } from "@/lib/util/analyzer/iconUtil";
-import Image from "next/image";
+
 import { Dispatch, SetStateAction } from "react";
 
 interface FilterButtonProps {

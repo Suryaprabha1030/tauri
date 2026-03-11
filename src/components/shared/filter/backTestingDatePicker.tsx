@@ -2,7 +2,7 @@
 import TimeSelect from "./timeSelect";
 import DateRange from "./selecDateRange";
 import SelectIndice from "./selectIndice";
-import Image from "next/image";
+
 import { BackTestingInput, StopLossInput } from "@/lib/types";
 import { useState } from "react";
 import StopLoss from "./stopLoss";
@@ -50,34 +50,31 @@ const BackTestingDatePicker = (props: {
   return (
     <div className="flex w-full  flex-col gap-3  ">
       <div className="flex w-full  max-sm:flex-col sm:flex-col xl:flex-row items-center justify-center gap-4 ">
-       
-       <div className="flex flex-row max-sm:gap-[0.4rem] gap-4 ">
-      
-        <SelectIndice
-          updateIndex={(input: string) =>
-            setData((prevData) => ({
-              ...prevData,
-              indexName: input,
-            }))
-          }
-        />
-        
-        <div className="flex flex-row max-sm:w-[10rem] sm:w-[10.6rem] md:w-[12rem] xl:w-[11rem] 2xl:w-[13rem] xl:mt-[0.3rem]">
-          <DateRange
-            updateDate={(startDate: string, endDate: string) =>
+        <div className="flex flex-row max-sm:gap-[0.4rem] gap-4 ">
+          <SelectIndice
+            updateIndex={(input: string) =>
               setData((prevData) => ({
                 ...prevData,
-                startDate,
-                endDate,
+                indexName: input,
               }))
             }
           />
-          
+
+          <div className="flex flex-row max-sm:w-[10rem] sm:w-[10.6rem] md:w-[12rem] xl:w-[11rem] 2xl:w-[13rem] xl:mt-[0.3rem]">
+            <DateRange
+              updateDate={(startDate: string, endDate: string) =>
+                setData((prevData) => ({
+                  ...prevData,
+                  startDate,
+                  endDate,
+                }))
+              }
+            />
           </div>
-        <div className="flex flex-row max-sm:text-[0.62rem] sm:text-[0.8rem] md:text-[0.9rem] xl:text-[0.8rem]  2xl:text-sm  items-center gap-2">
-          <SelectDays updateSelectedDays={updateSelectedDays} />
+          <div className="flex flex-row max-sm:text-[0.62rem] sm:text-[0.8rem] md:text-[0.9rem] xl:text-[0.8rem]  2xl:text-sm  items-center gap-2">
+            <SelectDays updateSelectedDays={updateSelectedDays} />
+          </div>
         </div>
-        </div> 
         <div className="flex flex-row items-center gap-2 max-sm:text-[0.62rem] sm:text-[0.8rem]  md:text-[0.9rem]  xl:text-[0.75rem]  2xl:text-sm font-medium">
           <label>Entry Time</label>
           <TimeSelect
@@ -89,7 +86,7 @@ const BackTestingDatePicker = (props: {
               }))
             }
           />
-        </div> 
+        </div>
         <div className="flex flex-row items-center gap-2 max-sm:text-[0.62rem] sm:text-[0.8rem]  md:text-[0.9rem]  xl:text-[0.75rem]  2xl:text-sm font-medium">
           <label>Exit Time</label>
           <TimeSelect
@@ -103,7 +100,7 @@ const BackTestingDatePicker = (props: {
           />
         </div>
       </div>
-      
+
       <div className="flex w-full flex-row items-center justify-center max-sm:gap-[0.4rem] gap-4">
         <div className="flex flex-row items-center max-sm:gap-[0.25rem] gap-2">
           <label className="max-sm:text-[0.62rem] sm:text-[0.8rem]  md:text-[0.9rem]  xl:text-[0.75rem]  2xl:text-sm font-medium text-gray-900">

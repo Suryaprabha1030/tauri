@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import domtoimage from "dom-to-image";
 import Logo from "@/components/shared/logo/logo";
 import { formatNumber } from "@/lib/util/DraftUtil";
-import Image from "next/image";
+
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import CryptoJS from "crypto-js";

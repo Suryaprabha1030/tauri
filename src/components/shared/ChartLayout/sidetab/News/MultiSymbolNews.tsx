@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+
 import { NewsRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import NewsBox from "../../sidetoolbar/news/NewsBox";
@@ -83,7 +83,7 @@ const MultiSymbolNews: React.FC<MultiSymbolNewsProps> = ({
               const maxSentiment = Math.max(
                 overall_sentiment_counts.positive,
                 overall_sentiment_counts.neutral,
-                overall_sentiment_counts.negative
+                overall_sentiment_counts.negative,
               );
               const sentiment =
                 maxSentiment === overall_sentiment_counts.positive
@@ -128,7 +128,7 @@ const MultiSymbolNews: React.FC<MultiSymbolNewsProps> = ({
         () => {
           fetchNews();
         },
-        15 * 60 * 1000
+        15 * 60 * 1000,
       );
 
       // Clean up the interval on unmount
@@ -152,7 +152,7 @@ const MultiSymbolNews: React.FC<MultiSymbolNewsProps> = ({
 
   const currentSymbols = newsData.slice(
     currentPage * symbolsPerPage,
-    (currentPage + 1) * symbolsPerPage
+    (currentPage + 1) * symbolsPerPage,
   );
 
   const handleNext = () => {
@@ -230,7 +230,7 @@ const MultiSymbolNews: React.FC<MultiSymbolNewsProps> = ({
                     >
                       <h1
                         className={`cursor-pointer py-1 text-center text-[0.75rem] font-medium ${getColorBasedOnSentiment(
-                          sentimentInfo.sentiment
+                          sentimentInfo.sentiment,
                         )}`}
                       >
                         {apiSymbol}

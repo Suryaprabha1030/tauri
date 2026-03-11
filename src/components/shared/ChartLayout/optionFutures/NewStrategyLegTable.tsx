@@ -33,7 +33,7 @@ import {
   getMultiplier,
   getTempInputValues,
 } from "@/lib/redux/slices/OptionChainSlice";
-import Image from "next/image";
+
 import { mergePositionsAndStrategy } from "./optionFuturesUtil/legUtil";
 
 interface OptionData {

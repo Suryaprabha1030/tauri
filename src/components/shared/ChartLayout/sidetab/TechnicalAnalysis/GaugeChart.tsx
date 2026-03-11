@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 import getGaugeChartOptions from "./GaugechartOptions";
-import Image from "next/image";
+
 import dynamic from "next/dynamic";
 
 interface SummaryData {

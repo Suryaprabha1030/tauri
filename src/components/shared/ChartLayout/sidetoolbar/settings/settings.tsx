@@ -7,7 +7,7 @@ import SettingTable from "./SettingTable";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import PWAInstallPrompt from "@/components/ProgressiveWebApp/PwaInstallPrompt";
 import usePWAInstallPrompt from "@/components/ProgressiveWebApp/usePWAInstallPromt";
-import Image from "next/image";
+
 import { useTawk } from "@/context/TawkProvider";
 
 interface SettingsProps {

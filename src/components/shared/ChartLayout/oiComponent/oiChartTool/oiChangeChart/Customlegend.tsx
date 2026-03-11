@@ -1,5 +1,5 @@
 // components/CustomLegend.js
-import Image from "next/image";
+
 import React from "react";
 
 const CustomLegend = () => {

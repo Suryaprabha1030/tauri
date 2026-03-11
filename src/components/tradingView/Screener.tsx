@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import config from "@/lib/config";
 import TabNavigation from "../StockInfo/TabNavigation";
-import Image from "next/image";
 
 const TradingViewScreener = () => {
   const containerRef = useRef<HTMLDivElement>(null);

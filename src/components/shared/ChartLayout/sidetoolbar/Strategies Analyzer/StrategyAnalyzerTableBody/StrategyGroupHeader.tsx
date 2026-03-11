@@ -1,6 +1,6 @@
 // GroupHeader.tsx
 import React from "react";
-import Image from "next/image";
+
 import { getImageSrc } from "@/lib/util/analyzer/iconUtil";
 
 interface GroupHeaderProps {

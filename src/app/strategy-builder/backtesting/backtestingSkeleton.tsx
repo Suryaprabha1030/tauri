@@ -1,4 +1,3 @@
-import Image from "next/image";
 const BackTestingSkeleton = () => {
   return (
     <div className="backtesting-skeleton flex h-1/2 w-full flex-col items-center justify-center text-center">

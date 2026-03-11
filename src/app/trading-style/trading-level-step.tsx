@@ -1,4 +1,3 @@
-import Image from "next/image";
 const TradingLevelStep = (props: {
   saveTradingLevel: (level: number) => void;
 }) => {

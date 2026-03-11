@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import HoldingsWatchlist from "../HoldingsWatchlist";
 import PositionsWatchlist from "../PositionsWatchlist";
-import Image from "next/image";
+
 import { formatNumber } from "@/lib/util/DraftUtil";
 import { RootState } from "@/lib/redux/Store";
 import { useSelector } from "react-redux";

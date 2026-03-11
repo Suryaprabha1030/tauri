@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 import { handleTVChart } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { formatNumber } from "@/lib/util/DraftUtil";
@@ -29,10 +29,10 @@ const PositionTable: React.FC<PositionTableProps> = ({
   setSelectAll,
 }) => {
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const sortedPositionsData =
     positionsdata &&
@@ -60,7 +60,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
     setPositionsData(newPositionsData);
 
     const checkedItems = newPositionsData.filter(
-      (position) => position.checked
+      (position) => position.checked,
     );
     setcheckedData(checkedItems);
     setAnyChecked(checkedItems.length > 0);
@@ -74,7 +74,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
   };
 
   const handleChart = (index: any, identifier: any, filter: any) => {
-    dispatch(setChartIconClicked(false))
+    dispatch(setChartIconClicked(false));
     handleTVChart(
       index,
       filter,
@@ -82,7 +82,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
       router,
       dispatch,
       brokerCode,
-      identifier
+      identifier,
     );
   };
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { formatNumber } from "@/lib/util/DraftUtil";
 import { useRouter } from "next/navigation";
 import { handleTVChart } from "@/lib/util/sideToolBar/sidetoolbarCommon";
-import Image from "next/image";
+
 import CandleIcon from "../../optionFutures/CandleIcon";
 import { getBrokerCode } from "@/components/helpers";
 import {
@@ -21,13 +21,13 @@ const HoldingsTable: React.FC<HoldingsTableProps> = ({
   leftWidth,
 }) => {
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const netchange: any = useSelector(
-    (state: RootState) => state.strategy.netChange
+    (state: RootState) => state.strategy.netChange,
   );
   const netpercentage: any = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const path = window.location.pathname;
   const router = useRouter();
@@ -42,7 +42,7 @@ const HoldingsTable: React.FC<HoldingsTableProps> = ({
       router,
       dispatch,
       brokerCode,
-      identifier
+      identifier,
     );
   };
   return (

@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import Image from "next/image";
+
 import { minimizeStatus } from "@/lib/redux/slices/OptionChainSlice";
 import { useDispatch } from "react-redux";
 interface ToggleChartAndOptButtonProps {

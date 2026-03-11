@@ -7,7 +7,7 @@ import {
 import { setScreenerQuery } from "@/lib/redux/slices/screenerSlice";
 import { RootState } from "@/lib/redux/Store";
 import { IconKey, icons } from "@/lib/util/sideToolBar/RightToolBarIcons";
-import Image from "next/image";
+
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ScreenerButton from "../Screener/SideScreener";

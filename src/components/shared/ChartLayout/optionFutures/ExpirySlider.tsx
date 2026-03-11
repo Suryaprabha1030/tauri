@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Dispatch } from "react";
 import "rc-slider/assets/index.css"; // Import the default styles
-import Image from "next/image";
+
 import { getDaysBetween } from "./optionFuturesUtil/legUtil";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";

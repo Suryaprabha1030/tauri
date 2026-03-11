@@ -1,5 +1,5 @@
 import { formatDateOrTimeAgo } from "@/lib/util/sideToolBar/news/TimeConverterUtil";
-import Image from "next/image";
+
 import React from "react";
 
 interface NewsBoxProps {

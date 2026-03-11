@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { ManualTriggerScheduledAPIApi } from "@/lib/api/base";
 import config from "@/lib/config";

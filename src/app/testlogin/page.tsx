@@ -9,7 +9,7 @@ import ErrorAlert from "@/components/shared/ErrorAlert";
 import zApi from "@/lib/api/zApi";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { BrokersRouterApi, UserApi } from "@/lib/api/base";
-import Image from "next/image";
+
 import SuccessAlert from "@/components/shared/SuccessAlert";
 import LoginWithGoogle from "../login/LoginWithGoogle";
 import config from "@/lib/config";

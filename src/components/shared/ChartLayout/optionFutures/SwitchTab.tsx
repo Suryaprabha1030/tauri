@@ -10,7 +10,7 @@ import {
   showPositionTable,
   showStrategyTable,
 } from "@/lib/redux/slices/AnalyzerSlice";
-import Image from "next/image";
+
 import { extractKeywords, groupByCategory } from "./optionFuturesUtil/legUtil";
 import ClearStrategy from "./ClearStrategy";
 import { strategyTabs } from "@/lib/util/toggleButtonName/toggleButtonNames";

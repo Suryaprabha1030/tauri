@@ -1,5 +1,5 @@
 import { getMonthsFromMay2025 } from "@/lib/util/FiiDiiUtil/FiiDiiUtil";
-import Image from "next/image";
+
 import React, { useEffect, useRef, useState } from "react";
 
 interface FiiDiiSummaryProps {

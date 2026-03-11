@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 interface SearchSymbolProps {
   searchSymbol: any;

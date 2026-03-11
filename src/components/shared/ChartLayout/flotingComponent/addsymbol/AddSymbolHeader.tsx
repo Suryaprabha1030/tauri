@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { Dispatch, SetStateAction } from "react";
 import AddGroupSymbol from "./AddGroupSymbol";
 interface AddSymbolHeaderProps {

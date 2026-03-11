@@ -57,7 +57,7 @@ import {
 import { RootState } from "@/lib/redux/Store";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 import React, { Dispatch, useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";

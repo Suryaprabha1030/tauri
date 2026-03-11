@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import { Dispatch, SetStateAction } from "react";
 interface AeroButtonProps {
   aeroToggle: boolean;

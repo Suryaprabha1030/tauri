@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useRef } from "react";
 import CandleIcon from "../../optionFutures/CandleIcon";
 import { useDispatch } from "react-redux";

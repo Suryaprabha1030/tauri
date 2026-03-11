@@ -1,7 +1,7 @@
 "use client";
 import TimeSelect from "./timeSelect";
 import SelectIndice from "./selectIndice";
-import Image from "next/image";
+
 import SelectDate from "./selectDate";
 import SelectExpiry from "./selectExpiry";
 import { SimulationInput } from "@/lib/types";
@@ -133,14 +133,12 @@ const SimulationDatePicker = (props: {
       </div>
       {props.inputSelected && (
         <div className="flex w-full max-sm:flex-col sm:flex-col   2xl:flex-row  items-center justify-center max-sm:gap-4 sm:gap-2 lg:gap-2 max-sm:mt-1 sm:mt-1  ">
-
           <div className="flex 2xl:w-full max-sm:flex-row sm:flex-row 2xl:flex-row gap-2 lg:px-0.5 max-sm:-mt-[1.5rem] sm:-mt-[1.5rem] 2xl:-mt-[2rem] 2xl:gap-[0.29rem] ">
             <button
               className="rounded-full bg-z-green-300 max-sm:text-[0.55rem] sm:text-[0.78rem] md:text-[0.9rem]   max-sm:px-1 sm:px-2 lg:px-2 2xl:w-[4.4rem] 2xl:h-[2rem] "
               onClick={() => updateTimeTravel("BOD")}
             >
-              &lt;&lt;
-              BOD{" "}
+              &lt;&lt; BOD{" "}
             </button>
             <button
               className="rounded-full bg-z-green-300 max-sm:text-[0.55rem] sm:text-[0.78rem] md:text-[0.9rem]  max-sm:px-1 sm:px-2 lg:px-2"
@@ -192,7 +190,6 @@ const SimulationDatePicker = (props: {
               -3m{" "}
             </button>
           </div>
-
 
           {props.currentTime && (
             <input
@@ -260,7 +257,6 @@ const SimulationDatePicker = (props: {
               EOD{" >> "}
             </button>
           </div>
-
         </div>
       )}
     </div>

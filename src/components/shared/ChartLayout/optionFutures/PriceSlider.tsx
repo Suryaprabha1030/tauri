@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import { setStock } from "@/lib/redux/slices/StrategySlice";
 import { useDispatch } from "react-redux";
-import Image from "next/image";
+
 import { getInputValue } from "@/lib/redux/slices/StrategyChartSlice";
 
 interface PriceSliderProps {

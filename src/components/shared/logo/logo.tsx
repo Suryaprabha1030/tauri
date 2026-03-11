@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Logo(props: { width: number; height: number }) {
   return (
     <img

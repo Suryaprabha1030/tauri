@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { toast, ToastPosition } from "react-toastify";
 import clsx from "clsx";
 

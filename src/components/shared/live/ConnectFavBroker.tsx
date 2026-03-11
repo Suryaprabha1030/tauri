@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import Image from "next/image";
+
 import Link from "next/link";
 import LiveHeader from "./LiveHeader";
 import LoadingComponent from "../loading/Loading";

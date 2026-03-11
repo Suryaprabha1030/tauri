@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBrokerCode } from "../helpers";
 import DisplayHandleSellButton from "../shared/ChartLayout/buySellButton/DisplayHandleSellButton";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import {
   adjustTooltipPosition,
   fetchIndexDetails,

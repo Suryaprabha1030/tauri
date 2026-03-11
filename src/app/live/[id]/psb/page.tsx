@@ -106,7 +106,7 @@ import {
   getStrangleOiLoad,
 } from "@/lib/redux/slices/StrategyChartSlice";
 import SumButton from "@/components/shared/ChartLayout/oiComponent/SumButton";
-import Image from "next/image";
+
 import Multiplier from "@/components/shared/ChartLayout/optionFutures/NewStrategyTable/Multiplier";
 import LiveChart from "@/components/shared/ChartLayout/chartTool/LiveChart";
 import {

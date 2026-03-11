@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Logo from "../logo/logo";
-import Image from "next/image";
+
 import config from "@/lib/config";
 
 const LiveHeader = ({ userMail }) => {

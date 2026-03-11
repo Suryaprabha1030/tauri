@@ -2,7 +2,7 @@ import { NotesRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { notesformatDateTime } from "./notesUtil";
-import Image from "next/image";
+
 import PaginationLoading from "@/components/shared/commonUtil/PaginationLoading";
 import LoadingComponent from "@/components/shared/loading/Loading";
 import CommonNotesList from "../../sidetoolbar/notes/CommonNotesList";

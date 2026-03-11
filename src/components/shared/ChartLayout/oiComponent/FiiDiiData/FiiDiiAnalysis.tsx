@@ -3,7 +3,7 @@ import FiiDiiTab from "./FiiDiiTab";
 import FiiDiiData from "./FiiDiiData";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import RemoveButton from "../../sidetoolbar/sharedContent/RemoveButton";
-import Image from "next/image";
+
 import { ShowStrategiesPopup } from "@/lib/redux/slices/ChartsSlice";
 import { useDispatch } from "react-redux";
 import MonthSelector from "./MonthSelector";
@@ -24,7 +24,7 @@ const FiiDiiAnalysis: React.FC<FiiDiiAnalysisProps> = ({
   const dispatch = useDispatch();
   const months = getMonthsFromMay2025();
   const [payLoadDate, setPayLoadDate] = useState<any>(
-    months[months.length - 1]
+    months[months.length - 1],
   );
   return (
     <div className="flex h-full w-full flex-col ">

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { Dispatch, SetStateAction, useEffect } from "react";
 import DisplayIncreDecrease from "../DisplayIncreDecrease/DisplayIncreDecrease";
 import { useDispatch, useSelector } from "react-redux";

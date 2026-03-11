@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { useState, useEffect, useRef } from "react";
 import AIResponseTable from "./AIResponseTable";
 import { getBrokerCode } from "../helpers";

@@ -1,5 +1,5 @@
 import { sideTabButtonName } from "@/lib/util/toggleButtonName/toggleButtonNames";
-import Image from "next/image";
+
 import React, { Dispatch, SetStateAction, useState } from "react";
 
 interface SymbolNameSectionProps {

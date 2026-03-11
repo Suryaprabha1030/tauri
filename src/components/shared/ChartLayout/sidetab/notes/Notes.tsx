@@ -1,7 +1,6 @@
 import { useState } from "react";
 import NotesForm from "./NotesForm";
 import NoteList from "./NotesList";
-import Image from "next/image";
 
 interface NotesProps {
   showCreateNotes: boolean;

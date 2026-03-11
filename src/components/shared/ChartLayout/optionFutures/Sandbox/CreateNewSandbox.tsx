@@ -4,7 +4,7 @@ import {
   showPositionTable,
   showStrategyTable,
 } from "@/lib/redux/slices/AnalyzerSlice";
-import Image from "next/image";
+
 import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 interface DraftNamePopupProps {

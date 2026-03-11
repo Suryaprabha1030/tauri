@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import StockInfoSideDisplay from "../shared/ChartLayout/sidetoolbar/StockinfoSideDisplay/stockinfoSideDisplay";
 import {
   setSelectedAiStock,

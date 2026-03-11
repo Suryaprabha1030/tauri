@@ -24,7 +24,7 @@ import {
   multiStarddleOPtions,
   OiOptions,
 } from "@/lib/util/toggleButtonName/toggleButtonNames";
-import Image from "next/image";
+
 import { useParams, useRouter } from "next/navigation";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import ShowMargin from "@/components/shared/ChartLayout/oiComponent/ShowMargin";

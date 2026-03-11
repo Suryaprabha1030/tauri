@@ -21,7 +21,7 @@ import { UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+
 import { formatStockData } from "@/lib/util/placeOrder/placeOrder";
 import { formatNumber } from "@/lib/util/DraftUtil";
 import { getBrokerCode } from "@/components/helpers";

@@ -1,6 +1,6 @@
 import { ShowStrategiesPopup } from "@/lib/redux/slices/ChartsSlice";
 import { setCurrentSection } from "@/lib/redux/slices/CommonSlice";
-import Image from "next/image";
+
 import React from "react";
 import { useDispatch } from "react-redux";
 

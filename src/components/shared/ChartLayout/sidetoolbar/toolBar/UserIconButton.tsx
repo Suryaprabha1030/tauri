@@ -4,7 +4,7 @@ import {
   setStockInfoOpen,
 } from "@/lib/redux/slices/CommonSlice";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 

@@ -1,7 +1,7 @@
 "use client";
 import Logo from "@/components/shared/logo/logo";
 import { use, useContext, useEffect, useState } from "react";
-import Image from "next/image";
+
 import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import zApi from "@/lib/api/zApi";

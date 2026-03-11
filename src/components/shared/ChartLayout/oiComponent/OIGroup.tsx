@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { Dispatch, useState } from "react";
 
 import AddGroup from "./AddGroup";

@@ -1,7 +1,6 @@
 import React from "react";
 import { determineMarketAction } from "../optionFuturesUtil/strategyUtil";
 import { getTrend } from "@/lib/util/analyzer/iconUtil";
-import Image from "next/image";
 
 interface OITrendProps {
   expandTable: any;
@@ -27,7 +26,7 @@ const OITrend: React.FC<OITrendProps> = ({
         oiChangePerc[`${rowKey}#${optionType}`],
         parseFloat(closeCEPEPercentage),
         optionType,
-        expandTable
+        expandTable,
       )}
     </span>
   );

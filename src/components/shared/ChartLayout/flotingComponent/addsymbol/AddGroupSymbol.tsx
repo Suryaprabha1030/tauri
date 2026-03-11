@@ -4,7 +4,7 @@ import { getGrpSymbols } from "@/lib/redux/slices/GroupSlice";
 import { RootState } from "@/lib/redux/Store";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

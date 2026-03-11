@@ -5,7 +5,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-import Image from "next/image";
+
 interface buttonItems {
   label: string;
   value: string;

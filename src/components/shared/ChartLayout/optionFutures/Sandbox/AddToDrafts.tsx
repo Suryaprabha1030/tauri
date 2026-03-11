@@ -17,7 +17,7 @@ import { useDispatch } from "react-redux";
 import { constructRequestBody } from "@/lib/util/DraftUtil";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { useRouter } from "next/navigation";
 import {

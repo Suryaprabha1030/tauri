@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { BackTestingInput, StopLossInput } from "@/lib/types";
 import { useEffect, useState } from "react";
 import SelectIndice from "@/components/shared/filter/selectIndice";

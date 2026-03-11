@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleToggle } from "../tradingView/CustomCheckBoxButton";
 import { setIsSidetabCollapsed } from "@/lib/redux/slices/CommonSlice";
 import { ViewType } from "@/lib/util/toggleButtonName/toggleButtonNames";
-import Image from "next/image";
 
 const TabNavigation: React.FC = () => {
   const toggleState: any = useSelector(

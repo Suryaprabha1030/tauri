@@ -1,6 +1,6 @@
 import { getFutureData, getOptionData } from "@/lib/redux/slices/AnalyzerSlice";
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 

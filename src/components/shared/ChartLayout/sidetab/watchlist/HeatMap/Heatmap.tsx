@@ -7,7 +7,6 @@ import React, {
   useCallback,
 } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Image from "next/image";
 
 import { showHeatmap } from "@/lib/redux/slices/ChartsSlice";
 import HeatMapChart from "./HeatmapChart";

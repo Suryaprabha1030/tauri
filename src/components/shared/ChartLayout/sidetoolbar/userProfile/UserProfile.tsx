@@ -6,7 +6,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/context/authContextProvider";
 import { useRouter } from "next/navigation";
 import zApi from "@/lib/api/zApi";
-import Image from "next/image";
+
 import ProfileSkeleton from "@/app/profile/profileSkeleton";
 import Headings from "../sharedContent/headings";
 import RemoveButton from "../sharedContent/RemoveButton";

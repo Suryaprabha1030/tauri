@@ -1,5 +1,5 @@
 import { getImageUrl } from "@/lib/util/brokersUtil/BrokersImage";
-import Image from "next/image";
+
 import React from "react";
 import BuySellDisplay from "./ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/BuySellDisplay";
 import { formatNumber } from "@/lib/util/DraftUtil";

@@ -1,5 +1,5 @@
 import { RootState } from "@/lib/redux/Store";
-import Image from "next/image";
+
 import React, { Dispatch, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getHashKey } from "./optionFuturesUtil/strategyUtil";

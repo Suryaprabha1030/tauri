@@ -1,7 +1,7 @@
 "use client";
 
 import config from "@/lib/config";
-import Image from "next/image";
+
 import Link from "next/link";
 
 interface BrokerLoginDisplayProps {
