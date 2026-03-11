@@ -68,7 +68,7 @@ const Signup = () => {
       },
       (error) => {
         setError("root", { message: error.response.data });
-      }
+      },
     );
   };
 
@@ -149,20 +149,20 @@ const Signup = () => {
             </form>
             <div className="pt-5 text-center text-base font-normal leading-relaxed text-zinc-600">
               Already have an account?
-              <Link className="text-blue-600" href="/login">
+              <a className="text-blue-600" href="/login">
                 {" "}
                 Sign in
-              </Link>
+              </a>
             </div>
             <div>
               <p className="text-xs">
                 Charts powered by{" "}
-                <Link
+                <a
                   href="https://www.tradingview.com/"
                   className="text-blue-600"
                 >
                   Tradingview{" "}
-                </Link>
+                </a>
               </p>
             </div>
           </div>

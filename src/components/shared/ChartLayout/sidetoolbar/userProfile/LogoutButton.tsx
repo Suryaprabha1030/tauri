@@ -4,7 +4,7 @@ import React from "react";
 
 const LogoutButton = () => {
   return (
-    <Link href="/logout">
+    <a href="/logout">
       <span className="group relative h-[5rem] w-[5rem]">
         <span className="absolute left-1/2 top-1/2 mt-2 w-max -translate-x-1/2 rounded-md bg-gray-800 px-2 text-[0.75rem] text-white opacity-0 transition-opacity group-hover:opacity-100 max-xl:hidden">
           Logout
@@ -18,7 +18,7 @@ const LogoutButton = () => {
           />
         </span>
       </span>
-    </Link>
+    </a>
   );
 };
 

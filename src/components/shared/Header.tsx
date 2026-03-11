@@ -29,18 +29,14 @@ const Header: React.FC<HeaderProps> = ({ toggleChild }) => {
       ? "bg-z-green-500 text-white"
       : " bg-white text-z-green-500";
   };
-  
- 
 
   return (
     <header className="flex w-full flex-row items-center justify-between p-5 shadow relative">
-
       <div className="flex flex-row gap-20 lg:gap-[0.98rem]  xl:gap-5">
-  
         <div className="flex flex-row items-center max-sm:left-[8rem]   sm:left-[12rem] md:left-[19rem]   bottom-[1rem]  max-sm:absolute sm:absolute  max-sm:w-40 lg:static lg:flex  ">
-          <Link href="/strategy-builder">
+          <a href="/strategy-builder">
             <Logo height={48} width={160} />
-          </Link>
+          </a>
           <span className="mr-3 flex rounded-full bg-gradient-to-r from-green-400 to-blue-500 max-sm:px-2 sm:px-2 lg:px-1 xl:px-2 py-1 max-sm:text-[0.35rem] sm:text-[0.55rem] lg:text-[0.35rem]  xl:text-xs font-semibold uppercase text-white hover:from-pink-500 hover:to-yellow-500">
             <div className="flex grid-cols-2 justify-center max-sm:gap-1 sm:gap-1 xl:gap-0">
               <div className="col-span-1">Alpha</div>
@@ -63,37 +59,45 @@ const Header: React.FC<HeaderProps> = ({ toggleChild }) => {
           </span>
         </div>
         {/* harmburger menu */}
-        <button onClick={toggleChild} className="max-sm:show sm:block  md:block  lg:hidden " >
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
-        <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
-        </svg>
-        </button>
-        
-       {/* header button */}
-        <div className="max-sm:hidden sm:hidden md:hidden  flex lg:flex-row  lg:justify-center lg:gap-[0.4rem] xl:gap-2  lg:flex 2xl:ms-8"
+        <button
+          onClick={toggleChild}
+          className="max-sm:show sm:block  md:block  lg:hidden "
         >
-  
-          <Link
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+          >
+            <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
+          </svg>
+        </button>
+
+        {/* header button */}
+        <div className="max-sm:hidden sm:hidden md:hidden  flex lg:flex-row  lg:justify-center lg:gap-[0.4rem] xl:gap-2  lg:flex 2xl:ms-8">
+          <a
             className={`focus:ring-offset flex items-center lg:justify-between max-sm:justify-evenly sm:justify-evenly lg:gap-2 rounded-full border border-green-500 max-sm:px-2 sm:py-2 max-sm:py-2 sm:py-2 lg:px-2  2xl:px-4 2xl:py-2  max-sm:text-[0.85rem] sm-text-[0.85rem] lg:text-[0.8rem] 2xl:text-base   font-medium leading-none focus:ring focus:ring-z-green-300 focus:ring-offset-z-green-100 ${getTextColor(
-              "/strategy-builder"
+              "/strategy-builder",
             )}`}
             href="/strategy-builder"
           >
             <ChartIcon color={getSvgColor("/strategy-builder")} />
             Strategies
-          </Link>
-          <Link
+          </a>
+          <a
             className={`flex items-center lg:justify-between max-sm:justify-evenly lg:gap-2 rounded-full border border-green-500 max-sm:px-2 max-sm:py-2 lg:px-2 2xl:px-4 2xl:py-2  max-sm:text-[0.85rem]  lg:text-[0.8rem] 2xl:text-base font-medium leading-none focus:ring focus:ring-z-green-300 focus:ring-offset-z-green-100 ${getTextColor(
-              "/simulator"
+              "/simulator",
             )}`}
             href="/simulator"
           >
             <ComputerIcon color={getSvgColor("/simulator")} />
             Simulator
-          </Link>
-          <Link
+          </a>
+          <a
             className={`flex items-center lg:justify-between max-sm:justify-evenly lg:gap-2 rounded-full border border-green-500 max-sm:px-2 max-sm:py-2 lg:px-2 2xl:px-4 lg:py-2  max-sm:text-[0.85rem] lg:text-[0.8rem] 2xl:text-base font-medium leading-none focus:ring focus:ring-z-green-300 focus:ring-offset-z-green-100 ${getTextColor(
-              "/backtesting"
+              "/backtesting",
             )}`}
             href="/backtesting"
           >
@@ -118,26 +122,26 @@ const Header: React.FC<HeaderProps> = ({ toggleChild }) => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
             </svg> */}
             BackTesting
-          </Link>
-          <Link
+          </a>
+          <a
             className={`flex items-center lg:justify-between max-sm:justify-evenly lg:gap-2 rounded-full border border-green-500 max-sm:px-2 max-sm:py-2 lg:px-2 2xl:px-4 lg:py-2  max-sm:text-[0.85rem] lg:text-[0.8rem] 2xl:text-base font-medium leading-none focus:ring focus:ring-z-green-300 focus:ring-offset-z-green-100 ${getTextColor(
-              "/calendar"
+              "/calendar",
             )}`}
             href="/calendar"
           >
             <CalendarIcon color={getSvgColor("/calendar")} />
             Calendar
-          </Link>
+          </a>
         </div>
       </div>
-{/* join */}
+      {/* join */}
       <div className="flex flex-row justify-center gap-6 lg:gap-[0.5rem] 2xl:gap-6 ">
         <div className=" rounded-full bg-gradient-to-r from-green-400 to-blue-500 lg:py-[0.0006rem] 2xl:py-2 text-center hover:from-pink-500 hover:to-yellow-500 max-sm:hidden sm:hidden  md:hidden lg:flex lg:px-2 2xl:px-4">
           <div
             className="flex items-center p-2 leading-none text-indigo-100 lg:inline-flex lg:rounded-full"
             role="alert"
           >
-            <Link
+            <a
               href="https://join.slack.com/t/zoonest/shared_invite/zt-24car2fbn-_7f2~2zbveKXVI4cRzu5ZA"
               target="_blank"
               rel="noopener noreferrer"
@@ -168,10 +172,9 @@ const Header: React.FC<HeaderProps> = ({ toggleChild }) => {
               >
                 <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
-
 
         <div className="dropdown group relative flex ">
           <button
@@ -203,5 +206,5 @@ const Header: React.FC<HeaderProps> = ({ toggleChild }) => {
       </div>
     </header>
   );
-}
+};
 export default Header;

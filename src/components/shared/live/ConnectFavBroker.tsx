@@ -84,10 +84,10 @@ const ConnectFavBroker = () => {
   const handleXlResize = () => {
     /* for above md */
     const mdToLg = window.matchMedia(
-      "(min-width: 768px) and (max-width: 991px)"
+      "(min-width: 768px) and (max-width: 991px)",
     );
     const lgToXl = window.matchMedia(
-      "(min-width: 992px) and (max-width: 1399px)"
+      "(min-width: 992px) and (max-width: 1399px)",
     );
     const XlTo2xl = window.matchMedia("(min-width: 1400px) ");
     if (mdToLg.matches) {
@@ -110,7 +110,7 @@ const ConnectFavBroker = () => {
       // Store brokerCodes in sessionStorage
       sessionStorage.setItem(
         "ExistbrokerCode",
-        JSON.stringify(validBrokerCodes)
+        JSON.stringify(validBrokerCodes),
       );
     }
   }, [loginValid, client]);
@@ -130,7 +130,7 @@ const ConnectFavBroker = () => {
           }
         },
 
-        (error) => {}
+        (error) => {},
       );
     };
     getProfileData();
@@ -160,7 +160,7 @@ const ConnectFavBroker = () => {
               return brokerapi
                 .fetchMyBrokerProfileV1UsersMeBrokersBrokerCodeProfileGet(
                   //To get the client code ,userfullname
-                  userBroker.broker_code
+                  userBroker.broker_code,
                 )
                 .then((profileResponse) => {
                   setLoading(false);
@@ -209,7 +209,7 @@ const ConnectFavBroker = () => {
 
                   return userBroker; // Return the original object in case of error
                 });
-            }
+            },
           );
         Promise.all(userBrokerMappings)
           .then((updatedMappings) => {
@@ -229,7 +229,7 @@ const ConnectFavBroker = () => {
 
             // Step 2: Brokers not connected at all — show 1 "connect" card
             const connectedBrokerIds = new Set(
-              cleanedMappings.map((m) => m.broker_id)
+              cleanedMappings.map((m) => m.broker_id),
             );
 
             const unconnectedCards = allBrokers
@@ -302,7 +302,7 @@ const ConnectFavBroker = () => {
         visibleBrokers = sortedBroker.filter((b) => b.is_active);
       } else {
         const isActiveBrokers = sortedBroker.filter(
-          (b) => b.is_active === true
+          (b) => b.is_active === true,
         );
         const active = [...isActiveBrokers, ...sampleBrokerData];
 
@@ -312,7 +312,7 @@ const ConnectFavBroker = () => {
         } else {
           // Try to match broker name inside signupMode
           const matchedBroker = isActiveBrokers.find((b) =>
-            signUpMode?.toLowerCase().includes(b.name.toLowerCase())
+            signUpMode?.toLowerCase().includes(b.name.toLowerCase()),
           );
 
           if (matchedBroker) {
@@ -331,7 +331,7 @@ const ConnectFavBroker = () => {
     /* only for small screen and medium screen */
     const handleSmResize = () => {
       const smTomd = window.matchMedia(
-        "(min-width: 300px) and (max-width: 767px)"
+        "(min-width: 300px) and (max-width: 767px)",
       );
       if (smTomd.matches) {
         setBrokersPerPage(brokers.length);
@@ -343,7 +343,7 @@ const ConnectFavBroker = () => {
     /* only for small screen and medium screen */
     const handleSmResize = () => {
       const smTomd = window.matchMedia(
-        "(min-width: 300px) and (max-width: 768px)"
+        "(min-width: 300px) and (max-width: 768px)",
       );
       if (smTomd.matches) {
         setCurrentStartIndex(0);
@@ -473,7 +473,7 @@ const ConnectFavBroker = () => {
   };
   const visibleBrokers: any = brokers.slice(
     currentStartIndex,
-    currentStartIndex + brokersPerPage
+    currentStartIndex + brokersPerPage,
   );
 
   const router = useRouter();
@@ -487,7 +487,7 @@ const ConnectFavBroker = () => {
     const popup = window.open(
       url,
       "popup",
-      `width=${width},height=${height},top=${top},left=${left}`
+      `width=${width},height=${height},top=${top},left=${left}`,
     );
 
     if (popup) {
@@ -513,7 +513,7 @@ const ConnectFavBroker = () => {
             router.push(`${config.brokersListUrl}/${message_data[2]}/psv`); // Redirect to a dynamic route
           }
         },
-        false
+        false,
       );
     }
   };
@@ -566,7 +566,7 @@ const ConnectFavBroker = () => {
                     const userBroker = client.find(
                       (c) =>
                         c?.broker_id === broker?.id &&
-                        c?.broker_code === broker?.broker_code
+                        c?.broker_code === broker?.broker_code,
                     );
 
                     const isActive = activeBroker === broker?.id;
@@ -632,7 +632,7 @@ const ConnectFavBroker = () => {
                               userBroker?.user_full_name ? (
                                 <div>
                                   <div className="flex justify-center gap-4  max-md:h-[2.5rem] max-md:items-end">
-                                    <Link
+                                    <a
                                       href={`${config.brokersListUrl}/${userBroker?.broker_code}/psv`}
                                     >
                                       <button
@@ -643,8 +643,8 @@ const ConnectFavBroker = () => {
                                       >
                                         PSV
                                       </button>
-                                    </Link>
-                                    <Link
+                                    </a>
+                                    <a
                                       href={`${config.brokersListUrl}/${userBroker?.broker_code}/psb`}
                                     >
                                       <button
@@ -655,8 +655,8 @@ const ConnectFavBroker = () => {
                                       >
                                         PSB
                                       </button>
-                                    </Link>
-                                    <Link
+                                    </a>
+                                    <a
                                       href={`${config.brokersListUrl}/${userBroker?.broker_code}/oi`}
                                     >
                                       <button
@@ -667,7 +667,7 @@ const ConnectFavBroker = () => {
                                       >
                                         OI
                                       </button>
-                                    </Link>
+                                    </a>
                                   </div>
                                   <div className="flex items-center gap-2  px-2 py-1 max-md:py-0.5">
                                     <div className="h-px flex-1 bg-stone-300"></div>
@@ -719,7 +719,7 @@ const ConnectFavBroker = () => {
 
                                     const isNotSupportedBroker =
                                       !config.enabledBrokers.some((b) =>
-                                        brokerName.includes(b)
+                                        brokerName.includes(b),
                                       );
 
                                     if (

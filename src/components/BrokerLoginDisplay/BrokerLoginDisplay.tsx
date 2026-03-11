@@ -20,12 +20,12 @@ const BrokerLoginDisplay: React.FC<BrokerLoginDisplayProps> = ({
   getImageUrl,
 }) => {
   const enabledBrokers = brokers.filter((broker) =>
-    config.enabledBrokers.some((b) => broker?.toLowerCase().includes(b))
+    config.enabledBrokers.some((b) => broker?.toLowerCase().includes(b)),
   );
 
   const comingSoonBrokers = brokers.filter(
     (broker) =>
-      !config.enabledBrokers.some((b) => broker?.toLowerCase().includes(b))
+      !config.enabledBrokers.some((b) => broker?.toLowerCase().includes(b)),
   );
 
   const renderBrokerCard = (broker: string, clickable: boolean) => (
@@ -77,14 +77,14 @@ const BrokerLoginDisplay: React.FC<BrokerLoginDisplayProps> = ({
       <div className="flex w-full items-center justify-center pb-2">
         <p className="max-w-full text-center text-xs leading-relaxed text-gray-400">
           Charts are powered by{" "}
-          <Link
+          <a
             href="https://www.tradingview.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 underline hover:text-blue-600"
           >
             Tradingview
-          </Link>
+          </a>
         </p>
       </div>
     </div>

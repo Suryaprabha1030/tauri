@@ -31,7 +31,7 @@ const TradingStyle = () => {
   const userApi = new UserApi(baseConfig());
   const apiClient = new zApi(useRouter(), useContext(AuthContext));
   const googleSignInUserData: any = useSelector(
-    (state: RootState) => state.common.googleSignInUserData
+    (state: RootState) => state.common.googleSignInUserData,
   );
   const saveTradingStyle = (style: number) => {
     setValues({ ...values, trading_style: style });
@@ -73,7 +73,7 @@ const TradingStyle = () => {
         console.log(error);
 
         setValues({ ...values, error: error.response.data });
-      }
+      },
     );
   };
 
@@ -184,13 +184,13 @@ const TradingStyle = () => {
                   <div className="text-center text-sm font-normal leading-none text-stone-300">
                     --- or ---
                   </div>
-                  <Link
+                  <a
                     className="text-[0.85rem] text-blue-600 underline"
                     href="/live"
                   >
                     {" "}
                     Skip for Now
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

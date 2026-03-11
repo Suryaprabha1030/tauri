@@ -22,7 +22,6 @@ import { debug } from "console";
 import Link from "next/link";
 import { idText } from "typescript";
 
-
 const StrategyBuilder = (props: {
   strategy?: Strategy | undefined;
   name?: string | undefined;
@@ -31,8 +30,7 @@ const StrategyBuilder = (props: {
   const router = useRouter();
   const [name, setName] = useState<string>(props.name || "");
   const [data, setData] = useState<StrategyBuilderData[]>(
-    getCreateStrategyData(props.strategy || ({} as Strategy))
-    
+    getCreateStrategyData(props.strategy || ({} as Strategy)),
   );
   const [chartData, setChartData] = useState<PlotResult | null>(null);
 
@@ -94,47 +92,71 @@ const StrategyBuilder = (props: {
         "2023-07-14T12:01",
         "20JUL23",
         "",
-        consolidateStrategyBuilderData(data)
+        consolidateStrategyBuilderData(data),
       )
       .then((res) => {
         setChartData(res.data.plot_results);
       });
   }, [data]);
-  
 
   return (
     <div className="flex h-full max-sm:w-full max-sm:jutify-center  md:justify-center flex-col   xl:flex-row gap-[3.5rem]  lg:gap-2 md:gap-3 ">
       <div className="flex flex-col  w-full xl:flex-col xl:w-1/2 gap-5 ">
-      <div className="flex flex-row gap-5    items-center md:gap-[15rem] xl:gap-[5rem]">
-      <Link href="/">  <button
-              type="button" 
+        <div className="flex flex-row gap-5    items-center md:gap-[15rem] xl:gap-[5rem]">
+          <a href="/">
+            {" "}
+            <button
+              type="button"
               className="flex h-10 w-10 max-sm:py-2 max-md:py-2 lg:py-0  items-center justify-center rounded-3xl bg-z-green-500 max-sm:text-[0.85rem] md:text-base font-medium leading-none text-white"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
-    <path d="M4 12L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-    <path d="M8.99996 17C8.99996 17 4.00001 13.3176 4 12C3.99999 10.6824 9 7 9 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                color="#ffffff"
+                fill="none"
+              >
+                <path
+                  d="M4 12L20 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.99996 17C8.99996 17 4.00001 13.3176 4 12C3.99999 10.6824 9 7 9 7"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </a>
 
-            </button></Link>
-      
-      <h1 className="max-sm:text-[0.8rem] text-center  md:text-[1rem] font-bold ">{!props.id ? "Create Strategy" : "Update Strategy"}</h1></div>
-      <input
-              type="text"
-              placeholder="Add Strategy Name"
-              className="rounded-lg border-2 border-gray-300 p-2  max-sm:text-[0.8rem] md:mx-12 "
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-     <div className="flex lg:w-full xl:w-full max-sm:h-[20rem] h-[24rem]  flex-col w-full ">
-        {chartData && <Chart data={getChartData(chartData)} spotPrice={0} />}
-      </div>
+          <h1 className="max-sm:text-[0.8rem] text-center  md:text-[1rem] font-bold ">
+            {!props.id ? "Create Strategy" : "Update Strategy"}
+          </h1>
+        </div>
+        <input
+          type="text"
+          placeholder="Add Strategy Name"
+          className="rounded-lg border-2 border-gray-300 p-2  max-sm:text-[0.8rem] md:mx-12 "
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <div className="flex lg:w-full xl:w-full max-sm:h-[20rem] h-[24rem]  flex-col w-full ">
+          {chartData && <Chart data={getChartData(chartData)} spotPrice={0} />}
+        </div>
       </div>
       <div className="flex xl:w-1/2 w-full flex-col gap-2 lg:gap-5 xl:mt-12">
-      
-        
         <div className="flex flex-col gap-5">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-[1.5rem] lg:gap-4">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-[1.5rem] lg:gap-4"
+          >
             {/* <input
               type="text"
               placeholder="Add Strategy Name"
@@ -157,7 +179,6 @@ const StrategyBuilder = (props: {
           </form>
         </div>
       </div>
-      
     </div>
   );
 };
