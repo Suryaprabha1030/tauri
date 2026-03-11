@@ -16,6 +16,7 @@
     "apexcharts": "^5.10.3",
     "axios": "^1.13.6",
     "date-fns": "^4.1.0",
+    "path": "^0.12.7",
     "react": "^19.1.0",
     "react-apexcharts": "^2.1.0",
     "react-dom": "^19.1.0",
