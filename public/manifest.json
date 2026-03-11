@@ -1,0 +1,27 @@
+{
+  "name": "Zoonest",
+  "short_name": "Zoonest",
+  "description": "Zoonest | F&O",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/images/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+
+    {
+      "src": "/images/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ]
+}
