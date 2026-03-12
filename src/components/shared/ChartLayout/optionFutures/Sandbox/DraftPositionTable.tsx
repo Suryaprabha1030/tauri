@@ -15,7 +15,7 @@ import PaginationLoading from "@/components/shared/commonUtil/PaginationLoading"
 import { toast } from "react-toastify";
 import TabEmptyInfo from "../emptyInfo/TabEmptyInfo";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 interface DraftPositionsTableProps {
@@ -59,7 +59,7 @@ const DraftPositionsTable: React.FC<DraftPositionsTableProps> = ({
   const LiveLtpData = useSelector(
     (state: RootState) => state.strategy.symbolsPrice,
   );
-  const router = useRouter();
+  const router = useNavigate();
 
   const getAllSandbox = (indexname: string, pageNum: number) => {
     if (DraftPositions) {

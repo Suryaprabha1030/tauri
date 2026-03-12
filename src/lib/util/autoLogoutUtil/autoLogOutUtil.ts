@@ -15,7 +15,7 @@ const autoLogoutTokenRemove = (router: any | null) => {
     if (getJwtFromCookie()) {
       removeJwtCookie();
     }
-    router.push("/login");
+    router("/login");
     // when autolout need to remove token
 
     if (!toast.isActive("logout-toast")) {

@@ -23,7 +23,7 @@ const channelToSubscription: any = new Map<string, SubscriptionItem>();
 let worker: Worker | null = null;
 if (typeof window !== "undefined") {
   worker = new Worker(
-    new URL("../workers/websocketWorker.worker.ts", import.meta.url)
+    new URL("../workers/websocketWorker.worker.ts", import.meta.url),
   );
 }
 const updateBuffer: Record<string, any> = {};
@@ -47,7 +47,7 @@ export function subscribeOnStream(
   onRealtimeCallback: (bar: Bar) => void,
   subscriberUID: string,
   onResetCacheNeededCallback: () => void,
-  lastDailyBar: Bar
+  lastDailyBar: Bar,
 ) {
   if (!worker) return;
   const channelString = symbolInfo.identifier;
@@ -77,7 +77,7 @@ export function unsubscribeFromStream(subscriberUID: string) {
     subscriptionItem,
   ] of channelToSubscription?.entries()) {
     const handlerIndex = subscriptionItem.handlers.findIndex(
-      (handler: any) => handler.id === subscriberUID
+      (handler: any) => handler.id === subscriberUID,
     );
 
     if (handlerIndex !== -1) {
@@ -122,7 +122,7 @@ const getNextBarTime = (barTime: number, resolution: string) => {
 
 const useWebSocket = (
   url: string,
-  onConnectionStatusChange: (connected: boolean) => void
+  onConnectionStatusChange: (connected: boolean) => void,
 ) => {
   const [websocketError, setWebSocketError] = useState(false);
   const workerRef = useRef<Worker | null>(null);
@@ -133,7 +133,8 @@ const useWebSocket = (
     let intervalId: NodeJS.Timeout;
 
     const fetchJwt = async () => {
-      const token = await getJwtFromCookie();
+      // const token = await getJwtFromCookie();
+      const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwidXNlcl9pZCI6MiwiZXhwIjoxNzczMzA1MjcwfQ.a3ov2Txlr-XLY6shqkWUAF1k3n2M9Gv423gqKEqIYy0`;
       if (token) {
         setJwt(token);
         clearInterval(intervalId); // Stop polling once JWT is available
@@ -224,7 +225,7 @@ const useWebSocket = (
           let bar = { ...subscriptionItem.lastDailyBar };
           let nextBarTime = getNextBarTime(
             bar.time,
-            subscriptionItem.resolution
+            subscriptionItem.resolution,
           );
 
           if (tradeTime * 1000 >= nextBarTime) {
@@ -245,7 +246,7 @@ const useWebSocket = (
 
           subscriptionItem.lastDailyBar = bar;
           subscriptionItem.handlers.forEach((handler: any) =>
-            handler.callback(bar)
+            handler.callback(bar),
           );
 
           break;

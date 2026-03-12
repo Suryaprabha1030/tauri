@@ -22,8 +22,7 @@ import { RootState } from "@/lib/redux/Store";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { modifiedconstructRequestBody } from "@/lib/util/DraftUtil";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -62,7 +61,7 @@ const ListAllSandboxNames: React.FC<ListAllSandboxNamesProps> = ({
   const positionDatas = useSelector(
     (state: RootState) => state.analyzer.PositionDataList,
   );
-  const router = useRouter();
+  const router = useNavigate();
   const handleSelectionChange = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {

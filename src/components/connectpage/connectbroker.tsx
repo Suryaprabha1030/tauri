@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserApi, UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { CommonTokenRequest } from "@/lib/api/base";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import LoadingComponent from "../shared/loading/Loading";
 import { useDispatch } from "react-redux";
 import { AuthContext } from "@/context/authContextProvider";
@@ -21,11 +21,11 @@ function ConnectBroker(props: ConnectBrokerProps) {
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [brokerCode, setBrokerCode] = useState("");
-  const router = useRouter();
+  const router = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated, loginSuccess } = useContext(AuthContext);
   const userApi = new UserApi(baseConfig());
-  const apiClient = new zApi(useRouter(), useContext(AuthContext));
+  const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   const [callProfile, setCallProfile] = useState(false);
   const url = config.apiUrl;
   const commonTokenRequest: CommonTokenRequest = {
@@ -41,13 +41,17 @@ function ConnectBroker(props: ConnectBrokerProps) {
     restParams.request_token = restParams.requestToken;
     delete restParams.requestToken;
   }
-  if ("auth_code" in restParams||
+  if (
+    "auth_code" in restParams ||
     "authcode" in restParams ||
     "authCode" in restParams ||
     "code" in restParams
   ) {
-    restParams.auth_code = restParams.auth_code??
-      restParams.authcode ?? restParams.authCode ?? restParams.code;
+    restParams.auth_code =
+      restParams.auth_code ??
+      restParams.authcode ??
+      restParams.authCode ??
+      restParams.code;
     delete restParams.authcode;
     delete restParams.authCode;
     delete restParams.code;
@@ -74,7 +78,7 @@ function ConnectBroker(props: ConnectBrokerProps) {
       const response =
         await connectApi.connectMyBrokerByNameV1UsersMeBrokersByNameBrokerNameConnectPost(
           brokerName!,
-          restParams
+          restParams,
         );
       const code = response?.data?.user_broker_mapping?.broker_code;
       const apiKey = response?.data?.broker_meta?.api_key;
@@ -94,7 +98,7 @@ function ConnectBroker(props: ConnectBrokerProps) {
       const response =
         await connectApi.connectMyBrokerByNameUnauthorizedV1UsersMeBrokersByNameBrokerNameBrokerConnectPost(
           brokerName!,
-          restParams
+          restParams,
         );
 
       const brokerCode = response?.data?.user_broker_mapping?.broker_code;
@@ -138,16 +142,16 @@ function ConnectBroker(props: ConnectBrokerProps) {
           response?.data?.last_name == null ||
           response?.data?.phone_number == null
         ) {
-          router.push("/trading-style");
+          router("/trading-style");
           return;
         }
 
         if (response?.data?.is_confirmed == false) {
-          router.push("/need-confirmation");
+          router("/need-confirmation");
           return;
         }
 
-        router.push(config.brokersListUrl);
+        router(config.brokersListUrl);
       },
       (error) => {
         if (error?.response && error?.response?.status == 401) {
@@ -156,7 +160,7 @@ function ConnectBroker(props: ConnectBrokerProps) {
         if (error?.response && error?.response?.status == 456) {
           brokerLogoutTokenRemove(router);
         }
-      }
+      },
     );
   };
 
@@ -165,7 +169,7 @@ function ConnectBroker(props: ConnectBrokerProps) {
       if (window.opener) {
         window.opener.postMessage(
           `authentication_success_${brokerCode}`,
-          "*" // Use specific origin if known
+          "*", // Use specific origin if known
         );
         window.close();
       } else {
@@ -173,7 +177,7 @@ function ConnectBroker(props: ConnectBrokerProps) {
           getProfileData();
           setCallProfile(false);
         } else {
-          router.push(`${config.brokersListUrl}/${brokerCode}/psv`);
+          router(`${config.brokersListUrl}/${brokerCode}/psv`);
         }
       }
     }

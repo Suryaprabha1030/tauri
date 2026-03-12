@@ -9,7 +9,7 @@ import {
   fetchNews,
   startIntervalAtQuarterHour,
 } from "@/lib/util/sideToolBar/news/fetchNews";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 interface NewsProps {
   brokerCode: number | null;
@@ -23,7 +23,7 @@ const News: React.FC<NewsProps> = ({ brokerCode, setLeftWidth, leftWidth }) => {
   const [lastUpdated, setLastUpdated] = useState<any>(null);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dispNews, setDispNews] = useState<any>();
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     fetchNews(currentPage, setNewsData, setLastUpdated, setDispNews, router);
 
@@ -33,7 +33,7 @@ const News: React.FC<NewsProps> = ({ brokerCode, setLeftWidth, leftWidth }) => {
       setNewsData,
       setLastUpdated,
       setDispNews,
-      router
+      router,
     );
 
     // Clean up everything on component unmount or dependency change

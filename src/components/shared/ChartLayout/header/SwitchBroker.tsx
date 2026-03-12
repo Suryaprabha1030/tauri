@@ -57,8 +57,7 @@ import {
 import { RootState } from "@/lib/redux/Store";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { Dispatch, useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -89,7 +88,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
     (state: RootState) => state.common.showSwitchbroker,
   );
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   const addbrokerRef = useRef<HTMLDivElement>(null);
 
   const fetchBrokers = async (fetchAllProfiles = false) => {
@@ -267,7 +266,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
         dispatch(getMaxPainStrikeValue(null));
       }, 100);
     }
-    router.push(config.brokersListUrl);
+    router(config.brokersListUrl);
     dispatch(
       getIndexName({
         indexName: "",
@@ -303,7 +302,7 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
       sessionStorage.setItem("brokerCode", "");
       sessionStorage.setItem("brokerCode", String(code));
 
-      router.push(`${config.brokersListUrl}/${code}/psb`);
+      router(`${config.brokersListUrl}/${code}/psb`);
 
       setTimeout(() => {
         dispatch(getOptionData({ optionData: {} }));
@@ -342,11 +341,11 @@ const SwitchBroker: React.FC<SwitchBrokerProps> = ({
       dispatch(getCalcData([]));
       dispatch(getMaxPainStrikeValue(null));
     } else if (path === `${config.brokersListUrl}/${brokerCode}/psv`) {
-      router.push(`${config.brokersListUrl}/${code}/psv`);
+      router(`${config.brokersListUrl}/${code}/psv`);
       sessionStorage.setItem("brokerCode", "");
       sessionStorage.setItem("brokerCode", String(code));
     } else if (path === `${config.brokersListUrl}/${brokerCode}/oi`) {
-      router.push(`${config.brokersListUrl}/${code}/oi`);
+      router(`${config.brokersListUrl}/${code}/oi`);
       dispatch(getMaxPainStrikeValue(null));
     }
   };

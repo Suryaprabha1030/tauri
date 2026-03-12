@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import DisplayIndexChanger from "../../displayIndexChanger/DisplayIndexChanger";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { fetchOiStoredData } from "@/lib/util/oi/oiUtil";
 import config from "@/lib/config";
 import { getMaxPainStrikeValue } from "@/lib/redux/slices/StrategyChartSlice";
@@ -74,10 +74,10 @@ const OiIndex: React.FC<IndexChangerProps> = ({
 
   const [defaultDD, setDefaultDD] = useState<any>([]);
   const oiIndexData: any = useSelector(
-    (state: RootState) => state.OI.OiIndexData
+    (state: RootState) => state.OI.OiIndexData,
   );
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     const fetchData = () => {
       const apiInstance = new UserBrokerRouterApi(baseConfig());
@@ -85,12 +85,12 @@ const OiIndex: React.FC<IndexChangerProps> = ({
         apiInstance.getAllIndicesV1UsersMeBrokersBrokerCodeGetAllIndicesPost(
           brokerCode,
           "NSE",
-          "index_options"
+          "index_options",
         ),
         apiInstance.getAllIndicesV1UsersMeBrokersBrokerCodeGetAllIndicesPost(
           brokerCode,
           "BSE",
-          "index_options"
+          "index_options",
         ),
       ])
         .then(([indicesResponse, BSEResponse]) => {
@@ -103,7 +103,7 @@ const OiIndex: React.FC<IndexChangerProps> = ({
               addSymbol({
                 symbol: opt?.identifier, // add identifier as symbol
                 // token: opt.token,
-              })
+              }),
             );
           });
           const filterData = () => {
@@ -112,8 +112,8 @@ const OiIndex: React.FC<IndexChangerProps> = ({
               (item: any) =>
                 config.supportIndices.includes(item?.index_name) &&
                 Object.values(item).some(
-                  (value) => typeof value === "string" && value.toLowerCase()
-                )
+                  (value) => typeof value === "string" && value.toLowerCase(),
+                ),
             );
           };
           setDefaultDD(filterData);

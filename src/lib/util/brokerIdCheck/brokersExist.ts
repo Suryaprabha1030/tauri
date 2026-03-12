@@ -31,7 +31,7 @@ export const fetchExistBrokers = async (router: any, id?: any) => {
         try {
           const profileRes =
             await brokerapi.fetchMyBrokerProfileV1UsersMeBrokersBrokerCodeProfileGet(
-              broker?.broker_code
+              broker?.broker_code,
             );
           if (
             profileRes?.data &&
@@ -48,7 +48,7 @@ export const fetchExistBrokers = async (router: any, id?: any) => {
             brokerLogoutTokenRemove(router);
           }
         }
-      }
+      },
     );
 
     await Promise.all(profileFetches); // Wait for all API calls
@@ -76,7 +76,7 @@ export const validateBrokerCode = async (
 
   router: any,
   setBrokerCode: any,
-  setIsValid: any
+  setIsValid: any,
 ) => {
   const brokers: any = await fetchExistBrokers(router, code); // Now correctly awaited!
   const parsedBrokerData = Array.isArray(brokerData)
@@ -92,7 +92,7 @@ export const validateBrokerCode = async (
         !brokers?.includes(parseInt(code.id))
       ) {
         // router.push("/404");
-        router.push(config.brokersListUrl);
+        router(config.brokersListUrl);
         setBrokerCode(null);
         sessionStorage.setItem("brokerCode", "");
         sessionStorage.setItem("errorMessage", "Broker Code does not exist");
@@ -104,7 +104,7 @@ export const validateBrokerCode = async (
       }
     }
   } else {
-    router.push(config.brokersListUrl);
+    router(config.brokersListUrl);
     setBrokerCode(null);
     sessionStorage.setItem("brokerCode", "");
     sessionStorage.setItem("errorMessage", "Broker Code does not exist");

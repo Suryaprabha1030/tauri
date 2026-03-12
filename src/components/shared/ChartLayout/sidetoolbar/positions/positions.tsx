@@ -13,8 +13,7 @@ import {
   initializePositionsData,
   updatePositionsWithPnL,
 } from "@/lib/util/sideToolBar/positions/managePositionsData";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import ShareableImageCard from "./TwitterSharableImage";
 
 interface PositionsProps {
@@ -84,7 +83,7 @@ const Positions: React.FC<PositionsProps> = ({
   const ImageTotalPositionsPnl = useSelector(
     (state: RootState) => state.Position.TotalPositionsPnl,
   );
-  const router = useRouter();
+  const router = useNavigate();
 
   // Trigger API call when the history button is clicked
   const handleHistoryClick = () => {

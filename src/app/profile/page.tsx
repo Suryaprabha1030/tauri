@@ -7,14 +7,14 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/context/authContextProvider";
 import ProfileSkeleton from "./profileSkeleton";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import zApi from "@/lib/api/zApi";
 
 import ToolTip from "@/components/shared/toolTip";
 import Tooltip from "@/components/shared/toolTip";
 const Profile = () => {
   const userApi = new UserApi(baseConfig());
-  const apiClient = new zApi(useRouter(), useContext(AuthContext));
+  const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",

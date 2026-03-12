@@ -47,7 +47,7 @@ import {
   getCachedIndices,
 } from "@/lib/util/watchlist/handlingServerData";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import {
   setIdentifiersSet,
   updateSymbolPnl,
@@ -185,7 +185,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
   const SymbolIdentifier = useSelector(
     (state: RootState) => state.charts.SymbolIdentifier,
   );
-  const router = useRouter();
+  const router = useNavigate();
   const identifiersSet = useSelector(
     (state: RootState) => state.Position.identifiersSet,
   );

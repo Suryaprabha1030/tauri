@@ -6,7 +6,7 @@ import CompareOi from "./CompareOi";
 import MatrixDropDown from "./matrixDropDown";
 import DisplayHandleSellButton from "../../buySellButton/DisplayHandleSellButton";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import config from "@/lib/config";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
@@ -45,7 +45,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
 }) => {
   const [spotPriceData, setSpotPriceData] = useState<any>({});
 
-  const router = useRouter();
+  const router = useNavigate();
   const getISTTime = (utcTime: any) => {
     const date = new Date(utcTime);
     date.setMinutes(date.getMinutes() + 330); // 330 mins = 5hr 30min
@@ -58,14 +58,14 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
   const oiMatrixRef = useRef<any>(null);
   const [matrixBasketData, setMatrixBasketData] = useState({});
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const dispatch = useDispatch();
   const lotSizeData: any = useSelector(
-    (state: RootState) => state.OI.lotSizeData
+    (state: RootState) => state.OI.lotSizeData,
   );
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   const fetchSymbolPriceData = async (payload: any) => {
     if (!payload) return;
@@ -79,7 +79,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
   useEffect(() => {
     if (Object.entries(matrixBasketData).length > 0) {
       fetchSymbolPriceData(
-        Object.values(matrixBasketData).map((data: any) => data.identifier)
+        Object.values(matrixBasketData).map((data: any) => data.identifier),
       );
     }
   }, [matrixBasketData]);
@@ -102,7 +102,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
             queryIdentifier,
             combinedOiExpiry,
             requireData,
-            selected
+            selected,
           );
 
         const strikeGroups = res?.data?.strike_price_groups;
@@ -134,7 +134,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
           const sortedData = item?.data.sort(
             (a: any, b: any) =>
               new Date(b?.created_at).getTime() -
-              new Date(a?.created_at).getTime()
+              new Date(a?.created_at).getTime(),
           );
 
           sortedData.forEach((inner: any) => {
@@ -188,7 +188,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
 
   const getSortedStrikesByHighestOi = (tableData = {}) => {
     const allTimes = Object.values(tableData)?.flatMap((strikeData: any) =>
-      Object.keys(strikeData)
+      Object.keys(strikeData),
     );
 
     const uniqueTimes = Array.from(new Set(allTimes));
@@ -346,7 +346,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
                                 handleChange={() =>
                                   handleBasketOrder(
                                     matrixBasketData[strike],
-                                    "LONG"
+                                    "LONG",
                                   )
                                 }
                               />
@@ -356,7 +356,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
                                 handleChange={() =>
                                   handleBasketOrder(
                                     matrixBasketData[strike],
-                                    "SHORT"
+                                    "SHORT",
                                   )
                                 }
                               />

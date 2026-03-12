@@ -4,7 +4,7 @@ import AddToWatchlist from "../AddToWatchlist";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import { handlePinSymbol } from "@/lib/util/watchlist/heatMapHandle";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import config from "@/lib/config";
 
 interface WatchListRowActionProps {
@@ -64,7 +64,7 @@ const WatchListRowAction: React.FC<WatchListRowActionProps> = ({
   const defaultWatchlistPinnedSymbol = useSelector(
     (state: RootState) => state.charts.setDefaultWatchlist,
   );
-  const router = useRouter();
+  const router = useNavigate();
   return (
     <>
       {(window.innerWidth < 1200 &&

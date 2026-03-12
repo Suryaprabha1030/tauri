@@ -7,7 +7,7 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import PaginationLoading from "@/components/shared/commonUtil/PaginationLoading";
 import LoadingComponent from "@/components/shared/loading/Loading";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 interface symbNotesProps {
   symbIdentifier: any;
@@ -24,13 +24,13 @@ export const SymbolNotes: React.FC<symbNotesProps> = ({
   const symbolContainerRef = useRef(null);
   const [callEndSymbs, setCallEndSymbs] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
+  const router = useNavigate();
   const fetchSymbolNotes = (symbolIdentifier: any, pageNumber: any) => {
     const notesApi = new NotesRouterApi(baseConfig());
     notesApi
       .getNotesByIdentifierV1UsersMeNotesBySymbolIdentifierGet(
         symbolIdentifier,
-        pageNumber
+        pageNumber,
       )
       .then((res: any) => {
         if (res.status == 204) {

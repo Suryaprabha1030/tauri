@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import ListOfGroups from "../groups/listOfGroups";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 interface ListOfWatchListProps {
   setShowCreateWatchlist: Dispatch<SetStateAction<boolean>>;
@@ -39,7 +39,7 @@ const ListOfWatchList: React.FC<ListOfWatchListProps> = ({
     (state: RootState) => state.strategy.primaryRefresh,
   );
   const [GroupsOpen, setGroupsOpen] = useState<boolean>(false);
-  const router = useRouter();
+  const router = useNavigate();
   const createWatchlist = () => {
     if (list.length < 5) {
       setShowCreateWatchlist(true);

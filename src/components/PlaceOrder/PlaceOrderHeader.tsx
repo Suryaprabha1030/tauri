@@ -17,7 +17,7 @@ import {
   setStock,
   updateSymbolData,
 } from "@/lib/redux/slices/StrategySlice";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 import { AnalyzeOrderObject } from "@/lib/util/sideToolBar/orders/OrderUtil";
 import { setAnalyzeOrderStocks } from "@/lib/redux/slices/PlaceOrder";
@@ -68,7 +68,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
   const [spinningAnimation, setSpinningAnimation] = useState(false);
   const brokerCode = getBrokerCode();
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
 
   const resetPrices = async () => {
     setSpinningAnimation(true);
@@ -133,7 +133,7 @@ const PlaceOrderHeader: React.FC<PlaceOrderHeaderProps> = ({
     }
 
     if (!(path === `${config.brokersListUrl}/${brokerCode}/psb`)) {
-      router.push(`${config.brokersListUrl}/${brokerCode}/psb`);
+      router(`${config.brokersListUrl}/${brokerCode}/psb`);
     }
   };
 

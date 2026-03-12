@@ -8,7 +8,7 @@ import LoadingComponent from "@/components/shared/loading/Loading";
 import CommonNotesList from "../../sidetoolbar/notes/CommonNotesList";
 import InfoNotes from "../InfoNotes";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 interface NoteListProps {
@@ -34,7 +34,7 @@ const NoteList: React.FC<NoteListProps> = ({
   const [callEndList, setCallEndList] = useState(true);
   const [listPageNum, setListPageNum] = useState(1);
 
-  const router = useRouter();
+  const router = useNavigate();
   // get symbol notes
   const ListSymbolNotes = (identifier: any, pageNum: any) => {
     const notesApi = new NotesRouterApi(baseConfig());

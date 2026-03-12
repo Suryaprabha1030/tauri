@@ -232,7 +232,7 @@ const Strategies: React.FC = () => {
   const brokerName = getBrokerName();
   const [triggerSpotPrice, setTriggerSpotPrice] = useState(false);
   const [PayoffTableOiChg, setPayoffTableOiChg] = useState("");
-  const router: any = useRouter();
+  const router: any = useNavigate();
   const Brokercode: any = useParams();
   const [isValid, setIsValid] = useState(false);
   const brokerData: any = sessionStorage.getItem("ExistbrokerCode");

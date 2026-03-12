@@ -11,7 +11,7 @@ import PlaceOrderHeader from "./PlaceOrderHeader";
 import { containsSameIndexWithCEorPE } from "@/lib/util/sideToolBar/orders/OrderUtil";
 import { RootState } from "@/lib/redux/Store";
 import { updateSymbolData } from "@/lib/redux/slices/StrategySlice";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import {
   formatStockData,
   handlePlaceOrder,
@@ -37,10 +37,10 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [resetMargin, setResetmargin] = useState(false);
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const webSocketDataRead: any = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const handleOrder = (event: any) => {
     if (orderPlaced) return; // Prevent multiple triggers
@@ -71,10 +71,10 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
     bottom: 0,
   });
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   // Get updated stock data from Redux state
   const UpdatedOrderStockData = useSelector(
-    (state: RootState) => state.placeOrder.UpdateOrderStock
+    (state: RootState) => state.placeOrder.UpdateOrderStock,
   );
   const [localStockData, setLocalStockData] = useState<any[]>([]);
 
@@ -106,12 +106,12 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
       });
       const newStockData = formatStockData(
         preProcessedStocks,
-        webSocketDataRead
+        webSocketDataRead,
       );
 
       const updatedStockData = UpdatedOrderStockData?.map((existingStock) => {
         const matchingStock = newStockData?.find(
-          (newStock) => newStock?.identifier === existingStock?.identifier
+          (newStock) => newStock?.identifier === existingStock?.identifier,
         );
 
         return matchingStock
@@ -132,8 +132,8 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
           (newStock) =>
             !UpdatedOrderStockData.some(
               (existingStock) =>
-                existingStock?.identifier === newStock?.identifier
-            )
+                existingStock?.identifier === newStock?.identifier,
+            ),
         ),
       ];
 
@@ -164,7 +164,9 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
 
   const handleRadioButtonChange = (identifier: string, value: string) => {
     const updatedStockData = UpdatedOrderStockData.map((stock: any) =>
-      stock?.identifier === identifier ? { ...stock, order_type: value } : stock
+      stock?.identifier === identifier
+        ? { ...stock, order_type: value }
+        : stock,
     );
 
     dispatch(setUpdateStockData(updatedStockData));
@@ -207,7 +209,7 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
 
   const handleDelete = (identifier: string) => {
     const updatedLocalStockData = localStockData.filter(
-      (stock: any) => stock.identifier !== identifier
+      (stock: any) => stock.identifier !== identifier,
     );
 
     setLocalStockData(updatedLocalStockData);
@@ -222,7 +224,7 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
       setMarginRequired,
       setMarginAvail,
       router,
-      webSocketDataRead
+      webSocketDataRead,
     );
   }, [localStockData, resetMargin]);
 

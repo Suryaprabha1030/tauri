@@ -5,14 +5,11 @@ import {
   removeJwtCookie,
   setJwtCookie,
 } from "@/lib/util/cookies";
-import { baseConfig } from "@/lib/api/baseConfiguration";
-import { UserApi } from "@/lib/api/base";
-import { usePathname, useRouter } from "next/navigation";
-import LoadingComponent from "@/components/shared/loading/Loading";
 
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/lib/redux/Store";
+import { useLocation } from "react-router-dom";
+import LoadingComponent from "@/components/shared/loading/Loading";
 import config from "@/lib/config";
+import { useNavigate } from "react-router-dom";
 
 export interface AuthContextType {
   isAuthenticated: boolean;
@@ -37,8 +34,9 @@ export const AuthContextProvider = ({
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useNavigate();
+  const location = useLocation();
+  const pathname = location.pathname;
 
   useEffect(() => {
     setIsLoaded(false);
@@ -49,7 +47,7 @@ export const AuthContextProvider = ({
       if (token) {
         setIsAuthenticated(true);
         if (pathname.startsWith("/login") || pathname.startsWith("/signup"))
-          router.push(config.brokersListUrl);
+          router(config.brokersListUrl);
       }
     }
 

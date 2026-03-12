@@ -14,7 +14,7 @@ import {
   drawExitLineAndOverlay,
   drawOrUpdateAnnotationWithOverlay,
 } from "./AnnotationDisplay";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { setPositionsData } from "@/lib/OItoggleExpiry";
 
 interface TradingViewChartProps {
@@ -32,7 +32,7 @@ export function InjectOIOverlay(containerId: string) {
 
   // Cast iframe as HTMLIFrameElement for TS
   const iframe = container.querySelector(
-    'iframe[src^="blob:"]'
+    'iframe[src^="blob:"]',
   ) as HTMLIFrameElement | null;
   if (!iframe) {
     console.warn("TradingView iframe not found");
@@ -102,52 +102,52 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
   const dispatch = useDispatch();
 
   const toggleState: any = useSelector(
-    (state: RootState) => state.common.CandleAreaToggle
+    (state: RootState) => state.common.CandleAreaToggle,
   );
   const isOpen = useSelector((state: RootState) => state.common.showTVpopup);
   const chartforPsb = useSelector(
-    (state: RootState) => state.charts.chartPanel
+    (state: RootState) => state.charts.chartPanel,
   );
   const isSidetabCollapsed: any = useSelector(
-    (state: RootState) => state.common.isSidetabCollapsed
+    (state: RootState) => state.common.isSidetabCollapsed,
   );
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
   const firstFut = useSelector(
-    (state: RootState) => state.charts.IndexFirstFutData
+    (state: RootState) => state.charts.IndexFirstFutData,
   );
   const FutIndexName = useSelector(
-    (state: RootState) => state.charts.FutIndexName
+    (state: RootState) => state.charts.FutIndexName,
   );
   const ChartIconClicked = useSelector(
-    (state: RootState) => state.charts.ChartIconClicked
+    (state: RootState) => state.charts.ChartIconClicked,
   );
 
   const TvAddSymbolPopup = useSelector(
-    (state: RootState) => state.charts.TvAddSymbolPopup
+    (state: RootState) => state.charts.TvAddSymbolPopup,
   );
   const UpdatedSymbolPnl = useSelector(
-    (state: RootState) => state.Position.SymbolPnl
+    (state: RootState) => state.Position.SymbolPnl,
   );
   const holdingsdata: any = useSelector(
-    (state: RootState) => state.strategy.holdingsData
+    (state: RootState) => state.strategy.holdingsData,
   );
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   const lastExitRef = useRef<{ price: number; symbol: string } | null>(null);
   const symbolChangeSubscribed = useRef(false);
-  const router = useRouter();
+  const router = useNavigate();
   const updatedPnlRef = useRef(UpdatedSymbolPnl);
   const WebsocketLtpRef = useRef(webSocketDataRead);
   const positionsDataRef = useRef(positionsdata);
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
 
   useEffect(() => {
@@ -168,7 +168,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
         TvAddSymbolPopup,
         router,
         chartforPsb,
-        isMarketHoliday
+        isMarketHoliday,
       ); // Reinitialize with new brokerCode
       InjectOIOverlay("trading-view-chart");
     }
@@ -219,7 +219,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
 
         const selectedSymbol = symbolInfo?.full_name || symbolInfo?.symbol;
         const holding = holdingsdata?.holdings?.find(
-          (hold: any) => hold?.identifier === selectedSymbol
+          (hold: any) => hold?.identifier === selectedSymbol,
         );
         if (holding) {
           const avgPrice = Number(holding?.average_price);
@@ -248,7 +248,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
             holding,
             pledge,
             t1qty,
-            true
+            true,
           );
           // Check again after async work
           if (currentToken !== drawToken) {
@@ -278,11 +278,11 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
               positionsDataRef.current?.find(
                 (pos: any) =>
                   pos?.identifier === selectedSymbol &&
-                  pos?.transaction_type !== "EXITED" //  filter out exited
+                  pos?.transaction_type !== "EXITED", //  filter out exited
               );
 
             const holding = holdingsdata?.holdings?.find(
-              (hold: any) => hold?.identifier === selectedSymbol
+              (hold: any) => hold?.identifier === selectedSymbol,
             );
 
             if (holding) {
@@ -308,7 +308,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
                 holding,
                 pledge,
                 t1qty,
-                false
+                false,
               );
             }
 
@@ -329,7 +329,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
                   ltp,
                   pnl,
                   dispatch,
-                  router
+                  router,
                 );
                 lastExitRef.current = { price: ltp, symbol: selectedSymbol };
               }
@@ -362,7 +362,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
           const position = positionsDataRef.current?.find(
             (pos: any) =>
               pos?.identifier === selectedSymbol &&
-              pos?.transaction_type !== "EXITED" //  filter out exited
+              pos?.transaction_type !== "EXITED", //  filter out exited
           );
 
           if (position) {
@@ -376,7 +376,7 @@ const TradingViewChart: React.FC<TradingViewChartProps> = ({
               ltp,
               pnl,
               dispatch,
-              router
+              router,
             );
             symbolChangeSubscribed.current = true;
           }

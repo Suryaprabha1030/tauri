@@ -16,7 +16,7 @@ import config from "@/lib/config";
 import BrokerLoginPopup from "@/components/LoginPopup/BrokerLoginPopup";
 
 const Login = () => {
-  const router = useRouter();
+  const router = useNavigate();
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -75,16 +75,16 @@ const Login = () => {
           response?.data?.user?.last_name == null ||
           response?.data?.user?.phone_number == null
         ) {
-          router.push("/trading-style");
+          router("/trading-style");
           return;
         }
 
         if (response?.data?.user?.is_confirmed == false) {
-          router.push("/need-confirmation");
+          router("/need-confirmation");
           return;
         }
 
-        router.push(config.brokersListUrl);
+        router(config.brokersListUrl);
       },
       (error) => {
         setError("root", { message: error.response.data });

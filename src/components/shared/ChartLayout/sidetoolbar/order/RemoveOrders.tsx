@@ -1,7 +1,7 @@
 import { handleCancelOrder } from "@/lib/util/sideToolBar/orders/handlingOrders";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 interface RemoveOrdersProps {
   order: any;
@@ -18,7 +18,7 @@ const RemoveOrders: React.FC<RemoveOrdersProps> = ({
   setEditOrderId,
   setOrdersData,
 }) => {
-  const router = useRouter();
+  const router = useNavigate();
   const [tooltipDisplay, setTooltipDisplay] = useState<boolean>(false);
 
   const canShowButton =

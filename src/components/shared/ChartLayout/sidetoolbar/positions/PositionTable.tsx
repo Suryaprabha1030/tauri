@@ -1,8 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { handleTVChart } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { formatNumber } from "@/lib/util/DraftUtil";
 import CandleIcon from "../../optionFutures/CandleIcon";
@@ -44,7 +43,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
       return 0;
     });
   const path = window.location.pathname;
-  const router = useRouter();
+  const router = useNavigate();
   const brokerCode = getBrokerCode();
   const dispatch = useDispatch();
   const handleCheckboxChange = (index: number) => {

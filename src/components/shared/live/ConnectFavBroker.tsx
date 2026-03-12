@@ -5,7 +5,7 @@ import LiveHeader from "./LiveHeader";
 import LoadingComponent from "../loading/Loading";
 import { BrokersRouterApi, UserApi, UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "@/context/authContextProvider";
 import zApi from "@/lib/api/zApi";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
@@ -43,7 +43,7 @@ const ConnectFavBroker = () => {
   const [currentStartIndex, setCurrentStartIndex] = useState(0);
   const [brokersPerPage, setBrokersPerPage] = useState(0);
   const userApi = new UserApi(baseConfig());
-  const apiClient = new zApi(useRouter(), useContext(AuthContext));
+  const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   const [userMail, setUserMail] = useState("");
   const dispatch = useDispatch();
   const [maintainCards, setMaintainCards] = useState<null | number>(0);
@@ -476,7 +476,7 @@ const ConnectFavBroker = () => {
     currentStartIndex + brokersPerPage,
   );
 
-  const router = useRouter();
+  const router = useNavigate();
   const handlePopup = (e: any, url: any) => {
     e.stopPropagation();
     e.preventDefault();
@@ -510,7 +510,7 @@ const ConnectFavBroker = () => {
 
             // Use React Router's useNavigate to redirect
 
-            router.push(`${config.brokersListUrl}/${message_data[2]}/psv`); // Redirect to a dynamic route
+            router(`${config.brokersListUrl}/${message_data[2]}/psv`); // Redirect to a dynamic route
           }
         },
         false,
@@ -520,7 +520,7 @@ const ConnectFavBroker = () => {
 
   const navigateToPsv = (userBroker: any) => {
     if (loginValid[userBroker?.broker_code]) {
-      router.push(`${config.brokersListUrl}/${userBroker?.broker_code}/psv`);
+      router(`${config.brokersListUrl}/${userBroker?.broker_code}/psv`);
     }
   };
   const SendNotification = (BrokerName: string, userId: any) => {

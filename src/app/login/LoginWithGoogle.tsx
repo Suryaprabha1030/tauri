@@ -2,10 +2,10 @@ import { useRouter } from "next/navigation";
 import config from "@/lib/config";
 
 const LoginWithGoogle = ({ name }: any) => {
-  const router = useRouter();
+  const router = useNavigate();
   const url = config.apiUrl;
   const googleAuthentication = () => {
-    router.push(`${url}/v1/users/google_auth`);
+    router(`${url}/v1/users/google_auth`);
   };
 
   return (

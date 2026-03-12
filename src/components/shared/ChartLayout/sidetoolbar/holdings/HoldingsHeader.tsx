@@ -12,7 +12,7 @@ import { UserBrokerRouterApi } from "@/lib/api/base";
 import { useDispatch, useSelector } from "react-redux";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { setIdentifiersSet } from "@/lib/redux/slices/PositionSlicer";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import {
@@ -47,7 +47,7 @@ const HoldingsHeader: React.FC<HoldingsHeaderProps> = ({
   setLeftWidth,
 }) => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   const userEmail = useSelector((state: RootState) => state.common.userInfo);
   const isPrivilegedUser = config.userEmail.includes(userEmail?.email);
   const strategyOptions = [
@@ -58,7 +58,7 @@ const HoldingsHeader: React.FC<HoldingsHeaderProps> = ({
     { label: "Hybrid", value: "hybridInvestor" },
   ];
   const selectedHoldingsType = useSelector(
-    (state: RootState) => state.SimulationDemo.holdingsType
+    (state: RootState) => state.SimulationDemo.holdingsType,
   );
 
   const handlerefresh = () => {
@@ -74,19 +74,19 @@ const HoldingsHeader: React.FC<HoldingsHeaderProps> = ({
             positions: response.data.positions.positions,
             positionPnl: response.data.positions.total_pnl,
             positionpnlpercent: response.data.positions.total_pnl_percent,
-          })
+          }),
         );
         dispatch(
           setLastUpdatedPositions({
             data: response?.data?.positions,
             time: Date.now(),
-          })
+          }),
         );
         dispatch(
           setLastUpdatedHoldings({
             data: response?.data?.holdings,
             time: Date.now(),
-          })
+          }),
         );
         dispatch(setFundsData({ fundsData: response.data.funds }));
         dispatch(setIdentifiersSet(false));

@@ -10,7 +10,7 @@ const brokerLogoutTokenRemove = (router: any | null) => {
 
     // when brokerLogout need to remove token
   } else {
-    router.push("/live");
+    router("/live");
 
     // when brokerLogout need to remove token
 

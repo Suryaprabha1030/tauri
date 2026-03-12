@@ -14,7 +14,7 @@ import { formatExpiryDate } from "@/lib/util/DateUtil";
 import HeatMapHeader from "./SpotPriceDisplay";
 import HeatMapToggle from "./HeatMapToggle";
 import { getToggleState } from "@/lib/redux/slices/AnalyzerSlice";
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import { debounce } from "lodash";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { RootState } from "@/lib/redux/Store";
@@ -33,7 +33,8 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
     const [dragStartX, setDragStartX] = useState<number | null>(null);
     const [isExpanded, setIsExpanded] = useState(false);
     const dispatch = useDispatch();
-    const pathName = usePathname();
+    const location = useLocation();
+    const pathname = location.pathname;
     const [NoOiData, setNoOiData] = useState(true);
     const toggleState = useSelector(
       (state: RootState) => state.analyzer.toggleState,

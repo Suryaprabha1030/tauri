@@ -1,7 +1,6 @@
 "use client";
 import config from "@/lib/config";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 

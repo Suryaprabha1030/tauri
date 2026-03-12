@@ -16,8 +16,7 @@ import {
   settoggleholdings,
   settogglepositions,
 } from "@/lib/redux/slices/StrategySlice";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import {
   checkPosition,
   getCheckedPositionData,
@@ -90,7 +89,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
   const [showHistory, setShowHistory] = useState(true);
 
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   const { connectionStatus } = useWebSocketContext();
   const addsymbolsread: any = useSelector(
     (state: RootState) => state.strategy.symbols,
@@ -244,7 +243,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
         },
       }),
     );
-    router.push(route);
+    router(route);
     dispatch(ShowStrategiesPopup(false));
     dispatch(
       getIndexName({

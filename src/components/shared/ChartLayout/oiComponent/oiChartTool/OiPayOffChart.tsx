@@ -15,7 +15,7 @@ import CombinedBarChart from "./combinedOi/CombineBarChart";
 import CombinedOiChart from "./combinedOi/CombinedOiChart";
 import CombinedOiLegendWithRange from "./combinedOi/CombinedOiLegendWithRange";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import config from "@/lib/config";
 import MultiOiChart from "./multiOi/MultiOiChart";
 import StraddleStrangleOiChart from "./straddleStrangle/StraddleStrangleOiChart";
@@ -85,18 +85,18 @@ const OiPayOffChart: React.FC<OiPayOffChartProps> = ({
 
   const [combinedOiPayload, setCombinedOiPayload] = useState<any>({});
   const [combinedOiMinStrikeRange, setCombinedOiMinStrikeRange] = useState<any>(
-    {}
+    {},
   );
   const [combinedOiMaxStrikeRange, setCombinedOiMaxStrikeRange] = useState<any>(
-    {}
+    {},
   );
 
   const oiChangeIntervalRef = useRef<any>(null);
 
   const combinedOiIntervalRef = useRef<any>(null);
-  const router = useRouter();
+  const router = useNavigate();
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   useEffect(() => {
     if (activeButton == "oi") {
@@ -129,7 +129,7 @@ const OiPayOffChart: React.FC<OiPayOffChartProps> = ({
             true,
             oiChangeboolean,
             fromOiTime,
-            toOiTime
+            toOiTime,
           )
           .then((res: any) => {
             if (res && res?.status == 204) {
@@ -160,7 +160,7 @@ const OiPayOffChart: React.FC<OiPayOffChartProps> = ({
     };
     oiChangeIntervalRef.current = setInterval(
       fetchIfTradingTimeOiChangeData,
-      180000
+      180000,
     );
     // oiChangeIntervalRef.current = setInterval(fetchData, 180000); // 3 minutes
 
@@ -190,7 +190,7 @@ const OiPayOffChart: React.FC<OiPayOffChartProps> = ({
             queryIdentifier,
             combinedOiExpiry,
             // oiIndexData[query]?.token,
-            selected
+            selected,
           )
           .then((res: any) => {
             if (res && res?.status == 204) {
@@ -222,7 +222,7 @@ const OiPayOffChart: React.FC<OiPayOffChartProps> = ({
     };
     combinedOiIntervalRef.current = setInterval(
       fetchIfTradingTimeCombinedOiData,
-      180000
+      180000,
     );
     return () => {
       if (combinedOiIntervalRef.current) {

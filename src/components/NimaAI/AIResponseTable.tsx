@@ -15,7 +15,7 @@ import {
   fetchIndexDetails,
   handleStockTransaction,
 } from "./AIChat";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { AllStrategyUtil } from "@/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil";
 
 import {
@@ -73,7 +73,7 @@ export default function AIResponseTable({
   );
   const dispatch = useDispatch();
   const brokerCode = authSuccess ? getBrokerCode() : null;
-  const router = useRouter();
+  const router = useNavigate();
   const [selectedText, setSelectedText] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<{
     x: number;

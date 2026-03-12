@@ -4,7 +4,7 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import { ManualTriggerScheduledAPIApi } from "@/lib/api/base";
 import config from "@/lib/config";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
@@ -16,7 +16,7 @@ interface OiAlertBoxProps {
 
 const OiAlertBox: React.FC<OiAlertBoxProps> = React.memo(
   ({ showWarningOiAlert, setShowWarningOiAlert }) => {
-    const router = useRouter();
+    const router = useNavigate();
     const isMarketHoliday = useSelector(
       (state: RootState) => state.MarketBasis.isMarketHoliday,
     );

@@ -21,7 +21,7 @@ import FliterGroup from "./FliterGroup";
 import AddSymbolTable from "./AddSymbolTable";
 import { searchTypeMap } from "@/lib/util/analyzer/generalUtil/generalUtil";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 interface addSymbolProps {
@@ -57,7 +57,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
   const [selectedExchange, setSelectedExchange] = useState<"NSE" | "BSE">(
     "NSE",
   );
-  const router = useRouter();
+  const router = useNavigate();
   const searchRef = useRef<HTMLInputElement | null>(null);
   const [selected, setSelected] = useState("No Group");
 

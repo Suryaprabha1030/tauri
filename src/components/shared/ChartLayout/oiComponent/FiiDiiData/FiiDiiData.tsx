@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { getFiiDiiData } from "@/lib/redux/slices/FiiDiiSlice";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import CashMarket from "./cashMarket/CashMarket";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import FiiDiiHistory from "./FiiDiiHistory/FiiDiiHistory";
 import BuySellIndex from "./FiiDiiFno/fnoChart/buySellIndex/BuySellIndex";
 import BuySellFutureChart from "./FiiDiiFno/fnoChart/BuySellFuture/BuySellFutureChart";
@@ -33,7 +33,7 @@ const FiiDiiData: React.FC<FiiDiiDataProps> = ({
   setPayLoadDate,
 }) => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   const [fnoTabActiveButton, setFnoTabActiveButton] = useState("fii");
   const [marketData, setMarketData] = useState<any>({});
 
@@ -50,7 +50,7 @@ const FiiDiiData: React.FC<FiiDiiDataProps> = ({
     try {
       const response: any =
         await FiDiiApi.getCombinedMarketDataMarketDataMarketDataPost(
-          payLoadDate
+          payLoadDate,
         );
       if (response.status === 204) {
         setMarketData({});
@@ -68,7 +68,7 @@ const FiiDiiData: React.FC<FiiDiiDataProps> = ({
           ?.sort(
             ([a], [b]) =>
               new Date(a.replace(/-/g, " ")).getTime() -
-              new Date(b.replace(/-/g, " ")).getTime()
+              new Date(b.replace(/-/g, " ")).getTime(),
           )
           .forEach(([key, value]: any) => {
             cashFlowData.push(value?.market_overview);
@@ -89,7 +89,7 @@ const FiiDiiData: React.FC<FiiDiiDataProps> = ({
             FiiDiiLtpData: FiiDiiLtp,
             FiiDiiLtpChgData: FiiDiiLtpChg,
             datewiseSummaryData: summaryData,
-          })
+          }),
         );
       }
     } catch (error: any) {

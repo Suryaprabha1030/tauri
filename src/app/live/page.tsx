@@ -10,7 +10,7 @@ import { RootState } from "@/lib/redux/Store";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { fetchMarketDays } from "@/lib/util/generalUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 import React, { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,9 +20,9 @@ const Livepage = () => {
   const { isAuthenticated } = useContext(AuthContext);
   const dispatch = useDispatch();
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     const message = sessionStorage.getItem("errorMessage");
     if (message) {

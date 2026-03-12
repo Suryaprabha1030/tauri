@@ -28,22 +28,22 @@ const Charts = () => {
   const [showCreateWatchlist, setShowCreateWatchlist] =
     useState<boolean>(false);
   const [selectedWatchlistId, setSelectedWatchlistId] = useState<number | null>(
-    null
+    null,
   );
   const toggleState: any = useSelector(
-    (state: RootState) => state.common.CandleAreaToggle
+    (state: RootState) => state.common.CandleAreaToggle,
   );
   const netpercentage = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
 
   const [parentVisible, setParentVisible] = useState<boolean>(true);
@@ -53,7 +53,7 @@ const Charts = () => {
   const [clickedSymbolData, setClickedSymbolData] = useState<any>(null);
   const [clickTvChart, setClickTvChart] = useState(false);
 
-  const router = useRouter();
+  const router = useNavigate();
   const code: any = useParams();
   const [isValid, setIsValid] = useState(false);
   const brokerData: any = sessionStorage.getItem("ExistbrokerCode");

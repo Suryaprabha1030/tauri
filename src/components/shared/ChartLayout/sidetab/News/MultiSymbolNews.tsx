@@ -4,7 +4,7 @@ import { NewsRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import NewsBox from "../../sidetoolbar/news/NewsBox";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 const formatDateTime = (date: any) => {
@@ -65,7 +65,7 @@ const MultiSymbolNews: React.FC<MultiSymbolNewsProps> = ({
     [key: string]: SentimentInfo;
   }>({});
   const [hoveredSymbol, setHoveredSymbol] = useState<string | null>(null);
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     const multisymbolNewsApi = new NewsRouterApi(baseConfig());
 

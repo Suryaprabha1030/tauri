@@ -5,11 +5,11 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import config from "@/lib/config";
 import { getGoogleSignInUser } from "@/lib/redux/slices/CommonSlice";
 import { removeJwtCookie, setJwtCookie } from "@/lib/util/cookies";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 const Page = () => {
-  const router = useRouter();
+  const router = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -17,7 +17,7 @@ const Page = () => {
     console.log(param, "param");
     if (!param) {
       console.error("Authorization code is missing in the callback URL.");
-      router.push("/login"); // Redirect to an error page or show an error message.
+      router("/login"); // Redirect to an error page or show an error message.
       return;
     }
     const userApi = new UserApi(baseConfig());
@@ -28,7 +28,7 @@ const Page = () => {
         dispatch(
           getGoogleSignInUser({
             googleSignInUser: res?.data?.user,
-          })
+          }),
         );
         removeJwtCookie();
         setJwtCookie(res?.data?.access_token);
@@ -37,18 +37,18 @@ const Page = () => {
           res.data.user.last_name == null ||
           res.data.user.phone_number == null
         ) {
-          router.push("/trading-style");
+          router("/trading-style");
           return;
         }
         if (res.data.user.is_confirmed == false) {
-          router.push("/need-confirmation");
+          router("/need-confirmation");
           return;
         }
-        router.push(config.brokersListUrl);
+        router(config.brokersListUrl);
       })
       .catch((err) => {
         console.error("Failed to handle OAuth callback:", err);
-        router.push("/login"); // Redirect to an error page or show an error message.
+        router("/login"); // Redirect to an error page or show an error message.
       });
   }, []);
   return (

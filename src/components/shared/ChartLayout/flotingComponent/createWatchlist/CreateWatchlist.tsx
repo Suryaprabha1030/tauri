@@ -2,8 +2,7 @@ import { UserWatchlistRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { Dispatch, SetStateAction, useRef, useState } from "react";
 interface CreateWatchlistProps {
   setShowCreateWatchlist: Dispatch<SetStateAction<boolean>>;
@@ -15,7 +14,7 @@ const CreateWatchlist: React.FC<CreateWatchlistProps> = ({
   setSelectedWatchlistId,
 }) => {
   const nameRef = useRef<any>(null);
-  const router = useRouter();
+  const router = useNavigate();
   // hide this floating component
   const removeSymbol = () => {
     setShowCreateWatchlist(false);

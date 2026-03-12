@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import NewsBox from "../../sidetoolbar/news/NewsBox";
 import InfoNotes from "../InfoNotes";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { formatDateTime } from "@/lib/util/sideToolBar/news/TimeConverterUtil";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
@@ -41,9 +41,9 @@ const GetSymbolNews: React.FC<SymbolNewsProps> = ({
   const [intervalId, setIntervalId] = useState(null);
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [dispNews, setDispNews] = useState<any>();
-  const router = useRouter();
+  const router = useNavigate();
   const SymbolNews: any = useSelector(
-    (state: RootState) => state.common.SymbolNewsData
+    (state: RootState) => state.common.SymbolNewsData,
   );
   const dispatch = useDispatch();
 
@@ -71,7 +71,7 @@ const GetSymbolNews: React.FC<SymbolNewsProps> = ({
         fetchSymbolNews,
         dispatch,
         router,
-        setIntervalId
+        setIntervalId,
       );
 
       return cleanup;
@@ -82,7 +82,7 @@ const GetSymbolNews: React.FC<SymbolNewsProps> = ({
     const maxValue = Math.max(
       sentimentAnalyze?.negative,
       sentimentAnalyze?.neutral,
-      sentimentAnalyze?.positive
+      sentimentAnalyze?.positive,
     );
     if (maxValue === sentimentAnalyze?.positive) {
       setSAvalue("Positive");
@@ -101,7 +101,10 @@ const GetSymbolNews: React.FC<SymbolNewsProps> = ({
   }, [activeFilters]);
 
   return (
-    <div id="newsSection" className="h-full w-full max-sm:pt-[0.5rem] sm:max-md:mb-[9rem] md:max-xl:mb-[13rem]">
+    <div
+      id="newsSection"
+      className="h-full w-full max-sm:pt-[0.5rem] sm:max-md:mb-[9rem] md:max-xl:mb-[13rem]"
+    >
       <div className=" h-full w-full">
         {/* <NewsFilter
           setNewsData={setNewsData}

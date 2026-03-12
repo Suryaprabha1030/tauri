@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import TabNavigation from "./TabNavigation";
 import LightweightChart from "./StockInfoChart";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import CompanyProfile from "./CompanyProfile";
 import StockFinancial from "./StockFinancials";
 import TimeframeSelector from "../shared/ChartLayout/sidetab/TimeFrameSelector/TimeFrameSelector";
@@ -83,12 +83,12 @@ const StockInfo: React.FC<StockInfoProps> = ({
   const [trendsData, setTrendsData] = useState<any>([]);
   const [documentsData, setDocumentsData] = useState<any>([]);
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
-  const router = useRouter();
+  const router = useNavigate();
   const timeframes = ["5", "15", "30", "60", "1D"];
   const [selectedTimeframe, setSelectedTimeframe] = useState(
-    timeframes.includes(resolution) ? resolution : "1D"
+    timeframes.includes(resolution) ? resolution : "1D",
   );
 
   const [AreaColor, setAreaColor] = useState("");
@@ -116,10 +116,10 @@ const StockInfo: React.FC<StockInfoProps> = ({
   const hasRenderedPePb = useRef(false);
   const [newsByTime, setNewsByTime] = useState<any>({});
   const SymbolNewsData: any = useSelector(
-    (state: RootState) => state.common.SymbolNewsData
+    (state: RootState) => state.common.SymbolNewsData,
   );
   const screenerOpen: any = useSelector(
-    (state: RootState) => state.common.ScreenerOpen
+    (state: RootState) => state.common.ScreenerOpen,
   );
   const isEquity = clickedSymbolData?.symbol_type === "equity" ? true : false;
 
@@ -187,7 +187,7 @@ const StockInfo: React.FC<StockInfoProps> = ({
       const res =
         await fetchApi.fetchTaPivotsWithYfinanceHistoryCandlesSymbolInfoStockDataGet(
           brokerCode,
-          symbol
+          symbol,
         );
       if (res?.status == 204) {
         setPepbData([]);
@@ -256,7 +256,7 @@ const StockInfo: React.FC<StockInfoProps> = ({
       setChartData,
       brokerCode,
       router,
-      symbolInfo
+      symbolInfo,
     );
   }, [selectedTimeframe, symbolInfo]);
 
@@ -277,7 +277,7 @@ const StockInfo: React.FC<StockInfoProps> = ({
         setcashFlow,
         setbalanceSheet,
         symbol,
-        router
+        router,
       );
 
       fetchSymbolNews(symbol, dispatch, router);
@@ -287,7 +287,7 @@ const StockInfo: React.FC<StockInfoProps> = ({
         fetchSymbolNews,
         dispatch,
         router,
-        () => {}
+        () => {},
       );
 
       if (
@@ -306,11 +306,11 @@ const StockInfo: React.FC<StockInfoProps> = ({
     }
 
     return () => {
-      setInfo([]),
+      (setInfo([]),
         setQuaterlysheet([]),
         setIncomeStatement([]),
         setcashFlow([]),
-        setbalanceSheet([]);
+        setbalanceSheet([]));
     };
   }, [symbol]);
 
@@ -391,7 +391,7 @@ const StockInfo: React.FC<StockInfoProps> = ({
             }
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.15 },
       );
 
       if (technicalsRef.current) observer.observe(technicalsRef.current);
@@ -434,7 +434,7 @@ const StockInfo: React.FC<StockInfoProps> = ({
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     if (peersRef.current) observer.observe(peersRef.current);
     if (trendsRef.current) observer.observe(trendsRef.current);

@@ -31,7 +31,7 @@ const StocksCard: React.FC<StocksCardProps> = ({
   const [symbs, setSymbols] = useState<Symbol[]>([]);
   const [identifiers, setIdentifiers] = useState<any>([]);
 
-  const router = useRouter();
+  const router = useNavigate();
   const symbols: any = [
     { symbol: "Nifty 50", identifier: "NSE:NIFTY50" },
     { symbol: "Nifty Bank", identifier: "NSE:BANKNIFTY" },
@@ -39,28 +39,28 @@ const StocksCard: React.FC<StocksCardProps> = ({
   ];
   const identifier: string[] = ["NSE:NIFTY50", "NSE:BANKNIFTY", "NSE:FINNIFTY"];
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   const netchange: any = useSelector(
-    (state: RootState) => state.strategy.netChange
+    (state: RootState) => state.strategy.netChange,
   );
 
   const netpercentage: any = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const pinUnpinRedux = useSelector(
-    (state: RootState) => state.strategy.pinUnpinstate
+    (state: RootState) => state.strategy.pinUnpinstate,
   );
   const pinnedSymbols = useSelector((state: RootState) =>
-    Array.from(new Set(state.strategy.pinnedsymbols))
+    Array.from(new Set(state.strategy.pinnedsymbols)),
   );
 
   const defaultWatchlistPinnedSymbol = useSelector(
-    (state: RootState) => state.charts.setDefaultWatchlist
+    (state: RootState) => state.charts.setDefaultWatchlist,
   );
   const SymbolIdentifier = useSelector(
-    (state: RootState) => state.charts.SymbolIdentifier
+    (state: RootState) => state.charts.SymbolIdentifier,
   );
   const path = window.location.pathname;
   const dispatch = useDispatch();
@@ -92,7 +92,7 @@ const StocksCard: React.FC<StocksCardProps> = ({
         return;
       }
       const defaultList = res.data.find(
-        (watchlist: any) => watchlist.primary === true
+        (watchlist: any) => watchlist.primary === true,
       );
 
       if (defaultList) {
@@ -134,21 +134,21 @@ const StocksCard: React.FC<StocksCardProps> = ({
         defaultWatchlistPinnedSymbol?.symbols
           .filter((symbol: any) =>
             defaultWatchlistPinnedSymbol?.pinned_symbols.includes(
-              symbol.identifier
-            )
+              symbol.identifier,
+            ),
           )
           .map((symbol: any) => symbol.identifier);
       const pinnedSymbols = validPinnedSymbols;
       if (pinnedSymbols?.length > 0) {
         // Filter out any empty strings from the pinned_symbols array
         const filteredSymbols = pinnedSymbols.filter(
-          (symbol: any) => symbol !== ""
+          (symbol: any) => symbol !== "",
         );
 
         if (
           filteredSymbols.length > 0 &&
           filteredSymbols.every((symbol: any) =>
-            pinnedSymbols?.includes(symbol)
+            pinnedSymbols?.includes(symbol),
           )
         ) {
           const timer = setTimeout(() => {
@@ -197,10 +197,10 @@ const StocksCard: React.FC<StocksCardProps> = ({
       if (remainingSlots > 0) {
         // Add default symbols that are not already pinned (ensure we don't exceed 3)
         const filteredDefaults = symbols.filter(
-          (sym) => !updatedIdentifiers.includes(sym.identifier)
+          (sym) => !updatedIdentifiers.includes(sym.identifier),
         );
         const filteredIdentifiers = identifier.filter(
-          (id) => !updatedIdentifiers.includes(id)
+          (id) => !updatedIdentifiers.includes(id),
         );
 
         // Add the remaining symbols to fill the slots (up to 3)

@@ -63,7 +63,7 @@ import OITrend from "./liveOptionChain/OITrend";
 import OiWithPercentage from "./liveOptionChain/OiWithPercentage";
 import { setAnalyzeOrderStocks } from "@/lib/redux/slices/PlaceOrder";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import config from "@/lib/config";
 import { setIndexFirstFutData } from "@/lib/redux/slices/ChartsSlice";
 import { setOiChartCall } from "@/lib/redux/slices/PayoffChartSlice";
@@ -116,39 +116,39 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
   const expiryDateRef = useRef<any>(null);
   const ltp: any = useSelector((state: RootState) => state.strategy.ltpData);
   const indexAddtionalData: any = useSelector(
-    (state: RootState) => state.strategy.addtionalData
+    (state: RootState) => state.strategy.addtionalData,
   );
   const spotPriceInfo: any = useSelector(
-    (state: RootState) => state.strategy.spotPriceData
+    (state: RootState) => state.strategy.spotPriceData,
   );
   const expiry: any = useSelector(
-    (state: RootState) => state.strategy.indexExpiryDate
+    (state: RootState) => state.strategy.indexExpiryDate,
   );
   const optionChainPayloadData: any = useSelector(
-    (state: RootState) => state.analyzer.optionChainPayLoadData
+    (state: RootState) => state.analyzer.optionChainPayLoadData,
   );
   const dispatch = useDispatch();
   const optionDatas: any = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
 
   const OpttargetltpData: any = useSelector(
-    (state: RootState) => state.analyzer.OptTargetLtpData
+    (state: RootState) => state.analyzer.OptTargetLtpData,
   );
 
   const indexObjData: any = useSelector(
-    (state: RootState) => state.strategy.indexObj
+    (state: RootState) => state.strategy.indexObj,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   // const [spotPriceInfo, setSpotPriceInfo] = useState(null);
   const netpercentage: any = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const SandboxData: any = useSelector(
-    (state: RootState) => state.analyzer.setSandboxData
+    (state: RootState) => state.analyzer.setSandboxData,
   );
 
   const intervalRef: any = useRef<any>(null);
@@ -158,51 +158,51 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
   const [oi, setOi] = useState({});
 
   const positionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
 
   const AnalyzeOrderstock = useSelector(
-    (state: RootState) => state.placeOrder.AnalyzeOrder
+    (state: RootState) => state.placeOrder.AnalyzeOrder,
   );
 
   const frompositionsdata = useSelector(
-    (state: RootState) => state.strategy.positions
+    (state: RootState) => state.strategy.positions,
   );
 
-  const router = useRouter();
+  const router = useNavigate();
   const indicesData: any = useSelector(
-    (state: RootState) => state.common.allIndicesOptionsList
+    (state: RootState) => state.common.allIndicesOptionsList,
   );
 
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const futureDatas = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
   const selectedStrategy = useSelector(
-    (state: RootState) => state.analyzer.setselectedStrategy
+    (state: RootState) => state.analyzer.setselectedStrategy,
   );
   const [currentExpiryOptionChainData, setCurrentExpiryOptionChainData] =
     useState<any>({});
   const [optionChainData, setOptionChainData] = useState<any>({});
   const noOiData = useSelector(
-    (state: RootState) => state.optionChain.nooiData
+    (state: RootState) => state.optionChain.nooiData,
   );
   const expandTable = useSelector(
-    (state: RootState) => state.optionChain.expandTable
+    (state: RootState) => state.optionChain.expandTable,
   );
   const oiPercent = useSelector(
-    (state: RootState) => state.optionChain.oiPercent
+    (state: RootState) => state.optionChain.oiPercent,
   );
 
   const consolidatedData: any = useSelector(
-    (state: RootState) => state.optionChain.consolidatedData
+    (state: RootState) => state.optionChain.consolidatedData,
   );
   const reset = useSelector((state: RootState) => state.optionChain.reset);
   const expiryValue = useSelector(
-    (state: RootState) => state.optionChain.expiryValue
+    (state: RootState) => state.optionChain.expiryValue,
   );
   const [spotPriceRoundOff, setSpotPriceRoundOff] = useState<any>(null);
   const isInitialRender = useRef(true);
@@ -210,7 +210,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
   const WebsocketLtpRef = useRef(webSocketDataRead);
   const [oiSupportResistance, setOiSupportResistance] = useState<any>({});
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   useEffect(() => {
     if (WebsocketLtpRef) {
@@ -222,7 +222,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
     brokerCode: any,
     query: any,
     querySpotPrice: any,
-    booleanState: any
+    booleanState: any,
   ) => {
     const getAllDataApi = new UserBrokerRouterApi(baseConfig());
     if (!query?.length) return;
@@ -231,7 +231,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         brokerCode,
         query,
         querySpotPrice,
-        booleanState
+        booleanState,
       )
       .then((res: any) => {
         dispatch(setIndexRawApiResponse(res?.data));
@@ -243,20 +243,20 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
           Indexfuture &&
           Indexfuture.length > 0 &&
           [...Indexfuture].sort((a, b) =>
-            new Date(a.expiry) > new Date(b.expiry) ? 1 : -1
+            new Date(a.expiry) > new Date(b.expiry) ? 1 : -1,
           );
         const firstFut = sortedFuts[0];
         dispatch(
           setIndexFirstFutData({
             IndexFirstFutData: firstFut,
             FutIndexName: IndexName,
-          })
+          }),
         ); //For displaying FUT in Tv chart Popup
         dispatch(
           addSymbol({
             symbol: res?.data?.index_obj?.identifier,
             // token: res?.data?.index_obj?.token,
-          })
+          }),
         );
 
         Object.keys(res?.data?.option_chain || {}).forEach((expiry) => {
@@ -270,7 +270,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                 addSymbol({
                   symbol: opt?.identifier, // pick identifier
                   // token: opt.token, // pick token
-                })
+                }),
               );
             });
           });
@@ -280,7 +280,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
             addSymbol({
               symbol: future?.identifier,
               // token: future.token,
-            })
+            }),
           );
         });
       })
@@ -305,7 +305,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
       .fetchLatestOiWithPercentageV1UsersMeBrokersBrokerCodeFetchLatestOiWithPercentagePost(
         uniBrokerCode,
         index,
-        expiry
+        expiry,
       )
       .then((res) => {
         if (res?.status == 204 || res?.status == 400) {
@@ -369,7 +369,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
       dispatch(
         optionChainPayload({
           optionChainPayloadData: { ClickedRow: {}, response: {} },
-        })
+        }),
       );
     }
     const expiry = event.target.value;
@@ -396,7 +396,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
             brokerCode,
             query,
             querySpotPrice,
-            false
+            false,
           )
           .then((res: any) => {
             dispatch(setIndexRawApiResponse(res?.data));
@@ -408,21 +408,21 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
               Indexfuture &&
               Indexfuture.length > 0 &&
               [...Indexfuture].sort((a, b) =>
-                new Date(a.expiry) > new Date(b.expiry) ? 1 : -1
+                new Date(a.expiry) > new Date(b.expiry) ? 1 : -1,
               );
             const firstFut = sortedFuts[0];
             dispatch(
               setIndexFirstFutData({
                 IndexFirstFutData: firstFut,
                 FutIndexName: res.data?.index_obj?.identifier ?? "",
-              })
+              }),
             );
 
             dispatch(
               addSymbol({
                 symbol: res?.data?.index_obj?.identifier,
                 // token: res?.data?.index_obj?.token,
-              })
+              }),
             );
 
             Object.keys(res?.data?.option_chain || {}).forEach((expiry) => {
@@ -436,7 +436,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                     addSymbol({
                       symbol: opt?.identifier, // pick identifier
                       // token: opt.token, // pick token
-                    })
+                    }),
                   );
                 });
               });
@@ -476,7 +476,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
       const atmStrike: any = ATMCalculation(
         currentExpiryOptionChainData,
         webSocketDataRead,
-        indexObjData
+        indexObjData,
       );
       setSpotPriceRoundOff(atmStrike);
       dispatch(getSpotPriceRoundOff(atmStrike));
@@ -489,7 +489,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         getIndexName({
           indexName: query,
           expiryDate: expiryValue,
-        })
+        }),
       );
     }
   }, [query, ltp, expiryDateRef, expiryValue]);
@@ -532,7 +532,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         let hasChanges = 1;
         const updateCommonData = (
           prevCommonData: { [key: string]: any },
-          tData: { [key: string]: any }
+          tData: { [key: string]: any },
         ) => {
           const updatedCommonData = { ...prevCommonData };
 
@@ -545,7 +545,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
               dispatch(
                 optionChainPayload({
                   optionChainPayloadData: { ClickedRow: {}, response: {} },
-                })
+                }),
               );
               if (
                 prevCommonData[key].ltp !== value.ltp &&
@@ -576,7 +576,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         let hasPositionChanges = false;
         const updatePositionData = (
           prevPostionData: { [key: string]: any },
-          tData: { [key: string]: any }
+          tData: { [key: string]: any },
         ) => {
           const updatedPositionData = { ...prevPostionData };
 
@@ -605,10 +605,10 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         };
         const newOptionData = updatePositionData(
           transformDataForPeriodic(
-            findValuesByCategory(query, groupByCategory(frompositionsdata))
+            findValuesByCategory(query, groupByCategory(frompositionsdata)),
           ),
 
-          tData
+          tData,
         );
 
         if (hasPositionChanges) {
@@ -617,7 +617,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
               addSymbol({
                 symbol: data?.identifier,
                 // token: data.token,
-              })
+              }),
             );
           });
         }
@@ -635,7 +635,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         const enrichedOptionChain = enrichOptionChain(
           optionChainData,
           webSocketDataRead,
-          netpercentage
+          netpercentage,
         );
         const asend = enrichedOptionChain[expiryDateRef.current.value];
         const sortedEntries = asend
@@ -652,7 +652,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         let hasChanges = 1;
         const updateCommonData = (
           prevCommonData: { [key: string]: any },
-          tData: { [key: string]: any }
+          tData: { [key: string]: any },
         ) => {
           const updatedCommonData = { ...prevCommonData };
 
@@ -695,7 +695,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         const atmStrike = ATMCalculation(
           sorted,
           webSocketDataRead,
-          indexObjData
+          indexObjData,
         );
 
         setSpotPriceRoundOff(atmStrike);
@@ -715,7 +715,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         const atmStrike: any = ATMCalculation(
           currentExpiryOptionChainData,
           WebsocketLtpRef.current,
-          indexObjData
+          indexObjData,
         );
         setSpotPriceRoundOff(atmStrike);
         dispatch(getSpotPriceRoundOff(atmStrike));
@@ -795,7 +795,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         const atmStrike = ATMCalculation(
           sorted,
           webSocketDataRead,
-          indexObjData
+          indexObjData,
         );
         setSpotPriceRoundOff(atmStrike);
         setCurrentExpiryOptionChainData(sorted);
@@ -809,7 +809,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
             optionData: {
               ...buildSelectedOptionChain(sorted),
             },
-          })
+          }),
         );
       }
     }
@@ -825,7 +825,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
       const updatedOptionDatas = updateOptionDatas(optionDatas, SandboxData);
       const filteredOptionDatas = filterOptionDatas(
         updatedOptionDatas,
-        expiryValue
+        expiryValue,
       );
 
       const optionData = currentExpiryOptionChainData;
@@ -835,7 +835,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
         const atmStrike = ATMCalculation(
           sorted,
           webSocketDataRead,
-          indexObjData
+          indexObjData,
         );
         setSpotPriceRoundOff(atmStrike);
         setCurrentExpiryOptionChainData(sorted);
@@ -846,7 +846,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
               ...buildSelectedOptionChain(sorted),
               ...filteredOptionDatas,
             },
-          })
+          }),
         );
 
         dispatch(setSandboxDataObj({ setSandboxData: {} }));
@@ -863,29 +863,29 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
     ) {
       const result = isFirstIndexNameMatching(
         AnalyzeOrderstock,
-        currentExpiryOptionChainData
+        currentExpiryOptionChainData,
       );
       if (result) {
         const updatedOptionDatas = updateOptionDatas(
           optionDatas,
-          AnalyzeOrderstock
+          AnalyzeOrderstock,
         );
         const filteredOptionDatas = filterOptionDatas(
           updatedOptionDatas,
-          expiryValue
+          expiryValue,
         );
 
         const optionData = currentExpiryOptionChainData;
         const sorted = prepareSortedSelectedData(
           optionData,
-          updatedOptionDatas
+          updatedOptionDatas,
         );
 
         if (sorted) {
           const atmStrike = ATMCalculation(
             sorted,
             webSocketDataRead,
-            indexObjData
+            indexObjData,
           );
           setSpotPriceRoundOff(atmStrike);
           setCurrentExpiryOptionChainData(sorted);
@@ -898,7 +898,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                 ...buildSelectedOptionChain(sorted),
                 ...filteredOptionDatas,
               },
-            })
+            }),
           );
 
           dispatch(setAnalyzeOrderStocks({}));
@@ -926,7 +926,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
     if (
       consolidatedData &&
       Object.keys(
-        (consolidatedData && consolidatedData?.clickedHeatmapData) || {}
+        (consolidatedData && consolidatedData?.clickedHeatmapData) || {},
       ).length > 0
     ) {
       const hashkey = consolidatedData.hash;
@@ -954,7 +954,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
 
             selectedStrategy,
             setActive,
-            active
+            active,
           )();
         }
       } else {
@@ -976,14 +976,14 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
           positionDatas,
           selectedStrategy,
           setActive,
-          active
+          active,
         )();
       }
     }
   }, [consolidatedData]);
   const removeWhitespaceNodes = (children: any) =>
     React.Children.toArray(children).filter(
-      (child) => !(typeof child === "string" && child.trim() === "")
+      (child) => !(typeof child === "string" && child.trim() === ""),
     );
 
   return (
@@ -1040,7 +1040,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                       expandOptTable,
                       oiChangePerc,
                       webSocketDataRead,
-                      netpercentage
+                      netpercentage,
                     );
 
                     return (
@@ -1113,7 +1113,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                   "CE",
                                   timeToExpiry(expiryDateRef.current.value),
                                   // expiryDateRef.current.value,
-                                  config.defaultIvValue / 100
+                                  config.defaultIvValue / 100,
                                 )?.greeks?.gamma
                               }
                             </td>
@@ -1135,7 +1135,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                 "CE",
                                 timeToExpiry(expiryDateRef.current.value),
                                 // expiryDateRef.current.value,
-                                config.defaultIvValue / 100
+                                config.defaultIvValue / 100,
                               )?.greeks?.vega?.toFixed(2)}
                             </td>
                           )}
@@ -1156,7 +1156,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                 "CE",
                                 timeToExpiry(expiryDateRef.current.value),
                                 // expiryDateRef.current.value,
-                                config.defaultIvValue / 100
+                                config.defaultIvValue / 100,
                               )?.greeks?.theta?.toFixed(2)}
                             </td>
                           )}
@@ -1177,7 +1177,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                 "CE",
                                 timeToExpiry(expiryDateRef.current.value),
                                 // expiryDateRef.current.value,
-                                config.defaultIvValue / 100
+                                config.defaultIvValue / 100,
                               )?.greeks?.delta?.toFixed(2)}
                             </td>
                           )}
@@ -1196,7 +1196,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                             spotPriceRoundOff,
                             key,
                             // indexObjData?.net_change_percent
-                            netpercentage[indexObjData?.identifier]
+                            netpercentage[indexObjData?.identifier],
                           )}  col-span-5 `}
                         >
                           <div className="flex h-full w-full flex-col max-md:py-1 max-sm:items-start max-sm:justify-start sm:items-center sm:justify-center  md:max-xl:w-full  xl:py-[1rem]">
@@ -1248,8 +1248,8 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                         hash,
                                         LivegetOptionChainForOptionType(
                                           value,
-                                          "CE"
-                                        )
+                                          "CE",
+                                        ),
                                       )}
                                     />
                                   )}
@@ -1312,7 +1312,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                             spotPriceRoundOff,
                             key,
                             // indexObjData?.net_change_percent
-                            netpercentage[indexObjData?.identifier]
+                            netpercentage[indexObjData?.identifier],
                           )}`}
                         >
                           <OptionChainKey
@@ -1339,7 +1339,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                             spotPriceRoundOff,
                             key,
                             // indexObjData?.net_change_percent
-                            netpercentage[indexObjData?.identifier]
+                            netpercentage[indexObjData?.identifier],
                           )} `}
                         >
                           <div className="flex h-full flex-col max-sm:h-[100%] max-sm:items-start max-sm:justify-start max-sm:py-0.5 sm:items-center sm:justify-center sm:max-md:py-1 md:max-xl:w-full xl:py-[1rem]">
@@ -1390,8 +1390,8 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                         hashPE,
                                         LivegetOptionChainForOptionType(
                                           value,
-                                          "PE"
-                                        )
+                                          "PE",
+                                        ),
                                       )}
                                     />
                                   )}
@@ -1463,7 +1463,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                 "PE",
                                 timeToExpiry(expiryDateRef.current.value),
                                 // expiryDateRef.current.value,
-                                config.defaultIvValue / 100
+                                config.defaultIvValue / 100,
                               )?.greeks?.delta?.toFixed(2)}
                             </td>
                           )}
@@ -1485,7 +1485,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                 "PE",
                                 timeToExpiry(expiryDateRef.current.value),
                                 // expiryDateRef.current.value,
-                                config.defaultIvValue / 100
+                                config.defaultIvValue / 100,
                               )?.greeks.theta?.toFixed(2)}
                             </td>
                           )}
@@ -1506,7 +1506,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                 "PE",
                                 timeToExpiry(expiryDateRef.current.value),
                                 // expiryDateRef.current.value,
-                                config.defaultIvValue / 100
+                                config.defaultIvValue / 100,
                               )?.greeks.vega?.toFixed(2)}
                             </td>
                           )}
@@ -1528,7 +1528,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                                   "PE",
                                   timeToExpiry(expiryDateRef.current.value),
                                   // expiryDateRef.current.value,
-                                  config.defaultIvValue / 100
+                                  config.defaultIvValue / 100,
                                 )?.greeks?.gamma
                               }
                             </td>
@@ -1581,9 +1581,9 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
                         )}
                       </tr>
                     );
-                  }
+                  },
                 )
-              : ""
+              : "",
           )}
         </tbody>
       </table>

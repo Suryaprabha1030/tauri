@@ -19,7 +19,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import {
   getMultiOiLoad,
   getPayOffChartPayLoad,
@@ -60,7 +60,7 @@ const AddToDrafts: React.FC<AddToDraftsProps> = ({
     dispatch(setSelectedStrategy({ setselectedStrategy: null }));
     dispatch(showAllSandboxNames(true));
   };
-  const router = useRouter();
+  const router = useNavigate();
   const clearStreategyTable = () => {
     if (
       Object.entries(optionDatas)?.length > 0 ||

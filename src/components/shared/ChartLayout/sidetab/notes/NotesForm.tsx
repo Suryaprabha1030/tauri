@@ -2,7 +2,7 @@ import { NotesRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 interface NotesFormProps {
@@ -22,7 +22,7 @@ const NotesForm: React.FC<NotesFormProps> = ({
   const [addNote, setAddNote] = useState(noteToEdit?.notes || "");
 
   const isEditing = noteToEdit !== null;
-  const router = useRouter();
+  const router = useNavigate();
   // Reset the input field when noteToEdit changes
   useEffect(() => {
     if (noteToEdit) {
@@ -69,8 +69,8 @@ const NotesForm: React.FC<NotesFormProps> = ({
 
         setSymbolNotesList((prevNotes: any) =>
           prevNotes.map((note: any) =>
-            note.id === noteToEdit?.id ? updateNote : note
-          )
+            note.id === noteToEdit?.id ? updateNote : note,
+          ),
         );
         setAddNote("");
         setNoteToEdit(null);

@@ -7,19 +7,20 @@ import { formatNumber } from "@/lib/util/DraftUtil";
 
 const BrowserTabTitle = () => {
   const PnlPositions = useSelector(
-    (state: RootState) => state.Position.totPositionsPnl
+    (state: RootState) => state.Position.totPositionsPnl,
   );
   const PnlHoldings: any = useSelector(
-    (state: RootState) => state.Position.totHoldingsPnl
+    (state: RootState) => state.Position.totHoldingsPnl,
   );
   const HoldingscurrentValue: any = useSelector(
-    (state: RootState) => state.common.currentHoldingsValue
+    (state: RootState) => state.common.currentHoldingsValue,
   );
   const brokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
 
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
 
   // Match the allowed paths
   const isTargetPath = /^\/live\/[^/]+\/(psv|psb|oi)$/.test(pathname);

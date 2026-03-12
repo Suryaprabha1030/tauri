@@ -3,7 +3,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
 import LoadingComponent from "@/components/shared/loading/Loading";
 
@@ -22,7 +22,7 @@ function decryptSlug(encryptedSlug: string) {
 }
 
 export default function ShareRedirectClient({ slug }: { slug: string }) {
-  const router = useRouter();
+  const router = useNavigate();
   //For redirecting to positions page
 
   useEffect(() => {

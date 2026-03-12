@@ -2,7 +2,7 @@ import { UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { formatNumber } from "@/lib/util/DraftUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import ResetButton from "../resetButton/ResetButton";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
@@ -43,7 +43,7 @@ const ShowMargin: React.FC<ShowMarginprops> = ({
   setSpinningAnimation,
   spinningAnimation,
 }) => {
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     if (
       (!marginPayload ||
@@ -61,7 +61,7 @@ const ShowMargin: React.FC<ShowMarginprops> = ({
         const res =
           await MarginApi.calculateMarginV1UsersMeBrokersBrokerCodeCalculateMarginPost(
             brokerCode,
-            marginPayload
+            marginPayload,
           );
         setShowMargin(null);
         setShowMargin(res?.data?.total_margin_required);

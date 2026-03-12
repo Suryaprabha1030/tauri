@@ -2,8 +2,7 @@ import { UserWatchlistRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 interface ListOfGroupsProps {
   setGroupsOpen: Dispatch<SetStateAction<boolean>>;
@@ -23,7 +22,7 @@ const ListOfGroups: React.FC<ListOfGroupsProps> = ({
   setSelectedGroupData,
 }) => {
   const [list, setList] = useState([]);
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     const fetchGroups = async () => {
       try {

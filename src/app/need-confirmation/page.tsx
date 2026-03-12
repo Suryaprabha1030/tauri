@@ -6,7 +6,7 @@ import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import zApi from "@/lib/api/zApi";
 import { AuthContext } from "@/context/authContextProvider";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import config from "@/lib/config";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
@@ -14,10 +14,10 @@ import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutU
 // import { toast } from "react-toastify";
 
 const NeedConfirmation = () => {
-  const router = useRouter();
+  const router = useNavigate();
 
   const userApi = new UserApi(baseConfig());
-  const apiClient = new zApi(useRouter(), useContext(AuthContext));
+  const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   // const [isConfirm, setIsConfirm] = useState("");
   useEffect(() => {
     apiClient.request(
@@ -25,7 +25,7 @@ const NeedConfirmation = () => {
       (response) => {
         // setIsConfirm(response?.data?.is_confirmed);
         if (!!response.data.is_confirmed) {
-          router.push(config.brokersListUrl);
+          router(config.brokersListUrl);
         }
       },
       (error) => {

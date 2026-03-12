@@ -1,7 +1,6 @@
 "use client";
 import config from "@/lib/config";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 // Error boundaries must be Client Components
 
@@ -12,7 +11,7 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const router = useRouter();
+  const router = useNavigate();
   return (
     // global-error must include html and body tags
     <html>
@@ -35,7 +34,7 @@ export default function GlobalError({
             </button>
             <button
               className="rounded-3xl border border-z-green-500 px-4 py-1 text-black transition hover:bg-z-green-500  hover:text-white"
-              onClick={() => router.push(config.brokersListUrl)}
+              onClick={() => router(config.brokersListUrl)}
             >
               Go Home
             </button>

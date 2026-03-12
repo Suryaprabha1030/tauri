@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import { useDispatch } from "react-redux";
 import { getIndexName } from "@/lib/redux/slices/StrategySlice";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { ShowStrategies } from "@/lib/redux/slices/ChartsSlice";
 import StrategiesAnalyzerHeader from "./StrategyAnalyzerHeader";
 import StrategyAnalyzerTableHeader from "./StrategiesAnalyzerTableHeader";
@@ -49,10 +49,10 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
 
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const expiryDate = useSelector(
-    (state: RootState) => state.strategy.expiryDate
+    (state: RootState) => state.strategy.expiryDate,
   );
   const sportpricevalue = useSelector(
-    (state: RootState) => state.strategy.spotPrice
+    (state: RootState) => state.strategy.spotPrice,
   );
   const item = useSelector((state: RootState) => state.strategy.items);
   const [response, setResponse] = useState();
@@ -63,21 +63,21 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
   const [spotvalue, setSpotvalue] = useState<any>();
 
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const indices = useSelector(
-    (state: RootState) => state.strategy.indicesLotsize
+    (state: RootState) => state.strategy.indicesLotsize,
   );
   const indicesLotSize = useMemo(() => {
     return indices?.filter((item: any) =>
-      config.supportIndices.includes(item?.index_name)
+      config.supportIndices.includes(item?.index_name),
     );
   }, [indices]);
   const [showData, setShowData] = useState(false);
   const [status, setStatus] = useState<
     "loading" | "success" | "error" | "initial"
   >("initial");
-  const router = useRouter();
+  const router = useNavigate();
   const indexRef = useRef<HTMLSelectElement>(null);
   const dispatch = useDispatch();
   const [liveExpiryList, setLiveExpiryList] = useState<string[]>([]);
@@ -88,7 +88,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
   const [sortedresponse, setSortedResponse] = useState({});
   // const [Stocks, setStocks] = useState([]);
   const [strategyLots, setStrategyLots] = useState<{ [key: string]: number }>(
-    {}
+    {},
   );
   const [selectedStrategy, setSelectedStrategy] = useState<string | null>(null);
   const [expandedRow, setExpandedRow] = useState<string | null>(null);
@@ -98,20 +98,20 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
   const [filteredStrategies, setFilteredStrategies] = useState({});
 
   const showStrategiesPopup = useSelector(
-    (state: RootState) => state.charts.setShowStrategiesPopup
+    (state: RootState) => state.charts.setShowStrategiesPopup,
   );
   const path = window.location.pathname;
   const fetchTriggered = useRef(false);
 
   const [allStrategyData, setAllStrategyData] = useState([]);
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
   const futureDatas = useSelector(
-    (state: RootState) => state.analyzer.futureDataList
+    (state: RootState) => state.analyzer.futureDataList,
   );
   const optionDatas = useSelector(
-    (state: RootState) => state.analyzer.optionDataList
+    (state: RootState) => state.analyzer.optionDataList,
   );
 
   useEffect(() => {
@@ -127,7 +127,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
   useEffect(() => {
     if (path === `${config.brokersListUrl}/${brokerCode}/psb`) {
       const item: any = indicesLotSize.find(
-        (index: any) => index.index_name === indexname
+        (index: any) => index.index_name === indexname,
       );
       setLotsize(item?.lot_size);
     }
@@ -140,7 +140,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
           (item: any) =>
             item.index_name == indexname &&
             (setSpotvalue(webSocketDataRead[item.identifier]),
-            setLotsize(item.lot_size))
+            setLotsize(item.lot_size)),
         );
       }
     } else if (path === `${config.brokersListUrl}/${brokerCode}/oi`) {
@@ -149,7 +149,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
           (item: any) =>
             item.index_name == indexname &&
             (setSpotvalue(webSocketDataRead[item.identifier]),
-            setLotsize(item.lot_size))
+            setLotsize(item.lot_size)),
         );
       }
     }
@@ -180,7 +180,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
           setStatus,
           dispatch,
           router,
-          setExpiry
+          setExpiry,
         );
       }
     }
@@ -219,7 +219,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
         setShowData,
         setStatus,
         dispatch,
-        router
+        router,
       );
     }
   }, [lotsize, brokerCode, refresh, expiry]);
@@ -263,7 +263,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
         expiryDateRef,
         setLiveExpiryList,
         setExpiry,
-        router
+        router,
       );
       setExpiry("");
     }
@@ -285,7 +285,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
     const filtered = filterStrategiesUtil(
       activeIndicatorFilter,
       sortedresponse,
-      hedgeddata
+      hedgeddata,
     );
     setFilteredStrategies(filtered);
   }, [activeIndicatorFilter, sortedresponse, hedgeddata]);
@@ -309,7 +309,7 @@ const StrategiesAnalyzer: React.FC<StrategiesProps> = ({
       router,
       positionDatas,
       futureDatas,
-      allStrategyData
+      allStrategyData,
     );
   };
 

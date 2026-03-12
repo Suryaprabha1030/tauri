@@ -35,10 +35,11 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
   const [leftWidth, setLeftWidth] = useState(40);
   const [isExpanded, setIsExpanded] = useState(false);
   const [dragStartX, setDragStartX] = useState<number | null>(null);
-  const pathName = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
   const [FiiDiiActiveButton, setFiiDiiActiveButton] = useState("summary");
   const currentSection = useSelector(
-    (state: RootState) => state.common.currentSection
+    (state: RootState) => state.common.currentSection,
   );
   const handleToggleWidth = () => {
     if (leftWidth === 40) {
@@ -63,7 +64,7 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
       const deltaX = e.clientX - dragStartX!;
       const newLeftWidth = Math.min(
         MAX_WIDTH,
-        Math.max(MIN_WIDTH, leftWidth - (deltaX / window.innerWidth) * 100)
+        Math.max(MIN_WIDTH, leftWidth - (deltaX / window.innerWidth) * 100),
       );
       setLeftWidth(newLeftWidth);
       setDragStartX(e.clientX);
@@ -189,10 +190,10 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
       const slideWidth: any = document.getElementById("slide-Width");
       // Define the media queries for different screen sizes
       const smToLg = window.matchMedia(
-        "(min-width: 300px) and (max-width: 1199px)"
+        "(min-width: 300px) and (max-width: 1199px)",
       );
       const xlTo2xl = window.matchMedia(
-        "(min-width: 1200px) and (max-width: 1536px)"
+        "(min-width: 1200px) and (max-width: 1536px)",
       );
       // Function to remove all inline styles
       const removeAllInlineStyles = () => {

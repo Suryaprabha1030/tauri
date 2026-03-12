@@ -7,7 +7,7 @@ import { RootState } from "@/lib/redux/Store";
 import InfoNotes from "../InfoNotes";
 import TimeframeSelector from "../TimeFrameSelector/TimeFrameSelector";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 interface PivotsProps {
@@ -21,20 +21,20 @@ const Pivots: React.FC<PivotsProps> = ({
   stockInfo,
 }) => {
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
 
   const [pivots, setPivots] = useState<any>({});
 
   const timeframes = ["5", "15", "30", "60", "1D"];
   const [selectedTimeframe, setSelectedTimeframe] = useState(
-    timeframes.includes(resolution) ? resolution : "1D"
+    timeframes.includes(resolution) ? resolution : "1D",
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const netpercentage = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const [ltp, setLtp] = useState<number | null>(null);
   const [chg, setChg] = useState<number | null>(null);
@@ -42,13 +42,13 @@ const Pivots: React.FC<PivotsProps> = ({
   const handleTimeframeClick = (timeframe: string) => {
     setSelectedTimeframe(timeframe);
   };
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     const Technicals = new TechnicalAnalysisRouterApi(baseConfig());
     Technicals.calculatePivotsPointV1TaPivotsPost(
       brokerCode,
       clickedSymbolData?.identifier,
-      selectedTimeframe
+      selectedTimeframe,
     )
       .then((res) => {
         setPivots(res.data);

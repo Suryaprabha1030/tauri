@@ -6,7 +6,7 @@ import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import zApi from "@/lib/api/zApi";
 import { AuthContext } from "@/context/authContextProvider";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import ErrorAlert from "@/components/shared/ErrorAlert";
 import TradingStyleStep from "./trading-Style-step";
 import TradingLevelStep from "./trading-level-step";
@@ -15,7 +15,7 @@ import { RootState } from "@/lib/redux/Store";
 import Link from "next/link";
 
 const TradingStyle = () => {
-  const router = useRouter();
+  const router = useNavigate();
   const [showNextStep, setShowNextStep] = useState(false);
   const [showNextStep2, setShowNextStep2] = useState(false);
   const [values, setValues] = useState({
@@ -29,7 +29,7 @@ const TradingStyle = () => {
   });
 
   const userApi = new UserApi(baseConfig());
-  const apiClient = new zApi(useRouter(), useContext(AuthContext));
+  const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   const googleSignInUserData: any = useSelector(
     (state: RootState) => state.common.googleSignInUserData,
   );
@@ -67,7 +67,7 @@ const TradingStyle = () => {
     apiClient.request(
       () => userApi.updateMeV1UsersMePut(formattedValues),
       (_) => {
-        router.push("/need-confirmation");
+        router("/need-confirmation");
       },
       (error) => {
         console.log(error);

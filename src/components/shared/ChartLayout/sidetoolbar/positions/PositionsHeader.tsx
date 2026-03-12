@@ -16,7 +16,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { RootState } from "@/lib/redux/Store";
 
 import {
@@ -82,7 +82,7 @@ const PositionsHeader: React.FC<PositionsHeaderProps> = ({
     (state: RootState) => state.SimulationDemo.strategiesPnlDemo,
   );
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
 
   const strategyOptions = [
     { label: "Intraday", value: "INTRADAY" },

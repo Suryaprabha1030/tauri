@@ -17,8 +17,7 @@ import {
   getLastClickDate,
   saveLastClickDate,
 } from "@/lib/util/storageUtil/indexdbStorage";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -42,7 +41,7 @@ const PositionsSharing: React.FC<PositionsSharingProps> = ({
 
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [tooltipText, setTooltipText] = useState<string>("");
-  const router: any = useRouter();
+  const router: any = useNavigate();
   // Track the last click date from IndexedDB
   const [lastClickDate, setLastClickDate] = useState<string | null>(null);
   const userId = sessionStorage.getItem("userDetails"); // User ID is fetched from sessionStorage

@@ -1,17 +1,17 @@
 "use client";
 import { AuthContext } from "@/context/authContextProvider";
 import { printConsole } from "@/lib/util/viewUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 
 const EnforceAuth = (WrappedComponent: React.ComponentType<any>) => {
   const Wrapper = (props: any) => {
     const { isAuthenticated } = useContext(AuthContext);
-    const router = useRouter();
+    const router = useNavigate();
 
     useEffect(() => {
       if (!isAuthenticated) {
-        router.push("/login");
+        router("/login");
       }
       printConsole();
     }, []);

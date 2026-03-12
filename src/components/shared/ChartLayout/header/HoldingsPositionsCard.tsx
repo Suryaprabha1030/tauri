@@ -15,7 +15,7 @@ import { formatNumber } from "@/lib/util/DraftUtil";
 import { calculateHoldingsPnL } from "@/lib/util/sideToolBar/holdingsUtil";
 import { updatePositionsWithPnL } from "@/lib/util/sideToolBar/positions/managePositionsData";
 import { IconKey } from "@/lib/util/sideToolBar/RightToolBarIcons";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { Dispatch, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -41,32 +41,32 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
   >();
   const [positionPnl, setpositionPnl] = useState<number | undefined>();
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const TotpositionPnl = useSelector(
-    (state: RootState) => state.strategy.positionPnl
+    (state: RootState) => state.strategy.positionPnl,
   );
   const Totpositionpnlpercent = useSelector(
-    (state: RootState) => state.strategy.positionpnlpercent
+    (state: RootState) => state.strategy.positionpnlpercent,
   );
   const HoldingscurrentValue: any = useSelector(
-    (state: RootState) => state.common.currentHoldingsValue
+    (state: RootState) => state.common.currentHoldingsValue,
   );
   const currentSection = useSelector(
-    (state: RootState) => state.common.currentSection
+    (state: RootState) => state.common.currentSection,
   );
   const currentBrokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   const openPositionsLength =
     positionsdata &&
     positionsdata?.length > 0 &&
     positionsdata?.filter(
       (position) =>
         position?.transaction_type === "SHORT" ||
-        position?.transaction_type === "LONG"
+        position?.transaction_type === "LONG",
     )?.length;
 
   const toggleholdings = () => {
@@ -121,7 +121,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
             addSymbol({
               symbol: holding?.identifier,
               // token: holding.token
-            })
+            }),
           );
         });
     }
@@ -134,8 +134,8 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
             addSymbol({
               symbol: position?.identifier,
               // token: (position as any).token,
-            })
-          )
+            }),
+          ),
         );
     }
   }, [positionsData]);
@@ -150,7 +150,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
         calculateHoldingsPnL(
           holdingsdata?.holdings,
           webSocketDataRead,
-          holdingsdata?.total_invested_value
+          holdingsdata?.total_invested_value,
         );
       setTotalProfitAndLoss(totalPnL);
       setTotalProfitAndLossPercent(totalPnLPercent);
@@ -161,7 +161,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
           updateSymbolPnl({
             symbol: stock?.identifier,
             pnl: stock?.profit_and_loss,
-          })
+          }),
         );
       });
     }
@@ -171,14 +171,14 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
     if (!positionsdata || !webSocketDataRead) return;
     const allPositionsExited = positionsdata.every(
       (position: any) =>
-        position.quantity === 0 && position.transaction_type === "EXITED"
+        position.quantity === 0 && position.transaction_type === "EXITED",
     );
     if (allPositionsExited) return;
     else {
       const { updatedTotalPnl, updatedPositions } = updatePositionsWithPnL(
         positionsdata,
         webSocketDataRead,
-        currentBrokerName
+        currentBrokerName,
       );
       setpositionPnl(updatedTotalPnl);
       //For updating Live Pnl
@@ -187,7 +187,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
           updateSymbolPnl({
             symbol: stock?.identifier,
             pnl: stock?.pnl,
-          })
+          }),
         );
       });
     }
@@ -198,7 +198,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
       setTotalPnl({
         totHoldingsPnl: totalProfitAndLoss,
         totPositionsPnl: positionPnl,
-      })
+      }),
     );
   }, [totalProfitAndLoss, positionPnl]);
 

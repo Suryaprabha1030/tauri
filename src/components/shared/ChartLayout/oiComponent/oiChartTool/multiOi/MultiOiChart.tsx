@@ -5,7 +5,7 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import config from "@/lib/config";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
@@ -28,13 +28,13 @@ const MultiOiChart: React.FC<MultiOiChartProps> = ({
   queryIdentifier,
 }) => {
   const oiIndexData: any = useSelector(
-    (state: RootState) => state.OI.OiIndexData
+    (state: RootState) => state.OI.OiIndexData,
   );
   const [oiChartData, setOiChartData] = useState<any>({});
-  const router = useRouter();
+  const router = useNavigate();
   const intradayIntervalRef = useRef<any>(null);
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   useEffect(() => {
     const fecthIntraday = () => {
@@ -52,7 +52,7 @@ const MultiOiChart: React.FC<MultiOiChartProps> = ({
             queryIdentifier,
             oiExpiry,
             selected,
-            Object.values(oiLoad)
+            Object.values(oiLoad),
           )
           .then((res: any) => {
             if (res.data?.strike_price_groups?.length > 0) {

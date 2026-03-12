@@ -12,7 +12,7 @@ import {
 import { useDispatch } from "react-redux";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { setIdentifiersSet } from "@/lib/redux/slices/PositionSlicer";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import {
@@ -33,7 +33,7 @@ const FundsHeaders: React.FC<FundsHeaderProps> = ({
   setLeftWidth,
 }) => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const router = useNavigate();
   const handlerefresh = () => {
     const fetchApi = new UserBrokerRouterApi(baseConfig());
     fetchApi
@@ -46,19 +46,19 @@ const FundsHeaders: React.FC<FundsHeaderProps> = ({
             positions: response.data.positions.positions,
             positionPnl: response.data.positions.total_pnl,
             positionpnlpercent: response.data.positions.total_pnl_percent,
-          })
+          }),
         );
         dispatch(
           setLastUpdatedPositions({
             data: response?.data?.positions,
             time: Date.now(),
-          })
+          }),
         );
         dispatch(
           setLastUpdatedHoldings({
             data: response?.data?.holdings,
             time: Date.now(),
-          })
+          }),
         );
         dispatch(setIdentifiersSet(false));
       })

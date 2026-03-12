@@ -27,7 +27,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import DisplayIndexChanger from "../displayIndexChanger/DisplayIndexChanger";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { ChartToggleButtonType, fetchOiStoredData } from "@/lib/util/oi/oiUtil";
 import config from "@/lib/config";
 import {
@@ -75,21 +75,21 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
   const screenWidth: number = window.innerWidth;
   const dispatch = useDispatch();
   const indexObjData: any = useSelector(
-    (state: RootState) => state.strategy.indexObj
+    (state: RootState) => state.strategy.indexObj,
   );
-  const router = useRouter();
+  const router = useNavigate();
   const query = useSelector((state: RootState) => state.optionChain.query);
   const tempValue = useSelector(
-    (state: RootState) => state.optionChain.tempValue
+    (state: RootState) => state.optionChain.tempValue,
   );
   const defaultDD = useSelector(
-    (state: RootState) => state.optionChain.defaultDD
+    (state: RootState) => state.optionChain.defaultDD,
   );
   const selectedIndexName = useSelector(
-    (state: RootState) => state.optionChain.selectedIndexName
+    (state: RootState) => state.optionChain.selectedIndexName,
   );
   const indexData = useSelector(
-    (state: RootState) => state.optionChain.indexData
+    (state: RootState) => state.optionChain.indexData,
   );
 
   const defaultDDRef = useRef(defaultDD);
@@ -120,12 +120,12 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
         apiInstance.getAllIndicesV1UsersMeBrokersBrokerCodeGetAllIndicesPost(
           brokerCode,
           "NSE",
-          "index_options"
+          "index_options",
         ),
         apiInstance.getAllIndicesV1UsersMeBrokersBrokerCodeGetAllIndicesPost(
           brokerCode,
           "BSE",
-          "index_options"
+          "index_options",
         ),
       ])
         .then(([indicesResponse, BSEResponse]) => {
@@ -140,7 +140,7 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
               addSymbol({
                 symbol: opt?.identifier, // add identifier as symbol
                 // token: opt.token,
-              })
+              }),
             );
           });
           const filterData = () => {
@@ -150,8 +150,8 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
               (item: any) =>
                 config.supportIndices.includes(item?.index_name) &&
                 Object.values(item).some(
-                  (value) => typeof value === "string" && value.toLowerCase()
-                )
+                  (value) => typeof value === "string" && value.toLowerCase(),
+                ),
             );
           };
 
@@ -202,7 +202,7 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
           spot_price: null,
           expiryDate: "",
         },
-      })
+      }),
     );
     dispatch(
       setStock({
@@ -211,7 +211,7 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
           index_name: "",
           spot_price: "",
         },
-      })
+      }),
     );
     dispatch(
       indicesAlldata({
@@ -223,7 +223,7 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
         spotPrice: null,
         indexData: "",
         lotSize: null,
-      })
+      }),
     );
     dispatch(getSpotPriceRoundOff(null));
     dispatch(getQuery(item?.index_name));
@@ -257,12 +257,12 @@ const IndexChanger: React.FC<IndexChangerProps> = ({
     dispatch(
       getCheckedPositionData({
         PositionData: {}, // Pass empty object to clear the state
-      })
+      }),
     );
     dispatch(
       optionChainPayload({
         optionChainPayloadData: { ClickedRow: {}, response: {} },
-      })
+      }),
     );
     dispatch(getMaxPainStrikeValue(null));
   };

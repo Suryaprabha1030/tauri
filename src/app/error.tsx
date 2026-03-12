@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 import config from "@/lib/config";
+import { useNavigate } from "react-router-dom";
 
 export default function ErrorPage({
   error,
@@ -12,7 +12,7 @@ export default function ErrorPage({
   error: Error;
   reset: () => void;
 }) {
-  const router = useRouter();
+  const router = useNavigate();
 
   useEffect(() => {
     console.error("Global error caught:", error);

@@ -1,12 +1,12 @@
 "use client";
 import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 
 const SignupConfirmation = () => {
-  const router = useRouter();
+  const router = useNavigate();
   useEffect(() => {
     const userConfirm = async () => {
       const url = new URL(window.location.href);
@@ -15,12 +15,12 @@ const SignupConfirmation = () => {
       try {
         const userApi = new UserApi(baseConfig());
         const res = await userApi.markUserConfirmedV1UsersUserConfirmationPost(
-          Buffer?.from(email, "base64").toString("utf-8")
+          Buffer?.from(email, "base64").toString("utf-8"),
         );
 
         if (res) {
           toast("Your account has been confirmed");
-          router.push("/login");
+          router("/login");
         }
       } catch {
         console.log("err");

@@ -4,7 +4,7 @@ import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { Fragment, useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/context/authContextProvider";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import zApi from "@/lib/api/zApi";
 
 import ProfileSkeleton from "@/app/profile/profileSkeleton";
@@ -19,7 +19,7 @@ import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutU
 
 const UserProfile = ({ setLeftWidth, leftWidth }: any) => {
   const userApi = new UserApi(baseConfig());
-  const apiClient = new zApi(useRouter(), useContext(AuthContext));
+  const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -29,7 +29,7 @@ const UserProfile = ({ setLeftWidth, leftWidth }: any) => {
     error: "",
     success: "",
   });
-  const router = useRouter();
+  const router = useNavigate();
 
   const getProfileData = async () => {
     apiClient.request(

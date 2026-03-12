@@ -12,7 +12,7 @@ import {
 } from "@/lib/util/sideToolBar/orders/handlingOrders";
 import { ModifyOrderData } from "@/lib/util/sideToolBar/orders/OrderUtil";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
@@ -43,7 +43,7 @@ const Orders: React.FC<OrdersProps> = ({
   );
   const [editOrderId, setEditOrderId] = useState<string | null>(null);
   const [editedOrder, setEditedOrder] = useState<any>({});
-  const router = useRouter();
+  const router = useNavigate();
   const tooltipRef = useRef<HTMLDivElement>(null);
   const tooltipIconRef = useRef<HTMLDivElement>(null);
   const handleTooltipToggle = (index: any, event: any) => {

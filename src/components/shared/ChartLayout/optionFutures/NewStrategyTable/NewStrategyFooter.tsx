@@ -20,7 +20,7 @@ import { PlaceOrderStock } from "@/lib/util/sideToolBar/orders/OrderUtil";
 import { UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 import { formatStockData } from "@/lib/util/placeOrder/placeOrder";
 import { formatNumber } from "@/lib/util/DraftUtil";
@@ -73,7 +73,7 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
   const webSocketDataRead: any = useSelector(
     (state: RootState) => state.strategy.symbolsPrice,
   );
-  const router = useRouter();
+  const router = useNavigate();
   const [hoverImage, setHoverImage] = useState(true);
   const [legHoverImage, setLegHoverImage] = useState(true);
   const [enableButtons, setEnableButtons] = useState(true);

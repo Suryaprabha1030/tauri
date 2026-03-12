@@ -13,7 +13,7 @@ import EnforceAuth from "@/components/layout/EnforceAuth";
 import CreateWatchlist from "./flotingComponent/createWatchlist/CreateWatchlist";
 import Addsymbol from "./flotingComponent/addsymbol/Addsymbol";
 import ChartHeader from "./header/ChartHeader";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import {
   addSymbol,
   setFundsData,
@@ -113,51 +113,51 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
 }) => {
   const { isAuthenticated } = useContext(AuthContext);
   const dispatch = useDispatch();
-  const router: any = useRouter();
+  const router: any = useNavigate();
 
   const showDraftNamePopup = useSelector(
-    (state: RootState) => state.analyzer.setShowDraftNamePopUp
+    (state: RootState) => state.analyzer.setShowDraftNamePopUp,
   );
   const showListAllSandboxes = useSelector(
-    (state: RootState) => state.analyzer.setListAllSandbox
+    (state: RootState) => state.analyzer.setListAllSandbox,
   );
   const showPlaceOrder = useSelector(
-    (state: RootState) => state.placeOrder.isVisible
+    (state: RootState) => state.placeOrder.isVisible,
   );
   const stockData = useSelector(
-    (state: RootState) => state.placeOrder.stockData
+    (state: RootState) => state.placeOrder.stockData,
   );
   const PlaceOrderInitiated = useSelector(
-    (state: RootState) => state.Position.orderPlaced
+    (state: RootState) => state.Position.orderPlaced,
   );
   const isOpen = useSelector((state: RootState) => state.common.showTVpopup);
   const initiateOrderToaster: any = useSelector(
-    (state: RootState) => state.common.initiateOrderToast
+    (state: RootState) => state.common.initiateOrderToast,
   );
   const currentBrokerClientCode = useSelector(
-    (state: RootState) => state.Position.ClientCode
+    (state: RootState) => state.Position.ClientCode,
   );
   const openOISettings = useSelector(
-    (state: RootState) => state.common.openOiSettings
+    (state: RootState) => state.common.openOiSettings,
   );
   const screenerOpen = useSelector(
-    (state: RootState) => state.common.ScreenerOpen
+    (state: RootState) => state.common.ScreenerOpen,
   );
   const stockInfoOpen: any = useSelector(
-    (state: RootState) => state.common.StockInfoOpen
+    (state: RootState) => state.common.StockInfoOpen,
   );
   const OpenNewsModal: any = useSelector(
-    (state: RootState) => state.common.OpenSymbolNewsPopup
+    (state: RootState) => state.common.OpenSymbolNewsPopup,
   );
   const symbolNewsData = useSelector(
-    (state: RootState) => state.common.SymbolNewsData
+    (state: RootState) => state.common.SymbolNewsData,
   );
   const toasterIdentifiers = useSelector(
-    (state: RootState) => state.common.toasterIdentifiers
+    (state: RootState) => state.common.toasterIdentifiers,
   );
 
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   const [handleInstallClick, setHandleInstallClick] = useState<
@@ -167,33 +167,33 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
   const [showModal, setShowModal] = useState(false);
   const [showWarningOiAlert, setShowWarningOiAlert] = useState(false);
   const selectedPositionType = useSelector(
-    (state: RootState) => state.SimulationDemo.positionType
+    (state: RootState) => state.SimulationDemo.positionType,
   );
   const selectedHoldingsType = useSelector(
-    (state: RootState) => state.SimulationDemo.holdingsType
+    (state: RootState) => state.SimulationDemo.holdingsType,
   );
   const Simulatedholdings: any = useSimulatedHoldings(
     webSocketDataRead,
-    selectedHoldingsType
+    selectedHoldingsType,
   );
   const currentBrokerName = useSelector(
-    (state: RootState) => state.Position.BrokerName
+    (state: RootState) => state.Position.BrokerName,
   );
   const StrategiesPnl = useSelector(
-    (state: RootState) => state.SimulationDemo.strategiesPnlDemo
+    (state: RootState) => state.SimulationDemo.strategiesPnlDemo,
   );
   const Simulatedpositions: any = useSimulatedPositions(
     StrategiesPnl,
     webSocketDataRead,
     currentBrokerName,
-    selectedPositionType
+    selectedPositionType,
   );
   const userEmail = useSelector((state: RootState) => state.common.userInfo);
   const isPrivilegedUser = config.userEmail.includes(userEmail?.email);
   const [allIndicesData, setAllindicesData] = useState<any[]>([]);
   const hasFetchedRef = useRef(false);
   const RefreshStrategiesPnl = useSelector(
-    (state: RootState) => state.SimulationDemo.refreshStrategiesPnl
+    (state: RootState) => state.SimulationDemo.refreshStrategiesPnl,
   );
   const isFetchingRef = useRef(false);
   const fetchData = () => {
@@ -203,7 +203,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
         .getAllDataV1UsersMeBrokersBrokerCodeGetAllDataGet(brokerCode)
         .then((response: any) => {
           // if (response && response.status == 204) {
-          //   router.push("/live/brokers");
+          // router("/live/brokers");
           //   toast("Broker doesn't Exist!");
           // }
 
@@ -215,19 +215,19 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
               positions: response?.data?.positions?.positions,
               positionPnl: response?.data?.positions?.total_pnl,
               positionpnlpercent: response?.data?.positions?.total_pnl_percent,
-            })
+            }),
           );
           dispatch(
             setLastUpdatedPositions({
               data: response?.data?.positions,
               time: Date.now(),
-            })
+            }),
           );
           dispatch(
             setLastUpdatedHoldings({
               data: response?.data?.holdings,
               time: Date.now(),
-            })
+            }),
           );
           const Holdings = response?.data?.holdings?.holdings;
           const Positions = response?.data?.positions?.positions;
@@ -240,13 +240,13 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
               addSymbol({
                 symbol: item?.identifier,
                 // token: item?.token,
-              })
+              }),
             );
             dispatch(
               updateSymbolPnl({
                 symbol: item?.identifier,
                 pnl: item?.pnl || item?.profit_and_loss,
-              })
+              }),
             );
           });
         })
@@ -256,7 +256,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
             autoLogoutTokenRemove(router);
           }
           if (error?.response && error?.response.status == 400) {
-            router.push(config.brokersListUrl);
+            router(config.brokersListUrl);
             toast("Broker doesn't Exist!");
           }
           if (error?.response && error?.response?.status == 456) {
@@ -276,7 +276,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
     if (brokerCode) {
       fetchApi
         .fetchMyBrokerPositionsV1UsersMeBrokersBrokerCodePositionsGet(
-          brokerCode
+          brokerCode,
         )
         .then((response: any) => {
           dispatch(
@@ -284,13 +284,13 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
               positions: response?.data?.positions,
               positionPnl: response?.data?.total_pnl,
               positionpnlpercent: response?.data?.total_pnl_percent,
-            })
+            }),
           );
           dispatch(
             setLastUpdatedPositions({
               data: response?.data?.positions,
               time: Date.now(),
-            })
+            }),
           );
           const Positions = response?.data?.positions;
 
@@ -300,13 +300,13 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
               addSymbol({
                 symbol: item?.identifier,
                 // token: item?.token,
-              })
+              }),
             );
             dispatch(
               updateSymbolPnl({
                 symbol: item?.identifier,
                 pnl: item?.pnl,
-              })
+              }),
             );
           });
           dispatch(setOrderPlaced(false));
@@ -381,7 +381,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
     const loadIndices = async () => {
       const allIndicesDetails = await getAllIndicesWithExpiryDetails(
         brokerCode,
-        dispatch
+        dispatch,
       ); //This is for Nima AI displaying strategy chart
       setAllindicesData(allIndicesDetails);
     };
@@ -421,7 +421,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
         lotSize,
         expiry,
         dispatch,
-        router
+        router,
       ).finally(() => {
         isFetchingRef.current = false;
         dispatch(setStrategiesPnlRefresh(false)); // reset refresh
@@ -437,7 +437,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
           positions: Simulatedpositions?.positions,
           positionPnl: Simulatedpositions?.total_pnl,
           positionpnlpercent: Simulatedpositions?.total_pnl_percent,
-        })
+        }),
       );
       const Positions = Simulatedpositions?.positions;
       Positions?.forEach((item: any) => {
@@ -445,13 +445,13 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
           addSymbol({
             symbol: item?.identifier,
             // token: item?.token,
-          })
+          }),
         );
         dispatch(
           updateSymbolPnl({
             symbol: item?.identifier,
             pnl: item?.pnl || item?.profit_and_loss,
-          })
+          }),
         );
       });
     }
@@ -467,13 +467,13 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
           addSymbol({
             symbol: item?.identifier,
             // token: item?.token,
-          })
+          }),
         );
         dispatch(
           updateSymbolPnl({
             symbol: item?.identifier,
             pnl: item?.pnl || item?.profit_and_loss,
-          })
+          }),
         );
       });
     }

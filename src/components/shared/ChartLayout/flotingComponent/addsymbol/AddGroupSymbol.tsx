@@ -4,8 +4,7 @@ import { getGrpSymbols } from "@/lib/redux/slices/GroupSlice";
 import { RootState } from "@/lib/redux/Store";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +15,7 @@ const AddGroupSymbol = ({
   setSearchSymbol,
 }) => {
   const [open, setOpen] = useState(false);
-  const router = useRouter();
+  const router = useNavigate();
   const grpSymbols = useSelector((state: RootState) => state.Groups.grpSymbols);
   const [options, setOptions] = useState<any>(grpSymbols);
   const dispatch = useDispatch();

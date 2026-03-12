@@ -1,6 +1,6 @@
 "use client";
 import zApi from "@/lib/api/zApi";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/context/authContextProvider";
 import { OptionsSimulatorHistoricalApi } from "@/lib/api/base";
@@ -17,7 +17,7 @@ const SelectExpiry = (props: {
 }) => {
   const { index, date, time } = props;
   const [expiryList, setExpirtyList] = useState<string[]>([props.expiry]);
-  const myApiClient = new zApi(useRouter(), useContext(AuthContext));
+  const myApiClient = new zApi(useNavigate(), useContext(AuthContext));
   const expiryApi = new OptionsSimulatorHistoricalApi(baseConfig());
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const SelectExpiry = (props: {
       () =>
         expiryApi.getExpiriesListV1SimulatorExpiriesListGet(
           `${date}T${time}`,
-          index
+          index,
         ),
       (res) => {
         setExpirtyList(res.data);
@@ -37,7 +37,7 @@ const SelectExpiry = (props: {
         props.updateExpiry(res.data[0]);
         props.toggleButton(false);
       },
-      () => {}
+      () => {},
     );
   }, [index, date]);
 
@@ -55,7 +55,11 @@ const SelectExpiry = (props: {
             disabled={props.disabled || false}
           >
             {expiryList.map((c, idx) => (
-              <option className="lg:p-3 lg:py-0 py-3 text-cyan-400" key={idx} value={c}>
+              <option
+                className="lg:p-3 lg:py-0 py-3 text-cyan-400"
+                key={idx}
+                value={c}
+              >
                 {c}
               </option>
             ))}

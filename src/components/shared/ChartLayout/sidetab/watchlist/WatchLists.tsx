@@ -21,7 +21,7 @@ import {
   getOptionData,
   optionChainPayload,
 } from "@/lib/redux/slices/AnalyzerSlice";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import WatchListHeader from "./watchListTable/WatchListHeader";
 import WatchListTableRow from "./watchListTable/WatchListTableRow";
@@ -114,45 +114,45 @@ const WatchLists: React.FC<WatchListProps> = ({
   const [buttonId, setbuttonID] = useState("");
   const [clickTimeout, setClickTimeout] = useState<NodeJS.Timeout | null>(null);
   const [pinnedSymbolsCount, setPinnedSymbolsCount] = useState<number>(3);
-  const router = useRouter();
+  const router = useNavigate();
   const dispatch = useDispatch();
   const shouldRefreshRedux = useSelector(
-    (state: RootState) => state.strategy.shouldRefresh
+    (state: RootState) => state.strategy.shouldRefresh,
   );
 
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const pinUnpinRedux = useSelector(
-    (state: RootState) => state.strategy.pinUnpinstate
+    (state: RootState) => state.strategy.pinUnpinstate,
   ); //state to check changes in pin or unpin symbols
   const netchange: any = useSelector(
-    (state: RootState) => state.strategy.netChange
+    (state: RootState) => state.strategy.netChange,
   );
   const netpercentage = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const holdingsdata: any = useSelector(
-    (state: RootState) => state.strategy.holdingsData
+    (state: RootState) => state.strategy.holdingsData,
   );
 
   const pinnedSymbols = useSelector(
-    (state: RootState) => state.strategy.pinnedsymbols
+    (state: RootState) => state.strategy.pinnedsymbols,
   );
   const defaultWatchlistPinnedSymbol = useSelector(
-    (state: RootState) => state.charts.setDefaultWatchlist
+    (state: RootState) => state.charts.setDefaultWatchlist,
   );
   const TvChartInitiateIndex: any = useSelector(
-    (state: RootState) => state.Position.initiateTvChart
+    (state: RootState) => state.Position.initiateTvChart,
   );
   const SymbolIdentifier = useSelector(
-    (state: RootState) => state.charts.SymbolIdentifier
+    (state: RootState) => state.charts.SymbolIdentifier,
   );
   const posHoldFilterChanged: any = useSelector(
-    (state: RootState) => state.Position.activePosHoldFilter
+    (state: RootState) => state.Position.activePosHoldFilter,
   );
   const toggleState: any = useSelector(
-    (state: RootState) => state.common.CandleAreaToggle
+    (state: RootState) => state.common.CandleAreaToggle,
   );
   const ITEMS_PER_PAGE = 50;
   const [currentPage, setCurrentPage] = useState(1);
@@ -176,7 +176,7 @@ const WatchLists: React.FC<WatchListProps> = ({
 
   useEffect(() => {
     const clickedRowIndex = filteredSymbols.findIndex(
-      (row: any) => row.identifier === clickedRow
+      (row: any) => row.identifier === clickedRow,
     );
     if (clickedRowIndex !== -1 && rowRefs.current[clickedRowIndex]) {
       rowRefs.current[clickedRowIndex].scrollIntoView({
@@ -246,7 +246,7 @@ const WatchLists: React.FC<WatchListProps> = ({
     }
     setSelectedSymbol(rowData);
     const clickedSymbol = symbols.find(
-      (symb: any) => symb.identifier === rowData
+      (symb: any) => symb.identifier === rowData,
     );
     setclickedrowdata(clickedSymbol);
     const price = webSocketDataRead[clickedSymbol?.identifier];
@@ -258,7 +258,7 @@ const WatchLists: React.FC<WatchListProps> = ({
 
       const isFnoIdentifier = fnoIdentifiers.some(
         (identifierObj: any) =>
-          identifierObj.identifier === clickedSymbol.identifier
+          identifierObj.identifier === clickedSymbol.identifier,
       );
 
       if (isFnoIdentifier) {
@@ -274,7 +274,7 @@ const WatchLists: React.FC<WatchListProps> = ({
   const setFutureOption = (
     symb: any,
     cell: HTMLTableCellElement,
-    type: any
+    type: any,
   ) => {
     dispatch(getFutureData({ futureData: {} }));
     dispatch(getOptionData({ optionData: {} }));
@@ -287,7 +287,7 @@ const WatchLists: React.FC<WatchListProps> = ({
           spot_price: null,
           expiryDate: "",
         },
-      })
+      }),
     );
     dispatch(
       setStock({
@@ -296,14 +296,14 @@ const WatchLists: React.FC<WatchListProps> = ({
           index_name: symb.symbol_name,
           spot_price: webSocketDataRead[symb.identifier],
         },
-      })
+      }),
     );
     dispatch(
       optionChainPayload({
         optionChainPayloadData: { ClickedRow: {}, response: {} },
-      })
+      }),
     );
-    router.push(`${config.brokersListUrl}/${brokerCode}/psb`);
+    router(`${config.brokersListUrl}/${brokerCode}/psb`);
   };
 
   const handleBuy = (index: any) => {
@@ -319,7 +319,7 @@ const WatchLists: React.FC<WatchListProps> = ({
       setSelectedSymbol,
       symbols,
       webSocketDataRead,
-      dispatch
+      dispatch,
     );
   };
 
@@ -336,7 +336,7 @@ const WatchLists: React.FC<WatchListProps> = ({
       setSelectedSymbol,
       symbols,
       webSocketDataRead,
-      dispatch
+      dispatch,
     );
   };
 
@@ -346,7 +346,7 @@ const WatchLists: React.FC<WatchListProps> = ({
       selectedWatchlistId,
       dispatch,
       shouldRefreshRedux,
-      router
+      router,
     );
     dispatch(symbolAddedToWatchlist(false));
     if (pinnedSymbols.includes(payload)) {
@@ -359,7 +359,7 @@ const WatchLists: React.FC<WatchListProps> = ({
         pinnedSymbols,
         setPinnedSymbolslimit,
         dispatch,
-        router
+        router,
       );
     }
   };
@@ -372,7 +372,7 @@ const WatchLists: React.FC<WatchListProps> = ({
       pinnedSymbols,
       setPinnedSymbolslimit,
       dispatch,
-      router
+      router,
     );
   };
 
@@ -421,7 +421,7 @@ const WatchLists: React.FC<WatchListProps> = ({
         activePositionFilter == TvChartInitiateIndex.filter
       ) {
         const matchedIndex = filteredSymbols.findIndex(
-          (item) => item.identifier === TvChartInitiateIndex.identifier
+          (item) => item.identifier === TvChartInitiateIndex.identifier,
         );
         // Only update if item is found
         if (matchedIndex !== -1) {
@@ -461,11 +461,11 @@ const WatchLists: React.FC<WatchListProps> = ({
             setVisibleSymbols,
             setAllIdentifiers,
             selectedGroup,
-            activePositionFilter
+            activePositionFilter,
           );
         }
       },
-      { threshold: 1.0 }
+      { threshold: 1.0 },
     );
 
     const target = lastRowRef.current;
@@ -499,7 +499,7 @@ const WatchLists: React.FC<WatchListProps> = ({
                 const isFNO =
                   fnoIdentifiers &&
                   fnoIdentifiers?.some(
-                    (index: any) => index.identifier === symb.identifier
+                    (index: any) => index.identifier === symb.identifier,
                   );
                 const isLastRow =
                   visibleSymbols?.length !== 1 &&

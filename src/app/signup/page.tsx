@@ -2,7 +2,7 @@
 import Logo from "@/components/shared/logo/logo";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { UserApi, UserCreate } from "@/lib/api/base";
 import { useForm } from "react-hook-form";
 import ErrorAlert from "@/components/shared/ErrorAlert";
@@ -20,7 +20,7 @@ interface SignupForm {
 }
 
 const Signup = () => {
-  const router = useRouter();
+  const router = useNavigate();
   const apiClient = new zApi(router);
   const userApi = new UserApi(baseConfig());
   const [values, setValues] = useState<SignupForm>({
@@ -64,7 +64,7 @@ const Signup = () => {
     await apiClient.request(
       () => userApi.signupV1UsersPost(signupCreateParams),
       (_) => {
-        router.push("/login?signup=true");
+        router("/login?signup=true");
       },
       (error) => {
         setError("root", { message: error.response.data });

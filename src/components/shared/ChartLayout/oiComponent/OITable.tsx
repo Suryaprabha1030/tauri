@@ -37,7 +37,7 @@ import {
 import LtpWithPerc from "../optionFutures/liveOptionChain/LtpWithPerc";
 import OptionChainKey from "../optionFutures/liveOptionChain/OptionChainKey";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import OITrend from "../optionFutures/liveOptionChain/OITrend";
 import OiWithPercentage from "../optionFutures/liveOptionChain/OiWithPercentage";
 import config from "@/lib/config";
@@ -136,37 +136,37 @@ const OITable: React.FC<OITableProps> = ({
   const dispatch = useDispatch();
   const ltp = useSelector((state: RootState) => state.OI.OILtpData);
   const indexAddtionalData: any = useSelector(
-    (state: RootState) => state.OI.OIAddtionalData
+    (state: RootState) => state.OI.OIAddtionalData,
   );
   const expiry: any = useSelector(
-    (state: RootState) => state.OI.OIIndexExpiryDate
+    (state: RootState) => state.OI.OIIndexExpiryDate,
   );
   const [OIAllData, setOIAllData] = useState<any>({});
   const expiryDateRef = useRef<any>(null);
 
   const indexData: any = useSelector(
-    (state: RootState) => state.OI.OiIndexData
+    (state: RootState) => state.OI.OiIndexData,
   );
   const [indicesApiBoolean, setIndicesApiBoolean] = useState(true);
   const [oiChangePerct, setOiChangePerct] = useState<any>({});
-  const router = useRouter();
+  const router = useNavigate();
   const intervalRef = useRef<any>(null);
   const [oiDataEmpty, setOiDataEmpty] = useState(false);
   const indicesData: any = useSelector(
-    (state: RootState) => state.common.allIndicesOptionsList
+    (state: RootState) => state.common.allIndicesOptionsList,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
   const netpercentage: any = useSelector(
-    (state: RootState) => state.strategy.netChangepercent
+    (state: RootState) => state.strategy.netChangepercent,
   );
   const rawApiResponse = useSelector(
-    (state: RootState) => state.strategy.rawIndexAPIresponse
+    (state: RootState) => state.strategy.rawIndexAPIresponse,
   );
   const [oiSupportResistance, setOiSupportResistance] = useState<any>({});
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
 
   const oiPercentData = async (unibrokerCode: any, index: any, expiry: any) => {
@@ -175,7 +175,7 @@ const OITable: React.FC<OITableProps> = ({
       .fetchLatestOiWithPercentageV1UsersMeBrokersBrokerCodeFetchLatestOiWithPercentagePost(
         unibrokerCode,
         index,
-        expiry
+        expiry,
       )
       .then((res) => {
         if (res?.status == 204 || res?.status == 400) {
@@ -242,7 +242,7 @@ const OITable: React.FC<OITableProps> = ({
         const atmStrike: any = ATMCalculation(
           OIData,
           WebsocketDataLtp,
-          currentIndexData
+          currentIndexData,
         );
         setSpotPriceRoundOff(atmStrike);
         // dispatch(getSpotPriceRoundOff(atmStrike));
@@ -274,7 +274,7 @@ const OITable: React.FC<OITableProps> = ({
 
     // Sort and set OI data
     const sorted: any = Object.fromEntries(
-      Object.entries(expiryData).sort(([a], [b]) => a.localeCompare(b))
+      Object.entries(expiryData).sort(([a], [b]) => a.localeCompare(b)),
     );
     setOIData(sorted);
 
@@ -290,14 +290,14 @@ const OITable: React.FC<OITableProps> = ({
       defaultLoad.map((key) => [
         key,
         `${key.split(".0")[0]}#${key.split("#")[1]}`,
-      ])
+      ]),
     );
 
     const initialRadioLoad = Object.fromEntries(
       [`${defaultSelector}.0#${expiry}#${groupName}`].map((key) => [
         key,
         [`${key.split(".0")[0]}CE`, `${key.split(".0")[0]}PE`],
-      ])
+      ]),
     );
 
     const updateCheckedRows = (setter: any, condition: any) => {
@@ -343,7 +343,7 @@ const OITable: React.FC<OITableProps> = ({
       setCheckedOIRows,
       showMultiOi &&
         !showMultiStraddle &&
-        Object?.entries(checkedOIRows).length == 0
+        Object?.entries(checkedOIRows).length == 0,
     );
     // all unchecked when tab switch and again click multi oi tab
     updateCheckedRows(
@@ -351,7 +351,7 @@ const OITable: React.FC<OITableProps> = ({
       !showMultiOi &&
         showMultiStraddle &&
         (Object?.entries(checkedOIRows).length == 0 ||
-          Object?.values(checkedOIRows)?.every((value) => !value))
+          Object?.values(checkedOIRows)?.every((value) => !value)),
     );
     // all unchecked when tab switch and again click multi starddle -custom tab
     updateMultiStraddleRows(
@@ -359,7 +359,7 @@ const OITable: React.FC<OITableProps> = ({
       !showMultiStraddle &&
         showMultiOi &&
         (Object?.entries(checkedCustomRows).length == 0 ||
-          Object?.values(checkedCustomRows)?.every((value) => !value))
+          Object?.values(checkedCustomRows)?.every((value) => !value)),
     );
     // all unchecked when tab switch and again click multi starddle-strangle tab
     updateMultiStraddleRows(
@@ -367,21 +367,21 @@ const OITable: React.FC<OITableProps> = ({
       showMultiOi &&
         !showMultiStraddle &&
         (Object?.entries(checkedStrangleRows).length == 0 ||
-          Object?.values(checkedStrangleRows)?.every((value) => !value))
+          Object?.values(checkedStrangleRows)?.every((value) => !value)),
     );
 
     // when stay that tab,change index name =>radio -stranggle
     updateMultiStraddleRows(
       setCheckedStrangleRows,
 
-      showMultiStraddle && Object?.entries(checkedStrangleRows).length == 0
+      showMultiStraddle && Object?.entries(checkedStrangleRows).length == 0,
     );
     // when stay that tab,change index name =>radio -custom
     updateMultiStraddleRows(
       setCheckedCustomRows,
       showMultiStraddle &&
         !showMultiOi &&
-        Object?.entries(checkedCustomRows).length == 0
+        Object?.entries(checkedCustomRows).length == 0,
     );
     // all unchecked when tab switch and again click multi starddle-strangle tab
     updateCheckedRadios(
@@ -389,14 +389,14 @@ const OITable: React.FC<OITableProps> = ({
       showMultiOi &&
         !showMultiStraddle &&
         (Object?.entries(checkedOIRadios).length == 0 ||
-          Object?.values(checkedOIRadios)?.every((value) => !value))
+          Object?.values(checkedOIRadios)?.every((value) => !value)),
     );
     // when stay that tab,change index name =>radio -straddle
     updateCheckedRadios(
       setCheckedOiradios,
       showMultiStraddle &&
         !showMultiOi &&
-        Object?.entries(checkedOIRadios).length == 0
+        Object?.entries(checkedOIRadios).length == 0,
     );
 
     const spotPriceRoundOffz = expiry && indexAddtionalData[query][expiry];
@@ -404,7 +404,7 @@ const OITable: React.FC<OITableProps> = ({
     const atmStrike: any = ATMCalculation(
       OIData,
       WebsocketDataLtp,
-      indexData[query]
+      indexData[query],
     );
     setSpotPriceRoundOff(atmStrike);
     setOiIncrementor(spotPriceRoundOffz && spotPriceRoundOffz?.incrementer);
@@ -462,7 +462,7 @@ const OITable: React.FC<OITableProps> = ({
             brokerCode,
             query,
             querySpotPrice,
-            false
+            false,
           )
           .then((res: any) => {
             dispatch(setIndexRawApiResponse(res?.data));
@@ -474,7 +474,7 @@ const OITable: React.FC<OITableProps> = ({
               addSymbol({
                 symbol: res?.data?.index_obj?.identifier,
                 // token: res?.data?.index_obj?.token,
-              })
+              }),
             );
             Object.keys(res?.data?.option_chain || {}).forEach((expiry) => {
               const strikes = res?.data?.option_chain[expiry];
@@ -487,7 +487,7 @@ const OITable: React.FC<OITableProps> = ({
                     addSymbol({
                       symbol: opt?.identifier, // pick identifier
                       // token: opt.token, // pick token
-                    })
+                    }),
                   );
                 });
               });
@@ -497,7 +497,7 @@ const OITable: React.FC<OITableProps> = ({
                 addSymbol({
                   symbol: future?.identifier,
                   // token: future.token,
-                })
+                }),
               );
             });
           })
@@ -561,19 +561,19 @@ const OITable: React.FC<OITableProps> = ({
           setCheckedCustomRows,
           showMultiStraddle &&
             !showMultiOi &&
-            Object?.entries(checkedCustomRows).length == 0
+            Object?.entries(checkedCustomRows).length == 0,
         );
         updateMultiStraddleRows(
           setCheckedStrangleRows,
           showMultiStraddle &&
             !showMultiOi &&
-            Object?.entries(checkedStrangleRows).length == 0
+            Object?.entries(checkedStrangleRows).length == 0,
         );
         updateCheckedRadios(
           setCheckedOiradios,
           showMultiStraddle &&
             !showMultiOi &&
-            Object?.entries(checkedOIRadios).length == 0
+            Object?.entries(checkedOIRadios).length == 0,
         );
       }
     }
@@ -582,7 +582,7 @@ const OITable: React.FC<OITableProps> = ({
   const handleStraddle = (
     event: React.ChangeEvent<HTMLInputElement>,
     key: any,
-    hashKey: any
+    hashKey: any,
   ) => {
     const isChecked = event.target.checked;
     const keys = hashKey;
@@ -628,7 +628,7 @@ const OITable: React.FC<OITableProps> = ({
     event: React.ChangeEvent<HTMLInputElement>,
     key: any,
     value: any,
-    hashKey: any
+    hashKey: any,
   ) => {
     const isChecked = event.target.checked;
     const keys = hashKey;
@@ -680,7 +680,7 @@ const OITable: React.FC<OITableProps> = ({
     event: React.ChangeEvent<HTMLInputElement>,
     key: any,
     value: any,
-    hashKey: any
+    hashKey: any,
   ) => {
     const isChecked = event.target.checked;
     const keys = hashKey;
@@ -964,42 +964,42 @@ const OITable: React.FC<OITableProps> = ({
                 const closeCEPercentage = getCloseValuePercentage(
                   value,
                   "CE",
-                  netpercentage
+                  netpercentage,
                 );
                 const closePEPercentage = getCloseValuePercentage(
                   value,
                   "PE",
-                  netpercentage
+                  netpercentage,
                 );
                 const closePE = getCloseValue(value, "PE", webSocketDataRead);
                 const hashCE = getOIHashKey(
                   key,
                   "CE",
                   expiryDateRef.current?.value,
-                  groupName
+                  groupName,
                 );
                 const hashPE = getOIHashKey(
                   key,
                   "PE",
                   expiryDateRef.current?.value,
-                  groupName
+                  groupName,
                 );
                 const hashKey = getOIRadioHashKey(
                   key,
                   expiryDateRef.current?.value,
-                  groupName
+                  groupName,
                 );
                 const icon = determineMarketAction(
                   oiChangePerct[`${key}#CE`],
                   parseFloat(closeCEPercentage),
                   "CE",
-                  expandOiTable
+                  expandOiTable,
                 );
                 const iconPE = determineMarketAction(
                   oiChangePerct[`${key}#PE`],
                   parseFloat(closePEPercentage),
                   "PE",
-                  expandOiTable
+                  expandOiTable,
                 );
                 return (
                   <tr
@@ -1056,7 +1056,7 @@ const OITable: React.FC<OITableProps> = ({
                         spotPriceRoundOff,
                         key,
                         indexData[query]?.net_change_percent,
-                        expandOiTable
+                        expandOiTable,
                       )}`}
                     >
                       <LtpWithPerc
@@ -1124,8 +1124,8 @@ const OITable: React.FC<OITableProps> = ({
                                 key,
                                 "CE",
                                 expiryDateRef.current?.value,
-                                groupName
-                              )
+                                groupName,
+                              ),
                             )
                           }
                           className=" flex  h-4 w-4 flex-col border-2 border-gray-200"
@@ -1152,8 +1152,8 @@ const OITable: React.FC<OITableProps> = ({
                                 key,
                                 "CE",
                                 expiryDateRef.current?.value,
-                                groupName
-                              )
+                                groupName,
+                              ),
                             )
                           }
                           className=" flex  h-4 w-4 flex-col border-2 border-gray-200"
@@ -1166,7 +1166,7 @@ const OITable: React.FC<OITableProps> = ({
                       className={`max-sm:w-[30%] sm:max-md:w-[17.5%] md:max-xl:w-[18%] xl:max-2xl:w-[20%] ${oiGetSymbolClass(
                         spotPriceRoundOff,
                         key,
-                        indexData[query]?.net_change_percent
+                        indexData[query]?.net_change_percent,
                       )} ${oiDataEmpty ? "xl:max-2xl:w-[30%] xl:max-2xl:pr-4 " : ""}`}
                     >
                       <OptionChainKey
@@ -1202,8 +1202,8 @@ const OITable: React.FC<OITableProps> = ({
                                 key,
                                 "PE",
                                 expiryDateRef.current?.value,
-                                groupName
-                              )
+                                groupName,
+                              ),
                             )
                           }
                           className=" flex  h-4 w-4 flex-col border-2 border-gray-200"
@@ -1225,8 +1225,8 @@ const OITable: React.FC<OITableProps> = ({
                                 key,
                                 "PE",
                                 expiryDateRef.current?.value,
-                                groupName
-                              )
+                                groupName,
+                              ),
                             )
                           }
                           className=" flex  h-4 w-4 flex-col border-2 border-gray-200"
@@ -1247,7 +1247,7 @@ const OITable: React.FC<OITableProps> = ({
                         spotPriceRoundOff,
                         key,
                         indexData[query]?.net_change_percent,
-                        expandOiTable
+                        expandOiTable,
                       )}`}
                     >
                       <LtpWithPerc

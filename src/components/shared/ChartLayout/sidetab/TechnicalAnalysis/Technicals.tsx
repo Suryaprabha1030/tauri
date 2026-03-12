@@ -8,7 +8,7 @@ import { RootState } from "@/lib/redux/Store";
 import InfoNotes from "../InfoNotes";
 import TimeframeSelector from "../TimeFrameSelector/TimeFrameSelector";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 interface TechnicalProps {
@@ -36,16 +36,16 @@ const Technicals: React.FC<TechnicalProps> = ({
   const [movingAvgData, setMovingAvgData] = useState([]);
   const [scrollToMA, setScrollToMA] = useState<boolean>(false);
   const resolution = useSelector(
-    (state: RootState) => state.charts.setTvResolution
+    (state: RootState) => state.charts.setTvResolution,
   );
   const timeframes = ["5", "15", "30", "60", "1D"];
   const [selectedTimeframe, setSelectedTimeframe] = useState(
-    timeframes.includes(resolution) ? resolution : "1D"
+    timeframes.includes(resolution) ? resolution : "1D",
   );
   const handleTimeframeClick = (timeframe: string) => {
     setSelectedTimeframe(timeframe);
   };
-  const router = useRouter();
+  const router = useNavigate();
 
   useEffect(() => {
     const Technicals = new TechnicalAnalysisRouterApi(baseConfig());
@@ -53,7 +53,7 @@ const Technicals: React.FC<TechnicalProps> = ({
       Technicals.taStocksV1TaPost(
         brokerCode,
         clickedSymbolData?.identifier,
-        selectedTimeframe
+        selectedTimeframe,
       )
         //As of now only NSE is accepting
         .then((res) => {

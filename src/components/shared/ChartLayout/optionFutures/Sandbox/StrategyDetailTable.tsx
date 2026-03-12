@@ -24,7 +24,7 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import { toast } from "react-toastify";
 import DisplayHandleSellButton from "../../buySellButton/DisplayHandleSellButton";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { getMinimumExpiryDate } from "../optionFuturesUtil/newStrategyUtil";
 import {
   getMultiOiLoad,
@@ -64,7 +64,7 @@ const StrategyDetailsTable: React.FC<StrategyDetailsTableProps> = ({
   const [editedData, setEditedData] = useState<{ [key: string]: any }>({}); // Tracks edits
   const dispatch = useDispatch();
   const [hoverStrategy, setHoverStrategy] = useState(true);
-  const router = useRouter();
+  const router = useNavigate();
 
   useEffect(() => {
     // Filter legs where is_expired and is_exited are false

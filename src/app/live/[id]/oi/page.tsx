@@ -115,7 +115,7 @@ function OpenInterest() {
   );
   const [userId, setUserId] = useState("");
   // Function to toggle the name
-  const router: any = useRouter();
+  const router: any = useNavigate();
   const id: any = useParams();
   const [isValid, setIsValid] = useState(false);
   const brokerData: any = sessionStorage.getItem("ExistbrokerCode");

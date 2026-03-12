@@ -27,8 +27,7 @@ import {
   showStrategyTable,
 } from "@/lib/redux/slices/AnalyzerSlice";
 import { ShowStrategiesPopup } from "@/lib/redux/slices/ChartsSlice";
-
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { autoLogoutTokenRemove } from "../autoLogoutUtil/autoLogOutUtil";
 import config from "@/lib/config";
 import { brokerLogoutTokenRemove } from "../autoLogoutUtil/brokerLogOutUtil";
@@ -41,7 +40,7 @@ import { setStrategiesPnlDemo } from "@/lib/redux/slices/SimulationSlice";
 export const updateLotsBasedOnMultiplier = (
   strategyName: string,
   apiResponse: any,
-  strategyLots: Record<string, number>
+  strategyLots: Record<string, number>,
 ) => {
   //updating lots value of API response with the manually changed lots
   const multiplier = strategyLots[strategyName] || 1;
@@ -100,7 +99,7 @@ export const handleSelectChange = ({
           spot_price: null,
           expiryDate: "",
         },
-      })
+      }),
     );
     dispatch(
       setStock({
@@ -109,14 +108,14 @@ export const handleSelectChange = ({
           index_name: selectedItem.index_name,
           spot_price: webSocketDataRead[selectedItem.identifier],
         },
-      })
+      }),
     );
   }
 };
 
 export const toggleRowExpansion = (
   strategy: string,
-  setExpandedRow: React.Dispatch<React.SetStateAction<any>>
+  setExpandedRow: React.Dispatch<React.SetStateAction<any>>,
 ) => {
   setExpandedRow((prev: any) => (prev === strategy ? null : strategy));
 };
@@ -125,7 +124,7 @@ export const handleLotsChange = (
   strategyName: string,
   event: React.ChangeEvent<HTMLSelectElement>,
   setStrategyLots: React.Dispatch<React.SetStateAction<any>>,
-  response: any
+  response: any,
 ) => {
   const selectedLots = parseInt(event.target.value, 10);
   setStrategyLots((prev: any) => ({
@@ -136,7 +135,7 @@ export const handleLotsChange = (
 };
 
 export const handleHedged = (
-  sethedgedData: React.Dispatch<React.SetStateAction<boolean>>
+  sethedgedData: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   sethedgedData((prev: any) => !prev);
 };
@@ -145,7 +144,7 @@ export const handleExecute = (
   strategyName: any,
   response: any,
   setSelectedStrategy: React.Dispatch<React.SetStateAction<any>>,
-  dispatch: Dispatch<any>
+  dispatch: Dispatch<any>,
 ) => {
   const strategy: any = response?.[strategyName];
   const combinedLegs = [
@@ -180,7 +179,7 @@ export const handleExpiry = (
   e: React.ChangeEvent<HTMLSelectElement>,
   setExpiry: React.Dispatch<React.SetStateAction<any>>,
   dispatch: Dispatch<any>,
-  indexname: string
+  indexname: string,
 ) => {
   const currentExpiryvalue = e.target.value;
   setExpiry(currentExpiryvalue);
@@ -192,7 +191,7 @@ export const fetchLiveExpiry = async (
   expiryDateRef: any,
   setLiveExpiryList: React.Dispatch<React.SetStateAction<any>>,
   setExpiry: React.Dispatch<React.SetStateAction<any>>,
-  router: any
+  router: any,
 ) => {
   const supportedIndexNames = config.BSESupportIndices.map((i) => i);
   const isSupportedIndex = supportedIndexNames.includes(payload);
@@ -203,7 +202,7 @@ export const fetchLiveExpiry = async (
       await liveExpirydates.getLiveExpiryDatesV1UsersMeBrokersBrokerCodeLiveExpiryDatesPost(
         brokerCode,
         payload,
-        exchange
+        exchange,
       );
     if (res.data && expiryDateRef.current && res.data.length > 0) {
       if (isSupportedIndex) {
@@ -226,7 +225,7 @@ export const fetchLiveExpiry = async (
 
 export const strategyDirection = (
   response: any,
-  setSortedResponse: React.Dispatch<React.SetStateAction<any>>
+  setSortedResponse: React.Dispatch<React.SetStateAction<any>>,
 ) => {
   const strategyOrder = ["bullish", "bearish", "neutral", "directional"];
   const responseArray = Object.entries(response);
@@ -257,7 +256,7 @@ export const fetchStrategiesPnl = async (
   setStatus: React.Dispatch<React.SetStateAction<any>>,
   dispatch: Dispatch<any>,
   router: any,
-  setExpiry?: React.Dispatch<React.SetStateAction<any>>
+  setExpiry?: React.Dispatch<React.SetStateAction<any>>,
 ) => {
   const livestrategy = new UserBrokerRouterApi(baseConfig());
   try {
@@ -267,7 +266,7 @@ export const fetchStrategiesPnl = async (
         indexname,
         price,
         lotsize,
-        expiry
+        expiry,
       );
     setResponse(res.data.pnl);
     dispatch(setStrategyCount(res?.data?.pnl));
@@ -304,7 +303,7 @@ export const strategyApiDataDetails = (
   positionDatas: any,
   futureDatas: any,
   allStrategyData: any,
-  isAI?: boolean
+  isAI?: boolean,
 ) => {
   if (path === `${config.brokersListUrl}/${brokerCode}/psb`) {
     dispatch(showPnlTable(false));
@@ -319,7 +318,7 @@ export const strategyApiDataDetails = (
       dispatch(getFutureData({ futureData: {} }));
     }
     const responsePayLoad = allStrategyData.find(
-      (item: any) => item?.strategy_name === strategy
+      (item: any) => item?.strategy_name === strategy,
     )?.result;
 
     // Deep clone so it's fully mutable (like API data)
@@ -328,7 +327,7 @@ export const strategyApiDataDetails = (
     const updatedResponse = updateLotsBasedOnMultiplier(
       strategy,
       mutableResponsePayload,
-      strategyLots
+      strategyLots,
     );
 
     //  Now use `updatedResponse` everywhere — NOT `responsePayLoad`
@@ -338,7 +337,7 @@ export const strategyApiDataDetails = (
           ClickedRow: {},
           response: { responsePayLoad: updatedResponse },
         },
-      })
+      }),
     );
     dispatch(
       addCartSuccess({
@@ -348,20 +347,20 @@ export const strategyApiDataDetails = (
           spot_price: item.spot_price,
           expiryDate: item.expiryDate,
         },
-      })
+      }),
     );
   } else if (!(path === `${config.brokersListUrl}/${brokerCode}/psb`)) {
     const PayloadOPtionChainApi = new OptionsStrategyBuilderApi(baseConfig());
 
     PayloadOPtionChainApi.getReadyMadeStrategyByNameV1StrategiesByNameStrategyNameGet(
-      strategy
+      strategy,
     )
       .then((res: any) => {
         const responsePayLoad = res.data.result;
         const updatedResponse = updateLotsBasedOnMultiplier(
           strategy,
           responsePayLoad,
-          strategyLots
+          strategyLots,
         );
 
         dispatch(showPositionTable(false));
@@ -376,7 +375,7 @@ export const strategyApiDataDetails = (
               spot_price: null,
               expiryDate: "",
             },
-          })
+          }),
         );
 
         dispatch(
@@ -385,9 +384,9 @@ export const strategyApiDataDetails = (
               ClickedRow: {},
               response: { responsePayLoad },
             },
-          })
+          }),
         );
-        router.push(`${config.brokersListUrl}/${brokerCode}/psb`);
+        router(`${config.brokersListUrl}/${brokerCode}/psb`);
         dispatch(setprimaryRefresh(false));
         if (!isAI) {
           dispatch(ShowStrategiesPopup(true));
@@ -408,7 +407,7 @@ export const fetchSymbolData = async (
   payload: any,
   brokerCode: any,
   dispatch: Dispatch<any>,
-  router: any
+  router: any,
 ) => {
   if (!payload) return;
   if (Array.isArray(payload) && payload.length > 0) {
@@ -423,20 +422,20 @@ export const filterStrategies = (data: any, activeIndicatorFilter: any) => {
   return Object.fromEntries(
     Object.entries(data).filter(([_, strategyData]) => {
       return (strategyData as any).strategy_direction === activeIndicatorFilter;
-    })
+    }),
   );
 };
 
 export const filterStrategiesUtil = (
   activeIndicatorFilter: any,
   sortedresponse: any,
-  hedgeddata: boolean | null
+  hedgeddata: boolean | null,
 ) => {
   let dataToFilter = hedgeddata
     ? Object.fromEntries(
         Object.entries(sortedresponse).filter(
-          ([_, strategyData]) => (strategyData as any).is_hedged
-        )
+          ([_, strategyData]) => (strategyData as any).is_hedged,
+        ),
       )
     : sortedresponse;
 
@@ -455,7 +454,7 @@ export const AllStrategyUtil = (setAllStrategyData: any, router: any) => {
   const PayloadOPtionChainApi = new OptionsStrategyBuilderApi(baseConfig());
 
   PayloadOPtionChainApi.getReadyMadeStrategyByNameV1StrategiesByNameStrategyNameGet(
-    "All"
+    "All",
   )
     .then((res: any) => {
       if (res?.data?.result.length > 0) {

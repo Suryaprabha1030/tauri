@@ -2,7 +2,7 @@ import { RootState } from "@/lib/redux/Store";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { formatNumber } from "@/lib/util/DraftUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { handleTVChart } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 
 import CandleIcon from "../../optionFutures/CandleIcon";
@@ -30,7 +30,7 @@ const HoldingsTable: React.FC<HoldingsTableProps> = ({
     (state: RootState) => state.strategy.netChangepercent,
   );
   const path = window.location.pathname;
-  const router = useRouter();
+  const router = useNavigate();
   const brokerCode = getBrokerCode();
   const dispatch = useDispatch();
   const handleChart = (index: any, identifier: any, filter: any) => {

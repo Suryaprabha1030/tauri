@@ -8,7 +8,7 @@ import { normalizeDate } from "@/lib/util/DraftUtil";
 import { useDispatch } from "react-redux";
 import { setShowpayoffChart } from "@/lib/redux/slices/AnalyzerSlice";
 import { getDaysBetween } from "./optionFuturesUtil/legUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { removeTokenField } from "@/lib/util/analyzer/handleNewStrategyUtil";
 
 import { MultiLegCalc } from "../payOffChartCalculation/MultiLegCalc";
@@ -80,95 +80,95 @@ const StrategyChart: React.FC<LivePayoffChartProps> = ({
   const [selectedData, setSelectedData] = useState<any>();
 
   const spotPriceInfo = useSelector(
-    (state: RootState) => state.strategy.spotPriceData
+    (state: RootState) => state.strategy.spotPriceData,
   );
 
   const positionDatas = useSelector(
-    (state: RootState) => state.analyzer.PositionDataList
+    (state: RootState) => state.analyzer.PositionDataList,
   );
 
   const showPayoffchart = useSelector(
-    (state: RootState) => state.analyzer.ShowPayOffChart
+    (state: RootState) => state.analyzer.ShowPayOffChart,
   );
   const selectedStrategy = useSelector(
-    (state: RootState) => state.analyzer.setselectedStrategy
+    (state: RootState) => state.analyzer.setselectedStrategy,
   );
   const strategyExited = useSelector(
-    (state: RootState) => state.analyzer.SandboxExited
+    (state: RootState) => state.analyzer.SandboxExited,
   );
   const dispatch = useDispatch();
   const [projectedPnl, setprojectedPnl] = useState<any>();
 
   const expiry: any = useSelector(
-    (state: RootState) => state.strategy.indexExpiryDate
+    (state: RootState) => state.strategy.indexExpiryDate,
   );
-  const router = useRouter();
+  const router = useNavigate();
   const [payOffchartDisplay, setPayOffchartDisplay] = useState(true);
   const payOffChartPayLoad = useSelector(
-    (state: RootState) => state.StrategyChart.payOffChartPayLoad
+    (state: RootState) => state.StrategyChart.payOffChartPayLoad,
   );
   const sanitizedPayOffChartPayload = removeTokenField(payOffChartPayLoad);
   const indexAddtionalData: any = useSelector(
-    (state: RootState) => state.strategy.addtionalData
+    (state: RootState) => state.strategy.addtionalData,
   );
   const oiChartCall = useSelector(
-    (state: RootState) => state.PayoffChart.oiChartCall
+    (state: RootState) => state.PayoffChart.oiChartCall,
   );
   const [oiData, setOiData] = useState([]);
   const [invalidExpiry, setInvalidExpiry] = useState<any[]>([]);
   const spotPriceRoundOff = useSelector(
-    (state: RootState) => state.optionChain.spotPrice
+    (state: RootState) => state.optionChain.spotPrice,
   );
   const noOiData = useSelector(
-    (state: RootState) => state.optionChain.nooiData
+    (state: RootState) => state.optionChain.nooiData,
   );
   const oiPercent = useSelector(
-    (state: RootState) => state.optionChain.oiPercent
+    (state: RootState) => state.optionChain.oiPercent,
   );
 
   const PayoffTableOiChg = useSelector(
-    (state: RootState) => state.optionChain.payoffTableOiChg
+    (state: RootState) => state.optionChain.payoffTableOiChg,
   );
   const calcData = useSelector(
-    (state: RootState) => state.optionChain.calcData
+    (state: RootState) => state.optionChain.calcData,
   );
   const lastApiCallTime = useSelector(
-    (state: RootState) => state.optionChain.lastApiCallTime
+    (state: RootState) => state.optionChain.lastApiCallTime,
   );
   const cachedApiData = useSelector(
-    (state: RootState) => state.optionChain.cachedApiData
+    (state: RootState) => state.optionChain.cachedApiData,
   );
   const inputValue = useSelector(
-    (state: RootState) => state.StrategyChart.inputValue
+    (state: RootState) => state.StrategyChart.inputValue,
   );
   const minExpiryDate = useSelector(
-    (state: RootState) => state.StrategyChart.minExpiryDate
+    (state: RootState) => state.StrategyChart.minExpiryDate,
   );
   const daysToExpiry = useSelector(
-    (state: RootState) => state.StrategyChart.daysToExpiry
+    (state: RootState) => state.StrategyChart.daysToExpiry,
   );
   const payoffExpiryDate = useSelector(
-    (state: RootState) => state.StrategyChart.payoffExpiryDate
+    (state: RootState) => state.StrategyChart.payoffExpiryDate,
   );
   const indexObjData: any = useSelector(
-    (state: RootState) => state.strategy.indexObj
+    (state: RootState) => state.strategy.indexObj,
   );
   const webSocketDataRead = useSelector(
-    (state: RootState) => state.strategy.symbolsPrice
+    (state: RootState) => state.strategy.symbolsPrice,
   );
 
   const lotSizes = useSelector(
-    (state: RootState) => state.strategy.lotSizeData
+    (state: RootState) => state.strategy.lotSizeData,
   );
   const Payoffstrategy = useSelector(
-    (state: RootState) => state.Screener.PayoffStrategyName
+    (state: RootState) => state.Screener.PayoffStrategyName,
   );
   const StrategyCount = useSelector(
-    (state: RootState) => state.Screener.StrategyCount
+    (state: RootState) => state.Screener.StrategyCount,
   );
   const indexname = useSelector((state: RootState) => state.strategy.indexName);
   const expiryValue = useSelector(
-    (state: RootState) => state.optionChain.expiryValue
+    (state: RootState) => state.optionChain.expiryValue,
   );
   const captureRef = useRef<HTMLDivElement>(null);
 
@@ -205,7 +205,7 @@ const StrategyChart: React.FC<LivePayoffChartProps> = ({
           await liveOptionApi.fetchPayOffChartOiV1UsersMeBrokersBrokerCodePayOffChartOiPost(
             brokerCode,
             query,
-            payoffExpiryDate
+            payoffExpiryDate,
           );
         if (res.status == 204) {
           setOiData([]);
@@ -248,7 +248,7 @@ const StrategyChart: React.FC<LivePayoffChartProps> = ({
       dispatch,
       router,
       query,
-      indexAddtionalData[query][expiry[query][0]]?.incrementer
+      indexAddtionalData[query][expiry[query][0]]?.incrementer,
     );
 
     if (data?.renamedData?.length == 0) {
@@ -284,7 +284,7 @@ const StrategyChart: React.FC<LivePayoffChartProps> = ({
       dispatch,
       futFlattenTransformData(sanitizedPayOffChartPayload),
       lotSizes[query],
-      input
+      input,
     );
 
     // margin caculation
@@ -406,7 +406,7 @@ const StrategyChart: React.FC<LivePayoffChartProps> = ({
 
         const strategyKeys = Object.keys(StrategyCount);
         const lastStrategyKey = normalize(
-          strategyKeys[strategyKeys.length - 1]
+          strategyKeys[strategyKeys.length - 1],
         );
 
         if (normalize(strategyName) === lastStrategyKey) {
@@ -482,9 +482,8 @@ const StrategyChart: React.FC<LivePayoffChartProps> = ({
             invalidExpiry?.length == 0 ? (
             <div className=" flex w-full items-center justify-center font-medium text-gray-400 max-sm:h-[90%] max-sm:text-center max-sm:text-[0.7rem] xl:h-[95%]">
               {" "}
-              Payoff Chart Cannot be Rendered For {
-                strategyExited
-              } Contracts{" "}
+              Payoff Chart Cannot be Rendered For {strategyExited}{" "}
+              Contracts{" "}
             </div>
           ) : (
             !payOffchartDisplay && (

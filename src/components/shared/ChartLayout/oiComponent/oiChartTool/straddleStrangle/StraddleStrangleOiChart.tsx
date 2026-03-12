@@ -3,7 +3,7 @@ import { straddleTabPayload } from "../../OIUtil";
 import { UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import config from "@/lib/config";
 import StraddleStrangleChart from "./StaddleStrangleChart";
 import MultiOiCustomLegend from "../multiOi/MultiOiCustomLegend";
@@ -45,12 +45,12 @@ const StraddleStrangleOiChart: React.FC<StraddleStrangleOiChartProps> = ({
   activeStraddleButton,
   checkedOIRadios,
 }) => {
-  const router = useRouter();
+  const router = useNavigate();
   const straddleIntervalRef = useRef<any>(null);
   const dispatch = useDispatch();
   const [uniqueSeries, setUniqueSeries] = useState<any>({});
   const isMarketHoliday = useSelector(
-    (state: RootState) => state.MarketBasis.isMarketHoliday
+    (state: RootState) => state.MarketBasis.isMarketHoliday,
   );
   useEffect(() => {
     const fetchStraddleStrangle = () => {
@@ -67,7 +67,7 @@ const StraddleStrangleOiChart: React.FC<StraddleStrangleOiChartProps> = ({
             oiExpiry,
             selected,
             Object.values(straddleTabPayload(straddlePayload))?.flat(),
-            isSumSelected
+            isSumSelected,
           )
           .then((res: any) => {
             if (res && res?.status == 204) {
@@ -99,7 +99,7 @@ const StraddleStrangleOiChart: React.FC<StraddleStrangleOiChartProps> = ({
     };
     straddleIntervalRef.current = setInterval(
       fetchIfTradingTimeOiStraddleData,
-      180000
+      180000,
     );
 
     return () => {
