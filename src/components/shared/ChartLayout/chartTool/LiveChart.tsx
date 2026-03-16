@@ -1,9 +1,9 @@
 "use client";
-import dynamic from "next/dynamic";
+
 import { useEffect, useMemo, useState } from "react";
 import { getChartSeries } from "@/lib/util/payoffChart/ChartSeries";
 import { getChartOptions } from "@/lib/util/payoffChart/ChartOptions";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 
 const LiveChart = ({
   data,
@@ -40,7 +40,7 @@ const LiveChart = ({
         ...(data?.map((i: any) => i?.strike_price) || []),
         // Add your single number here
       ].sort((a, b) => a - b),
-    [data, spotPrice] // Add 'additionalValue' to the dependencies
+    [data, spotPrice], // Add 'additionalValue' to the dependencies
   );
 
   // Calculations for Y-Axis limits
@@ -48,35 +48,35 @@ const LiveChart = ({
     () =>
       Math.max(
         Math.abs(Math.min(...yAxis1Data)),
-        Math.abs(Math.max(...yAxis1Data))
+        Math.abs(Math.max(...yAxis1Data)),
       ),
-    [yAxis1Data]
+    [yAxis1Data],
   );
 
   const maxYAxis2 = useMemo(() => {
     // if (!oiAvailable || yAxis2Data.length === 0) return 0;
     return Math.max(
       Math.abs(Math.min(...yAxis2Data)),
-      Math.abs(Math.max(...yAxis2Data))
+      Math.abs(Math.max(...yAxis2Data)),
     );
   }, [yAxis2Data]);
 
   const yAxis1Min = useMemo(
     () => -Math.ceil(maxYAxis1 / 1000) * 1000,
-    [maxYAxis1]
+    [maxYAxis1],
   );
   const yAxis1Max = useMemo(
     () => Math.ceil(maxYAxis1 / 1000) * 1000,
-    [maxYAxis1]
+    [maxYAxis1],
   );
 
   const yAxis2Min = useMemo(
     () => -Math.ceil(maxYAxis2 / 1000) * 1000,
-    [maxYAxis2]
+    [maxYAxis2],
   );
   const yAxis2Max = useMemo(
     () => Math.ceil(maxYAxis2 / 1000) * 1000,
-    [maxYAxis2]
+    [maxYAxis2],
   );
   const gradientOffset = useMemo(() => {
     const dataMax =
@@ -97,7 +97,7 @@ const LiveChart = ({
 
   const series = useMemo(
     () => getChartSeries(data, oiData, payoffExpiryDate),
-    [data, oiData]
+    [data, oiData],
   );
   const options = useMemo(
     () =>
@@ -112,9 +112,9 @@ const LiveChart = ({
         yAxis2Max,
         spotPrice,
         calculateWidthPercentage,
-        defaultChartToolTip
+        defaultChartToolTip,
       ),
-    [data, oiData]
+    [data, oiData],
   );
 
   return (

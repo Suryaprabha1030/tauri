@@ -8,8 +8,6 @@ import React, {
 
 import getGaugeChartOptions from "./GaugechartOptions";
 
-import dynamic from "next/dynamic";
-
 interface SummaryData {
   sell: number;
   neutral: number;
@@ -23,7 +21,7 @@ interface chartProps {
   setTechIndicator?: Dispatch<SetStateAction<any>>;
   isStockInfo?: boolean;
 }
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 const GaugeWithThreePartitions: React.FC<chartProps> = ({
   summary,
   type,

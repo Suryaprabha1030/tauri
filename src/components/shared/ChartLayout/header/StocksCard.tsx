@@ -2,7 +2,7 @@ import { UserBrokerRouterApi, UserWatchlistRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { addSymbol, updateSymbolData } from "@/lib/redux/slices/StrategySlice";
 import { RootState } from "@/lib/redux/Store";
-import { usePathname, useRouter } from "next/navigation";
+
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -18,6 +18,7 @@ import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil"
 import { setShowTVpopup } from "@/lib/redux/slices/CommonSlice";
 import config from "@/lib/config";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
+import { useNavigate } from "react-router-dom";
 
 interface StocksCardProps {
   brokerCode: number | null;

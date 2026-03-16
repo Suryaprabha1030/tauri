@@ -3,14 +3,14 @@ const config = {
   siteDescription: "The future of trading is here",
   siteUrl: "https://zoonest.com",
   apiUrl:
-    process.env.NEXT_PUBLIC_ZOONEST_API_URL ||
+    import.meta.env.NEXT_PUBLIC_ZOONEST_API_URL ||
     "http://test-demozoonest.pagekite.me",
   nimaAPIUrl:
-    process.env.NEXT_PUBLIC_ZOONEST_NIMA_API_URL ||
+    import.meta.env.NEXT_PUBLIC_ZOONEST_NIMA_API_URL ||
     "http://zoonestmac.pagekite.me",
   websocketBaseUrl:
-    process.env.NEXT_PUBLIC_ZOONEST_WEBSOCKET_BASE_URL ||
-    "wss://ws-demozoonest.pagekite.me/ws/connect",
+    import.meta.env.NEXT_PUBLIC_ZOONEST_WEBSOCKET_BASE_URL ||
+    "wss://ws-in.services.zoonest.com/ws/connect",
 
   sideNav: [
     {

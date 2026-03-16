@@ -1,5 +1,5 @@
-import { useRouter } from "next/navigation";
 import config from "@/lib/config";
+import { useNavigate } from "react-router-dom";
 
 const LoginWithGoogle = ({ name }: any) => {
   const router = useNavigate();

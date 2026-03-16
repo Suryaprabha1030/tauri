@@ -1,12 +1,11 @@
 import React from "react";
 import CombinedOiData from "./CombinedOiData";
 import CombinedOiOptions from "./CombinedOiOptions";
-import dynamic from "next/dynamic";
 
 interface CombinedBarChartProps {
   data: any;
 }
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 const CombinedBarChart: React.FC<CombinedBarChartProps> = ({ data }) => {
   const { series } = CombinedOiData(data);
   const options = CombinedOiOptions();

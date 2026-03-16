@@ -3,21 +3,20 @@ import { heatmapOptions } from "./heatmapOptions";
 import { heatmapSeries } from "./heatmapSeries";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-import dynamic from "next/dynamic";
 
 interface HeatMapProps {
   HeatMapData: any[];
   setClickedHeatmapData?: Dispatch<SetStateAction<{}>>;
   xlScreenHeight?: string;
 }
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 const HeatMapChart: React.FC<HeatMapProps> = ({
   HeatMapData,
   setClickedHeatmapData,
   xlScreenHeight,
 }) => {
   const toggleState = useSelector(
-    (state: RootState) => state.analyzer.toggleState
+    (state: RootState) => state.analyzer.toggleState,
   );
 
   const series = heatmapSeries(HeatMapData, toggleState);

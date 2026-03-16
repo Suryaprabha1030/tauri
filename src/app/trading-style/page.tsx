@@ -12,7 +12,6 @@ import TradingStyleStep from "./trading-Style-step";
 import TradingLevelStep from "./trading-level-step";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-import Link from "next/link";
 
 const TradingStyle = () => {
   const router = useNavigate();

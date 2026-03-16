@@ -1,8 +1,6 @@
 "use client";
 import Logo from "@/components/shared/logo/logo";
-import Link from "next/link";
-import { useState, useContext, use, useEffect } from "react";
-import { redirect, useRouter, useSearchParams } from "next/navigation";
+import { useState, useContext } from "react";
 import { AuthContext } from "@/context/authContextProvider";
 import { useForm } from "react-hook-form";
 import ErrorAlert from "@/components/shared/ErrorAlert";
@@ -14,6 +12,7 @@ import SuccessAlert from "@/components/shared/SuccessAlert";
 import LoginWithGoogle from "../login/LoginWithGoogle";
 import config from "@/lib/config";
 import BrokerLoginPopup from "@/components/LoginPopup/BrokerLoginPopup";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Login = () => {
   const router = useNavigate();
@@ -28,7 +27,7 @@ const Login = () => {
   } = useForm();
 
   const { loginSuccess } = useContext(AuthContext);
-  const searchParams = useSearchParams();
+  const [searchParams] = useSearchParams();
   const signupSuccess = searchParams.get("signup");
   const apiClient = new zApi(router);
   const userApi = new UserApi(baseConfig());

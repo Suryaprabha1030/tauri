@@ -1,10 +1,6 @@
 "use client";
-import dynamic from "next/dynamic";
 
-const AIScreener = dynamic(() => import("@/components/NimaAI/ChatKit"), {
-  ssr: false,
-});
-
+import AIScreener from "@/components/NimaAI/ChatKit";
 import Logo from "@/components/shared/logo/logo";
 import { useRef } from "react";
 

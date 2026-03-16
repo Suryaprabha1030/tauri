@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import ApexCharts from "react-apexcharts";
 import StraddleStrangleOptions from "./StraddleStrangleOptions";
 import StraddleStrangleData from "./StarddleStrangleData";
-import dynamic from "next/dynamic";
 
 interface StraddleStrangleChartProps {
   data: any;
   isSumSelected: boolean;
   setUniqueSeries: React.Dispatch<React.SetStateAction<any>>;
 }
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 const StraddleStrangleChart: React.FC<StraddleStrangleChartProps> = React.memo(
   ({ data, isSumSelected, setUniqueSeries }) => {
     const {
@@ -31,7 +30,7 @@ const StraddleStrangleChart: React.FC<StraddleStrangleChartProps> = React.memo(
       ltp,
       filteredArr2,
       pcrData,
-      maxPainData
+      maxPainData,
     );
 
     return (
@@ -57,7 +56,7 @@ const StraddleStrangleChart: React.FC<StraddleStrangleChartProps> = React.memo(
         )}
       </>
     );
-  }
+  },
 );
 StraddleStrangleChart.displayName = "StraddleStrangleChart";
 export default StraddleStrangleChart;

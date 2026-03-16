@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
+
 import { format } from "date-fns";
 import { getStockChartOptions } from "./StockChart/getStockChartOptions";
 import { getStockChartSeries } from "./StockChart/getStockChartSeries";
 import { useDispatch } from "react-redux";
 import { adjustToMarketTime } from "@/lib/util/Stockinfo/Stockinfo";
 
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 
 const LightWeightCharts = React.memo(
   ({
@@ -19,7 +19,13 @@ const LightWeightCharts = React.memo(
     newsByTime,
     symbol,
   }: {
-    data: { time: number; value: number; volume: number, high: number; low: number }[];
+    data: {
+      time: number;
+      value: number;
+      volume: number;
+      high: number;
+      low: number;
+    }[];
     AreaColor: string;
     volumeColor: string;
     showVolume: boolean;
@@ -40,7 +46,7 @@ const LightWeightCharts = React.memo(
         volume: point?.volume,
         prevValue: index > 0 ? data[index - 1].value : point.value,
         high: point?.high,
-        low: point?.low
+        low: point?.low,
       };
     });
 
@@ -50,7 +56,7 @@ const LightWeightCharts = React.memo(
         const { istDate, formatted, dateLabel } = adjustToMarketTime(key);
 
         const sameDayData = formattedData?.filter(
-          (d) => d.dateLabel === dateLabel
+          (d) => d.dateLabel === dateLabel,
         );
         if (sameDayData.length === 0) return null;
 
@@ -72,7 +78,7 @@ const LightWeightCharts = React.memo(
           newsData: newsByTime[key],
           symbol: symbol,
         };
-      }
+      },
     );
 
     const mergedAnnotations = Object.values(
@@ -82,7 +88,7 @@ const LightWeightCharts = React.memo(
         acc[curr.x]?.newsData.push(...curr?.newsData);
         acc[curr.x].label.text = `${acc[curr.x].newsData?.length} `;
         return acc;
-      }, {})
+      }, {}),
     );
 
     const dispatch = useDispatch();
@@ -93,7 +99,7 @@ const LightWeightCharts = React.memo(
       volumeColor,
       showVolume,
       mergedAnnotations,
-      dispatch
+      dispatch,
     );
 
     const series = getStockChartSeries(formattedData, showVolume);
@@ -111,7 +117,7 @@ const LightWeightCharts = React.memo(
         </div>
       </div>
     );
-  }
+  },
 );
 LightWeightCharts.displayName = "LightWeightCharts";
 export default LightWeightCharts;

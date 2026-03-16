@@ -17,9 +17,10 @@ import {
   tvWidgetId,
   ViewType,
 } from "@/lib/util/toggleButtonName/toggleButtonNames";
-import { useParams, useRouter } from "next/navigation";
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Charts = () => {
   const [symbols, setSymbols] = useState<any[]>([]);
@@ -55,6 +56,7 @@ const Charts = () => {
 
   const router = useNavigate();
   const code: any = useParams();
+  console.log(code, "code");
   const [isValid, setIsValid] = useState(false);
   const brokerData: any = sessionStorage.getItem("ExistbrokerCode");
   const [userId, setUserId] = useState("");

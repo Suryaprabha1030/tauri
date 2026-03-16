@@ -13,11 +13,12 @@ import HeatMapChart from "./HeatmapChart";
 import { formatExpiryDate } from "@/lib/util/DateUtil";
 import HeatMapHeader from "./SpotPriceDisplay";
 import HeatMapToggle from "./HeatMapToggle";
-import { getToggleState } from "@/lib/redux/slices/AnalyzerSlice";
+
 import { useLocation } from "react-router-dom";
-import { debounce } from "lodash";
+
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import { RootState } from "@/lib/redux/Store";
+import { debounce } from "lodash";
 
 interface HeatMapProps {
   HeatMapData: [];
@@ -34,7 +35,7 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
     const [isExpanded, setIsExpanded] = useState(false);
     const dispatch = useDispatch();
     const location = useLocation();
-    const pathname = location.pathname;
+    const pathName = location.pathname;
     const [NoOiData, setNoOiData] = useState(true);
     const toggleState = useSelector(
       (state: RootState) => state.analyzer.toggleState,

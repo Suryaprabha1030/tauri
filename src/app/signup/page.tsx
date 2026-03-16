@@ -1,6 +1,6 @@
 "use client";
 import Logo from "@/components/shared/logo/logo";
-import Link from "next/link";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserApi, UserCreate } from "@/lib/api/base";

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import OpenIntData from "./OpenIntData";
 import OpenIntOptions from "./OpenIntOptions";
-import dynamic from "next/dynamic";
+
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import Chart from "react-apexcharts";
 const OpenIntChart = ({ data, query, WebsocketLtpRef }: any) => {
   const oiIndexData: any = useSelector(
-    (state: RootState) => state.OI.OiIndexData
+    (state: RootState) => state.OI.OiIndexData,
   );
   const [spotPriceInfoValue, setSpotPriceInfoValue] = useState();
   useEffect(() => {
