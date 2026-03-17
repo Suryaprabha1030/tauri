@@ -244,6 +244,7 @@ const PlaceOrder: React.FC<PlaceOrderProps> = ({ stocks, brokerCode }) => {
   }, [componentHeight, UpdatedOrderStockData]);
   return (
     <Draggable
+      nodeRef={draggableRef}
       position={position}
       cancel=".class-for-touch-event"
       bounds={bounds}

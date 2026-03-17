@@ -28,7 +28,7 @@ const StrikeRange: React.FC<StrikeRangeProps> = ({
   spinningAnimation,
 }) => {
   const indexAddtionalData = useSelector(
-    (state: RootState) => state.OI.OIAddtionalData
+    (state: RootState) => state.OI.OIAddtionalData,
   );
 
   const [increment, setIncrement] = useState<any>(null);
@@ -38,39 +38,37 @@ const StrikeRange: React.FC<StrikeRangeProps> = ({
   const [minValue, setMinValue] = useState<any>(null);
   const [maxValue, setMaxValue] = useState<any>(null);
   useEffect(() => {
-    if (oiIncrementor != null && spotPriceRoundOff != null && !manuallyMinMax) {
-      setMinLimit(spotPriceRoundOff - 10 * oiIncrementor);
-      setMaxLimit(spotPriceRoundOff + 10 * oiIncrementor);
-      setMinValue(spotPriceRoundOff - 10 * oiIncrementor);
-      setMaxValue(spotPriceRoundOff + 10 * oiIncrementor);
-      setIncrement(oiIncrementor);
+    if (oiIncrementor != null && spotPriceRoundOff != null) {
+      if (!manuallyMinMax) {
+        setMinLimit(spotPriceRoundOff - 10 * oiIncrementor);
+        setMaxLimit(spotPriceRoundOff + 10 * oiIncrementor);
+        setMinValue(spotPriceRoundOff - 10 * oiIncrementor);
+        setMaxValue(spotPriceRoundOff + 10 * oiIncrementor);
+        setIncrement(oiIncrementor);
+      } else if (minValue == null || maxValue == null) {
+        setMinLimit(spotPriceRoundOff - 10 * oiIncrementor);
+        setMaxLimit(spotPriceRoundOff + 10 * oiIncrementor);
+        setMinValue(spotPriceRoundOff - 10 * oiIncrementor);
+        setMaxValue(spotPriceRoundOff + 10 * oiIncrementor);
+        setIncrement(oiIncrementor);
+      }
     }
-  }, [oiIncrementor, spotPriceRoundOff, indexAddtionalData]);
+  }, [oiIncrementor, spotPriceRoundOff, indexAddtionalData, manuallyMinMax]);
 
   useEffect(() => {
-    if (oiIncrementor != null && spotPriceRoundOff != null && manuallyMinMax) {
+    if (resetRange && oiIncrementor != null && spotPriceRoundOff != null) {
       setMinLimit(spotPriceRoundOff - 10 * oiIncrementor);
       setMaxLimit(spotPriceRoundOff + 10 * oiIncrementor);
       setMinValue(spotPriceRoundOff - 10 * oiIncrementor);
       setMaxValue(spotPriceRoundOff + 10 * oiIncrementor);
       setIncrement(oiIncrementor);
     }
-  }, []);
-
-  useEffect(() => {
-    if (resetRange) {
-      setMinLimit(spotPriceRoundOff - 10 * oiIncrementor);
-      setMaxLimit(spotPriceRoundOff + 10 * oiIncrementor);
-      setMinValue(spotPriceRoundOff - 10 * oiIncrementor);
-      setMaxValue(spotPriceRoundOff + 10 * oiIncrementor);
-      setIncrement(oiIncrementor);
-    }
-  }, [resetRange]);
+  }, [resetRange, oiIncrementor, spotPriceRoundOff]);
 
   const hasMounted = useRef(false);
   const handleMinChange = (change: number) => {
     setMinValue((prev: any) =>
-      Math.min(maxValue, Math.max(minLimit, prev + change))
+      Math.min(maxValue, Math.max(minLimit, prev + change)),
     );
     setManuallyMinMax(true);
     setResetRange(false);
@@ -78,14 +76,16 @@ const StrikeRange: React.FC<StrikeRangeProps> = ({
 
   const handleMaxChange = (change: number) => {
     setMaxValue((prev: any) =>
-      Math.max(minValue, Math.min(maxLimit, prev + change))
+      Math.max(minValue, Math.min(maxLimit, prev + change)),
     );
     setManuallyMinMax(true);
     setResetRange(false);
   };
 
   const getRange = () => {
+    if (minValue == null || maxValue == null || increment == null) return [];
     const range: any = [];
+    
     for (let i = minValue; i <= maxValue; i += increment) {
       range.push(i);
     }
@@ -93,6 +93,7 @@ const StrikeRange: React.FC<StrikeRangeProps> = ({
   };
 
   useEffect(() => {
+ 
     if (!hasMounted.current) {
       hasMounted.current = true;
     } else {

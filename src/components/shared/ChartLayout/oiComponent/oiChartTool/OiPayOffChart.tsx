@@ -146,6 +146,7 @@ const OiPayOffChart: React.FC<OiPayOffChartProps> = ({
             if (error?.response && error?.response?.status == 400) {
               setOiChangeData({});
             }
+             setOiChangeData({});
             if (error?.response && error?.response?.status == 456) {
               brokerLogoutTokenRemove(router);
             }
