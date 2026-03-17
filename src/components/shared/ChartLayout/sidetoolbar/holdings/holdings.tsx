@@ -120,7 +120,7 @@ const Holdings: React.FC<HoldingsProps> = ({
           </div>
         </>
       ) : (
-        <imgBox
+        <ImageBox
           imagePath="/svg/holdings.svg"
           display="No Holdings Available"
           width={250}

@@ -305,7 +305,7 @@ const Login = () => {
                 <div
                   onClick={() => handleBrokerClick(broker)}
                   key={broker}
-                  className={`relative z-[1000] flex h-[6rem] cursor-pointer flex-col items-center justify-center gap-3 rounded-lg border border-gray-200 bg-white p-2 shadow-lg transition-all duration-300  hover:scale-110`}
+                  className={`relative z-[1000] flex h-[6rem] cursor-pointer flex-col items-center justify-center gap-3 rounded-lg border border-gray-200 bg-white p-2 shadow-lg transition-all duration-300 transform-gpu hover:scale-110`}
                 >
                   <div
                     className={`flex flex-col items-center justify-center gap-2 pt-2 

@@ -24,6 +24,7 @@ let worker: Worker | null = null;
 if (typeof window !== "undefined") {
   worker = new Worker(
     new URL("../workers/websocketWorker.worker.ts", import.meta.url),
+    { type: "module" }
   );
 }
 const updateBuffer: Record<string, any> = {};
@@ -134,7 +135,7 @@ const useWebSocket = (
 
     const fetchJwt = async () => {
       // const token = await getJwtFromCookie();
-      const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwidXNlcl9pZCI6MiwiZXhwIjoxNzczMzA1MjcwfQ.a3ov2Txlr-XLY6shqkWUAF1k3n2M9Gv423gqKEqIYy0`;
+      const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwidXNlcl9pZCI6MiwiZXhwIjoxNzczNzMwMDQ4fQ.I_v9sjVVBb7krHfz7K1Hn5Svr9QrnoSs65UYhZogI40`;
       if (token) {
         setJwt(token);
         clearInterval(intervalId); // Stop polling once JWT is available

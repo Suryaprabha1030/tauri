@@ -38,7 +38,7 @@ const FundsDetailPage: React.FC<FundsDetailPageProps> = ({
       {fundsData && Object.keys(fundsData).length > 0 ? (
         <FundsTable fundsData={fundsData} />
       ) : (
-        <imgBox
+        <ImageBox
           imagePath="/svg/fundsdata.svg"
           display="No Funds Available"
           width={200}

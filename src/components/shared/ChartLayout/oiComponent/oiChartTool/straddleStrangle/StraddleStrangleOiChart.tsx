@@ -81,9 +81,10 @@ const StraddleStrangleOiChart: React.FC<StraddleStrangleOiChartProps> = ({
             if (error?.response && error?.response?.status == 401) {
               autoLogoutTokenRemove(router);
             }
-            if (error?.response && error?.response?.status == 400) {
-              setStraddleChartData && setStraddleChartData({});
-            }
+            // if (error?.response && error?.response?.status == 400) {
+            //   setStraddleChartData && setStraddleChartData({});
+            // }
+             setStraddleChartData && setStraddleChartData({});
             if (error?.response && error?.response?.status == 456) {
               brokerLogoutTokenRemove(router);
             }

@@ -286,7 +286,7 @@ const Sidetab: React.FC<SidetabProps> = ({
       </div>
       <div
         onMouseDown={handleMouseDownY}
-        className="cursor-row-resize bg-z-br-gray  text-black max-xl:hidden xl:h-1 "
+        className="cursor-row-resize bg-z-gray-200 text-black max-xl:hidden xl:h-1 "
         style={{
           position: "absolute", // Ensure absolute positioning
           top: `${topHeight}%`, // Position it based on topHeight
@@ -307,7 +307,7 @@ const Sidetab: React.FC<SidetabProps> = ({
       />
       <div
         onMouseDown={handleMouseDownX}
-        className="absolute left-0 top-0 w-1 cursor-col-resize bg-green-200 bg-z-br-gray text-black max-xl:hidden xl:h-full"
+        className="absolute left-0 top-0 w-1 cursor-col-resize bg-z-gray-200 text-black max-xl:hidden xl:h-full"
       ></div>
       {showHeatMap && memoizedHeatMapData && memoizedHeatMapData.length > 0 && (
         <HeatMap

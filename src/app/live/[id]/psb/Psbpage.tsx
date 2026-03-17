@@ -62,7 +62,7 @@ import DraftPositionsTable from "@/components/shared/ChartLayout/optionFutures/S
 import IndexChangerIconButton from "@/components/shared/ChartLayout/optionFutures/IndexChangerIconButton/IndexChangerIconButton";
 import ToggleChartAndOptButton from "@/components/shared/ChartLayout/optionFutures/ToggleChartAndOptButton";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { useParams, useRouter } from "next/navigation";
+
 import { handlePopUp } from "@/lib/util/analyzer/handleSelect";
 import {
   processAndDispatchLtpData,
@@ -129,8 +129,9 @@ import {
   setScreenerOpen,
 } from "@/lib/redux/slices/CommonSlice";
 import { fetchMarketDays } from "@/lib/util/generalUtil";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Strategies: React.FC = () => {
+const Psbpage: React.FC = () => {
   const [brokerCode, setBrokerCode] = useState<number | null>(null);
   const [show, setShow] = useState<boolean>(false);
   const [showCreateWatchlist, setShowCreateWatchlist] =
@@ -1638,4 +1639,4 @@ const Strategies: React.FC = () => {
   );
 };
 
-export default Strategies;
+export default Psbpage;

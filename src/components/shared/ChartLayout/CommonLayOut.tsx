@@ -480,7 +480,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
   }, [selectedHoldingsType]);
 
   return isAuthenticated ? (
-    <div className=" relative flex h-screen w-screen flex-col overflow-hidden max-xl:fixed max-xl:h-[100%]  max-sm:no-highlight  max-sm:no-active">
+    <div className="fixed inset-0 flex flex-col overflow-hidden bg-white max-sm:no-highlight max-sm:no-active">
       {showPlaceOrder && (
         <PlaceOrder
           brokerCode={brokerCode}
@@ -503,7 +503,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
 
       <RiskDisclosureModal />
 
-      <div className="flex h-[8%] w-full flex-row items-center justify-between bg-white bg-opacity-80 text-black shadow max-sm:h-[8%] md:max-xl:h-[8%]">
+      <div className="flex shrink-0 h-[8%] w-full flex-row items-center justify-between bg-white bg-opacity-80 text-black shadow max-sm:h-[8%] md:max-xl:h-[8%]">
         <ChartHeader
           brokerCode={brokerCode}
           setBrokerCode={setBrokerCode}
@@ -557,7 +557,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({
           />
         </div>
       )}
-      <div className="flex h-[calc(100vh-8%)] w-full items-center overflow-x-hidden overflow-y-hidden bg-white max-xl:flex-col-reverse xl:flex-row-reverse">
+      <div className="flex flex-1 w-full items-center overflow-x-hidden overflow-y-hidden bg-white max-xl:flex-col-reverse xl:flex-row-reverse">
         <RightToolBar
           brokerCode={brokerCode}
           apiKey={apiKey}

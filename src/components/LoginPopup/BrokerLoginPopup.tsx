@@ -26,7 +26,7 @@ const BrokerLoginPopup: React.FC<BrokerLoginPopupProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/50">
       <div className="relative">
         {/* Close Button */}
         <button

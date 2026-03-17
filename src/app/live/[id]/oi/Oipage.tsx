@@ -25,7 +25,6 @@ import {
   OiOptions,
 } from "@/lib/util/toggleButtonName/toggleButtonNames";
 
-import { useParams, useRouter } from "next/navigation";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import ShowMargin from "@/components/shared/ChartLayout/oiComponent/ShowMargin";
 import IndexChangerIconButton from "@/components/shared/ChartLayout/optionFutures/IndexChangerIconButton/IndexChangerIconButton";
@@ -62,6 +61,7 @@ import { ATMCalculation } from "@/components/shared/ChartLayout/optionFutures/op
 import MaxPainStrike from "@/components/shared/ChartLayout/optionFutures/MaxPainStrike";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { fetchMarketDays } from "@/lib/util/generalUtil";
+import { useNavigate, useParams } from "react-router-dom";
 
 function OpenInterest() {
   const [groupName, setGroupName] = useState("Group 1");

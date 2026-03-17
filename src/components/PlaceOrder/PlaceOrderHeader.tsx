@@ -25,11 +25,7 @@ import { formatNumber } from "@/lib/util/DraftUtil";
 import { setOiChartCall } from "@/lib/redux/slices/PayoffChartSlice";
 import { getBrokerCode } from "../helpers";
 import config from "@/lib/config";
-import { UserBrokerRouterApi } from "@/lib/api/base";
-import { baseConfig } from "@/lib/api/baseConfiguration";
-import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
-import { updateMarginData } from "@/lib/util/placeOrder/placeOrder";
+
 
 interface PlaceOrderHeaderProps {
   minimize: boolean;

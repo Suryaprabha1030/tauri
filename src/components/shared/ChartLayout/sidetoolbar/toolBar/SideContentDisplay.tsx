@@ -8,7 +8,7 @@ import Settings from "../settings/settings";
 import News from "../news/News";
 import { IconKey } from "@/lib/util/sideToolBar/RightToolBarIcons";
 import StrategiesAnalyzer from "../Strategies Analyzer/strategiesAnalyzer";
-import { usePathname } from "next/navigation";
+
 
 import UserProfile from "../userProfile/UserProfile";
 import FiiDiiData from "../../oiComponent/FiiDiiData/FiiDiiData";
@@ -16,6 +16,7 @@ import FiiDiiAnalysis from "../../oiComponent/FiiDiiData/FiiDiiAnalysis";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import Portfolio from "../portfolio/Portfolio";
+import { useLocation } from "react-router-dom";
 
 interface SideContentDisplayProps {
   brokerCode: number | null;
@@ -36,7 +37,7 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [dragStartX, setDragStartX] = useState<number | null>(null);
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathName = location.pathname;
   const [FiiDiiActiveButton, setFiiDiiActiveButton] = useState("summary");
   const currentSection = useSelector(
     (state: RootState) => state.common.currentSection,

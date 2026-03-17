@@ -226,7 +226,7 @@ const Positions: React.FC<PositionsProps> = ({
         ((positionsdata && positionsdata.length === 0) ||
           positionsdata === null) &&
         !HistoryClicked && (
-          <imgBox
+          <ImageBox
             imagePath="/svg/positions.svg"
             display="No Positions Available"
             width={200}

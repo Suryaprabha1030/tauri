@@ -204,7 +204,7 @@ const Orders: React.FC<OrdersProps> = ({
             />
           </table>
         ) : (
-          <imgBox
+          <ImageBox
             imagePath="/svg/orders.svg"
             display="No Orders placed"
             width={250}
