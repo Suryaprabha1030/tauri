@@ -203,7 +203,7 @@ export default function AIScreener() {
       );
       if (newIds?.length > 0) {
         // Fetch only for new identifiers
-        fetchSymbolPrices(brokerCode, newIds, dispatch);
+        fetchSymbolPrices( newIds, dispatch);
         // Add these new ones to the fetched list
         setFetchedIdentifiers((prev) => [...prev, ...newIds]);
       }

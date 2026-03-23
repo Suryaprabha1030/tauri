@@ -14,7 +14,7 @@ const TabNavigation: React.FC = () => {
   );
   const [check, setChecked] = useState(false);
   const dispatch = useDispatch();
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = () => {
     setChecked(!check);
     dispatch(setIsSidetabCollapsed(!check));
   };

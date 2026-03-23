@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import Headings from "../sharedContent/headings";
@@ -64,7 +64,7 @@ const StockInfoSideDisplay: React.FC<StockInfoSideDisplayProps> = ({
   useEffect(() => {
     if (!stockinfoDisplayData) return;
     const identifiers = [stockinfoDisplayData?.identifier];
-    fetchSymbolPrices(brokerCode, identifiers, dispatch);
+    fetchSymbolPrices( identifiers, dispatch);
   }, [stockinfoDisplayData, brokerCode]);
 
   return (

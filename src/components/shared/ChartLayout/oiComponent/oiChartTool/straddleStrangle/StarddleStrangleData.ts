@@ -13,9 +13,9 @@ const StraddleStrangleData = (data: any) => {
   const maxPain = data?.max_pain;
   // spot price set time key nd ltp value
   const transformedSpots = ltp1
-    ?.map((item) => ({ [item.time]: item.spot_price }))
+    ?.map((item:any) => ({ [item.time]: item.spot_price }))
     .sort(
-      (a, b) =>
+      (a:any, b:any) =>
         new Date(Object.keys(a)[0]).getTime() -
         new Date(Object.keys(b)[0]).getTime()
     );
@@ -23,16 +23,16 @@ const StraddleStrangleData = (data: any) => {
   const transformedStrikes: any = [
     {
       sumLtp: combData
-        ?.map((curr) => ({ [curr.created_at]: curr.strategy_price }))
+        ?.map((curr:any) => ({ [curr.created_at]: curr.strategy_price }))
         .sort(
-          (a, b) =>
+          (a:any, b:any) =>
             new Date(Object.keys(a)[0]).getTime() -
             new Date(Object.keys(b)[0]).getTime()
         ),
       vwap: combData
-        ?.map((curr) => ({ [curr.created_at]: curr.strategy_vwap }))
+        ?.map((curr:any) => ({ [curr.created_at]: curr.strategy_vwap }))
         .sort(
-          (a, b) =>
+          (a:any, b:any) =>
             new Date(Object.keys(a)[0]).getTime() -
             new Date(Object.keys(b)[0]).getTime()
         ),
@@ -51,9 +51,9 @@ const StraddleStrangleData = (data: any) => {
   const transFormedPcrData = [
     {
       pcrValue: pcr
-        ?.map((curr) => ({ [curr.created_at]: curr.pcr }))
+        ?.map((curr:any) => ({ [curr.created_at]: curr.pcr }))
         .sort(
-          (a, b) =>
+          (a:any, b:any) =>
             new Date(Object.keys(a)[0]).getTime() -
             new Date(Object.keys(b)[0]).getTime()
         ),

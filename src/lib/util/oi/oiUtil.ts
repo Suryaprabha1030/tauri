@@ -108,7 +108,7 @@ function TransformDataForMargin(input: any) {
 }
 
 function straddleTransformData(input: any) {
-  let output = {};
+  let output:any = {};
 
   Object.keys(input).forEach((key) => {
     if (input[key] === true) {

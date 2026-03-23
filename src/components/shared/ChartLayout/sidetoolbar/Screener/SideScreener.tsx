@@ -1,12 +1,12 @@
 import {
   setCurrentSection,
   setScreenerOpen,
-  setToggleChart,
+
 } from "@/lib/redux/slices/CommonSlice";
 import { RootState } from "@/lib/redux/Store";
-import { ViewType } from "@/lib/util/toggleButtonName/toggleButtonNames";
 
-import React from "react";
+
+
 import { useDispatch, useSelector } from "react-redux";
 
 const ScreenerButton = () => {

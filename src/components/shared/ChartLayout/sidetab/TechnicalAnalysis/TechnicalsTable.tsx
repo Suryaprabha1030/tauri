@@ -1,10 +1,8 @@
 import {
   alphabeticalSort,
-  numericalSort,
 } from "@/lib/util/sideToolBar/orders/OrderUtil";
 import React, { useEffect, useRef, useState } from "react";
 import TechnicalSection from "./TableDataSection";
-import PivotTable from "../Pivots/PivotsTable";
 
 interface Technical {
   name: string;

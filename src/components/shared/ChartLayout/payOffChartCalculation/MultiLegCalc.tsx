@@ -36,7 +36,7 @@ export const MultiLegCalc = (
   query: any,
   incrementer: any
 ) => {
-  let target_pnl_table = [];
+  let target_pnl_table:any = [];
   let pay_off_data: any = [];
   let target_pay_off_data: any = [];
   let margin_payload: any = [];
@@ -237,7 +237,7 @@ export const MultiLegCalc = (
     "_df2"
   );
 
-  const renameMap = {
+  const renameMap:any = {
     result_df1: "expiry_pnl",
     result_df2: "target_pnl",
     spot_price_df1: "spot_price",
@@ -246,7 +246,7 @@ export const MultiLegCalc = (
   };
 
   const renamedData = data2.map((row: any) => {
-    const renamedRow = {};
+    const renamedRow:any= {};
     for (const key in row) {
       renamedRow[renameMap[key] || key] = row[key];
     }

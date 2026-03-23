@@ -56,7 +56,7 @@ const OiExpiry: React.FC<OiExpiryProps> = ({
             ? expiries[query]?.slice(0, 1) // Only the first expiry if BSE-supported
             : expiries[query]?.slice(0, 3)
           ) // All expiries otherwise
-            ?.map((date, index, arr) => (
+            ?.map((date:any, index:any, arr:any) => (
               <button
                 key={date}
                 className={`font-label border border-gray-200 px-1 py-2 text-[0.7rem] max-sm:px-0.5 max-sm:py-1.5 max-sm:text-[0.6rem] sm:max-md:px-1.5 md:max-xl:px-2.5 md:max-xl:py-2 xl:max-2xl:px-0.5 xl:max-2xl:text-[0.65rem] ${

@@ -1,9 +1,8 @@
 import config from "@/lib/config";
 import { RootState } from "@/lib/redux/Store";
-import React from "react";
 import { useSelector } from "react-redux";
 
-export default function DemoButton({ onClick, disabled = false }) {
+export default function DemoButton({ onClick, disabled = false }:any) {
   const userEmail = useSelector((state: RootState) => state.common.userInfo);
   const isPrivilegedUser = config.userEmail.includes(userEmail?.email);
 

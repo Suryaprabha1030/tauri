@@ -323,7 +323,7 @@ const WatchLists: React.FC<WatchListProps> = ({
     );
   };
 
-  const handleSell = (index) => {
+  const handleSell = (index:any) => {
     handleTransaction(
       index,
       "SHORT",
@@ -421,7 +421,7 @@ const WatchLists: React.FC<WatchListProps> = ({
         activePositionFilter == TvChartInitiateIndex.filter
       ) {
         const matchedIndex = filteredSymbols.findIndex(
-          (item) => item.identifier === TvChartInitiateIndex.identifier,
+          (item:any) => item.identifier === TvChartInitiateIndex.identifier,
         );
         // Only update if item is found
         if (matchedIndex !== -1) {
@@ -480,7 +480,7 @@ const WatchLists: React.FC<WatchListProps> = ({
     >
       <DragDropContext onDragEnd={handleDragEnd} onDragStart={handleDragStart}>
         <Droppable droppableId="droppable" direction="horizontal">
-          {(provided) => (
+          {(provided:any) => (
             <WatchListHeader
               columns={columns}
               sortConfig={sortConfig}

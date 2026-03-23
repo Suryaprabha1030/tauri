@@ -1,6 +1,6 @@
-import React from "react";
 
-export default function BuySellDisplay({ transactionType }) {
+
+export default function BuySellDisplay({ transactionType }:any) {
   return (
     <span
       className={`text-left sm:max-md:w-[2rem] md:max-xl:w-[2.2rem] xl:w-[2.5rem] ${

@@ -44,7 +44,7 @@ const PeersChartOptions = (name: string[]):ApexOptions => {
             },
     
             colors: [
-                ({ value }) => value <= 0 ? "#FF4444" : "#4CA858"
+                ({ value }:any) => value <= 0 ? "#FF4444" : "#4CA858"
             ]
         }
 }

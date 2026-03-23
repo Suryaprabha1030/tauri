@@ -2,7 +2,6 @@ import React from "react";
 import Headings from "../sharedContent/headings";
 import RemoveButton from "../sharedContent/RemoveButton";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
-import NewsFilter from "../../sidetab/News/NewsFilter";
 
 interface NewsHeaderProps {
   leftWidth: number;

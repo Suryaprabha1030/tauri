@@ -11,7 +11,6 @@ const handleTVChart = (
   index: any,
   filter: any,
   path: any,
-  router: any,
   dispatch: Dispatch<any>,
   brokerCode: any,
   identifier: any

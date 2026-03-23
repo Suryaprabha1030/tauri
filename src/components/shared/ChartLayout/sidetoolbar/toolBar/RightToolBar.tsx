@@ -1,18 +1,15 @@
 import React, {
-  Dispatch,
-  SetStateAction,
+
   useEffect,
   useRef,
-  useState,
+ 
 } from "react";
 import SideToolBarIcon from "./SideToolBarIcon";
 import SideContentDisplay from "./SideContentDisplay";
 import UserIconButton from "./UserIconButton";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentSection } from "@/lib/redux/slices/CommonSlice";
+
 import { RootState } from "@/lib/redux/Store";
-import ScreenerButton from "../Screener/SideScreener";
-import config from "@/lib/config";
 
 interface RightToolBarProps {
   brokerCode: number | null;
@@ -31,7 +28,7 @@ const RightToolBar: React.FC<RightToolBarProps> = ({
 }) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-  const dispatch = useDispatch();
+
   const currentSection = useSelector(
     (state: RootState) => state.common.currentSection
   );
@@ -61,7 +58,7 @@ const RightToolBar: React.FC<RightToolBarProps> = ({
         ref={contentRef}
         className="flex h-[100%]  flex-col  max-md:justify-center md:items-center md:justify-between md:max-xl:flex-row md:max-lg:gap-[1.5rem] lg:max-xl:gap-[2rem]"
       >
-        <SideToolBarIcon brokerCode={brokerCode} />
+        <SideToolBarIcon />
         {/* for profile icon set bottom */}
 
         <span ref={iconRef} className="">

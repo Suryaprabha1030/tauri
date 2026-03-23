@@ -2,7 +2,6 @@ import { setSymbolIdentifier } from "@/lib/redux/slices/ChartsSlice";
 import { setShowTVpopup } from "@/lib/redux/slices/CommonSlice";
 import {
   getCalcData,
-  minimizeStatus,
 } from "@/lib/redux/slices/OptionChainSlice";
 import { setOiChartCall } from "@/lib/redux/slices/PayoffChartSlice";
 import { getStraddleChartData } from "@/lib/redux/slices/StrategyChartSlice";

@@ -54,9 +54,9 @@ const PePbChartOptions = ({ chartData, data, categories }: PePbChartOptionsProps
         tooltip: {
             followCursor: true,
             shared: false,
-            custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+            custom: function ({ seriesIndex, dataPointIndex, w }) {
                 const hoveredTimeStamp = w.config.series[seriesIndex].data[dataPointIndex].x
-                const pointData = chartData?.find(item =>
+                const pointData = chartData?.find((item:any) =>
                     new Date(item?.date).getTime() === hoveredTimeStamp
                 )
 

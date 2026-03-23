@@ -88,7 +88,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
   >({});
   const hideButton = document.getElementById("showHidebutton");
   const [enableButtons, setEnableButtons] = useState(false);
-  const [checkedDatas, setCheckedDatas] = useState({});
+  const [checkedDatas, setCheckedDatas] = useState<any>({});
 
   // when datas checked and exited did by user update the data for checkedrows and its helps payoff chart payload
   useEffect(() => {
@@ -126,7 +126,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
       if (!prev) return prev;
 
       let updated = false;
-      const next = { ...prev };
+      const next :any= { ...prev };
 
       Object.keys(next).forEach((key) => {
         const row = next[key];
@@ -338,7 +338,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
 
     // Step 3: Calculate total PnL for active checkedDatas
     const activeCheckedPnl: any = activeCheckedDatas?.reduce(
-      (total, data: any) => {
+      (total:any, data: any) => {
         const identifier = data.identifier;
         const updatedPnl =
           updatedPositionsMap[identifier]?.pnl || data?.pnl || 0;
@@ -347,7 +347,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
       0
     );
     // Step 4: Calculate total PnL for exited entries
-    const exitedPnl = exitedEntries?.reduce((sum, entry: any) => {
+    const exitedPnl = exitedEntries?.reduce((sum:any, entry: any) => {
       const updatedPnl =
         updatedPositionsMap[entry.identifier]?.pnl || entry.pnl || 0;
       return sum + updatedPnl;
@@ -361,7 +361,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
 
   useEffect(() => {
     if (Object.keys(positionDatas).length === 0) {
-      setCheckedPositionRows((prev) => {
+      setCheckedPositionRows((prev:any) => {
         if (Object.keys(prev).length !== 0) {
           return {};
         }

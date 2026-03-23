@@ -1,16 +1,13 @@
 import { UserBrokerRouterApi } from "@/lib/api/base";
 import { getBrokerCode } from "../helpers";
 import { baseConfig } from "@/lib/api/baseConfiguration";
-import { handlePlaceOrder } from "@/lib/util/placeOrder/placeOrder";
 import { formatNumber } from "@/lib/util/DraftUtil";
 import { togglePlaceOrderVisibility, setStockData } from "@/lib/redux/slices/PlaceOrder";
 
-let currentLine: any = null;
 let lastDrawnPnl: number | null = null;
 let activeExitShape: any = null;
 const symbolDataCache: Record<string, { lot_size: number }> = {};
-let annotationOverlay: HTMLDivElement | null = null;
-let currentAnnotationOverlay: HTMLDivElement | null = null;
+
 let activeExitLabelOverlay: HTMLDivElement | null = null;
 let activeExitButtonOverlay: HTMLDivElement | null = null;
 let exitDrawRetryTimeout: ReturnType<typeof setTimeout> | null = null;

@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import RollDropdown from "./RollDropDown";
 import { manageOrders } from "./optionFuturesUtil/legUtil";
 
-const RollUpDown = ({ query }) => {
+const RollUpDown = ({ query }:any) => {
   const dataKey = useSelector((state: RootState) => state.optionChain.dataKey);
   const [max, setMax] = useState<null | any>(null);
   const [min, setMin] = useState<null | any>(null);
@@ -23,7 +23,7 @@ const RollUpDown = ({ query }) => {
     (state: RootState) => state.strategy.ltpData
   );
   const dispatch = useDispatch();
-  const positionDatas = useSelector(
+  const positionDatas:any = useSelector(
     (state: RootState) => state.analyzer.PositionDataList
   );
   const showPlaceOrder = useSelector(

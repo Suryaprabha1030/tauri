@@ -17,7 +17,7 @@ const MatrixDropDown: React.FC<matrixDropDownProps> = ({
     { value: "", label: "Both" },
   ];
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setActiveMatrixTypeButton(e.target.value);
   };
   return (

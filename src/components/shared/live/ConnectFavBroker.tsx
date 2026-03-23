@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import LiveHeader from "./LiveHeader";
 import LoadingComponent from "../loading/Loading";
@@ -9,7 +9,7 @@ import { AuthContext } from "@/context/authContextProvider";
 import zApi from "@/lib/api/zApi";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { setShowSwitchbroker } from "@/lib/redux/slices/CommonSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import config from "@/lib/config";
 
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
@@ -218,7 +218,7 @@ const ConnectFavBroker = () => {
             const allBrokers = allBrokersResponse.data;
             // Step 1: Cards for each account (multiple broker_codes per broker_id allowed)
             const connectedCards = cleanedMappings.map((mapping) => {
-              const broker = allBrokers.find((b) => b.id === mapping.broker_id);
+              const broker = allBrokers.find((b:any) => b.id === mapping.broker_id);
               return {
                 ...broker,
                 ...mapping, // contains broker_code, client_code, user_full_name
@@ -232,8 +232,8 @@ const ConnectFavBroker = () => {
             );
 
             const unconnectedCards = allBrokers
-              .filter((broker) => !connectedBrokerIds.has(broker.id))
-              .map((broker) => ({
+              .filter((broker:any) => !connectedBrokerIds.has(broker.id))
+              .map((broker:any) => ({
                 ...broker,
                 broker_code: null,
                 client_code: null,
@@ -298,10 +298,10 @@ const ConnectFavBroker = () => {
     if (sortedBroker && sortedBroker.length > 0) {
       if (priveledgeUser) {
         // Privileged users see all active brokers
-        visibleBrokers = sortedBroker.filter((b) => b.is_active);
+        visibleBrokers = sortedBroker.filter((b:any) => b.is_active);
       } else {
         const isActiveBrokers = sortedBroker.filter(
-          (b) => b.is_active === true,
+          (b:any) => b.is_active === true,
         );
         const active = [...isActiveBrokers, ...sampleBrokerData];
 
@@ -310,7 +310,7 @@ const ConnectFavBroker = () => {
           visibleBrokers = active;
         } else {
           // Try to match broker name inside signupMode
-          const matchedBroker = isActiveBrokers.find((b) =>
+          const matchedBroker = isActiveBrokers.find((b:any) =>
             signUpMode?.toLowerCase().includes(b.name.toLowerCase()),
           );
 
@@ -561,7 +561,7 @@ const ConnectFavBroker = () => {
                 <div
                   className={`scrollbar-hide  max-md:grid max-md:items-center max-md:px-6 max-md:py-4  max-sm:w-screen max-sm:gap-6 sm:overflow-hidden sm:max-2xl:gap-6 sm:max-md:h-full   sm:max-md:w-screen md:flex md:flex-row md:max-2xl:py-[1rem] md:max-lg:h-[30rem] md:max-lg:w-[55rem] md:max-lg:px-5 lg:max-2xl:h-[27rem] lg:max-xl:w-[60rem] lg:max-xl:px-12 xl:max-2xl:px-5 2xl:h-[30rem] 2xl:gap-6 ${brokers?.length > 5 ? "" : "2xl:justify-center"} ${visibleBrokers?.length % brokersPerPage == 0 || brokers.length < brokersPerPage || visibleBrokers.length == 1 ? "md:max-2xl:justify-center" : "md:max-2xl:justify-start"} ${visibleBrokers?.length === 1 ? "  max-sm:grid-cols-1 max-sm:place-items-center sm:max-md:grid-cols-1 sm:max-md:place-items-center" : "max-sm:grid-cols-2 sm:max-md:grid-cols-2"}  2xl:overflow-x-auto 2xl:p-6`}
                 >
-                  {visibleBrokers?.map((broker, index) => {
+                  {visibleBrokers?.map((broker:any, index:any) => {
                     const userBroker = client.find(
                       (c) =>
                         c?.broker_id === broker?.id &&

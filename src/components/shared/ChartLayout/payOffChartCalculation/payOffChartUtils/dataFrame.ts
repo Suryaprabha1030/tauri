@@ -100,8 +100,8 @@ function dataFrameData2(
 function validateDataFrameResults(dataFrameResult: any[]): any[] {
   const result: any[] = [];
   const flattened = dataFrameResult.map((item) => item[0]);
-  flattened.forEach((df, dfNo) => {
-    df.forEach((row, i) => {
+  flattened.forEach((df:any, dfNo:any) => {
+    df.forEach((row:any, i:any) => {
       if (!result[i]) {
         result[i] = {
           result: +(row.result?.toFixed(2) || 0),

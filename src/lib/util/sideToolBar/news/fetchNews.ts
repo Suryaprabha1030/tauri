@@ -59,14 +59,14 @@ const startIntervalAtQuarterHour = (
 };
 
 const fetchNewsMarks = (startTime: any, endTime: any, newsData: any) => {
-  return newsData?.filter((event) => {
+  return newsData?.filter((event:any) => {
     const eventTimeSec = Math.floor(event.time / 1000);
     return eventTimeSec >= startTime && eventTimeSec <= endTime;
   });
 };
 const groupNewsByTime = (newsArray: any) => {
   const grouped: any = {};
-  newsArray.forEach((item) => {
+  newsArray.forEach((item:any) => {
     const timeSec = Math.floor(item.time / 1000);
     if (!grouped[timeSec]) grouped[timeSec] = [];
     grouped[timeSec].push(item);

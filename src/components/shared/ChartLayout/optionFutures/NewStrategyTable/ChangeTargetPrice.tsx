@@ -15,7 +15,7 @@ const ChangeTargetPrice: React.FC<ChangeTargetPriceProps> = ({
   copiedData,
 }) => {
   const dispatch = useDispatch();
-  const tempInputValues = useSelector(
+  const tempInputValues:any = useSelector(
     (state: RootState) => state.optionChain.tempInputValues
   );
   const handleLtpChange = (identifier: string, newLtp: number | null) => {

@@ -5,7 +5,7 @@ import {
 } from "./buildSimulatedPositions";
 import { updatePositionsWithPnL } from "@/lib/util/sideToolBar/positions/managePositionsData";
 
-const SIM_TRADER_MAP = {
+const SIM_TRADER_MAP :any= {
   INTRADAY: ["Iron Condor"],
   SWING: ["Long Straddle"],
   SCALPER: ["Short Straddle"],
@@ -13,10 +13,10 @@ const SIM_TRADER_MAP = {
 };
 
 export const useSimulatedPositions = (
-  strategyApiResponse,
-  ws,
-  brokerName,
-  selectedPositionType
+  strategyApiResponse:any,
+  ws:any,
+  brokerName:any,
+  selectedPositionType:any
 ) => {
   return useMemo(() => {
     if (!strategyApiResponse || !selectedPositionType) return null;
@@ -26,12 +26,12 @@ export const useSimulatedPositions = (
     if (!strategiesForTrader.length) return null;
 
     const selectedStrategies = strategiesForTrader
-      .map((name) => strategyApiResponse[name])
+      .map((name:any) => strategyApiResponse[name])
       .filter(Boolean);
 
     if (!selectedStrategies.length) return null;
 
-    const rawPositions = selectedStrategies.flatMap((strategy) =>
+    const rawPositions = selectedStrategies.flatMap((strategy:any) =>
       buildSimulatedPositionsFromStrategy(strategy)
     );
 
@@ -46,7 +46,7 @@ export const useSimulatedPositions = (
     const { updatedPositions, updatedTotalPnl } = engineResult;
 
     return {
-      positions: updatedPositions.map((p) => ({
+      positions: updatedPositions.map((p:any) => ({
         ...p,
         symbol_name: null,
         buy_avg_price: null,

@@ -135,7 +135,7 @@ export const handleBrokerLogin = (e: any, brokerName: string) => {
         (broker: any) => broker.is_active
       );
       const selectedBroker = activeBrokers?.find(
-        (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase()
+        (broker:any) => broker?.name?.toLowerCase() === brokerName?.toLowerCase()
       );
 
       // Redirect to login_url in the same tab

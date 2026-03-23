@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../Store";
 
 interface SelectedInfo {
   strategyId: string | null;
@@ -11,9 +10,6 @@ interface BrokerInfo {
   broker_name: string;
 }
 
-interface ClientInfo {
-  [clientCode: string]: BrokerInfo;
-}
 
 export interface StrategyState {
   strategyName: (() => void) | null;

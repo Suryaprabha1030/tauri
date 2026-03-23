@@ -11,7 +11,7 @@ const ChangeLots = ({
   initialLotSizes,
   copiedData,
   keyData,
-}) => {
+}:any) => {
   const dispatch = useDispatch();
   const optionDatas: any = useSelector(
     (state: RootState) => state.analyzer.optionDataList

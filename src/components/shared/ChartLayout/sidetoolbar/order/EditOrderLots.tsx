@@ -1,5 +1,5 @@
 import { handleFieldChange } from "@/lib/util/sideToolBar/orders/handlingOrders";
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 
 interface EditOrderLotsProps {
   order: any;

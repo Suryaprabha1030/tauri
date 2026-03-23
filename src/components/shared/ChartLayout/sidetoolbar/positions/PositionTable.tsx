@@ -21,7 +21,6 @@ interface PositionTableProps {
 const PositionTable: React.FC<PositionTableProps> = ({
   positionsData,
   leftWidth,
-  showAvgprice,
   setPositionsData,
   setcheckedData,
   setAnyChecked,
@@ -43,7 +42,7 @@ const PositionTable: React.FC<PositionTableProps> = ({
       return 0;
     });
   const path = window.location.pathname;
-  const router = useNavigate();
+
   const brokerCode = getBrokerCode();
   const dispatch = useDispatch();
   const handleCheckboxChange = (index: number) => {
@@ -78,7 +77,6 @@ const PositionTable: React.FC<PositionTableProps> = ({
       index,
       filter,
       path,
-      router,
       dispatch,
       brokerCode,
       identifier,

@@ -1,4 +1,4 @@
-const StockDashboard = ({ name, value }) => {
+const StockDashboard = ({ name, value }:any) => {
     return (
         <div className={`flex relative flex-col rounded-md border bg-white gap-2 p-2 m-0.5`}>
             <h2 className="max-sm:text-xs flex justify-center text-sm">{name}</h2>

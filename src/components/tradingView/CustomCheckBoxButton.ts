@@ -303,9 +303,9 @@ export const createFutButton = async (
         if(isIndex) {
           if( currentSymbol !== lastApiCallIndex) {
             try {
-            const indices = config.OIindices
+            const indices :any= config.OIindices
             const key: any = Object.keys(indices).find(
-              (k) => indices[k] === currentSymbol
+              (k:any) => indices[k] === currentSymbol
             );
             const getSymbol = new UserBrokerRouterApi(baseConfig());
             const brokerCode = getBrokerCode();

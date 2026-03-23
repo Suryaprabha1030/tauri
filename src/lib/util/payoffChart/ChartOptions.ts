@@ -184,7 +184,7 @@ export const getChartOptions = (
       intersect: false,
       hideEmptySeries: true,
 
-      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+      custom: function ({ series, seriesIndex, dataPointIndex, w }:any) {
         // Get the x-value of the hovered point
         const xValue = w.globals.seriesX[seriesIndex][dataPointIndex];
 
@@ -229,7 +229,7 @@ export const getChartOptions = (
           if (!seriesData) return; // Skip if series doesn’t exist
 
           // Find the data point matching the x-value
-          const matchingPoint = seriesData.find((point) => point.x === xValue);
+          const matchingPoint = seriesData.find((point:any) => point.x === xValue);
           const displayColor =
             name === "ExpiryPNL" && matchingPoint.y < 0
               ? "rgba(239, 83, 80, 0.3)"

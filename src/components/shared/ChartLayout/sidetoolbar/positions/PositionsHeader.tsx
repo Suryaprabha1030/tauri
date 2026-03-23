@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Back from "../../PositionSharing/back";
 import PositionHistory from "../../PositionSharing/PositionsHistory";
 import PositionsSharing from "../../PositionSharing/PositionsSharing";
@@ -11,7 +11,6 @@ import {
   setFundsData,
   setHoldingsData,
   setPositions,
-  updateSymbolData,
 } from "@/lib/redux/slices/StrategySlice";
 import { useDispatch, useSelector } from "react-redux";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";

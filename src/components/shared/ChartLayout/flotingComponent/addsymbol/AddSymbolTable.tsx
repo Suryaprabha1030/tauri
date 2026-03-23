@@ -49,7 +49,7 @@ const AddSymbolTable: React.FC<AddSymbolTableProps> = ({
                 <CandleIcon
                   className="pointer-events-none h-full w-full cursor-pointer group-hover:pointer-events-auto 
                max-md:h-4 max-md:w-4"
-                  onClick={(e) => {
+                  onClick={(e:any) => {
                     e.stopPropagation();
                     dispatch(setTvAddSymbPopup(true));
                     handlePopUp(symb, dispatch);

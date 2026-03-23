@@ -1,4 +1,4 @@
-import { useEffect, SetStateAction, Dispatch, useState } from "react";
+import { useEffect, SetStateAction, Dispatch, } from "react";
 
 interface Stock {
   exchange: string;

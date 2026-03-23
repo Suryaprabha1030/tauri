@@ -45,7 +45,6 @@ const OISlice = createSlice({
         OISymbol,
         OITokenLtpData,
         OIExpiryDate,
-        OIFutureData,
         OIAddonData,
         OISpotPrice,
         indexObj,

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import TrendsChart from "./TrendsChart";
 import { RootState } from "@/lib/redux/Store";
 
-const TrendsSection = ({ trendsData }) => {
+const TrendsSection = ({ trendsData }:any) => {
     const dropdownValues = useSelector((state: RootState) => state.common.selectedChart)
     return (
         <>

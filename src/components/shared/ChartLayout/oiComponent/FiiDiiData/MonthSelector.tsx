@@ -32,7 +32,7 @@ const MonthSelector: React.FC<FiiDiiSummaryProps> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  function normalizeSingleDate(input) {
+  function normalizeSingleDate(input:any) {
     const part = input.trim().replace(/([a-zA-Z]+)(\d{4})/, "$1 $2");
     const date = new Date(part);
 

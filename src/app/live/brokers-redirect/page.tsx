@@ -3,7 +3,7 @@
 import EnforceAuth from "@/components/layout/EnforceAuth";
 import { AuthContext } from "@/context/authContextProvider";
 
-import React, { useContext } from "react";
+import  { useContext } from "react";
 
 const data = {
   A: 1,

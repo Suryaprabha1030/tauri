@@ -6,7 +6,7 @@ import {
   setPinnedSymbols,
   setPinUnpin,
   setShouldRefresh,
-  updateSymbolData,
+  
 } from "@/lib/redux/slices/StrategySlice";
 import { processSymbols } from "./WatchlistUtil";
 import { autoLogoutTokenRemove } from "../autoLogoutUtil/autoLogOutUtil";
@@ -113,7 +113,7 @@ const fetchWatchlistData = async (
       const watchlistData: any = res?.data;
       setName(watchlistData?.name.trim());
       const filteredIdentifiers = watchlistData?.symbols?.map(
-        (item) => item.identifier
+        (item:any) => item.identifier
       );
       setIdentifiers(filteredIdentifiers);
       const processedSymbols = processSymbols(watchlistData?.symbols || []);

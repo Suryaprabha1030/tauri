@@ -11,7 +11,7 @@ const truncate = (str: string, length: number = 20) => {
   return str;
 };
 
-const fetchMarketDays = (dispatch, router) => {
+const fetchMarketDays = (dispatch:any, router:any) => {
   const fetchApi = new StockInfoAPIApi(baseConfig());
   fetchApi
     .isWeekendOrHolidayMarketHolidaysIsMarketHolidayGet()

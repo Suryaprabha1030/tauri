@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const FiiDiiTabDropDown = ({ buttons, currentSection, onButtonClick }) => {
+const FiiDiiTabDropDown = ({ buttons, currentSection, onButtonClick }:any) => {
   const [selectedButton, setSelectedButton] = useState(currentSection);
   const [isOpen, setIsOpen] = useState(false);
   const fiiDiiDropDown = useRef<HTMLDivElement>(null);

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CandleIcon({ className, onClick }) {
+export default function CandleIcon({ className, onClick }:any) {
   return (
     <div
       className={`${className}`}

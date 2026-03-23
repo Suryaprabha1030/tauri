@@ -3,16 +3,10 @@
 import EnforceAuth from "@/components/layout/EnforceAuth";
 import ConnectFavBroker from "@/components/shared/live/ConnectFavBroker";
 import { AuthContext } from "@/context/authContextProvider";
-import { StockInfoAPIApi } from "@/lib/api/base";
-import { baseConfig } from "@/lib/api/baseConfiguration";
-import { getMarketHolidays } from "@/lib/redux/slices/MarketBasisSlice";
 import { RootState } from "@/lib/redux/Store";
-import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
-import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { fetchMarketDays } from "@/lib/util/generalUtil";
 import { useNavigate } from "react-router-dom";
-
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 

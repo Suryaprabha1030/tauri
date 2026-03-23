@@ -31,10 +31,7 @@ const Login = () => {
   const signupSuccess = searchParams.get("signup");
   const apiClient = new zApi(router);
   const userApi = new UserApi(baseConfig());
-  const [displayBroker, setDisplayBroker] = useState(false);
   const [selectedBroker, setSelectedBroker] = useState<string | null>(null);
-  const hostname = window.location.hostname;
-  const [hasHostname, setHasHostname] = useState<boolean | null>();
   const [popupOpen, setPopupOpen] = useState(false);
 
   const brokers = [
@@ -204,7 +201,7 @@ const Login = () => {
           (broker: any) => broker.is_active,
         );
         const selectedBroker = activeBrokers?.find(
-          (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase(),
+          (broker:any) => broker?.name?.toLowerCase() === brokerName?.toLowerCase(),
         );
 
         //Redirect to login_url in the same tab

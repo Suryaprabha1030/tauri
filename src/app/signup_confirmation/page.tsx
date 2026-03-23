@@ -2,7 +2,7 @@
 import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { useNavigate } from "react-router-dom";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { toast } from "react-toastify";
 
 const SignupConfirmation = () => {

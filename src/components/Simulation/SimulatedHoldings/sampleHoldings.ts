@@ -46,7 +46,7 @@ export const hybridInvestor: SeedHolding[] = [
   { identifier: "NSE:CPSEETF", avg: 60, qty: 6000 },
 ];
 
-export const HOLDINGS_MAP = {
+export const HOLDINGS_MAP :any= {
   shortTermInvestor: shortTermInvestor,
   longTermInvestor: longTermInvestor,
   etfInvestor: etfInvestor,

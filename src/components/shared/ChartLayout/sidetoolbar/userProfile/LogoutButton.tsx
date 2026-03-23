@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const LogoutButton = () => {
   return (
@@ -10,7 +10,7 @@ const LogoutButton = () => {
         <span className=" relative inline-block h-[1.95rem] w-[1.7rem] md:max-xl:mt-0.5">
           <img
             src={"/svg/logout.svg"}
-            fill
+        
             alt="logout"
             className="mt-[0.2rem]"
           />

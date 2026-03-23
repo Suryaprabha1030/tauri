@@ -53,7 +53,7 @@ const LightWeightCharts = React.memo(
     const xCategories = formattedData?.map((d) => d?.fullLabel);
     const newsAnnotations = Object.entries(newsByTime).map(
       ([key, articles]: any) => {
-        const { istDate, formatted, dateLabel } = adjustToMarketTime(key);
+        const { istDate, dateLabel } = adjustToMarketTime(key);
 
         const sameDayData = formattedData?.filter(
           (d) => d.dateLabel === dateLabel,

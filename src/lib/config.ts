@@ -151,7 +151,7 @@ const config = {
       (hours > START_HOUR && hours < END_HOUR) ||
       (hours === END_HOUR && minutes <= END_MINUTE);
 
-    const isWeekday = ALLOWED_DAYS.includes(day);
+   
     return isWithinTimeRange;
   },
   isTradingSliderTime: (): boolean => {

@@ -130,7 +130,7 @@ const Addsymbol: React.FC<addSymbolProps> = (props) => {
         );
       dispatch(setShouldRefresh(!shouldRefreshRedux));
 
-      symbols?.forEach((symbol) =>
+      symbols?.forEach((symbol:any) =>
         dispatch(
           addSymbol({
             symbol: symbol?.identifier,

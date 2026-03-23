@@ -42,9 +42,7 @@ const Technicals: React.FC<TechnicalProps> = ({
   const [selectedTimeframe, setSelectedTimeframe] = useState(
     timeframes.includes(resolution) ? resolution : "1D",
   );
-  const handleTimeframeClick = (timeframe: string) => {
-    setSelectedTimeframe(timeframe);
-  };
+
   const router = useNavigate();
 
   useEffect(() => {

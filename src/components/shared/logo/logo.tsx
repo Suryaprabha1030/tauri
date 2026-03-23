@@ -1,7 +1,7 @@
 export default function Logo(props: { width: number; height: number }) {
   return (
     <img
-      priority
+
       src="/svg/Zoonest_Logo.svg"
       width={props.width}
       height={props.height}

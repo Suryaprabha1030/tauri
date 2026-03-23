@@ -36,7 +36,7 @@ const handleCancelOrder = (
     brokerCode,
     payload
   )
-    .then((res) => {
+    .then((res:any) => {
       toast("Order has been Cancelled successfully");
 
       // Close the edit mode after cancel

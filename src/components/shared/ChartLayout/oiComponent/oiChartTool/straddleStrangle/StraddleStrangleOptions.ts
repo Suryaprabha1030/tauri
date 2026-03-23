@@ -8,15 +8,15 @@ const StraddleStrangleOptions = (
   maxPainData: any
 ): any => {
   const pcrValues = [
-    ...pcrData.flatMap((p) => p.pcr.flatMap((obj) => Object.values(obj))),
+    ...pcrData.flatMap((p:any) => p.pcr.flatMap((obj:any) => Object.values(obj))),
     // ...series.flatMap((s) => s.sumLtp.flatMap((obj) => Object.values(obj))),
     // ...series.flatMap((s) => s.vwap.flatMap((obj) => Object.values(obj))),
   ];
   const vwapValues = [
-    ...series.flatMap((s) => s.vwap.flatMap((obj) => Object.values(obj))),
+    ...series.flatMap((s:any) => s.vwap.flatMap((obj:any) => Object.values(obj))),
   ];
   const sumLtpValues = [
-    ...series.flatMap((s) => s.sumLtp.flatMap((obj) => Object.values(obj))),
+    ...series.flatMap((s:any) => s.sumLtp.flatMap((obj:any) => Object.values(obj))),
   ];
 
   const padding = 0;

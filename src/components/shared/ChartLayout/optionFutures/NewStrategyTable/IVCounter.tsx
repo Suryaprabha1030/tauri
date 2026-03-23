@@ -1,9 +1,8 @@
 import { getFutureData, getOptionData } from "@/lib/redux/slices/AnalyzerSlice";
 import { RootState } from "@/lib/redux/Store";
-import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const IVCounter = ({ setCopiedData, keyData, option }) => {
+const IVCounter = ({ setCopiedData, keyData, option }:any) => {
   const dispatch = useDispatch();
   const optionDatas: any = useSelector(
     (state: RootState) => state.analyzer.optionDataList

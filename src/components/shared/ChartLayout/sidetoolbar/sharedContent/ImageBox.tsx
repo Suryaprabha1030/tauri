@@ -8,7 +8,7 @@ interface ImageBoxProps {
   autoWidth?: any;
 }
 
-const ImageBox: React.FC<imgBoxProps> = ({
+const ImageBox: React.FC<ImageBoxProps> = ({
   imagePath,
   display,
   width,

@@ -28,7 +28,7 @@ const PayoffTable: React.FC<PayoffTableProps> = ({
   oipercent,
   PayoffTableOiChg,
 }) => {
-  const [showOiChange, setShowOiChange] = useState(false);
+  
   const [oiOption, setOiOption] = useState("Chg%"); // State to track Chg or Chg%
   const roundedTargetSpotPrice = Math.round(targetSpotPrice / 50) * 50;
   const filteredPayoffData = payoffdata.filter(

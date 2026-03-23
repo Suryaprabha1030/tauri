@@ -7,12 +7,10 @@ import { getBrokerCode, getBrokerName } from "../../../components/helpers";
 import { getJwtFromCookie } from "@/lib/util/cookies";
 import { autoLogoutTokenRemove } from "../autoLogoutUtil/autoLogOutUtil";
 import { getGlobalSymbolNewsData } from "@/lib/OItoggleExpiry";
-import { fetchNewsMarks, groupNewsByTime } from "../sideToolBar/news/fetchNews";
 import { brokerLogoutTokenRemove } from "../autoLogoutUtil/brokerLogOutUtil";
 
 const lastBarsCache = new Map();
 const url = config.apiUrl;
-const accessToken = getJwtFromCookie();
 const configurationData = {
   supported_resolutions: [
     "1",

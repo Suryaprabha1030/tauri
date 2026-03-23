@@ -11,7 +11,7 @@ export default function PayoffScreenshot({
   targetSpotPrice,
   oiData,
   payoffExpiryDate,
-}) {
+}:any) {
   return (
     <div
       className="flex h-full w-full flex-col items-center justify-center gap-1"

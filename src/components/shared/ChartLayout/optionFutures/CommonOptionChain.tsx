@@ -193,7 +193,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
   const expandTable = useSelector(
     (state: RootState) => state.optionChain.expandTable,
   );
-  const oiPercent = useSelector(
+  const oiPercent :any= useSelector(
     (state: RootState) => state.optionChain.oiPercent,
   );
 
@@ -265,7 +265,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
           Object.keys(strikes).forEach((strike) => {
             const options = strikes[strike]; // array of CE & PE objects
 
-            options.forEach((opt) => {
+            options.forEach((opt:any) => {
               dispatch(
                 addSymbol({
                   symbol: opt?.identifier, // pick identifier
@@ -431,7 +431,7 @@ const CommonOptionChain: React.FC<CommonOptionChainProps> = ({
               Object.keys(strikes).forEach((strike) => {
                 const options = strikes[strike]; // array of CE & PE objects
 
-                options.forEach((opt) => {
+                options.forEach((opt:any) => {
                   dispatch(
                     addSymbol({
                       symbol: opt?.identifier, // pick identifier

@@ -20,7 +20,7 @@ import {
   showHeatmap,
 } from "@/lib/redux/slices/ChartsSlice";
 import SymbolFilter from "./SymbolFilter";
-import HeatMap from "./HeatMap/Heatmap";
+
 
 import PositionsHoldingFilter from "./PositionsHoldingFilter";
 import SwitchWatchList from "./SwitchWatchList";
@@ -39,7 +39,6 @@ import WatchLists from "./WatchLists";
 import {
   combineSymbolData,
   filterSymbols,
-  handlePinSymbol,
 } from "@/lib/util/watchlist/heatMapHandle";
 import {
   fetchSymbolPriceData,
@@ -50,10 +49,7 @@ import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil"
 import { useNavigate } from "react-router-dom";
 import {
   setIdentifiersSet,
-  updateSymbolPnl,
 } from "@/lib/redux/slices/PositionSlicer";
-import { calculateHoldingsPnL } from "@/lib/util/sideToolBar/holdingsUtil";
-import { get } from "react-hook-form";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 import { handleToggle } from "@/components/tradingView/CustomCheckBoxButton";
 import { ViewType } from "@/lib/util/toggleButtonName/toggleButtonNames";
@@ -627,7 +623,7 @@ const StocksTable: React.FC<StocksTableProps> = ({
               >
                 <CandleIcon
                   className="flex cursor-pointer items-center justify-center rounded max-sm:h-[1.5rem] max-sm:w-[1.5rem]  sm:max-xl:h-[1rem] sm:max-xl:w-[1rem] xl:h-[1.35rem] xl:w-[1.35rem]"
-                  onClick={(e) => {
+                  onClick={(e:any) => {
                     handleToggle(ViewType.CANDLESTICK, dispatch);
                     e.stopPropagation();
                   }}

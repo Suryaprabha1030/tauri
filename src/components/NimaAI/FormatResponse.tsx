@@ -201,7 +201,7 @@ export const renderWithClickableIdentifiers = (
     }
     const imageKey = `${normalizeKey(indexName)}_${normalizeKey(firstExpiry)}_${normalizeKey(strategyName)}.jpg`;
     const matchedImage = strategyImageResult?.find(
-      (img) => img?.fileName === imageKey,
+      (img:any) => img?.fileName === imageKey,
     );
     const isSmall = window.matchMedia("(max-width: 576px)").matches;
     const isXlSmall = window.matchMedia("(max-width: 1200px)").matches;

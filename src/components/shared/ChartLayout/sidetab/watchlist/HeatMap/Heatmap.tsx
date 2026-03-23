@@ -36,7 +36,6 @@ const HeatMap: React.FC<HeatMapProps> = React.memo(
     const dispatch = useDispatch();
     const location = useLocation();
     const pathName = location.pathname;
-    const [NoOiData, setNoOiData] = useState(true);
     const toggleState = useSelector(
       (state: RootState) => state.analyzer.toggleState,
     );

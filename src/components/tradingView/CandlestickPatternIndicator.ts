@@ -1,4 +1,4 @@
-const plotStyleMap = {
+const plotStyleMap:any = {
   bullish: {
     color: "green",
     textColor: "white",
@@ -76,7 +76,7 @@ const patternTypes = [
   "bearish", //plot_54:Bearish Three Outside Down Pattern
   "bearish", //plot_55:Bullish kicker
 ];
-const defaultStyles = {};
+const defaultStyles:any = {};
 for (let i = 0; i < 56; i++) {
   defaultStyles[`plot_${i}`] = {
     ...plotStyleMap[patternTypes[i]],
@@ -84,7 +84,7 @@ for (let i = 0; i < 56; i++) {
   };
 }
 
-export const custom_indicators_getter = function (PineJS) {
+export const custom_indicators_getter = function (PineJS:any) {
   return Promise.resolve([
     {
       name: "Candlestick Patterns",
@@ -166,7 +166,7 @@ export const custom_indicators_getter = function (PineJS) {
             "Bearish Three Outside Down Pattern",
             "Bullish Kicker",
           ];
-          return patterns.reduce((acc, text, i) => {
+          return patterns.reduce((acc:any, text, i) => {
             acc[`plot_${i}`] = {
               visible: i <= 4,
               location: [
@@ -185,7 +185,7 @@ export const custom_indicators_getter = function (PineJS) {
       },
 
       constructor: function () {
-        (this as any).main = function (context, inputCallback) {
+        (this as any).main = function (context:any) {
           const open = PineJS.Std.open(context);
           const high = PineJS.Std.high(context);
           const low = PineJS.Std.low(context);

@@ -2,10 +2,6 @@
 
 import config from "@/lib/config";
 
-interface SortConfig {
-  key: string;
-  direction: "ascending" | "descending";
-}
 
 // Function for alphabetical sorting
 export const alphabeticalSort = (

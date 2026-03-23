@@ -24,19 +24,19 @@ const PePbChart = React.memo(({ data }: any) => {
         }
     }
 
-    const categories = monthLabels?.map(m => monthNames[m]);
+    const categories = monthLabels?.map((m:any) => monthNames[m]);
 
     const series = [
         {
             name: "PE Ratio",
-            data: chartData?.map(item => ({
+            data: chartData?.map((item:any) => ({
                 x: new Date(item?.date).getTime(),   // datetime
                 y: item?.PE_Ratio                 // value
             })) ?? []
         },
         {
             name: "PB Ratio",
-            data: chartData?.map(item => ({
+            data: chartData?.map((item:any) => ({
                 x: new Date(item?.date).getTime(),   // datetime
                 y: item?.PB_Ratio                 // value
             })) ?? []

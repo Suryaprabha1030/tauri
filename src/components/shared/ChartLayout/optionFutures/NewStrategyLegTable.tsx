@@ -331,7 +331,7 @@ const NewStrategyLegTable: React.FC<NewStrategyLegTableProps> = ({
     );
 
     const updatedEntryPriceData = { ...entryPriceData };
-    const updatedTempInputValues = { ...tempInputValues };
+    const updatedTempInputValues :any= { ...tempInputValues };
 
     // Check if tokens in entryPriceData exist in copiedData
     if (entryPriceData && Object.entries(entryPriceData).length > 0) {

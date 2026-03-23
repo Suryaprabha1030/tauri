@@ -98,7 +98,7 @@ const OiIndex: React.FC<IndexChangerProps> = ({
             ...indicesResponse?.data,
             ...BSEResponse?.data,
           ];
-          consolidatedData?.forEach((opt) => {
+          consolidatedData?.forEach((opt:any) => {
             dispatch(
               addSymbol({
                 symbol: opt?.identifier, // add identifier as symbol

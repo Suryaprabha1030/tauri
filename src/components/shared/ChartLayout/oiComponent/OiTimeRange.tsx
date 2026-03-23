@@ -111,7 +111,7 @@ const OiTimeRange: React.FC<OiTimeRangeProps> = ({
     const updatedUpperValue = Math.min(values[1], currentTime);
     setSliderValue([values[0], updatedUpperValue]); // Update slider value
   };
-  const getLocalTimeFromUTCMinutes = (utcMinutes) => {
+  const getLocalTimeFromUTCMinutes = (utcMinutes:any) => {
     const now = new Date();
     const timezoneOffset = now.getTimezoneOffset(); // Offset in minutes
     const localMinutes = utcMinutes - timezoneOffset;

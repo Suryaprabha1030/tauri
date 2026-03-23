@@ -1,6 +1,4 @@
-// components/TwitterShareButton.tsx
 
-import React from "react";
 
 interface TwitterShareButtonProps {
   url: string;

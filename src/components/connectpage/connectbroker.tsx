@@ -22,12 +22,10 @@ function ConnectBroker(props: ConnectBrokerProps) {
   const [errorMessage, setErrorMessage] = useState("");
   const [brokerCode, setBrokerCode] = useState("");
   const router = useNavigate();
-  const dispatch = useDispatch();
   const { isAuthenticated, loginSuccess } = useContext(AuthContext);
   const userApi = new UserApi(baseConfig());
   const apiClient = new zApi(useNavigate(), useContext(AuthContext));
   const [callProfile, setCallProfile] = useState(false);
-  const url = config.apiUrl;
   const commonTokenRequest: CommonTokenRequest = {
     auth_token: props.auth_token || "",
     refresh_token: props.refresh_token || props.requestToken || "",

@@ -22,7 +22,7 @@ export default function InlineSuggestionSearch({
   inputRef,
   setShowSuggestions,
   streamingAssistantRef,
-}) {
+}:any) {
   const dispatch = useDispatch();
   const NimaGptType: any = useSelector(
     (state: RootState) => state.Screener.NimaGptType

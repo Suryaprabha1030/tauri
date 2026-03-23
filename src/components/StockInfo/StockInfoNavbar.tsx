@@ -12,7 +12,7 @@ const sections = [
   "Pivots & News",
 ];
 
-const StockInfoNavbar = ({ info, scopeId }) => {
+const StockInfoNavbar = ({ info, scopeId }:any) => {
   const [activeSection, setActiveSection] = useState("Overview");
   const [scrollBar, setScrollBar] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);

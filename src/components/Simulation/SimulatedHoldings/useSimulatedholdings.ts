@@ -6,7 +6,7 @@ import {
 import { HOLDINGS_MAP } from "./sampleHoldings";
 import { calculateHoldingsPnL } from "@/lib/util/sideToolBar/holdingsUtil";
 
-export const useSimulatedHoldings = (webSocketDataRead, holdingType) => {
+export const useSimulatedHoldings = (webSocketDataRead:any, holdingType:any) => {
   return useMemo(() => {
     if (!holdingType) return null;
 

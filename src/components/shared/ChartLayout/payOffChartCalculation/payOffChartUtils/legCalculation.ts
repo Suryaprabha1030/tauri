@@ -234,7 +234,7 @@ const longPE = (
 
     const rows = df.values;
     if (calculateExpiry > 0) {
-      const targetPremiumSeries = rows.map((row) => {
+      const targetPremiumSeries = rows.map((row:any) => {
         const spot_price = row[0];
         const strike_price = row[2];
         return calculatePutPrice(
@@ -379,9 +379,9 @@ const shortCE = (
       Math.min(val - spotPrices[i], 0)
     );
     df.addColumn("premium_value_range", premiumRange, { inplace: true });
-    const rows = df.values;
+    const rows :any= df.values;
     if (calculateExpiry > 0) {
-      const targetPremiumSeries = rows.map((row) => {
+      const targetPremiumSeries = rows.map((row:any) => {
         const spot_price = row[0];
         const strike_price = row[2];
         return calculateCallPrice(
@@ -828,7 +828,7 @@ function target_long_CE(
 
     const rows = df.values;
 
-    const targetPremiumSeries2 = rows.map((row) => {
+    const targetPremiumSeries2 = rows.map((row:any) => {
       const spot_price = row[0];
       const strike_price = row[2];
       return calculateCallPrice(
@@ -925,7 +925,7 @@ function target_long_PE(
 
     const rows = df.values;
 
-    const targetPremiumSeries2 = rows.map((row) => {
+    const targetPremiumSeries2 = rows.map((row:any) => {
       const spot_price = row[0];
       const strike_price = row[2];
       return calculatePutPrice(
@@ -1118,7 +1118,7 @@ function target_short_CE(
 
     const rows = df.values;
 
-    const targetPremiumSeries2 = rows.map((row) => {
+    const targetPremiumSeries2 = rows.map((row:any) => {
       const spot_price = row[0];
       const strike_price = row[2];
       return calculateCallPrice(

@@ -34,8 +34,8 @@ function analyseProfitAndLoss(
   const minValue = Math.min(...resultValues);
   const maxValue = Math.max(...resultValues);
 
-  const gteZeroRow = input.filter((row) => row.result >= 0);
-  const lteZeroRow = input.filter((row) => row.result <= 0);
+  const gteZeroRow = input.filter((row:any) => row.result >= 0);
+  const lteZeroRow = input.filter((row:any) => row.result <= 0);
 
   result.max_profit = maxValue;
   result.max_loss = minValue;
@@ -167,10 +167,10 @@ function analyseProfitAndLoss(
     }
   } else {
     // Debit strategy - profitable if price is outside B/Es
-    result.breakeven_points.sort((a, b) => a - b);
+    result.breakeven_points.sort((a:any, b:any) => a - b);
     if (result.breakeven_points.length === 1) {
       // Guessing direction based on strikes
-      const avgStrike = items.reduce((s, i) => s + i.strike, 0) / items.length;
+      const avgStrike = items.reduce((s:any, i:any) => s + i.strike, 0) / items.length;
       if (result.breakeven_points[0] > avgStrike) {
         // Likely bullish
         profitableRanges.push([result.breakeven_points[0], Infinity]);

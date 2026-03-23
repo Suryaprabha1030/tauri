@@ -5,7 +5,6 @@ import {
   getIndexQuery,
   setprimaryRefresh,
   setStock,
-  updateSymbolData,
 } from "@/lib/redux/slices/StrategySlice";
 import { Dispatch } from "react";
 import { extractIndexName } from "../sideToolBar/orders/OrderUtil";
@@ -19,23 +18,19 @@ import {
   checkPosition,
   getCheckedPositionData,
   getFutureData,
-  getSelectPositionData,
   optionChainPayload,
   showDraftPositions,
   showPnlTable,
   showPositionTable,
   showStrategyTable,
 } from "@/lib/redux/slices/AnalyzerSlice";
-import { ShowStrategiesPopup } from "@/lib/redux/slices/ChartsSlice";
-import { useNavigate } from "react-router-dom";
+import { ShowStrategiesPopup } from "@/lib/redux/slices/ChartsSlice"
 import { autoLogoutTokenRemove } from "../autoLogoutUtil/autoLogOutUtil";
 import config from "@/lib/config";
 import { brokerLogoutTokenRemove } from "../autoLogoutUtil/brokerLogOutUtil";
 import {
-  setPayoffStrategyName,
   setStrategyCount,
 } from "@/lib/redux/slices/screenerSlice";
-import { setStrategiesPnlDemo } from "@/lib/redux/slices/SimulationSlice";
 
 export const updateLotsBasedOnMultiplier = (
   strategyName: string,
@@ -178,8 +173,6 @@ export function calculateLegsCount(legs: any): number {
 export const handleExpiry = (
   e: React.ChangeEvent<HTMLSelectElement>,
   setExpiry: React.Dispatch<React.SetStateAction<any>>,
-  dispatch: Dispatch<any>,
-  indexname: string,
 ) => {
   const currentExpiryvalue = e.target.value;
   setExpiry(currentExpiryvalue);
@@ -299,7 +292,7 @@ export const strategyApiDataDetails = (
   strategyLots: any,
   item: any,
   dispatch: Dispatch<any>,
-  router: ReturnType<typeof useRouter>,
+  router: any,
   positionDatas: any,
   futureDatas: any,
   allStrategyData: any,

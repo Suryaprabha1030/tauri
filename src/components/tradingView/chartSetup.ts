@@ -5,15 +5,13 @@ import { setShowTvResolution } from "@/lib/redux/slices/ChartsSlice";
 import { useDispatch } from "react-redux";
 import {
   createBuySellButton,
-  createScreenerButton,
-  handleToggle,
   createWatchlistButton,
   createFutButton,
   resetButtonRefs,
   buyButtonRefs,
   sellButtonRefs,
 } from "./CustomCheckBoxButton";
-import { StudyPlotType, widget } from "../../../public/static/charting_library";
+import { widget } from "../../../public/static/charting_library";
 import {
   tvWidgetId,
   ViewType,
@@ -215,7 +213,7 @@ export const initializeTradingViewWidget = (
           );
         }
         createCustomToggleButton(tvWidget, dispatch, chartId, isMarketHoliday);
-        tvWidget.subscribe("onPlusClick", (params) => {
+        tvWidget.subscribe("onPlusClick", (params:any) => {
           const price = params?.price;
           if (
             !currentSymbolInfo ||
@@ -246,7 +244,6 @@ export const initializeTradingViewWidget = (
           const mainPane = paneContents[0];
           showActionOverlay(
             price,
-            y,
             mainPane,
             currentSymbolInfo,
             chart,

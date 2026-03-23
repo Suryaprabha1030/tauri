@@ -1,13 +1,12 @@
 "use client";
 import Logo from "@/components/shared/logo/logo";
-import { use, useContext, useEffect, useState } from "react";
+import {useContext, useEffect } from "react";
 
 import { UserApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import zApi from "@/lib/api/zApi";
 import { AuthContext } from "@/context/authContextProvider";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import config from "@/lib/config";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";

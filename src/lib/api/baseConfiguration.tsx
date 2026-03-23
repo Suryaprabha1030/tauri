@@ -2,10 +2,6 @@ import config from "../config";
 import { getJwtFromCookie } from "../util/cookies";
 import {
   Configuration,
-  OptionsSimulatorHistoricalApi,
-  UserApi,
-  OptionsStrategyBuilderApi,
-  OptionsBacktestingHistoricalApi,
 } from "./base";
 
 const baseConfig = () => {

@@ -1,15 +1,15 @@
 function getHighestOIStrikes(data: any) {
-  const CE = data?.filter((i) => i.option_type === "CE");
-  const PE = data?.filter((i) => i.option_type === "PE");
+  const CE = data?.filter((i:any) => i.option_type === "CE");
+  const PE = data?.filter((i:any) => i.option_type === "PE");
 
   const highestCE = CE?.reduce(
-    (max, item) =>
+    (max:any, item:any) =>
       max === null || item?.latest_oi >= max?.latest_oi ? item : max,
     null
   );
 
   const highestPE = PE?.reduce(
-    (max, item) =>
+    (max:any, item:any) =>
       max === null || item?.latest_oi >= max?.latest_oi ? item : max,
     null
   );

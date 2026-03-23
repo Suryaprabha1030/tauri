@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+
 import Headings from "../sharedContent/headings";
 import ToggleButton from "../../ToggleButton/ToggleButton";
 import { portfolioOptions } from "@/lib/util/toggleButtonName/toggleButtonNames";
 import RemoveButton from "../sharedContent/RemoveButton";
 
-const PortfolioHeader = ({ activePortFolio, setActivePortFolio }) => {
+const PortfolioHeader = ({ activePortFolio, setActivePortFolio }:any) => {
   const handleClickPortfolio = (buttonValue: any) => {
     setActivePortFolio(buttonValue);
   };

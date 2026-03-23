@@ -34,7 +34,7 @@ export default function ShareRedirectClient({ slug }: { slug: string }) {
         const origin = window.location.origin;
         window.location.replace(`${origin}`);
       } else {
-        router.replace("/404"); // fallback to 404 on failure
+        router("/404"); // fallback to 404 on failure
       }
     }, 100);
 

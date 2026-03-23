@@ -24,13 +24,13 @@ function cleanURL(url: string) {
     .replace(/\/$/, ""); // remove trailing slash
 }
 
-const flags = {
+const flags:any = {
   "Over Valued": "/svg/flagRed.svg",
   "Fairly Valued": "/svg/flagGreen.svg",
   "Under Valued": "/svg/flagGray.svg",
 };
 
-function factorValuation(value, min, max) {
+function factorValuation(value:any, min:any, max:any) {
   if (value === undefined) return "";
   if (value === null) return "";
   if (value === "-") return "";
@@ -208,7 +208,7 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ info }) => {
     }, 2000);
   }, [info]);
 
-  const getTooltipSide = (index) => {
+  const getTooltipSide = (index:any) => {
     const width = window.innerWidth;
 
     if (width < 576) {

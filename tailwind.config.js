@@ -119,6 +119,10 @@ export default {
           "0%": { transform: "rotateY(0deg) rotateX(0deg)" },
           "100%": { transform: "rotateY(360deg) rotateX(0deg)" },
         },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(5px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         chainLoading: "chainLoading 0.8s ease-in-out infinite",
@@ -127,6 +131,7 @@ export default {
         slideUp: "slideUp 0.5s ease-in-out",
         movedown: "movedown 0.3s ease forwards",
         coinRotate: "coinRotate 0.8s linear 1.5",
+        fadeIn: "fadeIn 0.3s ease-in-out",
       },
 
       spacing: {

@@ -8,15 +8,13 @@ import { setScreenerQuery } from "@/lib/redux/slices/screenerSlice";
 import { RootState } from "@/lib/redux/Store";
 import { IconKey, icons } from "@/lib/util/sideToolBar/RightToolBarIcons";
 
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ScreenerButton from "../Screener/SideScreener";
 
-interface SideToolBarIcon {
-  brokerCode: number | null;
-}
 
-const SideToolBarIcon: React.FC<SideToolBarIcon> = ({ brokerCode }) => {
+
+const SideToolBarIcon = () => {
   const currentSection = useSelector(
     (state: RootState) => state.common.currentSection,
   );

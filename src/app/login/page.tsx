@@ -1,17 +1,18 @@
 "use client";
 import Logo from "@/components/shared/logo/logo";
-import { useState, useContext, use, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
+
 import { baseConfig } from "@/lib/api/baseConfiguration";
-import { BrokersRouterApi, UserApi, UserBrokerRouterApi } from "@/lib/api/base";
+import { BrokersRouterApi } from "@/lib/api/base";
 
 import BrokerLoginPopup from "@/components/LoginPopup/BrokerLoginPopup";
 import BrokerLoginContent from "@/components/LoginPopup/BrokerLoginContent";
 import BrokerIntegrationPage from "@/components/BrokerLoginContent/FyersLoginContent";
 import BrokerLoginDisplay from "@/components/BrokerLoginDisplay/BrokerLoginDisplay";
+import { useSearchParams } from "react-router-dom";
 
 const Login = () => {
-  const searchParams = useSearchParams();
+  const [searchParams] = useSearchParams();
   const brokerNameFromQuery = searchParams.get("brokername");
 
   const brokers = [
@@ -174,7 +175,7 @@ const Login = () => {
           (broker: any) => broker.is_active,
         );
         const selectedBroker = activeBrokers?.find(
-          (broker) => broker?.name?.toLowerCase() === brokerName?.toLowerCase(),
+          (broker:any) => broker?.name?.toLowerCase() === brokerName?.toLowerCase(),
         );
 
         // Redirect to login_url in the same tab

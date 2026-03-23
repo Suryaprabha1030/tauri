@@ -1,9 +1,9 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import {useEffect, useState } from "react";
+
 import ConnectBroker from "@/components/connectpage/connectbroker";
-import { AuthContext } from "@/context/authContextProvider";
-import EnforceAuth from "@/components/layout/EnforceAuth";
+import { useSearchParams } from "react-router-dom";
+
 
 const validBrokers = [
   "angelone",

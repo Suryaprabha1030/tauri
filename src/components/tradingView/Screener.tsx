@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import ChatKitStream from "../NimaAI/ChatKit";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";

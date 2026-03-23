@@ -1,7 +1,6 @@
 import { RootState } from "@/lib/redux/Store";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import MultiSymbolNews from "../../sidetab/News/MultiSymbolNews";
 import ImageBox from "../sharedContent/ImageBox";
 import HoldingsHeader from "./HoldingsHeader";
 import HoldingsPnlPerc from "./HoldingsPnlPerc";
@@ -56,7 +55,7 @@ const Holdings: React.FC<HoldingsProps> = ({
 
     setHoldings(holdingsdata && holdingsdata?.holdings);
     holdingsdata &&
-      holdingsdata?.holdings?.forEach((stock) => {
+      holdingsdata?.holdings?.forEach((stock:any) => {
         dispatch(
           updateSymbolPnl({
             symbol: stock?.identifier,

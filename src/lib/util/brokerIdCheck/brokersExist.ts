@@ -53,7 +53,7 @@ export const fetchExistBrokers = async (router: any, id?: any) => {
 
     await Promise.all(profileFetches); // Wait for all API calls
     if (brokersWithProfile?.length > 0) {
-      const brokerCodes = brokersWithProfile?.map((data) => data?.broker_code);
+      const brokerCodes = brokersWithProfile?.map((data:any) => data?.broker_code);
       sessionStorage.setItem("ExistbrokerCode", JSON.stringify(brokerCodes));
       return brokerCodes; // ✅ Now returns an array
     }

@@ -241,7 +241,6 @@ export async function fetchNewsData(token: any) {
 }
 
 export async function fetchFnoData(
-  token: any,
   brokerCode: any,
   queryIdentifier: any
 ) {
@@ -383,7 +382,7 @@ export const uploadAllFromIndexedDB = async (
     );
 
   await Promise.all(
-    presignRes.data.urls.map(async (item, idx) => {
+    presignRes.data.urls.map(async (item:any, idx:any) => {
       const blob = await (await fetch(images[idx].image)).blob();
 
       const res = await fetch(item.url, {

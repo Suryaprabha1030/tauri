@@ -12,7 +12,7 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
   const fiiDiiHistoryData = useSelector(
     (state: RootState) => state.FiiDiiData.datewiseSummaryList,
   );
-  const [tableData, setTableData] = useState({});
+  const [tableData, setTableData] = useState<any>({});
 
   const [date, setDate] = useState(() => {
     const keys = Object.keys(tableData);
@@ -34,7 +34,7 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
     }
   }, [fiiDiiHistoryData]);
 
-  function getSentimentLabel(netOi, percentChange) {
+  function getSentimentLabel(netOi:any, percentChange:any) {
     if (Math.abs(netOi) < 5000 || Math.abs(percentChange) < 1) {
       return "Neutral";
     }
@@ -58,7 +58,7 @@ const FiiDiiSummary: React.FC<FiiDiiSummaryProps> = ({ leftwidth }) => {
     }
   }
 
-  const toggleOpen = (key) => {
+  const toggleOpen = (key:any) => {
     setOpenKey((prev) => (prev === key ? null : key));
   };
   const getSentiment = (netOi: number, change: number) => {

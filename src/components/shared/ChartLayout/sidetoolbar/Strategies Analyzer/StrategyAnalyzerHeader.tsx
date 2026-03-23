@@ -77,9 +77,9 @@ const StrategiesAnalyzerHeader: React.FC<StrategiesAnalyzerHeaderProps> = ({
   return (
     <div
       className="flex flex-row items-center justify-between max-md:py-1.5 md:max-xl:py-[0.8rem] xl:py-2"
-      onDoubleClick={(event: any) => {
-        WidthAdjusterDoubleClick(leftWidth, setLeftWidth);
-      }}
+      onDoubleClick={
+       ()=> WidthAdjusterDoubleClick(leftWidth, setLeftWidth)
+      }
     >
       <div className="flex flex-row items-center">
         <h1 className="flex font-heading max-lg:flex-col max-md:gap-1 max-md:text-lg max-sm:pl-2 max-sm:pr-1 sm:max-xl:sticky sm:max-xl:top-0 sm:max-md:px-4 md:items-center md:text-xl md:max-lg:items-start md:max-lg:gap-10 md:max-lg:px-6 lg:flex-row lg:px-4 lg:max-xl:gap-24 xl:gap-2 xl:max-2xl:flex-col xl:max-2xl:items-start">
@@ -140,7 +140,7 @@ const StrategiesAnalyzerHeader: React.FC<StrategiesAnalyzerHeaderProps> = ({
                   ref={expiryDateRef}
                   value={expiry}
                   onChange={(e) =>
-                    handleExpiry(e, setExpiry, dispatch, indexname)
+                    handleExpiry(e, setExpiry)
                   }
                   onDoubleClick={(event: any) => {
                     event.stopPropagation();

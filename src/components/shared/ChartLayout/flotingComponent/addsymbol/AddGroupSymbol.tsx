@@ -13,7 +13,7 @@ const AddGroupSymbol = ({
   selected,
   setSelected,
   setSearchSymbol,
-}) => {
+}:any) => {
   const [open, setOpen] = useState(false);
   const router = useNavigate();
   const grpSymbols = useSelector((state: RootState) => state.Groups.grpSymbols);

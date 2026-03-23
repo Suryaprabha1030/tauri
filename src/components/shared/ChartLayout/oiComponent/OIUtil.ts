@@ -250,7 +250,7 @@ function extractSumFalseData2(data: any) {
     output[strikePriceKey].ltp.push({ [createdAt]: ltpValue });
   };
 
-  data.forEach((d) => {
+  data.forEach((d:any) => {
     // Debug: Check if it exists
     let created_at = d?.created_at;
     if (!d.created_at) {
@@ -258,7 +258,7 @@ function extractSumFalseData2(data: any) {
     }
 
     if (Array.isArray(d?.ce_ltp)) {
-      d.ce_ltp.forEach((item) => {
+      d.ce_ltp.forEach((item:any) => {
         const strikePriceKey = `${item?.strike_price}#CE`;
         addLtp(strikePriceKey, created_at, item.ltp);
       });
@@ -266,10 +266,10 @@ function extractSumFalseData2(data: any) {
   });
 
   // Process PE (Put Option) data
-  data.forEach((d) => {
+  data.forEach((d:any) => {
     let created_at = d?.created_at;
     if (Array.isArray(d?.pe_ltp)) {
-      d.pe_ltp.forEach((item) => {
+      d.pe_ltp.forEach((item:any) => {
         const strikePriceKey = `${item?.strike_price}#PE`;
         addLtp(strikePriceKey, created_at, item.ltp);
       });

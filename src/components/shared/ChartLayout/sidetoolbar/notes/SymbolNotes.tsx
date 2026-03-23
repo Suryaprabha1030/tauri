@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { notesformatDateTime } from "../../sidetab/notes/notesUtil";
 import CommonNotesList from "./CommonNotesList";
-import { error } from "console";
 import { NotesRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import PaginationLoading from "@/components/shared/commonUtil/PaginationLoading";

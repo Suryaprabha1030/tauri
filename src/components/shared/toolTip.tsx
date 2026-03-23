@@ -7,7 +7,7 @@ const Tooltip = (props: {
 }) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
-  const { children, tooltipText, position } = props;
+  const { children, tooltipText } = props;
 
   const handleMouseEnter = () => {
     setTooltipVisible(true);

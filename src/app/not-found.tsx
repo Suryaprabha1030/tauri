@@ -1,15 +1,13 @@
 "use client";
 import config from "@/lib/config";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+
 
 export default function NotFoundPage() {
   return (
     <div className="fixed flex h-dvh w-screen flex-col items-center justify-center gap-[1rem] text-center">
       <>
         <span className="relative h-[20rem] w-[25rem] max-sm:h-[10rem] max-sm:w-[15rem]">
-          <img src={"/images/404.png"} alt="" fill className="" />
+          <img src={"/images/404.png"} alt=""  className="" />
         </span>
         <span className="flex flex-col gap-2">
           <h1 className=" text-2xl font-bold">404 - Page Not Found</h1>

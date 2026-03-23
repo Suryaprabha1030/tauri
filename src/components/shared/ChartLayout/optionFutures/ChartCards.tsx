@@ -97,7 +97,7 @@ const ChartCards: React.FC<ChartCardProps> = ({}) => {
   useEffect(() => {
     setProfitPercent(null);
     setlossPercent(null);
-    const calculatePercentge = (profit, funds) => {
+    const calculatePercentge = (profit:any, funds:any) => {
       if (isNaN(profit) || funds == 0) {
         return null;
       } else {

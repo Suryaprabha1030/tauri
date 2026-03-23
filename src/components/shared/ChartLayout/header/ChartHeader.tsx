@@ -121,7 +121,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
     if (connectionStatus && websocketOpen) {
       // Filter identifiers that are not yet subscribed
       const unsubscribedIdentifiers = addsymbolsread.filter(
-        (identifier) => !subscribedTokens.includes(identifier),
+        (identifier:any) => !subscribedTokens.includes(identifier),
       );
 
       if (unsubscribedIdentifiers.length > 0) {

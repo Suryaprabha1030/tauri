@@ -3,7 +3,6 @@ import { baseConfig } from "@/lib/api/baseConfiguration";
 import { autoLogoutTokenRemove } from "../../autoLogoutUtil/autoLogOutUtil";
 import {
   setPositions,
-  updateSymbolData,
 } from "@/lib/redux/slices/StrategySlice";
 import { brokerLogoutTokenRemove } from "../../autoLogoutUtil/brokerLogOutUtil";
 

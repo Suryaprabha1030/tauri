@@ -1,5 +1,4 @@
-import { NewsRouterApi } from "@/lib/api/base";
-import { baseConfig } from "@/lib/api/baseConfiguration";
+
 import React, { useEffect, useState } from "react";
 import NewsHeader from "./NewsHeader";
 import NewsBox from "./NewsBox";

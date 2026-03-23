@@ -1,6 +1,5 @@
 import { UserBrokerRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
-import { setStrategyCount } from "@/lib/redux/slices/screenerSlice";
 import {
   setStrategiesPnlDemo,
   setStrategiesPnlRefresh,

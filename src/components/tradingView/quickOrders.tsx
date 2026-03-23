@@ -14,7 +14,6 @@ let overlayAnimationId: number | null = null;
 
 export function showActionOverlay(
   price: number,
-  y: number,
   container: HTMLElement,
   symbolInfo: any,
   chart: any,
@@ -303,7 +302,7 @@ export async function drawOrderLineAndOverlay(
   const matchingPosition =
     positionsdata &&
     positionsdata?.length > 0 &&
-    positionsdata?.find((pos) => pos.identifier === identifier);
+    positionsdata?.find((pos:any) => pos.identifier === identifier);
 
   const isInPositions = Boolean(matchingPosition);
   //product type

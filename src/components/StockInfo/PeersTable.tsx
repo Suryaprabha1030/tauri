@@ -14,14 +14,14 @@ const PeersTable = ({ data }: PeersTableProp) => {
 
   let tableFormatData = data;
 
-  let demoData = data?.map((item) => ({
-    [item.name]: apiFields.reduce((acc, field, colIndex) => {
+  let demoData = data?.map((item:any) => ({
+    [item.name]: apiFields.reduce((acc:any, field:any, colIndex:any) => {
       acc[tableHeaders[colIndex]] = item[field];
       return acc;
     }, {})
   }))
 
-  const columnData = demoData?.map((row, index) => {
+  const columnData = demoData?.map((row:any) => {
     const peerName = Object.keys(row)[0]
     const peerData = row[peerName]
     const keys = Object.keys(peerData)
@@ -32,9 +32,9 @@ const PeersTable = ({ data }: PeersTableProp) => {
   }
   );
 
-  columnData.sort((a, b) => (a.value - b.value) * sortCol.order);
+  columnData.sort((a:any, b:any) => (a.value - b.value) * sortCol.order);
 
-  tableFormatData = columnData.map(item => item.row);   
+  tableFormatData = columnData.map((item:any) => item.row);   
   return (
     <div className="max-h-full w-full py-2 ">
       <div className="overflow-auto scrollbar-thin">
@@ -69,7 +69,7 @@ const PeersTable = ({ data }: PeersTableProp) => {
           </thead>
 
           <tbody className="text-gray-800">
-            {tableFormatData && tableFormatData?.map((row, index) => {
+            {tableFormatData && tableFormatData?.map((row:any, index:any) => {
               const key = Object.keys(row)[0]
               const values = row[key]
               const rowValues = Object.values(values)

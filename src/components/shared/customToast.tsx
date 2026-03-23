@@ -1,4 +1,4 @@
-import { toast, ToastPosition } from "react-toastify";
+import { toast} from "react-toastify";
 import clsx from "clsx";
 
 const getStatusColor = (status: string) => {
@@ -28,7 +28,7 @@ const getIndicatorColor = (status: string) => {
   return "bg-z-green-500";
 };
 
-const ToastContent = ({ title, message, details }) => {
+const ToastContent = ({ title, message, details }:any) => {
   return (
     <div
       className={clsx(

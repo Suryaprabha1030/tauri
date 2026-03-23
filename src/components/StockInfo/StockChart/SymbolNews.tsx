@@ -1,9 +1,9 @@
-import GetSymbolNews from "@/components/shared/ChartLayout/sidetab/News/GetSymbolNews";
+
 import NewsBox from "@/components/shared/ChartLayout/sidetoolbar/news/NewsBox";
 import Modal from "@/components/shared/popupModal";
 import { setOpenSymbolNewsPopup } from "@/lib/redux/slices/CommonSlice";
 import { RootState } from "@/lib/redux/Store";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const SymbolNews = () => {

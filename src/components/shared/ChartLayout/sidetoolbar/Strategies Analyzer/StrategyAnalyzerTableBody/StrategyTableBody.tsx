@@ -37,7 +37,7 @@ const StrategyTableBody: React.FC<strategyTableBodyProps> = ({
   leftWidth,
 }) => {
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);
-  let currentGroup: string | null = null;
+
   const strategiesByGroup: Record<string, string[]> = {};
   Object.keys(filteredStrategies).forEach((strategy) => {
     const direction = response[strategy].strategy_direction.toLowerCase();

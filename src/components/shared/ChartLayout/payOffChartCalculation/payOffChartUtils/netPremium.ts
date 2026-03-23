@@ -179,7 +179,7 @@ const calcNetPremium = (
   volatility: any,
   lotSize: any
 ) => {
-  const netPremium = items?.reduce((total, item) => {
+  const netPremium = items?.reduce((total:any, item:any) => {
     const { price, greeks }: any = calculateBlackScholes(
       underlyingPrice,
       item.strike,

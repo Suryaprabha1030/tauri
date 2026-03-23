@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import PeersChartOptions from "./StockChartOptions/PeersChartOptions";
 
-const tooltipValues = {
+const tooltipValues:any = {
   "Current Market Price": "CMP(Rs)",
   "PE Ratio": "Price to Equity",
   "Earnings Per Share": "EPS(Rs)",
@@ -16,7 +16,7 @@ const tooltipValues = {
   Debt: "Debt(Cr)",
 };
 
-const values = {
+const values :any= {
   "Current Market Price": "cmp_rs",
   "PE Ratio": "pe",
   "Earnings Per Share": "eps_12m_rs",
@@ -45,7 +45,7 @@ const PeersChart = React.memo(({ data }: any) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const fields = Object.keys(values)?.map((item) => item);
+  const fields:any = Object.keys(values)?.map((item) => item);
   const currentValue = data?.map((item: any) => item[values[currentChart]]);
   const name = data?.map((item: any) => item?.name);
 
@@ -77,7 +77,7 @@ const PeersChart = React.memo(({ data }: any) => {
             ref={dropdownRef}
             className="z-20 text-[0.85rem]  absolute top-12 right-4 border rounded-md bg-white border-gray-100 bg-green shadow-md"
           >
-            {fields.map((item) => {
+            {fields.map((item:any) => {
               return (
                 <div
                   key={item}

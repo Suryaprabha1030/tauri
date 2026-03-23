@@ -1,12 +1,8 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateSymbolData } from "@/lib/redux/slices/StrategySlice";
 import { setWebsocketOpen } from "@/lib/redux/slices/ChartsSlice";
-import { Bar } from "recharts";
-import { getJwtFromCookie } from "./util/cookies";
-import { toast } from "react-toastify";
-import { showCustomToast } from "@/components/shared/customToast";
 import {
   setInitiateOrderToast,
   setToasterIdentifiers,
@@ -45,10 +41,10 @@ export function subscribeToSymbol(identifier: any) {
 export function subscribeOnStream(
   symbolInfo: any,
   resolution: string,
-  onRealtimeCallback: (bar: Bar) => void,
+  onRealtimeCallback: (bar: any) => void,
   subscriberUID: string,
-  onResetCacheNeededCallback: () => void,
-  lastDailyBar: Bar,
+  _onResetCacheNeededCallback: () => void,
+  lastDailyBar: any,
 ) {
   if (!worker) return;
   const channelString = symbolInfo.identifier;
@@ -126,7 +122,6 @@ const useWebSocket = (
   onConnectionStatusChange: (connected: boolean) => void,
 ) => {
   const [websocketError, setWebSocketError] = useState(false);
-  const workerRef = useRef<Worker | null>(null);
   const dispatch = useDispatch();
   const [jwt, setJwt] = useState<string | null>(null);
 
@@ -135,7 +130,8 @@ const useWebSocket = (
 
     const fetchJwt = async () => {
       // const token = await getJwtFromCookie();
-      const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwidXNlcl9pZCI6MiwiZXhwIjoxNzczNzMwMDQ4fQ.I_v9sjVVBb7krHfz7K1Hn5Svr9QrnoSs65UYhZogI40`;
+      const token = `
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwidXNlcl9pZCI6MiwiZXhwIjoxNzczOTA4OTEwfQ.j6dZb5lcGq_ImpA9wCiGAEPTv4sWr_sBSr2gDKiC46A`;
       if (token) {
         setJwt(token);
         clearInterval(intervalId); // Stop polling once JWT is available
@@ -176,21 +172,25 @@ const useWebSocket = (
     worker.onmessage = (event) => {
       const { type, payload, id } = event.data;
       switch (type) {
-        case "connected":
+        case "connected": {
           setWebSocketError(false);
           dispatch(setWebsocketOpen(true));
           onConnectionStatusChange(true);
           break;
+        }
 
-        case "disconnected":
+        case "disconnected": {
           dispatch(setWebsocketOpen(false));
-        case "error":
+          break;
+        }
+        case "error": {
           setWebSocketError(true);
           dispatch(setWebsocketOpen(false));
           // onConnectionStatusChange(false);
           break;
+        }
 
-        case "data":
+        case "data": {
           const symbol = payload.identifier;
 
           // Store the latest update in buffer
@@ -251,23 +251,28 @@ const useWebSocket = (
           );
 
           break;
+        }
 
-        case "show-toast":
+        case "show-toast": {
           if (id) {
             dispatch(setToasterIdentifiers(id));
           }
           // showCustomToast(payload?.title, payload?.message, payload?.details);
           dispatch(setInitiateOrderToast({ payload }));
           break;
-        case "barUpdate":
+        }
+        case "barUpdate": {
           break;
+        }
       }
     };
 
     return () => {
-      workerRef.current?.terminate();
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+      // worker?.postMessage({ type: "disconnect" });
     };
-  }, [url, jwt]);
+  }, [url, jwt, onConnectionStatusChange]);
 
   return websocketError;
 };

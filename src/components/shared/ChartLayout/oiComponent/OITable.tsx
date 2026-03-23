@@ -303,7 +303,7 @@ const OITable: React.FC<OITableProps> = ({
     const updateCheckedRows = (setter: any, condition: any) => {
       if (condition) {
         setter({}); // Reset the state before updating
-        setter((prev) => ({
+        setter((prev:any) => ({
           ...prev,
           [`${defaultSelector}.0#CE#${expiry}#${groupName}`]: true,
           [`${defaultSelector}.0#PE#${expiry}#${groupName}`]: true,
@@ -314,7 +314,7 @@ const OITable: React.FC<OITableProps> = ({
     const updateMultiStraddleRows = (setter: any, condition: any) => {
       if (condition) {
         setter({}); // Reset the state before updating
-        setter((prev) => ({
+        setter((prev:any) => ({
           ...prev,
           [`${defaultSelector}.0#CE#${expiry}#${groupName}`]: true,
           [`${defaultSelector}.0#PE#${expiry}#${groupName}`]: true,
@@ -327,8 +327,8 @@ const OITable: React.FC<OITableProps> = ({
       if (condition) {
         setManuallyCheckedStraddle(false);
         setter({});
-        setter((prev) => ({
-          ...Object.keys(prev).reduce((acc, key) => {
+        setter((prev:any) => ({
+          ...Object.keys(prev).reduce((acc:any, key) => {
             if (key === `${defaultSelector}.0#${expiry}#${groupName}`)
               acc[key] = true;
             return acc;
@@ -482,7 +482,7 @@ const OITable: React.FC<OITableProps> = ({
               Object.keys(strikes).forEach((strike) => {
                 const options = strikes[strike]; // array of CE & PE objects
 
-                options.forEach((opt) => {
+                options.forEach((opt:any) => {
                   dispatch(
                     addSymbol({
                       symbol: opt?.identifier, // pick identifier
@@ -533,7 +533,7 @@ const OITable: React.FC<OITableProps> = ({
           if (condition) {
             setManuallyCheckedStraddle(false);
             setter({}); // Reset the state before updating
-            setter((prev) => ({
+            setter((prev:any) => ({
               ...prev,
               [`${defaultSelector}.0#CE#${expiry}#${groupName}`]: true,
               [`${defaultSelector}.0#PE#${expiry}#${groupName}`]: true,
@@ -546,8 +546,8 @@ const OITable: React.FC<OITableProps> = ({
           if (condition) {
             setManuallyCheckedStraddle(false);
             setter({});
-            setter((prev) => ({
-              ...Object.keys(prev).reduce((acc, key) => {
+            setter((prev:any) => ({
+              ...Object.keys(prev).reduce((acc:any, key) => {
                 if (key === `${defaultSelector}.0#${expiry}#${groupName}`)
                   acc[key] = true;
                 return acc;

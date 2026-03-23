@@ -42,7 +42,7 @@ export const getLastClickDate = (userId: any, brokerCode: any) => {
   });
 };
 
-export const saveLastClickDate = (userId, brokerCode, lastClickDate) => {
+export const saveLastClickDate = (userId:any, brokerCode:any, lastClickDate:any) => {
   return new Promise<void>((resolve, reject) => {
     const key = `${userId}#${brokerCode}`;
     console.log(`Saving to IndexedDB: Key=${key}, Date=${lastClickDate}`);

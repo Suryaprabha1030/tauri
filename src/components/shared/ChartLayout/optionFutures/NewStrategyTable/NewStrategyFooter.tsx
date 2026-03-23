@@ -102,7 +102,7 @@ const NewStrategyFooter: React.FC<NewStrategyFooterProps> = ({
     )
       .then((res) => {
         toast("Orders Placed");
-        const unchecked = Object.keys(getCheckedData).reduce((acc, key) => {
+        const unchecked = Object.keys(getCheckedData).reduce((acc:any, key) => {
           acc[key] = false;
           return acc;
         }, {});

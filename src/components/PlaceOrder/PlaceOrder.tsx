@@ -8,9 +8,8 @@ import {
 } from "@/lib/redux/slices/PlaceOrder";
 import OrderTable from "./OrderTable";
 import PlaceOrderHeader from "./PlaceOrderHeader";
-import { containsSameIndexWithCEorPE } from "@/lib/util/sideToolBar/orders/OrderUtil";
+
 import { RootState } from "@/lib/redux/Store";
-import { updateSymbolData } from "@/lib/redux/slices/StrategySlice";
 import { useNavigate } from "react-router-dom";
 import {
   formatStockData,
@@ -20,6 +19,7 @@ import {
   updateMarginData,
   updateStockData,
 } from "@/lib/util/placeOrder/placeOrder";
+import { containsSameIndexWithCEorPE } from "@/lib/util/sideToolBar/orders/OrderUtil";
 
 interface PlaceOrderProps {
   stocks: any;

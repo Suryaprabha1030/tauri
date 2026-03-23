@@ -64,7 +64,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
     positionsdata &&
     positionsdata?.length > 0 &&
     positionsdata?.filter(
-      (position) =>
+      (position:any) =>
         position?.transaction_type === "SHORT" ||
         position?.transaction_type === "LONG",
     )?.length;
@@ -182,7 +182,7 @@ const HoldingsPositionsCard: React.FC<HoldingsPositionsCardProps> = ({
       );
       setpositionPnl(updatedTotalPnl);
       //For updating Live Pnl
-      updatedPositions?.forEach((stock) => {
+      updatedPositions?.forEach((stock:any) => {
         dispatch(
           updateSymbolPnl({
             symbol: stock?.identifier,

@@ -9,7 +9,7 @@ const handleCombineData = ({
   setInitialLotSizes,
   prevCopiedDataRef,
   prevMultiplierRef,
-}) => {
+}:any) => {
   const combinedData = {
     ...optionDatas,
     ...FutPayloadTransformData(futureDatas),

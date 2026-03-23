@@ -25,7 +25,7 @@ const CashMaketTable: React.FC<CashMaketTableProps> = ({ leftWidth }) => {
     }
     // for path find in obj
     const getNestedValue = (obj: {}, path: string) => {
-      return path.split(".").reduce((acc, key) => acc?.[key], obj);
+      return path.split(".").reduce((acc:any, key:any) => acc?.[key], obj);
     };
     // change obj to array
     const arr = Object.values(tableData);

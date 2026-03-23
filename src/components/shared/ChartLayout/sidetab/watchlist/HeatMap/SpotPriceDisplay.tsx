@@ -1,11 +1,11 @@
 import { RootState } from "@/lib/redux/Store";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import DisplayIncreDecrease from "../../../DisplayIncreDecrease/DisplayIncreDecrease";
 import { getBrokerCode } from "@/components/helpers";
 import config from "@/lib/config";
 
-const HeatMapHeader = ({ indexName }) => {
+const HeatMapHeader = ({ indexName }:any) => {
   const indexObjData: any = useSelector(
     (state: RootState) => state.strategy.indexObj
   );

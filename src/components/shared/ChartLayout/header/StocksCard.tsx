@@ -198,10 +198,10 @@ const StocksCard: React.FC<StocksCardProps> = ({
       if (remainingSlots > 0) {
         // Add default symbols that are not already pinned (ensure we don't exceed 3)
         const filteredDefaults = symbols.filter(
-          (sym) => !updatedIdentifiers.includes(sym.identifier),
+          (sym:any) => !updatedIdentifiers.includes(sym.identifier),
         );
         const filteredIdentifiers = identifier.filter(
-          (id) => !updatedIdentifiers.includes(id),
+          (id:any) => !updatedIdentifiers.includes(id),
         );
 
         // Add the remaining symbols to fill the slots (up to 3)

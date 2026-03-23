@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { sampleOrders } from "./sampleOrders";
-import { useDispatch } from "react-redux";
-import { addSymbol } from "@/lib/redux/slices/StrategySlice";
+
 
 /**
  * Formats current date same like broker

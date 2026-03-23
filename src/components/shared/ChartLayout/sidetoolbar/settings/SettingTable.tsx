@@ -1,6 +1,6 @@
 import React from "react";
 import ShowSettings from "./ShowSettings";
-import Showfunds from "../funds/Showfunds";
+
 
 interface SettingTableProps {
   settingsData: any;

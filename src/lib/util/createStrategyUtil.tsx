@@ -162,7 +162,7 @@ export const consolidateSimulatorData = (optionChain: Record<string, any>) => {
 export const combineOptionChainAndStrategyData = (
   strategyData: Strategy,
   optionChain: Record<string, any>,
-  strategyJourney: Record<string, any>
+
 ) => {
   const strategy: Strategy = {
     LONG: {

@@ -1,6 +1,5 @@
 // app/share/[slug]/page.tsx
 import CryptoJS from "crypto-js";
-import { Metadata } from "next";
 import ShareRedirectClient from "./client-redirect";
 
 const SECRET_KEY = "your-default-key";
@@ -28,7 +27,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Promise<Metadata> {
+}): Promise<any> {
   const data = decryptSlug(params.slug);
 
   if (!data) return {};

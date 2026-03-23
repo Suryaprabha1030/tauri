@@ -11,7 +11,7 @@ import StrategiesAnalyzer from "../Strategies Analyzer/strategiesAnalyzer";
 
 
 import UserProfile from "../userProfile/UserProfile";
-import FiiDiiData from "../../oiComponent/FiiDiiData/FiiDiiData";
+
 import FiiDiiAnalysis from "../../oiComponent/FiiDiiData/FiiDiiAnalysis";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
@@ -38,7 +38,7 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
   const [dragStartX, setDragStartX] = useState<number | null>(null);
   const location = useLocation();
   const pathName = location.pathname;
-  const [FiiDiiActiveButton, setFiiDiiActiveButton] = useState("summary");
+
   const currentSection = useSelector(
     (state: RootState) => state.common.currentSection,
   );
@@ -97,7 +97,6 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
         return (
           <Positions
             brokerCode={brokerCode}
-            apiKey={apiKey}
             leftWidth={leftWidth}
             setLeftWidth={setLeftWidth}
           />
@@ -175,7 +174,6 @@ const SideContentDisplay: React.FC<SideContentDisplayProps> = ({
             brokerCode={brokerCode}
             leftWidth={leftWidth}
             setLeftWidth={setLeftWidth}
-            apiKey={apiKey}
           />
         );
       case null:

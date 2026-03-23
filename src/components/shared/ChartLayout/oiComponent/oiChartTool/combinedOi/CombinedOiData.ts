@@ -20,7 +20,7 @@ const CombinedOiData = (data: any) => {
       };
     })
     .sort(
-      (a, b) =>
+      (a:any, b:any) =>
         new Date(Object.keys(a)[0]).getTime() -
         new Date(Object.keys(b)[0]).getTime()
     );
@@ -54,14 +54,14 @@ const CombinedOiData = (data: any) => {
   // strike transform
   const transformedStrike = transformStrikePriceData(data);
 
-  const filterdata = (arr1, arr2) => {
+  const filterdata = (arr1:any, arr2:any) => {
     const keySet1 = new Set(arr1?.map((data: any) => Object.keys(data)[0]));
 
-    const filter2 = arr2?.map((item) => ({
-      totalCeOi: item.totalCeOi.filter((dataObj) =>
+    const filter2 = arr2?.map((item:any) => ({
+      totalCeOi: item.totalCeOi.filter((dataObj:any) =>
         keySet1.has(Object.keys(dataObj)[0])
       ),
-      totalPeOi: item.totalPeOi.filter((dataObj) =>
+      totalPeOi: item.totalPeOi.filter((dataObj:any) =>
         keySet1.has(Object.keys(dataObj)[0])
       ),
       // keySet1.has(Object.keys(item)[0])
@@ -73,7 +73,7 @@ const CombinedOiData = (data: any) => {
       )
     );
 
-    const filter1 = arr1?.filter((item) => keySet2.has(Object.keys(item)[0]));
+    const filter1 = arr1?.filter((item:any) => keySet2.has(Object.keys(item)[0]));
 
     return {
       filterArr1: filter1,
@@ -135,10 +135,10 @@ const CombinedOiData = (data: any) => {
     lineSeries,
     ltp: ltp1,
     oiData: [
-      filterArr2?.map((i) =>
+      filterArr2?.map((i:any) =>
         i.totalCeOi.map((data: any) => Object.values(data)[0]).flat()
       ),
-      filterArr2?.map((i) =>
+      filterArr2?.map((i:any) =>
         i.totalPeOi.map((data: any) => Object.values(data)[0]).flat()
       ),
     ].flat(),

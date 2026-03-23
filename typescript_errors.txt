@@ -1,0 +1,1093 @@
+src/app/brokers/connect/[...connect]/page.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/app/brokers/connect/[...connect]/page.tsx(2,17): error TS6133: 'useContext' is declared but its value is never read.
+src/app/brokers/connect/[...connect]/page.tsx(3,33): error TS2307: Cannot find module 'next/navigation' or its corresponding type declarations.
+src/app/brokers/connect/[...connect]/page.tsx(5,1): error TS6133: 'AuthContext' is declared but its value is never read.
+src/app/brokers/connect/[...connect]/page.tsx(6,1): error TS6133: 'EnforceAuth' is declared but its value is never read.
+src/app/error.tsx(24,48): error TS2322: Type '{ src: string; alt: string; fill: true; className: string; }' is not assignable to type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+  Property 'fill' does not exist on type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+src/app/error.tsx(40,33): error TS2339: Property 'push' does not exist on type 'NavigateFunction'.
+src/app/global-error.tsx(8,3): error TS6133: 'error' is declared but its value is never read.
+src/app/global-error.tsx(21,52): error TS2322: Type '{ src: string; alt: string; fill: true; className: string; }' is not assignable to type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+  Property 'fill' does not exist on type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+src/app/google-auth/page.tsx(9,8): error TS6133: 'React' is declared but its value is never read.
+src/app/google-auth/page.tsx(9,28): error TS6133: 'useState' is declared but its value is never read.
+src/app/live/[id]/LiveLayoutWrapper.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(14,8): error TS6133: 'React' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(32,1): error TS6133: 'FiiDiiTab' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(33,1): error TS6133: 'FiiDiiData' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(67,21): error TS6133: 'setGroupName' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(91,22): error TS6133: 'setButtonName' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(130,10): error TS6133: 'FiiDiiActiveButton' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(130,30): error TS6133: 'setFiiDiiActiveButton' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(337,30): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(521,11): error TS6133: 'initialRadioLoad' is declared but its value is never read.
+src/app/live/[id]/oi/Oipage.tsx(528,32): error TS7006: Parameter 'setter' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(528,40): error TS7006: Parameter 'condition' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(531,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(539,38): error TS7006: Parameter 'setter' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(539,46): error TS7006: Parameter 'condition' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(542,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(551,34): error TS7006: Parameter 'setter' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(551,42): error TS7006: Parameter 'condition' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(555,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/app/live/[id]/oi/Oipage.tsx(558,15): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/app/live/[id]/psb/Psbpage.tsx(2,1): error TS6133: 'CommonLayOut' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(33,3): error TS6133: 'updateSymbolLtp' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(40,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(69,3): error TS6133: 'processAndDispatchLtpData' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(75,10): error TS6133: 'getBrokerCode' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(131,1): error TS6133: 'fetchMarketDays' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(136,17): error TS6133: 'setBrokerCode' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(137,5): error TS6133: 'show' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(137,11): error TS6133: 'setShow' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(138,5): error TS6133: 'showCreateWatchlist' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(138,26): error TS6133: 'setShowCreateWatchlist' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(139,5): error TS6133: 'symbols' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(139,14): error TS6133: 'setSymbols' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(140,5): error TS6133: 'selectedWatchlistId' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(140,26): error TS6133: 'setSelectedWatchlistId' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(163,9): error TS6133: 'ltpData' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(183,19): error TS6133: 'setPremium' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(223,9): error TS6133: 'data' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(234,28): error TS6133: 'setPayoffTableOiChg' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(236,9): error TS6133: 'Brokercode' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(237,9): error TS6133: 'brokerData' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(376,11): error TS6133: 'updateFutLtp' is declared but its value is never read.
+src/app/live/[id]/psb/Psbpage.tsx(444,31): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/app/live/[id]/psv/Psvpage.tsx(3,1): error TS6133: 'getBrokerName' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(4,1): error TS6133: 'CommonLayOut' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(9,1): error TS6133: 'UserBrokerRouterApi' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(10,1): error TS6133: 'baseConfig' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(11,1): error TS6133: 'setShowTvResolution' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(13,1): error TS6133: 'autoLogoutTokenRemove' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(14,1): error TS6133: 'brokerLogoutTokenRemove' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(15,1): error TS6133: 'validateBrokerCode' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(16,1): error TS6133: 'fetchMarketDays' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(22,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(24,1): error TS6192: All imports in import declaration are unused.
+src/app/live/[id]/psv/Psvpage.tsx(30,5): error TS6133: 'show' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(32,5): error TS6133: 'showCreateWatchlist' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(54,9): error TS6133: 'resolution' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(58,10): error TS6133: 'parentVisible' is declared but its value is never read.
+src/app/live/[id]/psv/Psvpage.tsx(63,9): error TS6133: 'dispatch' is declared but its value is never read.
+src/app/live/brokers-redirect/page.tsx(6,8): error TS6133: 'React' is declared but its value is never read.
+src/app/live/Livepage.tsx(6,1): error TS6133: 'StockInfoAPIApi' is declared but its value is never read.
+src/app/live/Livepage.tsx(7,1): error TS6133: 'baseConfig' is declared but its value is never read.
+src/app/live/Livepage.tsx(8,1): error TS6133: 'getMarketHolidays' is declared but its value is never read.
+src/app/live/Livepage.tsx(10,1): error TS6133: 'autoLogoutTokenRemove' is declared but its value is never read.
+src/app/live/Livepage.tsx(11,1): error TS6133: 'brokerLogoutTokenRemove' is declared but its value is never read.
+src/app/live/Livepage.tsx(15,8): error TS6133: 'React' is declared but its value is never read.
+src/app/login/page.tsx(3,20): error TS6133: 'useContext' is declared but its value is never read.
+src/app/login/page.tsx(3,32): error TS6133: 'use' is declared but its value is never read.
+src/app/login/page.tsx(4,33): error TS2307: Cannot find module 'next/navigation' or its corresponding type declarations.
+src/app/login/page.tsx(6,28): error TS6133: 'UserApi' is declared but its value is never read.
+src/app/login/page.tsx(6,37): error TS6133: 'UserBrokerRouterApi' is declared but its value is never read.
+src/app/login/page.tsx(177,12): error TS7006: Parameter 'broker' implicitly has an 'any' type.
+src/app/need-confirmation/page.tsx(3,10): error TS6133: 'use' is declared but its value is never read.
+src/app/need-confirmation/page.tsx(3,38): error TS6133: 'useState' is declared but its value is never read.
+src/app/need-confirmation/page.tsx(10,1): error TS6133: 'toast' is declared but its value is never read.
+src/app/not-found.tsx(3,1): error TS6133: 'useNavigate' is declared but its value is never read.
+src/app/not-found.tsx(4,1): error TS6192: All imports in import declaration are unused.
+src/app/not-found.tsx(5,1): error TS6133: 'toast' is declared but its value is never read.
+src/app/not-found.tsx(12,47): error TS2322: Type '{ src: string; alt: string; fill: true; className: string; }' is not assignable to type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+  Property 'fill' does not exist on type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+src/app/profile/page.tsx(2,23): error TS2307: Cannot find module '@/components/layout/AppLayout' or its corresponding type declarations.
+src/app/profile/page.tsx(13,1): error TS6133: 'ToolTip' is declared but its value is never read.
+src/app/profile/page.tsx(14,1): error TS6133: 'Tooltip' is declared but its value is never read.
+src/app/share/[slug]/client-redirect.tsx(7,22): error TS7016: Could not find a declaration file for module 'crypto-js'. 'D:/tauri-app/tauri/node_modules/crypto-js/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/crypto-js` if it exists or add a new declaration (.d.ts) file containing `declare module 'crypto-js';`
+src/app/share/[slug]/client-redirect.tsx(37,16): error TS2339: Property 'replace' does not exist on type 'NavigateFunction'.
+src/app/share/[slug]/page.tsx(2,22): error TS7016: Could not find a declaration file for module 'crypto-js'. 'D:/tauri-app/tauri/node_modules/crypto-js/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/crypto-js` if it exists or add a new declaration (.d.ts) file containing `declare module 'crypto-js';`
+src/app/share/[slug]/page.tsx(3,26): error TS2307: Cannot find module 'next' or its corresponding type declarations.
+src/app/signup/page.tsx(12,1): error TS6133: 'SigninWithGoogle' is declared but its value is never read.
+src/app/signup/SignInWithGoogle.tsx(1,1): error TS6133: 'Link' is declared but its value is never read.
+src/app/signup/SignInWithGoogle.tsx(1,18): error TS2307: Cannot find module 'next/link' or its corresponding type declarations.
+src/app/signup_confirmation/page.tsx(5,8): error TS6133: 'React' is declared but its value is never read.
+src/app/testlogin/page.tsx(34,10): error TS6133: 'displayBroker' is declared but its value is never read.
+src/app/testlogin/page.tsx(34,25): error TS6133: 'setDisplayBroker' is declared but its value is never read.
+src/app/testlogin/page.tsx(36,9): error TS6133: 'hostname' is declared but its value is never read.
+src/app/testlogin/page.tsx(37,10): error TS6133: 'hasHostname' is declared but its value is never read.
+src/app/testlogin/page.tsx(37,23): error TS6133: 'setHasHostname' is declared but its value is never read.
+src/app/testlogin/page.tsx(207,12): error TS7006: Parameter 'broker' implicitly has an 'any' type.
+src/components/connectpage/connectbroker.tsx(25,9): error TS6133: 'dispatch' is declared but its value is never read.
+src/components/connectpage/connectbroker.tsx(30,9): error TS6133: 'url' is declared but its value is never read.
+src/components/LoginPopup/BrokerLoginContent.tsx(2,17): error TS6133: 'useState' is declared but its value is never read.
+src/components/NimaAI/AIChat.ts(2,22): error TS6133: 'nimaConfig' is declared but its value is never read.
+src/components/NimaAI/AIChat.ts(7,3): error TS6133: 'setScreenerQuery' is declared but its value is never read.
+src/components/NimaAI/AIChat.ts(14,3): error TS6133: 'getIndexQuery' is declared but its value is never read.
+src/components/NimaAI/AIChat.ts(16,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/NimaAI/AIChat.ts(19,22): error TS7016: Could not find a declaration file for module 'crypto-js'. 'D:/tauri-app/tauri/node_modules/crypto-js/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/crypto-js` if it exists or add a new declaration (.d.ts) file containing `declare module 'crypto-js';`
+src/components/NimaAI/AIChat.ts(212,20): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(234,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(236,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(374,16): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(424,20): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(467,26): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(470,26): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(488,28): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(513,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(522,3): error TS6133: 'brokerCode' is declared but its value is never read.
+src/components/NimaAI/AIChat.ts(522,3): error TS7006: Parameter 'brokerCode' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(523,3): error TS7006: Parameter 'identifiersList' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(524,3): error TS7006: Parameter 'dispatch' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(584,3): error TS7006: Parameter 'parentRef' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(614,3): error TS7006: Parameter 'indexName' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(615,3): error TS7006: Parameter 'expiryDate' implicitly has an 'any' type.
+src/components/NimaAI/AIChat.ts(685,6): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/NimaAI/AIResponseTable.tsx(62,3): error TS6133: 'setTableIdentifier' is declared but its value is never read.
+src/components/NimaAI/AIResponseTable.tsx(71,10): error TS6133: 'selectedIdentifier' is declared but its value is never read.
+src/components/NimaAI/ChatKit.tsx(14,3): error TS6133: 'encryptChatLimitData' is declared but its value is never read.
+src/components/NimaAI/ChatKit.tsx(16,3): error TS6133: 'getAllIndicesWithExpiryDetails' is declared but its value is never read.
+src/components/NimaAI/ChatKit.tsx(26,3): error TS6133: 'getAllIndicesDataWithExpiry' is declared but its value is never read.
+src/components/NimaAI/ChatKit.tsx(53,10): error TS6133: 'previousChats' is declared but its value is never read.
+src/components/NimaAI/FormatResponse.tsx(204,8): error TS7006: Parameter 'img' implicitly has an 'any' type.
+src/components/NimaAI/Nimabutton.tsx(3,1): error TS6133: 'React' is declared but its value is never read.
+src/components/NimaAI/Nimabutton.tsx(6,38): error TS7031: Binding element 'onClick' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(8,3): error TS7031: Binding element 'isChatMode' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(9,3): error TS7031: Binding element 'authSuccess' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(10,3): error TS7031: Binding element 'chatlimit' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(11,3): error TS7031: Binding element 'setShowLoginPopup' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(12,3): error TS7031: Binding element 'handleGenerate' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(13,3): error TS7031: Binding element 'STORAGE_KEY' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(14,3): error TS7031: Binding element 'setMessages' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(15,3): error TS7031: Binding element 'setChatLimit' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(16,3): error TS7031: Binding element 'setLoading' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(17,3): error TS7031: Binding element 'setQuery' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(18,3): error TS7031: Binding element 'setPreviousChats' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(19,3): error TS7031: Binding element 'brokerCode' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(20,3): error TS7031: Binding element 'loading' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(21,3): error TS7031: Binding element 'query' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(22,3): error TS7031: Binding element 'inputRef' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(23,3): error TS7031: Binding element 'setShowSuggestions' implicitly has an 'any' type.
+src/components/NimaAI/SearchBar.tsx(24,3): error TS7031: Binding element 'streamingAssistantRef' implicitly has an 'any' type.
+src/components/PlaceOrder/PlaceOrder.tsx(13,1): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrder.tsx(36,10): error TS6133: 'width' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrder.tsx(36,17): error TS6133: 'setWidth' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrder.tsx(45,24): error TS6133: 'event' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrder.tsx(149,27): error TS6133: 'event' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrder.tsx(251,16): error TS6133: 'e' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrderHeader.tsx(18,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/PlaceOrder/PlaceOrderHeader.tsx(48,3): error TS6133: 'marginAvail' is declared but its value is never read.
+src/components/PlaceOrder/StockRow.tsx(1,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/PlaceOrder/StockRow.tsx(22,3): error TS6133: 'index' is declared but its value is never read.
+src/components/publisherjs/SmartAPI.tsx(1,47): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/alertToast.tsx(4,10): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/alertToast.tsx(12,11): error TS6133: 'timeout' is declared but its value is never read.
+src/components/shared/ChartDropDown.tsx(20,3): error TS6133: 'setAnnotationsVisible' is declared but its value is never read.
+src/components/shared/ChartLayout/chartTool/ChartSettings.tsx(1,10): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/chartTool/LiveChart.tsx(3,10): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/chartTool/LiveChart.tsx(3,30): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/CommonLayOut.tsx(23,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/DisplayIncreDecrease/DisplayIncreDecrease.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/displayIndexChanger/DisplayIndexChanger.tsx(1,43): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/displayIndexChanger/DisplayIndexChanger.tsx(6,1): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/displayIndexChanger/DisplayIndexChanger.tsx(29,9): error TS6133: 'dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddGroupSymbol.tsx(8,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddGroupSymbol.tsx(12,3): error TS7031: Binding element 'setGrpSymbols' implicitly has an 'any' type.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddGroupSymbol.tsx(13,3): error TS7031: Binding element 'selected' implicitly has an 'any' type.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddGroupSymbol.tsx(14,3): error TS7031: Binding element 'setSelected' implicitly has an 'any' type.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddGroupSymbol.tsx(15,3): error TS7031: Binding element 'setSearchSymbol' implicitly has an 'any' type.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/Addsymbol.tsx(61,9): error TS6133: 'searchRef' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/Addsymbol.tsx(126,13): error TS6133: 'res' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/Addsymbol.tsx(133,25): error TS7006: Parameter 'symbol' implicitly has an 'any' type.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddSymbolTable.tsx(32,26): error TS6133: 'index' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/addsymbol/AddSymbolTable.tsx(52,29): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/shared/ChartLayout/flotingComponent/createWatchlist/CreateWatchlist.tsx(6,51): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/listOfWatchlist/ListOfWatchList.tsx(6,10): error TS6133: 'useDispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/listOfWatchlist/ListOfWatchList.tsx(38,9): error TS6133: 'getPrimaryRefreshData' is declared but its value is never read.
+src/components/shared/ChartLayout/flotingComponent/listOfWatchlist/ListOfWatchList.tsx(101,14): error TS6133: 'res' is declared but its value is never read.
+src/components/shared/ChartLayout/header/ChartHeader.tsx(5,3): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/header/ChartHeader.tsx(52,1): error TS6133: 'tvWidget' is declared but its value is never read.
+src/components/shared/ChartLayout/header/ChartHeader.tsx(53,1): error TS6133: 'holdings' is declared but its value is never read.
+src/components/shared/ChartLayout/header/ChartHeader.tsx(124,10): error TS7006: Parameter 'identifier' implicitly has an 'any' type.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(6,1): error TS6133: 'tvWidget' is declared but its value is never read.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(11,21): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(19,17): error TS6133: 'Dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(19,38): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(62,9): error TS6133: 'router' is declared but its value is never read.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(67,8): error TS7006: Parameter 'position' implicitly has an 'any' type.
+src/components/shared/ChartLayout/header/HoldingsPositionsCard.tsx(185,34): error TS7006: Parameter 'stock' implicitly has an 'any' type.
+src/components/shared/ChartLayout/header/MenuDropDown.tsx(2,3): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/header/StocksCard.tsx(1,10): error TS6133: 'UserBrokerRouterApi' is declared but its value is never read.
+src/components/shared/ChartLayout/header/StocksCard.tsx(3,21): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/header/StocksCard.tsx(31,16): error TS6133: 'setData' is declared but its value is never read.
+src/components/shared/ChartLayout/header/StocksCard.tsx(33,10): error TS6133: 'identifiers' is declared but its value is never read.
+src/components/shared/ChartLayout/header/StocksCard.tsx(201,12): error TS7006: Parameter 'sym' implicitly has an 'any' type.
+src/components/shared/ChartLayout/header/SwitchBroker.tsx(14,3): error TS6133: 'getUpdatedTargetltpData' is declared but its value is never read.
+src/components/shared/ChartLayout/header/SwitchBroker.tsx(49,3): error TS6133: 'addCartSuccess' is declared but its value is never read.
+src/components/shared/ChartLayout/header/SwitchBroker.tsx(51,3): error TS6133: 'indicesAlldata' is declared but its value is never read.
+src/components/shared/ChartLayout/header/SwitchBroker.tsx(77,3): error TS6133: 'setBrokerCode' is declared but its value is never read.
+src/components/shared/ChartLayout/header/SwitchBroker.tsx(87,9): error TS6133: 'showSwitchbroker' is declared but its value is never read.
+src/components/shared/ChartLayout/oiAlert/OiAlert.tsx(1,28): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/oiAlert/OiAlert.tsx(1,36): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/CombinedOiExpiry.tsx(7,3): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/CombinedOiExpiry.tsx(8,3): error TS6133: 'useLayoutEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/CombinedOiExpiry.tsx(29,9): error TS6133: 'slicedDates' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/CombinedOiExpiry.tsx(33,34): error TS6133: 'index' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/CombinedOiExpiry.tsx(44,36): error TS6133: 'index' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/cashMarket/CashMaketTable.tsx(28,51): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/cashMarket/CashMaketTable.tsx(108,22): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiAnalysis.tsx(7,1): error TS6133: 'ShowStrategiesPopup' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiAnalysis.tsx(11,1): error TS6133: 'FiiDiiTabDropDown' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiAnalysis.tsx(12,1): error TS6133: 'Headings' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiAnalysis.tsx(24,9): error TS6133: 'dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiData.tsx(18,1): error TS6133: 'getMonthsFromMay2025' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiData.tsx(19,1): error TS6133: 'MonthSelector' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiData.tsx(33,3): error TS6133: 'setPayLoadDate' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiFno/FiiDiiFnoTab.tsx(1,17): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiFno/fnoChart/BuySellFuture/BuySellFutureData.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiFno/fnoChart/OiIndexFuture/OiIndexFutureData.ts(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiFno/fnoChart/OiIndexFuture/OiIndexFutureOptions.ts(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiFno/fnoChart/OiIndexOptions/OIIndexOptionsData.ts(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiHistory/FiiDiiHistory.tsx(95,24): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiLegend/FutureOptionsBuySellLegend,.tsx(12,9): error TS6133: 'newClasses' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(25,10): error TS6133: 'openKey' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(37,12): error TS6133: 'getSentimentLabel' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(37,30): error TS7006: Parameter 'netOi' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(37,37): error TS7006: Parameter 'percentChange' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(61,9): error TS6133: 'toggleOpen' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(61,23): error TS7006: Parameter 'key' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(142,29): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(169,15): error TS7053: Element implicitly has an 'any' type because expression of type 'string | 0' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(171,30): error TS7053: Element implicitly has an 'any' type because expression of type 'string | 0' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(180,29): error TS6133: 'sentiment' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiSummary/FiiDiiSummary.tsx(238,37): error TS6133: 'optionSentiment' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiTabDropDown.tsx(3,30): error TS7031: Binding element 'buttons' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiTabDropDown.tsx(3,39): error TS7031: Binding element 'currentSection' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/FiiDiiTabDropDown.tsx(3,55): error TS7031: Binding element 'onButtonClick' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/MonthSelector.tsx(35,32): error TS7006: Parameter 'input' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/FiiDiiData/MonthSelector.tsx(67,27): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiChangeButtons.tsx(1,36): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiChart.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiChart.tsx(4,1): error TS6133: 'CombinedOiOptions' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(23,8): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(23,11): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(57,23): error TS7006: Parameter 'arr1' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(57,29): error TS7006: Parameter 'arr2' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(60,32): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(61,41): error TS7006: Parameter 'dataObj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(64,41): error TS7006: Parameter 'dataObj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(76,35): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(138,24): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/combinedOi/CombinedOiData.ts(141,24): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(7,25): error TS7006: Parameter 'data' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(14,11): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(16,8): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(16,11): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(21,41): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(24,13): error TS7006: Parameter 'curr' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(26,10): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(26,13): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(32,31): error TS7006: Parameter 'arr1' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(32,37): error TS7006: Parameter 'arr2' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(33,39): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(35,36): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(37,31): error TS7006: Parameter 'dataObj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(41,29): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(42,24): error TS7006: Parameter 'dataObj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(47,34): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(59,34): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(61,37): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(63,26): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(76,41): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(84,32): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiChartData.ts(85,22): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiOi.tsx(2,1): error TS6133: 'ApexCharts' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiOiChart.tsx(30,9): error TS6133: 'oiIndexData' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/multiOi/MultiOiCustomLegend.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/Customlegend.tsx(3,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/OiChangeChart.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/OiChangeChartOptions.ts(135,18): error TS7031: Binding element 'series' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/OiChangeChartOptions.ts(135,26): error TS6133: 'seriesIndex' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/OiChangeChartOptions.ts(135,26): error TS7031: Binding element 'seriesIndex' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/OiChangeChartOptions.ts(135,39): error TS7031: Binding element 'dataPointIndex' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/oiChangeChart/OiChangeChartOptions.ts(135,55): error TS7031: Binding element 'w' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/OiIndex.tsx(59,3): error TS6133: 'IconPadding' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/OiIndex.tsx(101,38): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/OiIndex.tsx(140,47): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/openInterest/OpenIntChart.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/openInterestChange/OpenIntChangeChart.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/openInterestChange/OpenIntChangeChart.tsx(2,1): error TS6133: 'ApexCharts' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StaddleStrangleChart.tsx(1,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StaddleStrangleChart.tsx(13,27): error TS6133: 'setUniqueSeries' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(3,3): error TS6133: 'extractSumFalseData' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(16,12): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(18,8): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(18,11): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(26,16): error TS7006: Parameter 'curr' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(28,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(28,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(33,16): error TS7006: Parameter 'curr' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(35,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(35,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(54,16): error TS7006: Parameter 'curr' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(56,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StarddleStrangleData.ts(56,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOiChart.tsx(51,10): error TS6133: 'uniqueSeries' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(8,3): error TS6133: 'maxPainData' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(10,9): error TS6133: 'pcrValues' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(11,25): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(11,46): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(16,24): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(16,46): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(18,9): error TS6133: 'sumLtpValues' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(19,24): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(19,48): error TS7006: Parameter 'obj' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiChartTool/straddleStrangle/StraddleStrangleOptions.ts(22,9): error TS6133: 'padding' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiExpiry.tsx(4,54): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiExpiry.tsx(59,20): error TS7006: Parameter 'date' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OiExpiry.tsx(59,26): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OiExpiry.tsx(59,33): error TS7006: Parameter 'arr' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/CompareOi.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/matrixDropDown.tsx(1,33): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/matrixDropDown.tsx(20,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/OiMatrix.tsx(17,21): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/OiMatrix.tsx(328,35): error TS6133: 'index' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/OiMatrix.tsx(348,37): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+src/components/shared/ChartLayout/oiComponent/oiMatrix/OiMatrix.tsx(358,37): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(17,3): error TS6133: 'enrichFutures' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(18,3): error TS6133: 'enrichOptionChain' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(27,1): error TS6133: 'OIAlldata' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(45,1): error TS6133: 'setIndexFirstFutData' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(133,3): error TS6133: 'querySpotPrice' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(155,9): error TS6133: 'indicesData' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(164,9): error TS6133: 'rawApiResponse' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(296,11): error TS6133: 'initialRadioLoad' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(306,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(317,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(330,17): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(333,15): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(485,34): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(536,21): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(549,21): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(552,19): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(629,5): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(681,5): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OITable.tsx(961,23): error TS6133: 'keys' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiTabName.tsx(1,1): error TS6133: 'OIAlldata' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiTabName.tsx(63,24): error TS6133: 'setTabSwitching' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiTimeRange.tsx(56,9): error TS6133: 'isInitialRender' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiTimeRange.tsx(103,11): error TS6133: 'timeoutId' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/OiTimeRange.tsx(114,39): error TS7006: Parameter 'utcMinutes' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OIUtil.ts(253,17): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OIUtil.ts(261,25): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OIUtil.ts(269,17): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/OIUtil.ts(272,25): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/oiComponent/StraddleStrangleButton.tsx(1,27): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/SumButton.tsx(2,43): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/TimeFilter.tsx(13,3): error TS6133: 'showMultiOi' is declared but its value is never read.
+src/components/shared/ChartLayout/oiComponent/TimeFilter.tsx(27,9): error TS6133: 'toggleButtonName' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CandleIcon.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CandleIcon.tsx(3,38): error TS7031: Binding element 'className' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/CandleIcon.tsx(3,49): error TS7031: Binding element 'onClick' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/ChartCards.tsx(100,33): error TS7006: Parameter 'profit' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/ChartCards.tsx(100,41): error TS7006: Parameter 'funds' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/chartCards/Cards.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(5,3): error TS6133: 'enrichFutures' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(32,3): error TS6133: 'addCartSuccess' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(35,3): error TS6133: 'indicesAlldata' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(37,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(51,3): error TS6133: 'updateSymbolLtp' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(173,9): error TS6133: 'indicesData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(193,9): error TS6133: 'expandTable' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(208,9): error TS6133: 'isInitialRender' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(268,30): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(406,19): error TS6133: 'IndexName' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(434,34): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(457,13): error TS6133: 'spotPriceRoundOff' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(615,56): error TS6133: 'index' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(736,15): error TS6133: 'data' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(1301,50): error TS7053: Element implicitly has an 'any' type because expression of type '`${string}#CE`' can't be used to index type '{}'.
+src/components/shared/ChartLayout/optionFutures/CommonOptionChain.tsx(1443,50): error TS7053: Element implicitly has an 'any' type because expression of type '`${string}#PE`' can't be used to index type '{}'.
+src/components/shared/ChartLayout/optionFutures/ExpirySlider.tsx(116,11): error TS6133: 'hours' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/ExpirySlider.tsx(117,11): error TS6133: 'minutes' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/FutureStocks.tsx(49,9): error TS6133: 'indexObjData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/IndexChanger.tsx(73,10): error TS6133: 'filteredData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/IndexChanger.tsx(73,24): error TS6133: 'setFilteredData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/IndexChanger.tsx(82,9): error TS6133: 'tempValue' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/IndexChanger.tsx(91,9): error TS6133: 'indexData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/IndexChanger.tsx(138,38): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/IndexChanger.tsx(185,47): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/liveOptionChain/BuySellButton.tsx(36,3): error TS6133: 'optionType' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/liveOptionChain/HeaderRow.tsx(3,28): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/liveOptionChain/OiWithPercentage.tsx(16,3): error TS6133: 'expandOptTable' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/MaxPainStrike.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyLegTable.tsx(76,3): error TS6133: 'apiKey' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyLegTable.tsx(109,10): error TS6133: 'buttonId' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyLegTable.tsx(110,10): error TS6133: 'smartApi' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyLegTable.tsx(296,17): error TS6133: 'fixedData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyLegTable.tsx(341,18): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeLots.tsx(9,3): error TS7031: Binding element 'option' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeLots.tsx(10,3): error TS7031: Binding element 'setCopiedData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeLots.tsx(11,3): error TS7031: Binding element 'initialLotSizes' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeLots.tsx(12,3): error TS7031: Binding element 'copiedData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeLots.tsx(13,3): error TS7031: Binding element 'keyData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeLots.tsx(33,15): error TS6133: 'initialLotSize' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeOptionType.tsx(35,11): error TS6133: 'strikePrice' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeOptionType.tsx(42,16): error TS2550: Property 'hasOwn' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeTargetPrice.tsx(52,24): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeTargetPrice.tsx(68,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/ChangeTargetPrice.tsx(69,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/IVCounter.tsx(3,1): error TS6192: All imports in import declaration are unused.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/IVCounter.tsx(6,22): error TS7031: Binding element 'setCopiedData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/IVCounter.tsx(6,37): error TS7031: Binding element 'keyData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/IVCounter.tsx(6,46): error TS7031: Binding element 'option' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/Multiplier.tsx(1,17): error TS6133: 'Dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/Multiplier.tsx(1,27): error TS6133: 'SetStateAction' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/NewStrategyDisplay.tsx(1,43): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/NewStrategyDisplay.tsx(1,54): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/NewStrategyDisplay.tsx(55,9): error TS6133: 'webSocketDataRead' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/NewStrategyFooter.tsx(103,14): error TS6133: 'res' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/NewStrategyTable/NewStrategyFooter.tsx(106,11): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/legUtil.tsx(16,12): error TS6133: 'rest' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/legUtil.tsx(65,16): error TS6133: 'strikePrice' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/legUtil.tsx(384,9): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/legUtil.tsx(419,53): error TS6133: 'rest' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/newStrategyUtil.tsx(47,9): error TS6133: 'partsz' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/strategyUtil.tsx(31,12): error TS6133: 'strikePrice' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/strategyUtil.tsx(77,7): error TS6133: 'keys' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/optionFuturesUtil/strategyUtil.tsx(164,12): error TS6133: 'strikePrice' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(6,3): error TS7031: Binding element 'captureRef' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(7,3): error TS7031: Binding element 'calcData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(8,3): error TS7031: Binding element 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(9,3): error TS7031: Binding element 'spotPriceInfo' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(10,3): error TS7031: Binding element 'projectedPnl' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(11,3): error TS7031: Binding element 'targetSpotPrice' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(12,3): error TS7031: Binding element 'oiData' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffScreenshot.tsx(13,3): error TS7031: Binding element 'payoffExpiryDate' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PayoffTable.tsx(31,10): error TS6133: 'showOiChange' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PayoffTable.tsx(31,24): error TS6133: 'setShowOiChange' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PayoffTable.tsx(87,5): error TS6133: 'oiObject' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PnlTable.tsx(2,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(23,1): error TS6133: 'formatExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(26,1): error TS6133: 'setPositions' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(78,10): error TS6133: 'smartApi' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(79,10): error TS6133: 'buttonId' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(89,9): error TS6133: 'hideButton' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(98,13): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(99,28): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(132,21): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(136,11): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(279,9): error TS6133: 'stocks' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(281,40): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(350,46): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PositionsTable.tsx(364,31): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/PriceSlider.tsx(1,17): error TS6133: 'use' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PriceSlider.tsx(35,9): error TS6133: 'handleChange' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/PriceSlider.tsx(90,9): error TS6133: 'roundUpToNearest10' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/RollDropDown.tsx(13,3): error TS6133: 'direction' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/RollUpDown.tsx(7,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/RollUpDown.tsx(15,23): error TS7031: Binding element 'query' implicitly has an 'any' type.
+src/components/shared/ChartLayout/optionFutures/RollUpDown.tsx(96,11): error TS6133: 'boundary' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/RollUpDown.tsx(158,14): error TS7053: Element implicitly has an 'any' type because expression of type '`${any}.0#${any}#${any}`' can't be used to index type '{}'.
+src/components/shared/ChartLayout/optionFutures/RollUpDown.tsx(175,46): error TS6133: 'i' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/Sandbox/ListAllSandbox.tsx(130,15): error TS6133: 'names' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/Sandbox/StrategyDetailTable.tsx(66,10): error TS6133: 'hoverStrategy' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/Sandbox/StrategyDetailTable.tsx(66,25): error TS6133: 'setHoverStrategy' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/Sandbox/StrategyDetailTable.tsx(288,9): error TS6133: 'AddToStrategy' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(10,1): error TS6133: 'getDaysBetween' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(21,3): error TS6133: 'getDaysToExpiry' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(32,24): error TS7016: Could not find a declaration file for module 'dom-to-image'. 'D:/tauri-app/tauri/node_modules/dom-to-image/src/dom-to-image.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/dom-to-image` if it exists or add a new declaration (.d.ts) file containing `declare module 'dom-to-image';`
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(71,3): error TS6133: 'setExpiryPayload' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(80,24): error TS6133: 'setSelectedData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(122,9): error TS6133: 'noOiData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(125,9): error TS6133: 'oiPercent' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(129,9): error TS6133: 'PayoffTableOiChg' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(144,9): error TS6133: 'minExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(153,9): error TS6133: 'indexObjData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/StrategyChart.tsx(156,9): error TS6133: 'webSocketDataRead' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/SwitchTab.tsx(19,3): error TS6133: 'getDaysToExpiry' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/SwitchTab.tsx(44,3): error TS6133: 'setpositionTableData' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/SwitchTab.tsx(87,9): error TS6133: 'showTable' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/ToggleChartAndOptButton.tsx(3,1): error TS6133: 'minimizeStatus' is declared but its value is never read.
+src/components/shared/ChartLayout/optionFutures/ToggleChartAndOptButton.tsx(4,1): error TS6133: 'useDispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(2,3): error TS6133: 'calculateMarginData' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(23,1): error TS6133: 'analyseProfitAndLoss' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(28,3): error TS6133: 'exchange' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(29,3): error TS6133: 'indexName' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(34,3): error TS6133: 'dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(35,3): error TS6133: 'router' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(39,7): error TS7034: Variable 'target_pnl_table' implicitly has type 'any[]' in some locations where its type cannot be determined.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(71,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(80,11): error TS6133: 'data2' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(86,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(105,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(113,11): error TS6133: 'data2' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(118,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(137,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(145,11): error TS6133: 'data2' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(150,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(169,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(177,11): error TS6133: 'data2' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(182,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(196,11): error TS6133: 'data' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(201,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(215,11): error TS6133: 'data' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(220,7): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(251,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(251,18): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ result_df1: string; result_df2: string; spot_price_df1: string; spot_price_df2: string; strike_prices: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ result_df1: string; result_df2: string; spot_price_df1: string; spot_price_df2: string; strike_prices: string; }'.
+src/components/shared/ChartLayout/payOffChartCalculation/MultiLegCalc.tsx(266,5): error TS7005: Variable 'target_pnl_table' implicitly has an 'any[]' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/calculateCommon.ts(78,11): error TS7006: Parameter 'item1' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/calculateCommon.ts(79,32): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/calculateCommon.ts(84,33): error TS7015: Element implicitly has an 'any' type because index expression is not of type 'number'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/calculateCommon.ts(88,33): error TS7015: Element implicitly has an 'any' type because index expression is not of type 'number'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/CalculatePrice.ts(46,10): error TS6133: 'calculateFutPrice' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/dataFrame.ts(53,3): error TS6133: 'strikePrice' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/dataFrame.ts(54,3): error TS6133: 'premium' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/dataFrame.ts(103,26): error TS6133: 'dfNo' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/dataFrame.ts(104,17): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/dataFrame.ts(104,22): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(4,3): error TS6133: 'getCurrentFormattedDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(11,7): error TS6133: 'impliedVolatility' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(238,28): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '0' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(239,30): error TS7053: Element implicitly has an 'any' type because expression of type '2' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '2' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(385,28): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '0' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(386,30): error TS7053: Element implicitly has an 'any' type because expression of type '2' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '2' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(596,3): error TS6133: 'recentExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(598,3): error TS6133: 'target_pnl_table' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(608,7): error TS6133: 'identifier' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(614,7): error TS6133: 'target_ltp' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(621,11): error TS6133: 'targetPremiumRound' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(690,3): error TS6133: 'target_spot_price_round_off' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(691,3): error TS6133: 'recentExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(692,3): error TS6133: 'daysToexpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(693,3): error TS6133: 'target_pnl_table' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(703,7): error TS6133: 'identifier' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(708,15): error TS6133: 'expiry_date' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(709,7): error TS6133: 'target_ltp' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(774,3): error TS6133: 'recentExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(776,3): error TS6133: 'target_pnl_table' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(778,3): error TS6133: 'pay_off_data' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(779,3): error TS6133: 'spotPrice' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(781,3): error TS6133: 'spotPriceRoundoff' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(786,7): error TS6133: 'identifier' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(832,26): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '0' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(833,28): error TS7053: Element implicitly has an 'any' type because expression of type '2' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '2' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(856,9): error TS6133: 'premium_value_range' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(872,3): error TS6133: 'recentExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(874,3): error TS6133: 'target_pnl_table' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(876,3): error TS6133: 'pay_off_data' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(879,3): error TS6133: 'spotPriceRoundoff' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(884,7): error TS6133: 'identifier' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(929,26): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '0' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(930,28): error TS7053: Element implicitly has an 'any' type because expression of type '2' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '2' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(953,9): error TS6133: 'premium_value_range' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(968,3): error TS6133: 'recentExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(970,3): error TS6133: 'target_pnl_table' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(972,3): error TS6133: 'pay_off_data' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(975,3): error TS6133: 'spotPriceRoundoff' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(980,7): error TS6133: 'identifier' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1048,9): error TS6133: 'premium_value_range' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1064,3): error TS6133: 'recentExpiryDate' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1066,3): error TS6133: 'target_pnl_table' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1068,3): error TS6133: 'pay_off_data' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1071,3): error TS6133: 'spotPriceRoundoff' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1076,7): error TS6133: 'identifier' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1122,26): error TS7053: Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '0' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1123,28): error TS7053: Element implicitly has an 'any' type because expression of type '2' can't be used to index type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+  Property '2' does not exist on type 'string | number | boolean | string[] | number[] | boolean[] | (string | number | boolean)[]'.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/legCalculation.ts(1146,9): error TS6133: 'premium_value_range' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/marginCalculated.ts(11,25): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/netPremium.ts(182,37): error TS7006: Parameter 'total' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/netPremium.ts(182,44): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/netPremium.ts(183,20): error TS6133: 'greeks' is declared but its value is never read.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/profitLossCalculation.tsx(37,36): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/profitLossCalculation.tsx(38,36): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/profitLossCalculation.tsx(170,35): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/profitLossCalculation.tsx(170,38): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/profitLossCalculation.tsx(173,39): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/shared/ChartLayout/payOffChartCalculation/payOffChartUtils/profitLossCalculation.tsx(173,42): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/shared/ChartLayout/PositionSharing/CalenderView.tsx(100,15): error TS6133: 'lastDay' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionHistoryDisplay.tsx(2,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionHistoryDisplay.tsx(25,6): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/components/shared/ChartLayout/PositionSharing/PositionsHistory.tsx(1,17): error TS6133: 'Dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionsHistory.tsx(1,27): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionsSharing.tsx(11,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionsSharing.tsx(18,3): error TS6133: 'saveLastClickDate' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionsSharing.tsx(46,10): error TS6133: 'lastClickDate' is declared but its value is never read.
+src/components/shared/ChartLayout/PositionSharing/PositionsSharing.tsx(52,13): error TS6133: 'key' is declared but its value is never read.
+src/components/shared/ChartLayout/resetButton/ResetButton.tsx(1,17): error TS6133: 'Dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/resetButton/ResetButton.tsx(1,27): error TS6133: 'SetStateAction' is declared but its value is never read.
+src/components/shared/ChartLayout/resetButton/ResetButton.tsx(1,43): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/News/GetSymbolNews.tsx(41,10): error TS6133: 'intervalId' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/News/GetSymbolNews.tsx(42,25): error TS6133: 'setActiveFilters' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/News/MultiSymbolNews.tsx(21,7): error TS6133: 'formatDateOrTimeAgo' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/News/NewsFilter.tsx(1,1): error TS6133: 'useRouter' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/News/NewsFilter.tsx(1,27): error TS2307: Cannot find module 'next/navigation' or its corresponding type declarations.
+src/components/shared/ChartLayout/sidetab/News/NewsFilter.tsx(2,54): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/Notes.tsx(20,10): error TS6133: 'notes' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/Notes.tsx(20,17): error TS6133: 'setNotes' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/Notes.tsx(23,39): error TS6133: 'id' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/NotesList.tsx(7,1): error TS6133: 'LoadingComponent' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/NotesList.tsx(84,14): error TS6133: 'res' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/notesUtil.tsx(1,1): error TS6133: 'NotesRouterApi' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/notes/notesUtil.tsx(2,1): error TS6133: 'baseConfig' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/Pivots/Pivots.tsx(42,9): error TS6133: 'handleTimeframeClick' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/Sidetab.tsx(162,13): error TS6133: 'tv' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/TechnicalAnalysis/GaugeChart.tsx(38,10): error TS6133: 'hover' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/TechnicalAnalysis/Technicals.tsx(45,9): error TS6133: 'handleTimeframeClick' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/TechnicalAnalysis/TechnicalsTable.tsx(3,3): error TS6133: 'numericalSort' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/TechnicalAnalysis/TechnicalsTable.tsx(7,1): error TS6133: 'PivotTable' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/TechnicalAnalysis/TechnicalsTable.tsx(48,9): error TS6133: 'requestSort' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/AddToWatchlist.tsx(52,13): error TS6133: 'res' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/Heatmap.tsx(39,12): error TS6133: 'NoOiData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/Heatmap.tsx(39,22): error TS6133: 'setNoOiData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/Heatmap.tsx(151,11): error TS6133: 'netBreadthfortwo' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(19,47): error TS7006: Parameter 'series' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(20,22): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(24,37): error TS7006: Parameter 'y' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(25,37): error TS7006: Parameter 'y' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(126,30): error TS6133: 'event' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(126,42): error TS6133: 'chartContext' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(142,28): error TS6133: 'text' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/heatmapOptions.ts(191,14): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/HeatMapToggle.tsx(2,17): error TS6133: 'Dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/HeatMapToggle.tsx(2,27): error TS6133: 'SetStateAction' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/HeatMapToggle.tsx(2,43): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/HeatMapToggle.tsx(20,21): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/HeatMapToggle.tsx(31,21): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/SpotPriceDisplay.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/HeatMap/SpotPriceDisplay.tsx(8,26): error TS7031: Binding element 'indexName' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(23,1): error TS6133: 'HeatMap' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(42,3): error TS6133: 'handlePinSymbol' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(53,3): error TS6133: 'updateSymbolPnl' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(55,1): error TS6133: 'calculateHoldingsPnL' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(56,1): error TS6133: 'get' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(120,10): error TS6133: 'data' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(120,16): error TS6133: 'setData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(125,10): error TS6133: 'defaultWatchlist' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(148,10): error TS6133: 'selectedSymbol' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(158,9): error TS6133: 'pinnedSymbols' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/StocksTable.tsx(630,29): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(8,44): error TS7016: Could not find a declaration file for module 'react-beautiful-dnd'. 'D:/tauri-app/tauri/node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.cjs.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/react-beautiful-dnd` if it exists or add a new declaration (.d.ts) file containing `declare module 'react-beautiful-dnd';`
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(84,3): error TS6133: 'apikey' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(112,10): error TS6133: 'buy' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(114,10): error TS6133: 'buttonId' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(115,10): error TS6133: 'clickTimeout' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(115,24): error TS6133: 'setClickTimeout' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(221,9): error TS6133: 'initialstocks' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(257,13): error TS6133: 'row' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(276,5): error TS6133: 'cell' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(277,5): error TS6133: 'type' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(326,23): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(424,12): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/WatchLists.tsx(483,13): error TS7006: Parameter 'provided' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetab/watchlist/watchListTable/WatchListHeader.tsx(4,27): error TS7016: Could not find a declaration file for module 'react-beautiful-dnd'. 'D:/tauri-app/tauri/node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.cjs.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/react-beautiful-dnd` if it exists or add a new declaration (.d.ts) file containing `declare module 'react-beautiful-dnd';`
+src/components/shared/ChartLayout/sidetab/watchlist/watchListTable/WatchListTableRow.tsx(5,3): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/watchListTable/WatchListTableRow.tsx(86,3): error TS6133: 'setSymbols' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetab/watchlist/watchListTable/WatchListTableRow.tsx(140,17): error TS6133: 'e' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/funds/funds.tsx(1,38): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/funds/Showfunds.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/holdings/holdings.tsx(4,1): error TS6133: 'MultiSymbolNews' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/holdings/holdings.tsx(36,10): error TS6133: 'symbolsPerPage' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/holdings/holdings.tsx(37,10): error TS6133: 'symbols' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/holdings/holdings.tsx(59,40): error TS7006: Parameter 'stock' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/holdings/HoldingsTable.tsx(12,3): error TS6133: 'setChartPanel' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/News.tsx(1,1): error TS6133: 'NewsRouterApi' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/News.tsx(2,1): error TS6133: 'baseConfig' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/NewsHeader.tsx(5,1): error TS6133: 'NewsFilter' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/NewsHeader.tsx(19,3): error TS6133: 'setNewsData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/NewsHeader.tsx(20,3): error TS6133: 'setActiveFilters' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/NewsHeader.tsx(21,3): error TS6133: 'activeFilters' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/news/NewsHeader.tsx(22,3): error TS6133: 'newsData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/notes/AllNote.tsx(1,26): error TS6133: 'UserBrokerRouterApi' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/notes/AllNote.tsx(22,3): error TS6133: 'brokerCode' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/notes/AllNote.tsx(32,10): error TS6133: 'symbolIdentifiers' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/notes/AllNote.tsx(33,22): error TS6133: 'setSymbolName' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/notes/SymbolNotes.tsx(4,1): error TS6133: 'error' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/notes/SymbolNotes.tsx(19,3): error TS6133: 'symbolName' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/order/EditOrderLots.tsx(2,54): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/Portfolio.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/Portfolio.tsx(6,22): error TS7031: Binding element 'brokerCode' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/Portfolio.tsx(6,34): error TS7031: Binding element 'apiKey' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/Portfolio.tsx(6,42): error TS7031: Binding element 'leftWidth' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/Portfolio.tsx(6,53): error TS7031: Binding element 'setLeftWidth' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/PortfolioHeader.tsx(1,1): error TS6192: All imports in import declaration are unused.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/PortfolioHeader.tsx(7,28): error TS7031: Binding element 'activePortFolio' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/portfolio/PortfolioHeader.tsx(7,45): error TS7031: Binding element 'setActivePortFolio' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/positions/positions.tsx(43,3): error TS6133: 'apiKey' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/positions.tsx(51,10): error TS6133: 'buttonId' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/positions.tsx(65,9): error TS6133: 'dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/positions.tsx(68,10): error TS6133: 'symbolsPerPage' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/positions.tsx(69,10): error TS6133: 'symbols' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/positions.tsx(71,10): error TS6133: 'totalPnLPercentage' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/PositionsHeader.tsx(1,17): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/PositionsHeader.tsx(14,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/PositionsTableHeader.tsx(19,3): error TS6133: 'showAvgprice' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/PositionTable.tsx(24,3): error TS6133: 'showAvgprice' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/TwitterSharableImage.tsx(3,24): error TS7016: Could not find a declaration file for module 'dom-to-image'. 'D:/tauri-app/tauri/node_modules/dom-to-image/src/dom-to-image.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/dom-to-image` if it exists or add a new declaration (.d.ts) file containing `declare module 'dom-to-image';`
+src/components/shared/ChartLayout/sidetoolbar/positions/TwitterSharableImage.tsx(4,1): error TS6133: 'Logo' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/TwitterSharableImage.tsx(9,22): error TS7016: Could not find a declaration file for module 'crypto-js'. 'D:/tauri-app/tauri/node_modules/crypto-js/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/crypto-js` if it exists or add a new declaration (.d.ts) file containing `declare module 'crypto-js';`
+src/components/shared/ChartLayout/sidetoolbar/positions/TwitterSharableImage.tsx(14,3): error TS6133: 'getImageUrl' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/positions/TwitterSharableImage.tsx(21,11): error TS6196: 'Position' is declared but never used.
+src/components/shared/ChartLayout/sidetoolbar/positions/twitterShareButton.tsx(3,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Screener/SideScreener.tsx(4,3): error TS6133: 'setToggleChart' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Screener/SideScreener.tsx(7,1): error TS6133: 'ViewType' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Screener/SideScreener.tsx(9,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/settings/settings.tsx(1,38): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/settings/settings.tsx(2,10): error TS6133: 'useDispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/settings/settings.tsx(9,1): error TS6133: 'usePWAInstallPrompt' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/settings/settings.tsx(21,3): error TS6133: 'brokerCode' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/settings/SettingTable.tsx(3,1): error TS6133: 'Showfunds' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/settings/ShowSettings.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/sharedContent/ImageBox.tsx(3,11): error TS6196: 'ImageBoxProps' is declared but never used.
+src/components/shared/ChartLayout/sidetoolbar/sharedContent/ImageBox.tsx(11,26): error TS2552: Cannot find name 'imgBoxProps'. Did you mean 'ImageBoxProps'?
+src/components/shared/ChartLayout/sidetoolbar/StockinfoSideDisplay/stockinfoSideDisplay.tsx(1,38): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(1,55): error TS6133: 'useContext' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(23,1): error TS6192: All imports in import declaration are unused.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(24,1): error TS6133: 'baseConfig' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(25,1): error TS6133: 'autoLogoutTokenRemove' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(26,1): error TS6133: 'brokerLogoutTokenRemove' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(41,3): error TS6133: 'apiKey' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/strategiesAnalyzer.tsx(93,10): error TS6133: 'selectedStrategy' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerHeader.tsx(80,23): error TS6133: 'event' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/BuySellDisplay.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/BuySellDisplay.tsx(3,42): error TS7031: Binding element 'transactionType' implicitly has an 'any' type.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/ExpandedRowDetails.tsx(4,1): error TS6133: 'DisplayHandleSellButton' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/StrategyRow.tsx(2,17): error TS6133: 'useRef' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/StrategyRow.tsx(2,25): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/StrategyRow.tsx(62,3): error TS6133: 'brokerCode' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/StrategyRow.tsx(63,3): error TS6133: 'expiry' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/StrategyRow.tsx(64,3): error TS6133: 'allStrategyData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/Strategies Analyzer/StrategyAnalyzerTableBody/StrategyTableBody.tsx(40,7): error TS6133: 'currentGroup' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(2,3): error TS6133: 'Dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(3,3): error TS6133: 'SetStateAction' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(6,3): error TS6133: 'useState' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(12,1): error TS6133: 'setCurrentSection' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(14,1): error TS6133: 'ScreenerButton' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(15,1): error TS6133: 'config' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/RightToolBar.tsx(34,9): error TS6133: 'dispatch' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/SideContentDisplay.tsx(14,1): error TS6133: 'FiiDiiData' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/SideContentDisplay.tsx(41,10): error TS6133: 'FiiDiiActiveButton' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/SideContentDisplay.tsx(41,30): error TS6133: 'setFiiDiiActiveButton' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/SideToolBarIcon.tsx(19,53): error TS6133: 'brokerCode' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/toolBar/UserIconButton.tsx(8,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/userProfile/LogoutButton.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/ChartLayout/sidetoolbar/userProfile/LogoutButton.tsx(13,13): error TS2322: Type '{ src: string; fill: true; alt: string; className: string; }' is not assignable to type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+  Property 'fill' does not exist on type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+src/components/shared/ChartLayout/ToggleButton/ToggleButton.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/commonUtil/PaginationLoading.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/commonUtil/Toaster.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/customToast.tsx(1,17): error TS6133: 'ToastPosition' is declared but its value is never read.
+src/components/shared/customToast.tsx(31,25): error TS7031: Binding element 'title' implicitly has an 'any' type.
+src/components/shared/customToast.tsx(31,32): error TS7031: Binding element 'message' implicitly has an 'any' type.
+src/components/shared/customToast.tsx(31,41): error TS7031: Binding element 'details' implicitly has an 'any' type.
+src/components/shared/filter/backTestingDatePicker.tsx(15,9): error TS6133: 'min' is declared but its value is never read.
+src/components/shared/filter/backTestingDatePicker.tsx(16,9): error TS6133: 'max' is declared but its value is never read.
+src/components/shared/filter/backTestingDatePicker.tsx(127,11): error TS2607: JSX element class does not support attributes because it does not have a 'props' property.
+src/components/shared/filter/backTestingDatePicker.tsx(127,12): error TS2786: 'Image' cannot be used as a JSX component.
+  Its type 'new (width?: number | undefined, height?: number | undefined) => HTMLImageElement' is not a valid JSX element type.
+    Type 'new (width?: number | undefined, height?: number | undefined) => HTMLImageElement' is not assignable to type 'new (props: any, context: any) => Component<any, any, any>'.
+      Type 'HTMLImageElement' is missing the following properties from type 'Component<any, any, any>': context, setState, forceUpdate, render, and 2 more.
+src/components/shared/filter/builderDatePicker.tsx(2,1): error TS6133: 'Label' is declared but its value is never read.
+src/components/shared/filter/builderDatePicker.tsx(2,23): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/components/shared/filter/builderDatePicker.tsx(4,1): error TS6133: 'DateRange' is declared but its value is never read.
+src/components/shared/filter/builderDatePicker.tsx(87,11): error TS2607: JSX element class does not support attributes because it does not have a 'props' property.
+src/components/shared/filter/builderDatePicker.tsx(87,12): error TS2786: 'Image' cannot be used as a JSX component.
+  Its type 'new (width?: number | undefined, height?: number | undefined) => HTMLImageElement' is not a valid JSX element type.
+    Type 'new (width?: number | undefined, height?: number | undefined) => HTMLImageElement' is not assignable to type 'new (props: any, context: any) => Component<any, any, any>'.
+      Type 'HTMLImageElement' is missing the following properties from type 'Component<any, any, any>': context, setState, forceUpdate, render, and 2 more.
+src/components/shared/filter/selecDateRange.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/filter/selecDateRange.tsx(3,24): error TS2307: Cannot find module 'react-tailwindcss-datepicker' or its corresponding type declarations.
+src/components/shared/filter/selectDate.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/filter/selectDate.tsx(3,24): error TS2307: Cannot find module 'react-tailwindcss-datepicker' or its corresponding type declarations.
+src/components/shared/filter/selectedDaysPicker.tsx(2,1): error TS6192: All imports in import declaration are unused.
+src/components/shared/filter/selectExpiry.tsx(8,1): error TS6133: 'config' is declared but its value is never read.
+src/components/shared/filter/selectIndice.tsx(1,10): error TS6133: 'use' is declared but its value is never read.
+src/components/shared/filter/selectIndice.tsx(7,10): error TS6133: 'indice' is declared but its value is never read.
+src/components/shared/filter/simulationDatePicker.tsx(118,13): error TS2607: JSX element class does not support attributes because it does not have a 'props' property.
+src/components/shared/filter/simulationDatePicker.tsx(118,14): error TS2786: 'Image' cannot be used as a JSX component.
+  Its type 'new (width?: number | undefined, height?: number | undefined) => HTMLImageElement' is not a valid JSX element type.
+    Type 'new (width?: number | undefined, height?: number | undefined) => HTMLImageElement' is not assignable to type 'new (props: any, context: any) => Component<any, any, any>'.
+      Type 'HTMLImageElement' is missing the following properties from type 'Component<any, any, any>': context, setState, forceUpdate, render, and 2 more.
+src/components/shared/filter/simulationDatePicker.tsx(127,23): error TS6133: 'event' is declared but its value is never read.
+src/components/shared/filter/stopLoss.tsx(67,41): error TS6133: 'idx' is declared but its value is never read.
+src/components/shared/filter/stopLoss.tsx(67,41): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/components/shared/filter/TargetSelect.tsx(21,43): error TS6133: 'idx' is declared but its value is never read.
+src/components/shared/filter/TargetSelect.tsx(21,43): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/components/shared/filter/timeSelect.tsx(71,37): error TS7006: Parameter 'timeOption' implicitly has an 'any' type.
+src/components/shared/filter/timeSelect.tsx(84,48): error TS7006: Parameter 'timeOption' implicitly has an 'any' type.
+src/components/shared/live/ConnectBroker.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(12,23): error TS6133: 'useSelector' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(36,10): error TS6133: 'brokerLogin' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(41,24): error TS6133: 'setActiveBroker' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(132,10): error TS6133: 'error' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(221,47): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(235,24): error TS7006: Parameter 'broker' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(236,21): error TS7006: Parameter 'broker' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(296,11): error TS6133: 'brokerFromHost' is declared but its value is never read.
+src/components/shared/live/ConnectFavBroker.tsx(301,47): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(304,12): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(313,55): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(564,41): error TS7006: Parameter 'broker' implicitly has an 'any' type.
+src/components/shared/live/ConnectFavBroker.tsx(564,49): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/shared/live/LiveHeader.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/live/LiveHeader.tsx(6,23): error TS7031: Binding element 'userMail' implicitly has an 'any' type.
+src/components/shared/loading/Loading.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/logo/logo.tsx(4,7): error TS2322: Type '{ priority: true; src: string; width: number; height: number; alt: string; className: string; }' is not assignable to type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+  Property 'priority' does not exist on type 'DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>'.
+src/components/shared/Logout.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/SelectDropdown.tsx(3,1): error TS6133: 'React' is declared but its value is never read.
+src/components/shared/TabTitle/BrowserTitleDisplay.tsx(5,1): error TS6133: 'usePathname' is declared but its value is never read.
+src/components/shared/TabTitle/BrowserTitleDisplay.tsx(5,29): error TS2307: Cannot find module 'next/navigation' or its corresponding type declarations.
+src/components/shared/TabTitle/BrowserTitleDisplay.tsx(22,20): error TS2552: Cannot find name 'useLocation'. Did you mean 'location'?
+src/components/shared/toolTip.tsx(10,34): error TS6133: 'position' is declared but its value is never read.
+src/components/shared/Warning alert/WarningBox.tsx(1,36): error TS6133: 'useState' is declared but its value is never read.
+src/components/Simulation/DemoButton.tsx(3,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Simulation/DemoButton.tsx(6,38): error TS7031: Binding element 'onClick' implicitly has an 'any' type.
+src/components/Simulation/SimulatedHoldings/useSimulatedholdings.ts(9,38): error TS7006: Parameter 'webSocketDataRead' implicitly has an 'any' type.
+src/components/Simulation/SimulatedHoldings/useSimulatedholdings.ts(9,57): error TS7006: Parameter 'holdingType' implicitly has an 'any' type.
+src/components/Simulation/SimulatedHoldings/useSimulatedholdings.ts(13,30): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ shortTermInvestor: SeedHolding[]; longTermInvestor: SeedHolding[]; etfInvestor: SeedHolding[]; hniInvestor: SeedHolding[]; hybridInvestor: SeedHolding[]; }'.
+src/components/Simulation/SimulatedPositions/StrategiesApiCall.ts(3,1): error TS6133: 'setStrategyCount' is declared but its value is never read.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(16,3): error TS7006: Parameter 'strategyApiResponse' implicitly has an 'any' type.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(17,3): error TS7006: Parameter 'ws' implicitly has an 'any' type.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(18,3): error TS7006: Parameter 'brokerName' implicitly has an 'any' type.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(19,3): error TS7006: Parameter 'selectedPositionType' implicitly has an 'any' type.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(24,33): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ INTRADAY: string[]; SWING: string[]; SCALPER: string[]; ARBITRAGE: string[]; }'.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(29,13): error TS7006: Parameter 'name' implicitly has an 'any' type.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(34,54): error TS7006: Parameter 'strategy' implicitly has an 'any' type.
+src/components/Simulation/SimulatedPositions/useSimulatedPositions.ts(49,40): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/components/Simulation/SimulationOrders/useSimulatedOrders.ts(5,1): error TS6133: 'useDispatch' is declared but its value is never read.
+src/components/Simulation/SimulationOrders/useSimulatedOrders.ts(6,1): error TS6133: 'addSymbol' is declared but its value is never read.
+src/components/StockInfo/CompanyProfile.tsx(33,26): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/StockInfo/CompanyProfile.tsx(33,33): error TS7006: Parameter 'min' implicitly has an 'any' type.
+src/components/StockInfo/CompanyProfile.tsx(33,38): error TS7006: Parameter 'max' implicitly has an 'any' type.
+src/components/StockInfo/CompanyProfile.tsx(211,27): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/StockInfo/CompanyProfile.tsx(272,35): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ "Over Valued": string; "Fairly Valued": string; "Under Valued": string; }'.
+src/components/StockInfo/CompanyProfile.tsx(274,44): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ "Over Valued": string; "Fairly Valued": string; "Under Valued": string; }'.
+src/components/StockInfo/DocumentSection.tsx(22,45): error TS7031: Binding element 'link' implicitly has an 'any' type.
+src/components/StockInfo/DocumentSection.tsx(22,51): error TS7031: Binding element 'subject' implicitly has an 'any' type.
+src/components/StockInfo/DocumentSection.tsx(59,43): error TS7031: Binding element 'link' implicitly has an 'any' type.
+src/components/StockInfo/DocumentSection.tsx(59,49): error TS7031: Binding element 'subject' implicitly has an 'any' type.
+src/components/StockInfo/FInancialChart.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/StockInfo/NoData.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/StockInfo/NoData.tsx(3,34): error TS7031: Binding element 'data' implicitly has an 'any' type.
+src/components/StockInfo/PeersChart.tsx(49,54): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ "Current Market Price": string; "PE Ratio": string; "Earnings Per Share": string; "Market Capital": string; Sales: string; "Profit After Tax": string; "Dividend Yield": string; Debt: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ "Current Market Price": string; "PE Ratio": string; "Earnings Per Share": string; "Market Capital": string; Sales: string; "Profit After Tax": string; "Dividend Yield": string; Debt: string; }'.
+src/components/StockInfo/PeersChart.tsx(52,27): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ "Current Market Price": string; "PE Ratio": string; "Earnings Per Share": string; "Market Capital": string; Sales: string; "Profit After Tax": string; "Dividend Yield": string; Debt: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ "Current Market Price": string; "PE Ratio": string; "Earnings Per Share": string; "Market Capital": string; Sales: string; "Profit After Tax": string; "Dividend Yield": string; Debt: string; }'.
+src/components/StockInfo/PeersTable.tsx(17,29): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(19,7): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+src/components/StockInfo/PeersTable.tsx(24,37): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(24,42): error TS6133: 'index' is declared but its value is never read.
+src/components/StockInfo/PeersTable.tsx(24,42): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(35,20): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(35,23): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(37,36): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(72,55): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/components/StockInfo/PeersTable.tsx(72,60): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/StockInfo/PePbChart.tsx(27,41): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/components/StockInfo/PePbChart.tsx(32,34): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/StockInfo/PePbChart.tsx(39,34): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/StockInfo/QuaterlyResults.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/StockInfo/ResultsTable.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/StockInfo/SentimentAnalysis.tsx(2,1): error TS6192: All imports in import declaration are unused.
+src/components/StockInfo/StockChart/getStockChartOptions.tsx(29,30): error TS6133: 'event' is declared but its value is never read.
+src/components/StockInfo/StockChart/getStockChartOptions.tsx(29,37): error TS6133: 'chartContext' is declared but its value is never read.
+src/components/StockInfo/StockChart/getStockChartOptions.tsx(66,37): error TS7006: Parameter 'val' implicitly has an 'any' type.
+src/components/StockInfo/StockChart/getStockChartOptions.tsx(91,27): error TS6133: 'series' is declared but its value is never read.
+src/components/StockInfo/StockChart/getStockChartOptions.tsx(233,28): error TS6133: 'val' is declared but its value is never read.
+src/components/StockInfo/StockChart/SymbolNews.tsx(1,1): error TS6133: 'GetSymbolNews' is declared but its value is never read.
+src/components/StockInfo/StockChart/SymbolNews.tsx(6,8): error TS6133: 'React' is declared but its value is never read.
+src/components/StockInfo/StockChartOptions/PeersChartOptions.ts(47,20): error TS7031: Binding element 'value' implicitly has an 'any' type.
+src/components/StockInfo/StockChartOptions/PePbChartOptions.ts(57,33): error TS6133: 'series' is declared but its value is never read.
+src/components/StockInfo/StockChartOptions/PePbChartOptions.ts(59,51): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/StockInfo/StockDashboard.tsx(1,27): error TS7031: Binding element 'name' implicitly has an 'any' type.
+src/components/StockInfo/StockDashboard.tsx(1,33): error TS7031: Binding element 'value' implicitly has an 'any' type.
+src/components/StockInfo/StockHeaderInfo.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/components/StockInfo/StockHeaderInfo.tsx(2,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/StockInfo/StockHeaderInfo.tsx(2,28): error TS6133: 'useRef' is declared but its value is never read.
+src/components/StockInfo/Stockinfo.tsx(97,10): error TS6133: 'techValue' is declared but its value is never read.
+src/components/StockInfo/Stockinfo.tsx(99,10): error TS6133: 'techIndicator' is declared but its value is never read.
+src/components/StockInfo/StockInfoChart.tsx(56,26): error TS6133: 'formatted' is declared but its value is never read.
+src/components/StockInfo/StockInfoNavbar.tsx(15,28): error TS7031: Binding element 'info' implicitly has an 'any' type.
+src/components/StockInfo/StockInfoNavbar.tsx(15,34): error TS7031: Binding element 'scopeId' implicitly has an 'any' type.
+src/components/StockInfo/TabNavigation.tsx(17,33): error TS6133: 'event' is declared but its value is never read.
+src/components/StockInfo/TrendsChart.tsx(1,17): error TS6133: 'act' is declared but its value is never read.
+src/components/StockInfo/TrendsChart.tsx(60,30): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ROE: string; "Net Income": string; Sales: string; "Debt to Equity": string; ROCE: string; "Operating Cash Flow": string; "Interest Coverage": string; "CFO to PAT": string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ROE: string; "Net Income": string; Sales: string; "Debt to Equity": string; ROCE: string; "Operating Cash Flow": string; "Interest Coverage": string; "CFO to PAT": string; }'.
+src/components/StockInfo/TrendsChart.tsx(75,15): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ "Net Income": string; ROE: string; "Debt to Equity": string; Sales: string; ROCE: string; "Operating Cash Flow": string; "Interest Coverage": string; "CFO to PAT": string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ "Net Income": string; ROE: string; "Debt to Equity": string; Sales: string; ROCE: string; "Operating Cash Flow": string; "Interest Coverage": string; "CFO to PAT": string; }'.
+src/components/StockInfo/TrendsChart.tsx(122,41): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ROE: string; "Net Income": string; Sales: string; "Debt to Equity": string; ROCE: string; "Operating Cash Flow": string; "Interest Coverage": string; "CFO to PAT": string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ROE: string; "Net Income": string; Sales: string; "Debt to Equity": string; ROCE: string; "Operating Cash Flow": string; "Interest Coverage": string; "CFO to PAT": string; }'.
+src/components/StockInfo/TrendsSection.tsx(6,26): error TS7031: Binding element 'trendsData' implicitly has an 'any' type.
+src/components/tradingView/AnnotationDisplay.ts(4,1): error TS6133: 'handlePlaceOrder' is declared but its value is never read.
+src/components/tradingView/AnnotationDisplay.ts(8,5): error TS6133: 'currentLine' is declared but its value is never read.
+src/components/tradingView/AnnotationDisplay.ts(12,5): error TS6133: 'annotationOverlay' is declared but its value is never read.
+src/components/tradingView/AnnotationDisplay.ts(13,5): error TS6133: 'currentAnnotationOverlay' is declared but its value is never read.
+src/components/tradingView/AnnotationDisplay.ts(413,11): error TS6133: 'brokerCode' is declared but its value is never read.
+src/components/tradingView/CandlestickPatternIndicator.ts(81,3): error TS7053: Element implicitly has an 'any' type because expression of type '`plot_${number}`' can't be used to index type '{}'.
+src/components/tradingView/CandlestickPatternIndicator.ts(82,8): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ bullish: { color: string; textColor: string; plottype: string; location: string; }; bearish: { color: string; textColor: string; plottype: string; location: string; }; neutral: { color: string; textColor: string; plottype: string; location: string; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ bullish: { color: string; textColor: string; plottype: string; location: string; }; bearish: { color: string; textColor: string; plottype: string; location: string; }; neutral: { color: string; textColor: string; plottype: string; location: string; }; }'.
+src/components/tradingView/CandlestickPatternIndicator.ts(87,51): error TS7006: Parameter 'PineJS' implicitly has an 'any' type.
+src/components/tradingView/CandlestickPatternIndicator.ts(170,13): error TS7053: Element implicitly has an 'any' type because expression of type '`plot_${number}`' can't be used to index type '{}'.
+src/components/tradingView/CandlestickPatternIndicator.ts(188,40): error TS7006: Parameter 'context' implicitly has an 'any' type.
+src/components/tradingView/CandlestickPatternIndicator.ts(188,49): error TS6133: 'inputCallback' is declared but its value is never read.
+src/components/tradingView/CandlestickPatternIndicator.ts(188,49): error TS7006: Parameter 'inputCallback' implicitly has an 'any' type.
+src/components/tradingView/chartSetup.ts(8,3): error TS6133: 'createScreenerButton' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(9,3): error TS6133: 'handleToggle' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(16,10): error TS6133: 'StudyPlotType' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(136,27): error TS6133: 'key' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(136,37): error TS6133: 'value' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(137,30): error TS6133: 'key' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(167,42): error TS6133: 'timeframeObj' is declared but its value is never read.
+src/components/tradingView/chartSetup.ts(218,44): error TS7006: Parameter 'params' implicitly has an 'any' type.
+src/components/tradingView/CustomCheckBoxButton.ts(11,1): error TS6133: 'formatNumber' is declared but its value is never read.
+src/components/tradingView/CustomCheckBoxButton.ts(13,1): error TS6133: 'OiIndex' is declared but its value is never read.
+src/components/tradingView/CustomCheckBoxButton.ts(15,1): error TS6133: 'handlePlaceOrder' is declared but its value is never read.
+src/components/tradingView/CustomCheckBoxButton.ts(16,1): error TS6133: 'tvWidget' is declared but its value is never read.
+src/components/tradingView/CustomCheckBoxButton.ts(308,22): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ NIFTY: string; BANKNIFTY: string; FINNIFTY: string; SENSEX: string; BANKEX: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ NIFTY: string; BANKNIFTY: string; FINNIFTY: string; SENSEX: string; BANKEX: string; }'.
+src/components/tradingView/CustomCheckBoxButton.ts(317,33): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ NIFTY: string; BANKNIFTY: string; FINNIFTY: string; SENSEX: string; BANKEX: string; }'.
+src/components/tradingView/CustomCheckBoxButton.ts(318,32): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ NIFTY: string; BANKNIFTY: string; FINNIFTY: string; SENSEX: string; BANKEX: string; }'.
+src/components/tradingView/OiProfile.ts(11,1): error TS6133: 'tvWidget' is declared but its value is never read.
+src/components/tradingView/OiProfile.ts(160,11): error TS6133: 'pageWidth' is declared but its value is never read.
+src/components/tradingView/OiProfile.ts(562,13): error TS6133: 'oiToggle' is declared but its value is never read.
+src/components/tradingView/OiProfile.ts(563,13): error TS6133: 'chgToggle' is declared but its value is never read.
+src/components/tradingView/OiProfile.ts(564,13): error TS6133: 'ltpToggle' is declared but its value is never read.
+src/components/tradingView/OiProfile.ts(565,13): error TS6133: 'ltpChgToggle' is declared but its value is never read.
+src/components/tradingView/OiProfile.ts(899,10): error TS6133: 'styleToggle' is declared but its value is never read.
+src/components/tradingView/OiSettings.tsx(10,8): error TS6133: 'React' is declared but its value is never read.
+src/components/tradingView/OiSettings.tsx(14,3): error TS6133: 'createCustomToggleButton' is declared but its value is never read.
+src/components/tradingView/OiSettings.tsx(76,30): error TS6133: 'index' is declared but its value is never read.
+src/components/tradingView/quickOrders.tsx(17,3): error TS6133: 'y' is declared but its value is never read.
+src/components/tradingView/quickOrders.tsx(135,3): error TS6133: 'symbol' is declared but its value is never read.
+src/components/tradingView/quickOrders.tsx(306,26): error TS7006: Parameter 'pos' implicitly has an 'any' type.
+src/components/tradingView/Screener.tsx(2,10): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/tradingView/TradingViewChart.tsx(1,36): error TS6133: 'useState' is declared but its value is never read.
+src/components/tradingView/TradingViewChart.tsx(157,13): error TS6133: 'tv' is declared but its value is never read.
+src/context/websocketContextProvider.tsx(4,37): error TS6133: 'useEffect' is declared but its value is never read.
+src/context/websocketContextProvider.tsx(4,48): error TS6133: 'useRef' is declared but its value is never read.
+src/context/websocketContextProvider.tsx(20,9): error TS6133: 'websocketError' is declared but its value is never read.
+src/lib/api/baseConfiguration.tsx(5,3): error TS6133: 'OptionsSimulatorHistoricalApi' is declared but its value is never read.
+src/lib/api/baseConfiguration.tsx(6,3): error TS6133: 'UserApi' is declared but its value is never read.
+src/lib/api/baseConfiguration.tsx(7,3): error TS6133: 'OptionsStrategyBuilderApi' is declared but its value is never read.
+src/lib/api/baseConfiguration.tsx(8,3): error TS6133: 'OptionsBacktestingHistoricalApi' is declared but its value is never read.
+src/lib/api/zApi.tsx(2,25): error TS6133: 'AxiosError' is declared but its value is never read.
+src/lib/api/zApi.tsx(3,35): error TS2307: Cannot find module 'next/dist/shared/lib/app-router-context.shared-runtime' or its corresponding type declarations.
+src/lib/config.ts(154,11): error TS6133: 'isWeekday' is declared but its value is never read.
+src/lib/config.ts(176,11): error TS6133: 'isWeekday' is declared but its value is never read.
+src/lib/redux/slices/OISlice.ts(48,9): error TS6133: 'OIFutureData' is declared but its value is never read.
+src/lib/redux/slices/PlaceOrder.ts(16,11): error TS6196: 'Bounds' is declared but never used.
+src/lib/redux/slices/StrategySlice.ts(2,1): error TS6133: 'RootState' is declared but its value is never read.
+src/lib/redux/slices/StrategySlice.ts(14,11): error TS6196: 'ClientInfo' is declared but never used.
+src/lib/util/analyzer/currentOptionChainHandler.ts(1,1): error TS6133: 'getOIRadioHashKey' is declared but its value is never read.
+src/lib/util/analyzer/currentOptionChainHandler.ts(4,3): error TS6133: 'determineMarketActionIcon' is declared but its value is never read.
+src/lib/util/analyzer/currentOptionChainHandler.ts(12,3): error TS6133: 'oiChangePercFromData' is declared but its value is never read.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(4,3): error TS7031: Binding element 'optionDatas' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(5,3): error TS7031: Binding element 'futureDatas' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(6,3): error TS7031: Binding element 'checkedRows' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(7,3): error TS7031: Binding element 'multiplier' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(8,3): error TS7031: Binding element 'setCheckedRows' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(9,3): error TS7031: Binding element 'setInitialLotSizes' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(10,3): error TS7031: Binding element 'prevCopiedDataRef' implicitly has an 'any' type.
+src/lib/util/analyzer/handleNewStrategyUtil.ts(11,3): error TS7031: Binding element 'prevMultiplierRef' implicitly has an 'any' type.
+src/lib/util/analyzer/handleSelect.ts(5,3): error TS6133: 'minimizeStatus' is declared but its value is never read.
+src/lib/util/analyzer/optUtil.ts(2,28): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/lib/util/analyzer/optUtil.ts(3,28): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/lib/util/analyzer/optUtil.ts(6,6): error TS7006: Parameter 'max' implicitly has an 'any' type.
+src/lib/util/analyzer/optUtil.ts(6,11): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/lib/util/analyzer/optUtil.ts(12,6): error TS7006: Parameter 'max' implicitly has an 'any' type.
+src/lib/util/analyzer/optUtil.ts(12,11): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/lib/util/autoLogoutUtil/brokerLogOutUtil.ts(2,1): error TS6192: All imports in import declaration are unused.
+src/lib/util/brokerIdCheck/brokersExist.ts(56,52): error TS7006: Parameter 'data' implicitly has an 'any' type.
+src/lib/util/BrokerLoginUtil.ts(138,10): error TS7006: Parameter 'broker' implicitly has an 'any' type.
+src/lib/util/createStrategyUtil.tsx(165,3): error TS6133: 'strategyJourney' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(10,1): error TS6192: All imports in import declaration are unused.
+src/lib/util/datafeeds/chartDatafeed.ts(15,7): error TS6133: 'accessToken' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(94,11): error TS6133: 'brokerName' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(180,5): error TS6133: 'extension' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(181,5): error TS6133: 'exchange' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(270,39): error TS6133: 'countBack' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(303,11): error TS6133: 'parsedSymbol' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(325,28): error TS6133: 'status' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(396,5): error TS6133: 'startTime' is declared but its value is never read.
+src/lib/util/datafeeds/chartDatafeed.ts(397,5): error TS6133: 'endTime' is declared but its value is never read.
+src/lib/util/DraftUtil.ts(251,55): error TS6133: 'dispatch' is declared but its value is never read.
+src/lib/util/DraftUtil.ts(260,33): error TS6133: 'option' is declared but its value is never read.
+src/lib/util/FiiDiiUtil/FiiDiiUtil.ts(61,30): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ Jan: string; Feb: string; Mar: string; Apr: string; May: string; Jun: string; Jul: string; Aug: string; Sep: string; Oct: string; Nov: string; Dec: string; }'.
+src/lib/util/generalUtil.ts(14,26): error TS7006: Parameter 'dispatch' implicitly has an 'any' type.
+src/lib/util/generalUtil.ts(14,36): error TS7006: Parameter 'router' implicitly has an 'any' type.
+src/lib/util/oi/oiUtil.ts(118,9): error TS7053: Element implicitly has an 'any' type because expression of type '`${string}#CE#${string}#${string}`' can't be used to index type '{}'.
+src/lib/util/oi/oiUtil.ts(119,9): error TS7053: Element implicitly has an 'any' type because expression of type '`${string}#PE#${string}#${string}`' can't be used to index type '{}'.
+src/lib/util/payoffChart/ChartOptions.ts(187,27): error TS6133: 'series' is declared but its value is never read.
+src/lib/util/payoffChart/ChartOptions.ts(187,27): error TS7031: Binding element 'series' implicitly has an 'any' type.
+src/lib/util/payoffChart/ChartOptions.ts(187,35): error TS7031: Binding element 'seriesIndex' implicitly has an 'any' type.
+src/lib/util/payoffChart/ChartOptions.ts(187,48): error TS7031: Binding element 'dataPointIndex' implicitly has an 'any' type.
+src/lib/util/payoffChart/ChartOptions.ts(187,64): error TS7031: Binding element 'w' implicitly has an 'any' type.
+src/lib/util/payoffChart/ChartOptions.ts(232,50): error TS7006: Parameter 'point' implicitly has an 'any' type.
+src/lib/util/placeOrder/placeOrder.ts(15,1): error TS6133: 'setOrderPlaced' is declared but its value is never read.
+src/lib/util/placeOrder/placeOrder.ts(139,57): error TS7006: Parameter 'stock' implicitly has an 'any' type.
+src/lib/util/Screenerutil/ScreenerUtil.ts(244,3): error TS6133: 'token' is declared but its value is never read.
+src/lib/util/Screenerutil/ScreenerUtil.ts(386,37): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/lib/util/Screenerutil/ScreenerUtil.ts(386,43): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/lib/util/sideToolBar/news/fetchNews.ts(62,28): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/lib/util/sideToolBar/news/fetchNews.ts(69,22): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/lib/util/sideToolBar/orders/handlingOrders.ts(39,12): error TS6133: 'res' is declared but its value is never read.
+src/lib/util/sideToolBar/orders/handlingOrders.ts(64,13): error TS6133: 'updatedLotSize' is declared but its value is never read.
+src/lib/util/sideToolBar/orders/OrderUtil.ts(5,11): error TS6196: 'SortConfig' is declared but never used.
+src/lib/util/sideToolBar/orders/OrderUtil.ts(117,24): error TS6133: 'expiryDate' is declared but its value is never read.
+src/lib/util/sideToolBar/orders/OrderUtil.ts(117,36): error TS6133: 'strikePrice' is declared but its value is never read.
+src/lib/util/sideToolBar/orders/OrderUtil.ts(117,49): error TS6133: 'optionType' is declared but its value is never read.
+src/lib/util/sideToolBar/positions/managePositionsData.ts(6,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/lib/util/sideToolBar/sidetoolbarCommon.ts(14,3): error TS6133: 'router' is declared but its value is never read.
+src/lib/util/Stockinfo/Stockinfo.ts(7,1): error TS6133: 'chart_datafeed' is declared but its value is never read.
+src/lib/util/Stockinfo/Stockinfo.ts(37,3): error TS6133: 'symbol' is declared but its value is never read.
+src/lib/util/Stockinfo/Stockinfo.ts(80,45): error TS7006: Parameter 'bar' implicitly has an 'any' type.
+src/lib/util/storageUtil/indexdbStorage.ts(45,35): error TS7006: Parameter 'userId' implicitly has an 'any' type.
+src/lib/util/storageUtil/indexdbStorage.ts(45,43): error TS7006: Parameter 'brokerCode' implicitly has an 'any' type.
+src/lib/util/storageUtil/indexdbStorage.ts(45,55): error TS7006: Parameter 'lastClickDate' implicitly has an 'any' type.
+src/lib/util/storageUtil/indexdbStorage.ts(58,31): error TS6133: 'event' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(8,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(22,3): error TS6133: 'getSelectPositionData' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(30,1): error TS6133: 'useNavigate' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(35,3): error TS6133: 'setPayoffStrategyName' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(38,1): error TS6133: 'setStrategiesPnlDemo' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(181,3): error TS6133: 'dispatch' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(182,3): error TS6133: 'indexname' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(302,29): error TS2552: Cannot find name 'useRouter'. Did you mean 'router'?
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(360,15): error TS6133: 'updatedResponse' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(408,3): error TS6133: 'brokerCode' is declared but its value is never read.
+src/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil.ts(410,3): error TS6133: 'router' is declared but its value is never read.
+src/lib/util/watchlist/handlingServerData.ts(9,3): error TS6133: 'updateSymbolData' is declared but its value is never read.
+src/lib/util/watchlist/handlingServerData.ts(75,11): error TS6133: 'res' is declared but its value is never read.
+src/lib/util/watchlist/handlingServerData.ts(116,10): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/lib/util/watchlist/WatchlistUtil.ts(145,19): error TS7006: Parameter 'prevPage' implicitly has an 'any' type.
+src/lib/util/watchlist/WatchlistUtil.ts(154,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/lib/websocket.ts(6,1): error TS6133: 'getJwtFromCookie' is declared but its value is never read.
+src/lib/websocket.ts(7,1): error TS6133: 'toast' is declared but its value is never read.
+src/lib/websocket.ts(8,1): error TS6133: 'showCustomToast' is declared but its value is never read.
+src/lib/websocket.ts(49,3): error TS6133: 'onResetCacheNeededCallback' is declared but its value is never read.

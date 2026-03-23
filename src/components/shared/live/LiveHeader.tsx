@@ -1,9 +1,9 @@
-import React from "react";
+
 import Logo from "../logo/logo";
 
 import config from "@/lib/config";
 
-const LiveHeader = ({ userMail }) => {
+const LiveHeader = ({ userMail }:any) => {
   return (
     <header className="flex w-full flex-row justify-between overflow-hidden  bg-white shadow max-xl:fixed max-xl:left-0 max-xl:top-0 max-xl:z-10 max-xl:h-20 max-md:p-2 lg:items-center lg:p-4">
       <div className=" flex flex-row items-center  max-md:w-[60%]">

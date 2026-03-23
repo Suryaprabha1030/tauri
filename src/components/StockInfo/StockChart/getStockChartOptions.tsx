@@ -26,7 +26,7 @@ export const getStockChartOptions = (
       animations: { enabled: true },
       zoom: { enabled: false },
       events: {
-        dataPointSelection: (event, chartContext, config) => {
+        dataPointSelection: (config:any) => {
           const index = config.dataPointIndex;
           const xValue = xCategories[index];
           const matching = newsAnnotation?.find((a: any) => a.x === xValue);
@@ -63,7 +63,7 @@ export const getStockChartOptions = (
         ? [
             {
               opposite: true,
-              labels: { formatter: (val) => formatNumber(val), offsetX: -10 },
+              labels: { formatter: (val:any) => formatNumber(val), offsetX: -10 },
               tickAmount: 6,
             },
           ]

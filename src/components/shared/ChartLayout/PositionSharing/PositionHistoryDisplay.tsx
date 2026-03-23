@@ -22,7 +22,7 @@ const PositionHistoryDisplay: React.FC<PositionHistoryDisplayProps> = ({
 
   // find the entry for selected date
   const selectedDay = calenderData?.find(
-    (d) => d.created_at.split("T")[0] === selectedDate
+    (d:any) => d.created_at.split("T")[0] === selectedDate
   );
   const containerRef = useRef<HTMLDivElement | null>(null);
 

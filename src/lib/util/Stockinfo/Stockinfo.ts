@@ -4,7 +4,6 @@ import {
   UserBrokerRouterApi,
 } from "@/lib/api/base";
 import { autoLogoutTokenRemove } from "../autoLogoutUtil/autoLogOutUtil";
-import { chart_datafeed } from "../datafeeds/chartDatafeed";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import { setSymbolNewsData } from "@/lib/redux/slices/CommonSlice";
 import { format } from "date-fns";
@@ -77,7 +76,7 @@ export const fetchChartData = async (
       formData
     )
     .then((res) => {
-      const formattedData = res?.data?.map((bar) => ({
+      const formattedData = res?.data?.map((bar:any) => ({
         time: bar?.time, // Keep in milliseconds if TradingView expects it
         value: bar?.close, // Use closing price for line chart
         volume: bar?.volume,

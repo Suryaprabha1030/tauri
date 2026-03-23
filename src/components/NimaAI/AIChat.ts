@@ -1,19 +1,17 @@
 import { UserBrokerRouterApi } from "@/lib/api/base";
-import { baseConfig, nimaConfig } from "@/lib/api/baseConfiguration";
+import { baseConfig} from "@/lib/api/baseConfiguration";
 import {
   getAllIndicesDataWithExpiry,
   setIsChatMode,
   setNimaGpt,
-  setScreenerQuery,
 } from "@/lib/redux/slices/screenerSlice";
 import { setScreenerOpen } from "@/lib/redux/slices/CommonSlice";
 import { setOiChartCall } from "@/lib/redux/slices/PayoffChartSlice";
 import {
   addSymbol,
   getIndexName,
-  getIndexQuery,
   setStock,
-  updateSymbolData,
+
 } from "@/lib/redux/slices/StrategySlice";
 import { strategyApiDataDetails } from "@/lib/util/StrategyAnalyzerUtil/StrategyAnalyerUtil";
 import CryptoJS from "crypto-js";
@@ -209,7 +207,7 @@ export const handleGenerate = async (
       : 0;
 
     if (currentLimit >= 3) {
-      setMessages((prev) => [
+      setMessages((prev:any) => [
         ...prev,
         {
           role: "assistant",
@@ -231,9 +229,9 @@ export const handleGenerate = async (
   const token = getJwtFromCookie();
   const pushAssistantMessage = (text: string) => {
     const userMessage: Message = { role: "user", text: finalQuery };
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((prev:any) => [...prev, userMessage]);
     if (!queryText) setQuery("");
-    setMessages((prev) => [...prev, { role: "assistant", text }]);
+    setMessages((prev:any) => [...prev, { role: "assistant", text }]);
     dispatch(setIsChatMode(true));
   };
   switch (NimaGpt) {
@@ -289,7 +287,7 @@ export const handleGenerate = async (
         ? matchedIndex
         : config.NimaFnoSymbol;
 
-      const fnoData = await fetchFnoData(token, brokerCode, indexIdentifier);
+      const fnoData = await fetchFnoData(brokerCode, indexIdentifier);
 
       if (fnoData?.error === "connect_broker") {
         pushAssistantMessage("Please connect your broker to continue.");
@@ -371,7 +369,7 @@ export const handleGenerate = async (
   dispatch(setIsChatMode(true));
   setLoading(true);
   const userMessage: Message = { role: "user", text: finalQuery };
-  setMessages((prev) => [...prev, userMessage]);
+  setMessages((prev:any) => [...prev, userMessage]);
   if (!queryText) setQuery("");
 
   const startTime = performance.now();
@@ -421,7 +419,7 @@ export const handleGenerate = async (
         text: "Something went wrong. Please try again.",
         duration: 0,
       };
-      setMessages((prev) => [...prev, assistantMessage]);
+      setMessages((prev:any) => [...prev, assistantMessage]);
       setLoading(false);
       return;
     }
@@ -464,10 +462,10 @@ export const handleGenerate = async (
             };
 
             streamingAssistantRef.current = assistantMessage;
-            setMessages((prev) => [...prev, { ...assistantMessage }]);
+            setMessages((prev:any) => [...prev, { ...assistantMessage }]);
           } else if (assistantMessage) {
             assistantMessage.text += payload.value;
-            setMessages((prev) => [
+            setMessages((prev:any) => [
               ...prev.slice(0, -1),
               { ...assistantMessage },
             ]);
@@ -485,7 +483,7 @@ export const handleGenerate = async (
             // Append any remaining buffer (optional)
             if (buffer.trim()) {
               assistantMessage.text += buffer;
-              setMessages((prev) => [
+              setMessages((prev:any) => [
                 ...prev.slice(0, -1),
                 { ...assistantMessage },
               ]);
@@ -510,7 +508,7 @@ export const handleGenerate = async (
       }
     }
   } catch (err) {
-    setMessages((prev) => [
+    setMessages((prev:any) => [
       ...prev,
       { role: "assistant", text: "Something went wrong. Please try again." },
     ]);
@@ -519,9 +517,8 @@ export const handleGenerate = async (
 };
 
 export const fetchSymbolPrices = async (
-  brokerCode,
-  identifiersList,
-  dispatch
+  identifiersList:any,
+  dispatch:any
 ) => {
   try {
     const items = identifiersList;
@@ -581,7 +578,7 @@ export const adjustTooltipPosition = (
   x: number,
   y: number,
 
-  parentRef
+  parentRef:any
 ) => {
   const parentRect = parentRef.current?.getBoundingClientRect();
   const tooltipWidth = 160;
@@ -611,8 +608,8 @@ export const AIstrategyDisplay = (
   futureDatas: any,
   allStrategyData: any,
   optionDatas: any,
-  indexName,
-  expiryDate
+  indexName: any,
+  expiryDate: any
 ) => {
   // router.push(`${config.brokersListUrl}/${brokerCode}/psb`);
   dispatch(getIndexName({ indexName: indexName, expiryDate: expiryDate }));
@@ -682,7 +679,7 @@ export const fetchIndexDetails = async (
     return new Date(year, month, day);
   };
   const index = IndexDetails.find(
-    (i) => i?.index_name.toUpperCase() === indexName.toUpperCase()
+    (i: any) => i?.index_name.toUpperCase() === indexName.toUpperCase()
   );
   if (!index || !index?.expiries?.length) return "";
 

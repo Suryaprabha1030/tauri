@@ -1,4 +1,4 @@
-import React, { act, useEffect, useRef, useState } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
@@ -13,7 +13,7 @@ interface TrendsChartProps {
   dropdown: any[];
 }
 
-const tooltipValues = {
+const tooltipValues:any = {
   "Net Income": "Net Income",
   ROE: "ROE",
   "Debt to Equity": "DE",
@@ -23,7 +23,7 @@ const tooltipValues = {
   "Interest Coverage": "Interest Coverage",
   "CFO to PAT": "CFO:PAT",
 };
-const values = {
+const values:any = {
   ROE: "roe_years",
   "Net Income": "net_income_years",
   Sales: "sales",

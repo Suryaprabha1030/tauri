@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import {  useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/Store";
 import Headings from "../sharedContent/headings";
 import RemoveButton from "../sharedContent/RemoveButton";
 import SettingTable from "./SettingTable";
 import { WidthAdjusterDoubleClick } from "@/lib/util/sideToolBar/sidetoolbarCommon";
 import PWAInstallPrompt from "@/components/ProgressiveWebApp/PwaInstallPrompt";
-import usePWAInstallPrompt from "@/components/ProgressiveWebApp/usePWAInstallPromt";
 
 import { useTawk } from "@/context/TawkProvider";
 

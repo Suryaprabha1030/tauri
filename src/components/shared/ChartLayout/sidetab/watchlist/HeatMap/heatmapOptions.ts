@@ -16,18 +16,18 @@ export const heatmapOptions = ({
   setClickedHeatmapData,
   seriesData,
 }: HeatMapOptionsProps): ApexOptions => {
-  const yValues = (seriesData ?? []).flatMap((series) =>
-    series.data.map((d) => d.y)
+  const yValues = (seriesData ?? []).flatMap((series:any) =>
+    series.data.map((d:any) => d.y)
   );
 
   // Split into positive and negative
-  const positiveY = yValues.filter((y) => y > 0);
-  const negativeY = yValues.filter((y) => y < 0);
+  const positiveY = yValues.filter((y:any) => y > 0);
+  const negativeY = yValues.filter((y:any) => y < 0);
 
   // Function to compute median safely
   const computeMedian = (arr: number[]) => {
     if (arr.length === 0) return null;
-    const sorted = [...arr].sort((a, b) => a - b);
+    const sorted = [...arr].sort((a:any, b:any) => a - b);
     const mid = Math.floor(sorted.length / 2);
     return sorted.length % 2 === 0
       ? (sorted[mid - 1] + sorted[mid]) / 2
@@ -123,7 +123,7 @@ export const heatmapOptions = ({
     chart: {
       type: "treemap",
       events: {
-        dataPointSelection: (event: any, chartContext: any, config: any) => {
+        dataPointSelection: (config: any) => {
           const { dataPointIndex } = config;
           const clickedItem = config.w.config.series[0].data[dataPointIndex];
           setClickedHeatmapData && setClickedHeatmapData(clickedItem);
@@ -188,7 +188,7 @@ export const heatmapOptions = ({
           if (!colorScale || !colorScale.ranges) return "#888C88"; // Default Gray
 
           const range = colorScale.ranges.find(
-            (r) => yValue >= r.from && yValue < r.to
+            (r:any) => yValue >= r.from && yValue < r.to
           );
           return range ? range.color : "#888C88";
         };

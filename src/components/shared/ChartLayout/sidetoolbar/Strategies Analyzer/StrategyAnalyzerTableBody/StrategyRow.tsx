@@ -1,5 +1,5 @@
 // StrategyRow.tsx
-import React, { useRef, useState } from "react";
+import React from "react";
 
 import { lotNumbers } from "../../../optionFutures/optionFuturesUtil/newStrategyUtil";
 import { formatNumber } from "@/lib/util/DraftUtil";

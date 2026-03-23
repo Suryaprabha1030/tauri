@@ -142,7 +142,7 @@ export const loadMoreSymbols = (
 ) => {
   if (visibleSymbols?.length >= filteredSymbols?.length) return; // Stop when all symbols are loaded
 
-  setCurrentPage((prevPage) => {
+  setCurrentPage((prevPage:any) => {
     const nextPage = prevPage + 1;
 
     setVisibleSymbols((prevSymbols: any) => {
@@ -151,7 +151,7 @@ export const loadMoreSymbols = (
         prevSymbols?.length + ITEMS_PER_PAGE
       );
 
-      const newIdentifiers = newSymbols?.map((s) => s.identifier);
+      const newIdentifiers = newSymbols?.map((s:any) => s.identifier);
       if (selectedGroup != null && activePositionsFilter == null) {
         //only group acctive
         setAllIdentifiers(newIdentifiers);

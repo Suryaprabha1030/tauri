@@ -1,15 +1,14 @@
 import { AuthContextType } from "@/context/authContextProvider";
-import { AxiosResponse, AxiosError } from "axios";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { AxiosResponse} from "axios";
 
 type SuccessCallback<T> = (response: AxiosResponse<T>) => void;
 type ErrorCallback = (error: any) => void;
 
 class zApi {
-  private router: AppRouterInstance;
+  private router: any;
   private authContext?: AuthContextType;
 
-  constructor(router: AppRouterInstance, authContext?: AuthContextType) {
+  constructor(router: any, authContext?: AuthContextType) {
     this.router = router;
     if (authContext) this.authContext = authContext;
   }

@@ -1,7 +1,6 @@
-import { getOIRadioHashKey } from "@/components/shared/ChartLayout/oiComponent/OIUtil";
+
 import {
   determineMarketAction,
-  determineMarketActionIcon,
   getBuyClassLive,
   getCloseSymbol,
   getCloseValue,
@@ -9,7 +8,6 @@ import {
   getHashKey,
   getSellClassLive,
   LivegetOptionChainForOptionType,
-  oiChangePercFromData,
 } from "@/components/shared/ChartLayout/optionFutures/optionFuturesUtil/strategyUtil";
 import classNames from "classnames";
 

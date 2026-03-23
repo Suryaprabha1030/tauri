@@ -13,12 +13,7 @@ interface Stock {
   trigger: number;
   variety: string;
 }
-interface Bounds {
-  left: number;
-  top: number;
-  right: number;
-  bottom: number;
-}
+
 
 interface PlaceOrderState {
   stockData: Stock[];

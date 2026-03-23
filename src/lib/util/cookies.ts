@@ -17,23 +17,36 @@ export function setJwtCookie(token: string) {
   expirationDate.setHours(expirationDate.getHours() + 24);
   // expirationDate.setMinutes(expirationDate.getMinutes() + 10);
 
+  // Detect if running inside Tauri
+  const isTauri = typeof window !== "undefined" && (window as any).__TAURI_INTERNALS__ !== undefined;
+  
+  const cookieDomain = process.env.NODE_ENV === "production" && !isTauri ? "zoonest.com" : undefined;
+  const isSecure = process.env.NODE_ENV === "production" && !isTauri;
+  const sameSiteValue = process.env.NODE_ENV === "production" && !isTauri ? "None" : "Lax";
+
   setCookie(COOKIE_NAME, token, {
     expires: expirationDate, // Use Date object for expiration
-    domain: process.env.NODE_ENV === "production" ? "zoonest.com" : undefined, // Set domain for production
+    domain: cookieDomain, // Set domain for production web, avoid for Tauri
     path: "/", // Ensure the cookie is available across the entire site
-    secure: process.env.NODE_ENV === "production",
-    sameSite: process.env.NODE_ENV === "production" ? "None" : undefined,
+    secure: isSecure, // Secure only if not in Tauri HTTP
+    sameSite: sameSiteValue, // SameSite None requires Secure, so Lax for Tauri
   });
 }
 
 export function removeJwtCookie() {
+  const isTauri = typeof window !== "undefined" && (window as any).__TAURI_INTERNALS__ !== undefined;
+  
+  const cookieDomain = process.env.NODE_ENV === "production" && !isTauri ? "zoonest.com" : undefined;
+  const isSecure = process.env.NODE_ENV === "production" && !isTauri;
+  const sameSiteValue = process.env.NODE_ENV === "production" && !isTauri ? "None" : "Lax";
+
   removeCookie(COOKIE_NAME, {
-    domain: process.env.NODE_ENV === "production" ? "zoonest.com" : undefined,
+    domain: cookieDomain,
     // path: "/",
     path: "/",
 
-    secure: process.env.NODE_ENV === "production",
-    sameSite: process.env.NODE_ENV === "production" ? "None" : undefined,
+    secure: isSecure,
+    sameSite: sameSiteValue,
   });
   sessionStorage.removeItem("warningDismissed"); //when logged out removed the warning close session storage
   localStorage.removeItem("RiskDisclosureClose"); //TO remove risk disclosure pop up

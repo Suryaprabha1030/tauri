@@ -2,8 +2,8 @@
 import { RootState } from "@/lib/redux/Store";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { usePathname } from "next/navigation";
 import { formatNumber } from "@/lib/util/DraftUtil";
+import { useLocation } from "react-router-dom";
 
 const BrowserTabTitle = () => {
   const PnlPositions = useSelector(

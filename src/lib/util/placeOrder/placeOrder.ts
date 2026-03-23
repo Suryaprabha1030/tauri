@@ -12,7 +12,6 @@ import {
   CalculateOrderMarginData,
   PlaceOrderStock,
 } from "@/lib/util/sideToolBar/orders/OrderUtil";
-import { setOrderPlaced } from "@/lib/redux/slices/PositionSlicer";
 import config from "@/lib/config";
 import { brokerLogoutTokenRemove } from "../autoLogoutUtil/brokerLogOutUtil";
 
@@ -136,7 +135,7 @@ export const updateStockData = (
   dispatch: Dispatch
 ) => {
   if (localStockData.length > 0) {
-    const updatedStockData = UpdatedOrderStockData.map((stock) => {
+    const updatedStockData = UpdatedOrderStockData.map((stock:any) => {
       // Find the matching local stock by identifier
       const localStock = localStockData.find(
         (local: any) => local && local.identifier === stock.identifier // Match by unique identifier

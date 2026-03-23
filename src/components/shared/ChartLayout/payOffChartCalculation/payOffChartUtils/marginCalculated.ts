@@ -8,7 +8,7 @@ import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil"
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
 
 const marginpayloadAdded = (long_ce_data: any, arr: any) => {
-  long_ce_data.forEach((d) =>
+  long_ce_data.forEach((d:any) =>
     arr.push({
       exchange: d.exchange,
       lot_size: d.lot_size,

@@ -19,7 +19,7 @@ const DocumentSection = ({ data }: DocumentProps) => {
                   Presentations
                 </h1>
                 <div className="p-1 gap-2 grid grid-cols-3  max-sm:grid-cols-2 grid-flow-row">
-                  {presentationData?.map(({ link, subject }, index: number) => (
+                  {presentationData?.map(({ link, subject }:any, index: number) => (
                     <div
                       key={index}
                       className="flex p-1 rounded-md bg-white hover:bg-gray-100 border h-[50px] hover:cursor-pointer"
@@ -56,7 +56,7 @@ const DocumentSection = ({ data }: DocumentProps) => {
                   Transcripts
                 </h1>
                 <div className="p-1 gap-2 grid grid-cols-3  max-sm:grid-cols-2 grid-flow-row">
-                  {transcriptData?.map(({ link, subject }, index: number) => (
+                  {transcriptData?.map(({ link, subject }:any, index: number) => (
                     <div
                       key={index}
                       className="flex p-1 rounded-md bg-white hover:bg-gray-100 border h-[50px] hover:cursor-pointer"

@@ -9,7 +9,6 @@ import CandleIcon from "../../optionFutures/CandleIcon";
 import { getBrokerCode } from "@/components/helpers";
 import {
   setChartIconClicked,
-  setChartPanel,
 } from "@/lib/redux/slices/ChartsSlice";
 interface HoldingsTableProps {
   dataholding: any[];
@@ -39,7 +38,6 @@ const HoldingsTable: React.FC<HoldingsTableProps> = ({
       index,
       filter,
       path,
-      router,
       dispatch,
       brokerCode,
       identifier,

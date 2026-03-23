@@ -1,7 +1,6 @@
 // ExpandedRowDetails.tsx
 import { formatExpiryDate } from "@/lib/util/DateUtil";
 import React from "react";
-import DisplayHandleSellButton from "../../../buySellButton/DisplayHandleSellButton";
 import BuySellDisplay from "./BuySellDisplay";
 
 interface LegDetails {

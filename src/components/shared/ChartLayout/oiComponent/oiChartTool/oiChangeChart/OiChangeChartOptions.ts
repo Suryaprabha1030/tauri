@@ -132,7 +132,7 @@ const OiChangeChartOptions = (
       shared: true,
       intersect: false,
 
-      custom: ({ series, seriesIndex, dataPointIndex, w }) => {
+      custom: ({ series, seriesIndex, dataPointIndex, w }:any) => {
         const callNeg = series[3][dataPointIndex];
         const callPost = series[2][dataPointIndex];
         const callChangeOi = callNeg

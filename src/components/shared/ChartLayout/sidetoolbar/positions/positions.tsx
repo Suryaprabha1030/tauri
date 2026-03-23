@@ -18,7 +18,6 @@ import ShareableImageCard from "./TwitterSharableImage";
 
 interface PositionsProps {
   brokerCode: number | null;
-  apiKey: string | null;
   leftWidth: number;
   setLeftWidth: React.Dispatch<React.SetStateAction<any>>;
 }
@@ -40,7 +39,6 @@ interface Position {
 
 const Positions: React.FC<PositionsProps> = ({
   brokerCode,
-  apiKey,
   leftWidth,
   setLeftWidth,
 }) => {
@@ -186,7 +184,6 @@ const Positions: React.FC<PositionsProps> = ({
               <PositionsTableHeader
                 positionsData={positionsData}
                 selectAll={selectAll}
-                showAvgprice={showAvgprice}
                 leftWidth={leftWidth}
                 setPositionsData={setPositionsData}
                 setcheckedData={setcheckedData}

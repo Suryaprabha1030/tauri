@@ -43,7 +43,7 @@ const sortKey = [
 const parseDate = (dateStr: any) => {
   const [day, month, year] = dateStr.split("-");
 
-  const months = {
+  const months:any = {
     Jan: "01",
     Feb: "02",
     Mar: "03",

@@ -1,5 +1,5 @@
 import { getToggleState } from "@/lib/redux/slices/AnalyzerSlice";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 
 interface HeatMapToggleProps {

@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import domtoimage from "dom-to-image";
-import Logo from "@/components/shared/logo/logo";
 import { formatNumber } from "@/lib/util/DraftUtil";
 
 import { useSelector } from "react-redux";
@@ -11,7 +10,6 @@ import { PositionsRouterApi } from "@/lib/api/base";
 import { baseConfig } from "@/lib/api/baseConfiguration";
 import TwitterShareButton from "./twitterShareButton";
 import {
-  getImageUrl,
   getTwitterImage,
 } from "@/lib/util/brokersUtil/BrokersImage";
 import Modal from "@/components/shared/popupModal";

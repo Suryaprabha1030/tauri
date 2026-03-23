@@ -1,18 +1,13 @@
 "use client";
-import config from "@/lib/config";
+
 import ErrorAlert from "./ErrorAlert";
-import { useState, useEffect } from "react";
+
 
 const AlertToast = (props: {
   errorMessage: string;
   toggleComponent: () => void;
 }) => {
-  useEffect(() => {
-    // Set a timeout to hide the component after 10 seconds
-    const timeout = setTimeout(() => {
-      props.toggleComponent();
-    }, config.alertToastTimeout);
-  }, []);
+  
 
   return (
     <div

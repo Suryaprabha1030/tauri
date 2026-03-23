@@ -75,10 +75,10 @@ function mergeDataArrays(
   suffix2: any
 ) {
   return arr1
-    .map((item1) => {
-      const item2 = arr2.find((item) => item[key] === item1[key]);
+    .map((item1:any) => {
+      const item2 = arr2.find((item:any) => item[key] === item1[key]);
       if (item2) {
-        const merged = { [key]: item1[key] };
+        const merged:any = { [key]: item1[key] };
 
         for (const k in item1) {
           if (k !== key) merged[k + suffix1] = item1[k];

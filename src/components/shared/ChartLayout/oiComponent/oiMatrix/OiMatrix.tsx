@@ -56,7 +56,7 @@ const OiMatrix: React.FC<OiMatrixProps> = ({
     string | null
   >("");
   const oiMatrixRef = useRef<any>(null);
-  const [matrixBasketData, setMatrixBasketData] = useState({});
+  const [matrixBasketData, setMatrixBasketData] = useState<any>({});
   const webSocketDataRead = useSelector(
     (state: RootState) => state.strategy.symbolsPrice,
   );

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 interface PositionsTableHeaderProps {
   positionsData: any[];
   selectAll: boolean;
-  showAvgprice: boolean;
   leftWidth: number;
   setPositionsData: React.Dispatch<React.SetStateAction<any>>;
   setcheckedData: React.Dispatch<React.SetStateAction<any>>;
@@ -16,7 +15,6 @@ interface PositionsTableHeaderProps {
 const PositionsTableHeader: React.FC<PositionsTableHeaderProps> = ({
   positionsData,
   selectAll,
-  showAvgprice,
   leftWidth,
   setPositionsData,
   setcheckedData,
