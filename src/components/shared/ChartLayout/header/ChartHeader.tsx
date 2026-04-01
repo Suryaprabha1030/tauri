@@ -16,7 +16,7 @@ import {
   settoggleholdings,
   settogglepositions,
 } from "@/lib/redux/slices/StrategySlice";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   checkPosition,
   getCheckedPositionData,
@@ -90,6 +90,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
 
   const dispatch = useDispatch();
   const router = useNavigate();
+  const location = useLocation();
   const { connectionStatus } = useWebSocketContext();
   const addsymbolsread: any = useSelector(
     (state: RootState) => state.strategy.symbols,
@@ -138,17 +139,15 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
   }, [connectionStatus]);
 
   useEffect(() => {
-    const path = window.location.pathname;
+    const path = location.pathname;
     if (path === `${config.brokersListUrl}/${brokerCode}/psv`) {
       setActiveButton("A");
-    }
-    if (path === `${config.brokersListUrl}/${brokerCode}/psb`) {
+    } else if (path === `${config.brokersListUrl}/${brokerCode}/psb`) {
       setActiveButton("B");
-    }
-    if (path === `${config.brokersListUrl}/${brokerCode}/oi`) {
+    } else if (path === `${config.brokersListUrl}/${brokerCode}/oi`) {
       setActiveButton("C");
     }
-  }, [brokerCode]);
+  }, [brokerCode, location.pathname]);
 
   //click outside menu
 
@@ -188,7 +187,7 @@ const ChartHeader: React.FC<DashboardHeaderProps> = ({
     dispatch(settogglepositions(false));
     dispatch(settoggleholdings(false));
     dispatch(getMaxPainStrikeValue(null));
-    const path = window.location.pathname;
+    const path = location.pathname;
     // Check the path and update the state accordingly
     if (
       path === `${config.brokersListUrl}/${brokerCode}/psv` ||

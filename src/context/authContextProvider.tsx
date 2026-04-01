@@ -39,8 +39,6 @@ export const AuthContextProvider = ({
   const pathname = location.pathname;
 
   useEffect(() => {
-    setIsLoaded(false);
-
     async function fetchUserFromCookie() {
       const token = getJwtFromCookie();
 
@@ -49,11 +47,11 @@ export const AuthContextProvider = ({
         if (pathname.startsWith("/login") || pathname.startsWith("/signup"))
           router(config.brokersListUrl);
       }
+      setIsLoaded(true);
     }
 
     fetchUserFromCookie();
-    setIsLoaded(true);
-  }, [isLoaded, pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loginSuccess = (accessToken: string) => {
     setIsLoaded(false);

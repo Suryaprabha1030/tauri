@@ -8,7 +8,7 @@ import { removeJwtCookie, setJwtCookie } from "@/lib/util/cookies";
 import { useNavigate } from "react-router-dom";
 import  { useEffect } from "react";
 import { useDispatch } from "react-redux";
-const Page = () => {
+const GoogleAuthpage = () => {
   const router = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -57,4 +57,4 @@ const Page = () => {
     </div>
   );
 };
-export default Page;
+export default GoogleAuthpage;

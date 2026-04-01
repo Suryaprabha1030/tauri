@@ -5,19 +5,19 @@
   "identifier": "com.surya.myapp",
   "build": {
     "beforeDevCommand": "npm run dev",
-    "devUrl": "http://localhost:1422",
+    "devUrl": "http://localhost:3000",
     "beforeBuildCommand": "npm run build",
     "frontendDist": "../dist"
   },
   "app": {
     "windows": [
       {
-        "title": "myapp",
-        "width": 800,
-        "height": 600,
-        "backgroundColor": "#ffffff",
-        "transparent": false,
-        "visible": true
+        "title": "zoonest",
+
+        "resizable": true,
+
+        "decorations": true,
+        "backgroundColor": "#ffffff"
       }
     ],
     "security": {

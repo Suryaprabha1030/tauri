@@ -9,7 +9,7 @@ import { AuthContext } from "@/context/authContextProvider";
 import zApi from "@/lib/api/zApi";
 import { autoLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/autoLogOutUtil";
 import { setShowSwitchbroker } from "@/lib/redux/slices/CommonSlice";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import config from "@/lib/config";
 
 import { brokerLogoutTokenRemove } from "@/lib/util/autoLogoutUtil/brokerLogOutUtil";
@@ -218,7 +218,9 @@ const ConnectFavBroker = () => {
             const allBrokers = allBrokersResponse.data;
             // Step 1: Cards for each account (multiple broker_codes per broker_id allowed)
             const connectedCards = cleanedMappings.map((mapping) => {
-              const broker = allBrokers.find((b:any) => b.id === mapping.broker_id);
+              const broker = allBrokers.find(
+                (b: any) => b.id === mapping.broker_id,
+              );
               return {
                 ...broker,
                 ...mapping, // contains broker_code, client_code, user_full_name
@@ -232,8 +234,8 @@ const ConnectFavBroker = () => {
             );
 
             const unconnectedCards = allBrokers
-              .filter((broker:any) => !connectedBrokerIds.has(broker.id))
-              .map((broker:any) => ({
+              .filter((broker: any) => !connectedBrokerIds.has(broker.id))
+              .map((broker: any) => ({
                 ...broker,
                 broker_code: null,
                 client_code: null,
@@ -298,10 +300,10 @@ const ConnectFavBroker = () => {
     if (sortedBroker && sortedBroker.length > 0) {
       if (priveledgeUser) {
         // Privileged users see all active brokers
-        visibleBrokers = sortedBroker.filter((b:any) => b.is_active);
+        visibleBrokers = sortedBroker.filter((b: any) => b.is_active);
       } else {
         const isActiveBrokers = sortedBroker.filter(
-          (b:any) => b.is_active === true,
+          (b: any) => b.is_active === true,
         );
         const active = [...isActiveBrokers, ...sampleBrokerData];
 
@@ -310,7 +312,7 @@ const ConnectFavBroker = () => {
           visibleBrokers = active;
         } else {
           // Try to match broker name inside signupMode
-          const matchedBroker = isActiveBrokers.find((b:any) =>
+          const matchedBroker = isActiveBrokers.find((b: any) =>
             signUpMode?.toLowerCase().includes(b.name.toLowerCase()),
           );
 
@@ -538,6 +540,8 @@ const ConnectFavBroker = () => {
     }
   };
 
+
+
   return (
     <div>
       {loading ? (
@@ -561,11 +565,16 @@ const ConnectFavBroker = () => {
                 <div
                   className={`scrollbar-hide  max-md:grid max-md:items-center max-md:px-6 max-md:py-4  max-sm:w-screen max-sm:gap-6 sm:overflow-hidden sm:max-2xl:gap-6 sm:max-md:h-full   sm:max-md:w-screen md:flex md:flex-row md:max-2xl:py-[1rem] md:max-lg:h-[30rem] md:max-lg:w-[55rem] md:max-lg:px-5 lg:max-2xl:h-[27rem] lg:max-xl:w-[60rem] lg:max-xl:px-12 xl:max-2xl:px-5 2xl:h-[30rem] 2xl:gap-6 ${brokers?.length > 5 ? "" : "2xl:justify-center"} ${visibleBrokers?.length % brokersPerPage == 0 || brokers.length < brokersPerPage || visibleBrokers.length == 1 ? "md:max-2xl:justify-center" : "md:max-2xl:justify-start"} ${visibleBrokers?.length === 1 ? "  max-sm:grid-cols-1 max-sm:place-items-center sm:max-md:grid-cols-1 sm:max-md:place-items-center" : "max-sm:grid-cols-2 sm:max-md:grid-cols-2"}  2xl:overflow-x-auto 2xl:p-6`}
                 >
-                  {visibleBrokers?.map((broker:any, index:any) => {
+                  {visibleBrokers?.map((broker: any, index: any) => {
                     const userBroker = client.find(
                       (c) =>
                         c?.broker_id === broker?.id &&
                         c?.broker_code === broker?.broker_code,
+                    );
+                    console.log(
+                      userBroker?.broker_code,
+                      "userBroker",
+                      userBroker,
                     );
 
                     const isActive = activeBroker === broker?.id;
@@ -631,42 +640,39 @@ const ConnectFavBroker = () => {
                               userBroker?.user_full_name ? (
                                 <div>
                                   <div className="flex justify-center gap-4  max-md:h-[2.5rem] max-md:items-end">
-                                    <a
-                                      href={`${config.brokersListUrl}/${userBroker?.broker_code}/psv`}
-                                    >
+                                    <div className="flex items-center justify-center">
                                       <button
                                         className="flex items-center justify-center rounded-3xl border border-z-green-500 px-2 py-1  font-medium leading-none  text-z-green-500   hover:bg-z-green-500 hover:text-white max-md:w-[2rem] max-sm:text-[0.6rem]  sm:max-md:mt-2 sm:max-md:text-[0.75rem] md:max-lg:w-[3rem] lg:max-xl:w-[3.2rem]  lg:max-xl:text-[0.8rem] xl:w-[4rem] xl:py-2 xl:text-[0.8rem]"
-                                        onClick={(e: any) =>
-                                          e.stopPropagation()
-                                        }
+                                        onClick={(e: any) => {
+                                          e.stopPropagation();
+                                          router(`${config.brokersListUrl}/${userBroker?.broker_code}/psv`);
+                                        }}
                                       >
                                         PSV
                                       </button>
-                                    </a>
-                                    <a
-                                      href={`${config.brokersListUrl}/${userBroker?.broker_code}/psb`}
-                                    >
+                                    </div>
+                                    <div className="flex items-center justify-center">
                                       <button
                                         className="flex items-center justify-center rounded-3xl border border-z-green-500 px-2 py-1  font-medium leading-none  text-z-green-500   hover:bg-z-green-500 hover:text-white max-md:w-[2rem] max-sm:text-[0.6rem]  sm:max-md:mt-2 sm:max-md:text-[0.75rem] md:max-lg:w-[3rem] lg:max-xl:w-[3.2rem]  lg:max-xl:text-[0.8rem] xl:w-[4rem] xl:py-2 xl:text-[0.8rem]"
-                                        onClick={(e: any) =>
-                                          e.stopPropagation()
-                                        }
+                                        onClick={(e: any) => {
+                                          e.stopPropagation();
+                                          router(`${config.brokersListUrl}/${userBroker?.broker_code}/psb`);
+                                        }}
                                       >
                                         PSB
                                       </button>
-                                    </a>
-                                    <a
-                                      href={`${config.brokersListUrl}/${userBroker?.broker_code}/oi`}
-                                    >
+                                    </div>
+                                    <div className="flex items-center justify-center">
                                       <button
                                         className="flex items-center justify-center rounded-3xl border border-z-green-500 px-2 py-1  font-medium leading-none text-z-green-500 hover:bg-z-green-500 hover:text-white max-xl:w-[2rem] max-sm:text-[0.6rem]  sm:max-md:mt-2 sm:max-md:text-[0.75rem]  md:max-lg:w-[3rem] lg:max-xl:w-[3.2rem]  lg:max-xl:text-[0.8rem] xl:w-[4rem] xl:py-2 xl:text-[0.8rem] 2xl:px-3 "
-                                        onClick={(e: any) =>
-                                          e.stopPropagation()
-                                        }
+                                        onClick={(e: any) => {
+                                          e.stopPropagation();
+                                          router(`${config.brokersListUrl}/${userBroker?.broker_code}/oi`);
+                                        }}
                                       >
                                         OI
                                       </button>
-                                    </a>
+                                    </div>
                                   </div>
                                   <div className="flex items-center gap-2  px-2 py-1 max-md:py-0.5">
                                     <div className="h-px flex-1 bg-stone-300"></div>
